@@ -1,0 +1,30 @@
+# PickMyApp
+
+> Honest guides, comparisons and reviews of business software. We check vendor pricing pages, test free plans where possible, take no paid placements, and note the date every price was checked.
+
+## Guides
+
+- [n8n vs Make: Which Is Better for Small Business in 2026?](https://pickmyapp.github.io/blog/n8n-vs-make-small-business/): Workflow automation compared — pricing per workflow run vs per module action, ease of use, AI features, integrations, and the volume where each tool saves money.
+- [Zapier Alternatives: 7 Cheaper Automation Tools Compared](https://pickmyapp.github.io/blog/zapier-alternatives-cheaper-automation/): Make, n8n, Pabbly Connect, Integrately, Activepieces, Power Automate and IFTTT compared with verified 2026 pricing.
+- [Mailchimp vs ConvertKit for Creators](https://pickmyapp.github.io/blog/mailchimp-vs-convertkit-creators/): Email marketing for creators compared — 2026 pricing, free plan gaps, newsletter and digital-product features, with a verdict for writers, course sellers and indie creators.
+- [Cheapest Email Marketing Software for Small Business](https://pickmyapp.github.io/blog/cheapest-email-marketing-software-small-business/): Real prices at 1K, 5K and 10K subscribers, the best free plans, and what sticker prices hide.
+- [HubSpot vs Pipedrive for Small Teams](https://pickmyapp.github.io/blog/hubspot-vs-pipedrive-small-teams/): CRM comparison for small teams — pricing, pipelines, automation and reporting compared.
+- [Best Free CRM for Startups (2026)](https://pickmyapp.github.io/blog/best-free-crm-startups-2026/): HubSpot, Zoho, Attio, Capsule, EngageBay and Bitrix24 compared — free-tier limits, upgrade costs, and which fits your team.
+- [Asana vs Monday vs ClickUp for Small Teams](https://pickmyapp.github.io/blog/asana-vs-monday-vs-clickup-small-teams/): Project management tools compared on pricing, ease of use and features for small teams.
+- [Best Cheap Web Hosting for WordPress (2026)](https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/): Hostinger, Bluehost, SiteGround and DreamHost compared — real intro and renewal prices plus two-year cost math.
+- [Jasper vs Copy.ai for Blog Writing](https://pickmyapp.github.io/blog/jasper-vs-copy-ai-blog-writing/): AI writing tools compared for blog content — pricing, output quality and workflows.
+- [Wix vs Squarespace for Small Business](https://pickmyapp.github.io/blog/wix-vs-squarespace-small-business/): Website builders compared — pricing, ease of use, templates, ecommerce and SEO, with a verdict for 2026.
+
+## Categories
+
+- [AI Automation Tools](https://pickmyapp.github.io/category/ai-automation/): n8n, Make, Zapier and alternatives — comparisons, pricing and guides.
+- [CRM Software](https://pickmyapp.github.io/category/crm/): HubSpot, Pipedrive, Zoho and free CRM options for startups and small teams.
+- [Email Marketing](https://pickmyapp.github.io/category/email-marketing/): Mailchimp, ConvertKit and budget-friendly email tools compared.
+- [Project Management](https://pickmyapp.github.io/category/project-management/): Asana, Monday, ClickUp and alternatives for small teams.
+- [Web Hosting](https://pickmyapp.github.io/category/web-hosting/): Cheap, reliable hosting for WordPress and small business sites.
+- [AI Writing Tools](https://pickmyapp.github.io/category/ai-writing/): Jasper, Copy.ai and AI content tools for blogs and marketing.
+
+## About
+
+- [About PickMyApp](https://pickmyapp.github.io/about/): How we research — methodology, update policy, no paid placements.
+- [Contact](https://pickmyapp.github.io/contact/): Get in touch with the PickMyApp research team.

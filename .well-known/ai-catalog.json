@@ -1,1 +1,126 @@
-{"entries":[{"capabilities":["content-discovery","reading"],"description":"In-depth, regularly updated guides and comparisons of business software: AI automation, CRM, email marketing, project management, web hosting and AI writing tools. Pricing verified against vendor pages.","displayName":"PickMyApp Software Guides","identifier":"urn:air:pickmyapp.github.io:guides","representativeQueries":["best CRM for startups","n8n vs Make","cheapest email marketing software"],"type":"text/html","url":"https://pickmyapp.github.io/blog/"},{"capabilities":["content-discovery","reading"],"description":"Comparisons and guides for workflow automation tools: n8n, Make, Zapier and cheaper alternatives.","displayName":"AI Automation Tools Guides","identifier":"urn:air:pickmyapp.github.io:category:ai-automation","representativeQueries":["Zapier alternatives","n8n vs Make pricing"],"type":"text/html","url":"https://pickmyapp.github.io/category/ai-automation/"},{"capabilities":["content-discovery","reading"],"description":"CRM comparisons for startups and small teams: HubSpot, Pipedrive, Zoho and free CRM options.","displayName":"CRM Software Guides","identifier":"urn:air:pickmyapp.github.io:category:crm","representativeQueries":["best free CRM for startups","HubSpot vs Pipedrive"],"type":"text/html","url":"https://pickmyapp.github.io/category/crm/"},{"capabilities":["content-discovery","reading"],"description":"Email marketing software comparisons: Mailchimp, ConvertKit and budget-friendly tools for small business.","displayName":"Email Marketing Guides","identifier":"urn:air:pickmyapp.github.io:category:email-marketing","representativeQueries":["Mailchimp vs ConvertKit","cheapest email marketing software"],"type":"text/html","url":"https://pickmyapp.github.io/category/email-marketing/"},{"capabilities":["content-discovery","reading"],"description":"Project management tool comparisons for small teams: Asana, Monday, ClickUp and alternatives.","displayName":"Project Management Guides","identifier":"urn:air:pickmyapp.github.io:category:project-management","representativeQueries":["Asana vs Monday vs ClickUp"],"type":"text/html","url":"https://pickmyapp.github.io/category/project-management/"},{"capabilities":["content-discovery","reading"],"description":"Web hosting comparisons for WordPress and small business: intro vs renewal pricing, tested picks.","displayName":"Web Hosting Guides","identifier":"urn:air:pickmyapp.github.io:category:web-hosting","representativeQueries":["best cheap web hosting for WordPress"],"type":"text/html","url":"https://pickmyapp.github.io/category/web-hosting/"},{"capabilities":["content-discovery","reading"],"description":"AI writing tool comparisons for blogs and marketing: Jasper, Copy.ai and alternatives.","displayName":"AI Writing Tools Guides","identifier":"urn:air:pickmyapp.github.io:category:ai-writing","representativeQueries":["Jasper vs Copy.ai"],"type":"text/html","url":"https://pickmyapp.github.io/category/ai-writing/"},{"capabilities":["content-discovery"],"description":"Machine-readable index of every page on PickMyApp with last-modified dates.","displayName":"PickMyApp Sitemap","identifier":"urn:air:pickmyapp.github.io:sitemap","representativeQueries":["list all PickMyApp guides"],"type":"application/xml","url":"https://pickmyapp.github.io/sitemap.xml"}],"host":{"displayName":"PickMyApp","documentationUrl":"https://pickmyapp.github.io/about/","identifier":"pickmyapp.github.io"},"specVersion":"1.0.0"}
+{
+ "entries": [
+  {
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "In-depth, regularly updated guides and comparisons of business software: AI automation, CRM, email marketing, project management, web hosting and AI writing tools. Pricing verified against vendor pages.",
+   "displayName": "PickMyApp Software Guides",
+   "identifier": "urn:air:pickmyapp.github.io:guides",
+   "representativeQueries": [
+    "best CRM for startups",
+    "n8n vs Make",
+    "cheapest email marketing software"
+   ],
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/blog/"
+  },
+  {
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Comparisons and guides for workflow automation tools: n8n, Make, Zapier and cheaper alternatives.",
+   "displayName": "AI Automation Tools Guides",
+   "identifier": "urn:air:pickmyapp.github.io:category:ai-automation",
+   "representativeQueries": [
+    "Zapier alternatives",
+    "n8n vs Make pricing"
+   ],
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/ai-automation/"
+  },
+  {
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "CRM comparisons for startups and small teams: HubSpot, Pipedrive, Zoho and free CRM options.",
+   "displayName": "CRM Software Guides",
+   "identifier": "urn:air:pickmyapp.github.io:category:crm",
+   "representativeQueries": [
+    "best free CRM for startups",
+    "HubSpot vs Pipedrive"
+   ],
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/crm/"
+  },
+  {
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Email marketing software comparisons: Mailchimp, ConvertKit and budget-friendly tools for small business.",
+   "displayName": "Email Marketing Guides",
+   "identifier": "urn:air:pickmyapp.github.io:category:email-marketing",
+   "representativeQueries": [
+    "Mailchimp vs ConvertKit",
+    "cheapest email marketing software"
+   ],
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/email-marketing/"
+  },
+  {
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Project management tool comparisons for small teams: Asana, Monday, ClickUp and alternatives.",
+   "displayName": "Project Management Guides",
+   "identifier": "urn:air:pickmyapp.github.io:category:project-management",
+   "representativeQueries": [
+    "Asana vs Monday vs ClickUp"
+   ],
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/project-management/"
+  },
+  {
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Web hosting comparisons for WordPress and small business: intro vs renewal pricing, tested picks.",
+   "displayName": "Web Hosting Guides",
+   "identifier": "urn:air:pickmyapp.github.io:category:web-hosting",
+   "representativeQueries": [
+    "best cheap web hosting for WordPress"
+   ],
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/web-hosting/"
+  },
+  {
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "AI writing tool comparisons for blogs and marketing: Jasper, Copy.ai and alternatives.",
+   "displayName": "AI Writing Tools Guides",
+   "identifier": "urn:air:pickmyapp.github.io:category:ai-writing",
+   "representativeQueries": [
+    "Jasper vs Copy.ai"
+   ],
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/ai-writing/"
+  },
+  {
+   "capabilities": [
+    "content-discovery"
+   ],
+   "description": "Machine-readable index of every page on PickMyApp with last-modified dates.",
+   "displayName": "PickMyApp Sitemap",
+   "identifier": "urn:air:pickmyapp.github.io:sitemap",
+   "representativeQueries": [
+    "list all PickMyApp guides"
+   ],
+   "type": "application/xml",
+   "url": "https://pickmyapp.github.io/sitemap.xml"
+  }
+ ],
+ "host": {
+  "displayName": "PickMyApp",
+  "documentationUrl": "https://pickmyapp.github.io/about/",
+  "identifier": "pickmyapp.github.io"
+ },
+ "specVersion": "1.0"
+}

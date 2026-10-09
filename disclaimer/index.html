@@ -191,6 +191,7 @@ caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
 .related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
 @media(min-width:960px){
  .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .art:not(:has(.toc)){grid-template-columns:minmax(0,880px);justify-content:center}
  .toc{position:sticky;top:90px;align-self:start}
  .verdict{grid-template-columns:1fr 1fr}
 }

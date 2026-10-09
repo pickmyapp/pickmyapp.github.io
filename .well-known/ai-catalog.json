@@ -70,7 +70,8 @@
    "displayName": "Project Management Guides",
    "identifier": "urn:air:pickmyapp.github.io:category:project-management",
    "representativeQueries": [
-    "Asana vs Monday vs ClickUp"
+    "Asana vs Monday vs ClickUp",
+    "best project management software"
    ],
    "type": "text/html",
    "url": "https://pickmyapp.github.io/category/project-management/"
@@ -84,7 +85,8 @@
    "displayName": "Web Hosting Guides",
    "identifier": "urn:air:pickmyapp.github.io:category:web-hosting",
    "representativeQueries": [
-    "best cheap web hosting for WordPress"
+    "best cheap web hosting for WordPress",
+    "Hostinger vs Bluehost"
    ],
    "type": "text/html",
    "url": "https://pickmyapp.github.io/category/web-hosting/"
@@ -98,7 +100,8 @@
    "displayName": "AI Writing Tools Guides",
    "identifier": "urn:air:pickmyapp.github.io:category:ai-writing",
    "representativeQueries": [
-    "Jasper vs Copy.ai"
+    "Jasper vs Copy.ai",
+    "best AI writing assistant"
    ],
    "type": "text/html",
    "url": "https://pickmyapp.github.io/category/ai-writing/"
@@ -111,7 +114,8 @@
    "displayName": "PickMyApp Sitemap",
    "identifier": "urn:air:pickmyapp.github.io:sitemap",
    "representativeQueries": [
-    "list all PickMyApp guides"
+    "list all PickMyApp guides",
+    "all software guides"
    ],
    "type": "application/xml",
    "url": "https://pickmyapp.github.io/sitemap.xml"

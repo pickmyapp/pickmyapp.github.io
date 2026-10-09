@@ -115,6 +115,96 @@
    ],
    "type": "application/xml",
    "url": "https://pickmyapp.github.io/sitemap.xml"
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:cybersecurity",
+   "displayName": "Personal Cybersecurity Guides",
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/cybersecurity/",
+   "description": "VPNs, password managers and antivirus compared for individuals and small teams.",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "representativeQueries": [
+    "best VPN for remote workers",
+    "NordVPN vs ExpressVPN"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:software-tutorials",
+   "displayName": "Software Tutorials & Troubleshooters",
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/software-tutorials/",
+   "description": "Step-by-step how-tos and fixes for popular software.",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "representativeQueries": [
+    "how to fix Excel running slow",
+    "software tutorial"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:developer-tools",
+   "displayName": "Developer Tools Guides",
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/developer-tools/",
+   "description": "Code editors, Git clients, hosting and learning resources for beginners.",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "representativeQueries": [
+    "VS Code vs Cursor",
+    "best code editor for beginners"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:cloud-devops",
+   "displayName": "Cloud & DevOps Guides",
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/cloud-devops/",
+   "description": "Cloud hosting, CI/CD and containers explained with real pricing.",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "representativeQueries": [
+    "AWS vs Google Cloud pricing",
+    "best CI/CD for small teams"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:data-science",
+   "displayName": "Data Science & Analytics Guides",
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/data-science/",
+   "description": "BI tools, analytics platforms and ML software compared.",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "representativeQueries": [
+    "Power BI vs Tableau",
+    "best BI tool for small business"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:emerging-tech",
+   "displayName": "Emerging Tech Trend Breakdowns",
+   "type": "text/html",
+   "url": "https://pickmyapp.github.io/category/emerging-tech/",
+   "description": "New AI models and breakthroughs explained without hype.",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "representativeQueries": [
+    "AI agents explained",
+    "new AI model comparison"
+   ]
   }
  ],
  "host": {

@@ -16,6 +16,12 @@
 - [Wix vs Squarespace for Small Business](https://pickmyapp.github.io/blog/wix-vs-squarespace-small-business/): Website builders compared — pricing, ease of use, templates, ecommerce and SEO, with a verdict for 2026.
 
 ## Categories
+- [Personal Cybersecurity & Online Safety](https://pickmyapp.github.io/category/cybersecurity/): VPNs, password managers and antivirus compared — real pricing, tested picks.
+- [Software Tutorials & Troubleshooters](https://pickmyapp.github.io/category/software-tutorials/): Step-by-step how-tos and fixes for popular software.
+- [Developer Tools & Coding for Beginners](https://pickmyapp.github.io/category/developer-tools/): Code editors, Git clients, hosting and learning resources compared.
+- [Cloud Computing & DevOps](https://pickmyapp.github.io/category/cloud-devops/): AWS vs GCP vs Azure, CI/CD and Docker explained with real pricing.
+- [Data Science & Big Data Analytics](https://pickmyapp.github.io/category/data-science/): BI tools, analytics platforms and ML software compared.
+- [Emerging Tech Trends](https://pickmyapp.github.io/category/emerging-tech/): New AI models and breakthroughs explained without the hype.
 
 - [AI Automation Tools](https://pickmyapp.github.io/category/ai-automation/): n8n, Make, Zapier and alternatives — comparisons, pricing and guides.
 - [CRM Software](https://pickmyapp.github.io/category/crm/): HubSpot, Pipedrive, Zoho and free CRM options for startups and small teams.

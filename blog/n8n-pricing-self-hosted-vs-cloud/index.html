@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>n8n Pricing Explained: Self-Hosted vs Cloud Costs (2026)</title>
+<meta name="description" content="n8n pricing in 2026: Cloud plans from €24/mo for 2,500 executions vs free self-hosting. Real cost math, plan comparison, and which one wins at your volume.">
+<meta name="keywords" content="n8n pricing 2026, n8n cloud pricing, self-host n8n cost, n8n Community Edition, n8n executions explained, n8n Starter vs Pro, n8n pricing per execution">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="n8n Pricing Explained: Self-Hosted vs Cloud Costs (2026)">
+<meta property="og:description" content="n8n pricing in 2026: Cloud plans from €24/mo for 2,500 executions vs free self-hosting. Real cost math, plan comparison, and which one wins at your volume.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-pricing-self-hosted-vs-cloud-1.jpg">
+<meta property="article:published_time" content="2026-10-10">
+<meta property="article:modified_time" content="2026-10-10">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="n8n Pricing Explained: Self-Hosted vs Cloud Costs (2026)">
+<meta name="twitter:description" content="n8n pricing in 2026: Cloud plans from €24/mo for 2,500 executions vs free self-hosting. Real cost math, plan comparison, and which one wins at your volume.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-pricing-self-hosted-vs-cloud-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/#article", "headline": "n8n Pricing Explained: Self-Hosted vs Cloud Costs (2026)", "description": "n8n pricing in 2026: Cloud plans from €24/mo for 2,500 executions vs free self-hosting. Real cost math, plan comparison, and which one wins at your volume.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-pricing-self-hosted-vs-cloud-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-10", "dateModified": "2026-10-10", "mainEntityOfPage": "https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the self-hosted n8n Community Edition really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for your own internal business use. The Community Edition ships under n8n's fair-code (Sustainable Use) license: no license fee, no execution limit. You pay only for your server — roughly $5 to $10 a month for a small VPS — plus the time to maintain it. You may not resell n8n itself as a hosted service."}}, {"@type": "Question", "name": "How much does n8n Cloud cost per month in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "Starter is €24/month (€20 billed annually) for 2,500 executions, Pro is €60/month (€50 annual) for 10,000 executions, and Business is €800/month (€667 annual) for 40,000 executions. Annual billing saves about 17%, and every paid plan includes unlimited users and unlimited active workflows. Prices checked October 2026 — verify on n8n.io/pricing before buying."}}, {"@type": "Question", "name": "What counts as an execution in n8n?", "acceptedAnswer": {"@type": "Answer", "text": "One execution is one complete run of a workflow, no matter how many steps it has — a 3-step workflow and a 30-step workflow each cost one execution per run. Sub-workflows called from a parent workflow can count as their own executions, so modular designs inflate the number faster than the workflow count suggests."}}, {"@type": "Question", "name": "Can I start on n8n Cloud and switch to self-hosting later?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. n8n workflows export as JSON files that import directly into a self-hosted Community Edition with no conversion. You will need to reconnect your app credentials and set up OAuth apps yourself, but nothing about your workflow logic is lost — which is why starting on the cloud trial and moving down to a VPS later is a common path."}}, {"@type": "Question", "name": "Is n8n cheaper than Zapier for a small business?", "acceptedAnswer": {"@type": "Answer", "text": "Usually, for anything beyond trivial automations. Zapier counts every action step as a task, so a 10-step workflow run costs ten tasks there and one execution on n8n. Third-party 2026 breakdowns put a workload needing n8n Pro's 10,000 executions at $300+/month on Zapier's Professional plan — roughly six times the price."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "n8n Pricing", "item": "https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">n8n Pricing</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">n8n Pricing Explained: Self-Hosted vs Cloud Costs (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-10"><strong>Oct 10, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>8 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p>n8n Cloud costs <strong>€24/month</strong> (€20 billed annually) for 2,500 workflow executions on Starter, <strong>€60/month</strong> (€50 annual) for 10,000 on Pro, and <strong>€800/month</strong> for 40,000 on Business — with unlimited users and unlimited active workflows on every paid plan. Self-hosting the free Community Edition costs roughly <strong>$5–10/month</strong> for a small server, with no execution limit at all. Rule of thumb: under about 2,000 executions a month with nobody comfortable running a server, Cloud is the simpler pick; above that — or when your data must stay on your own infrastructure — self-hosting is dramatically cheaper. Prices change, so verify on n8n.io/pricing before buying.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-pricing-self-hosted-vs-cloud-1.jpg" width="640" height="360" alt="Abstract flat illustration of interlocking gears and rounded nodes connected by dotted lines in deep blue and teal, representing workflow automation" loading="lazy" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#execution-model">How n8n pricing works (the execution model)</a></li><li><a href="#cloud-plans">n8n Cloud plans, explained</a></li><li><a href="#self-host-cost">The true cost of self-hosting n8n</a></li><li><a href="#three-volumes">Cost compared at three volumes</a></li><li><a href="#cloud-vs-selfhost">When Cloud wins, and when self-hosting wins</a></li><li><a href="#selfhost-basics">How self-hosting actually works (the basics)</a></li><li><a href="#verdict">Our verdict</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>n8n is the automation platform most small businesses discover right after outgrowing Zapier's per-task bills — but its pricing confuses newcomers because n8n is really two different products: a managed cloud you pay for monthly, and a free self-hosted edition that costs you nothing in license fees at all. The question isn't which plan is "best" in the abstract; it's how many times your workflows will run each month, and whether anyone on your team can look after a server. This guide explains the execution model, walks through every cloud plan with prices checked in October 2026, and does the real math on self-hosting — worked out at three different volumes — so you can pick the cheaper path for your own business. n8n bills in euros; treat every figure below as a starting point and confirm on n8n.io/pricing.</p>
+
+<h2 id="execution-model">How n8n pricing works (the execution model)</h2>
+<p><strong>An execution is one complete run of a workflow, no matter how many steps it contains.</strong> A lead-notification workflow with three steps and a 30-step monster that enriches the lead, checks three APIs, branches twice, and writes to two systems each cost exactly one execution per run. That single fact is what makes n8n pricing so different from the alternatives: Zapier counts every successful action step as a task, and Make spends roughly one credit per module action inside a scenario — we worked through that comparison in detail in our <a href="/blog/n8n-vs-make-small-business/">n8n vs Make guide</a>.</p>
+<p>The shape of your automations decides whether the execution model is a bargain or a trap. Long, multi-step workflows — onboarding sequences, order processing, report generation — are where n8n shines, because the per-run cost stays flat no matter how complex the workflow gets. High-frequency, trivially simple workflows are the opposite: if a workflow fires on a schedule every five minutes, that is 12 runs an hour, 288 a day, and roughly <strong>8,640 executions a month</strong> — more than triple the entire Starter allowance — for a workflow that does almost nothing.</p>
+<p class="fact"><strong>Watch for the polling trap.</strong> Two details inflate execution counts fast: schedule triggers that poll frequently (every 5 minutes burns ~8,640 executions/month), and sub-workflows called from a parent, which can each count separately. Measure real volume during the 14-day trial before committing to a tier.</p>
+
+<h2 id="cloud-plans">n8n Cloud plans, explained</h2>
+<p>n8n Cloud is the fully managed option: n8n runs the servers in Frankfurt, handles backups and updates, and you build workflows in your browser. Every paid plan includes unlimited users and unlimited active workflows; only the execution allowance, concurrency, and governance features change — and annual billing saves about 17%.</p>
+<div class="tablewrap"><table>
+<caption>Prices checked on n8n.io/pricing in October 2026. n8n bills in euros; USD figures are rough conversions at recent rates. Confirm current figures before budgeting.</caption>
+<thead><tr><th scope="col">Plan</th><th scope="col">Monthly billing</th><th scope="col">Annual billing</th><th scope="col">Executions/month</th><th scope="col">Concurrency</th><th scope="col">Notable features</th></tr></thead>
+<tbody>
+<tr><th scope="row">Community (self-hosted)</th><td>$0</td><td>$0</td><td>Unlimited</td><td>Your server</td><td>Free license; you run everything</td></tr>
+<tr><th scope="row">Starter</th><td>€24 (~$26)</td><td>€20/mo (~$22)</td><td>2,500</td><td>5</td><td>Unlimited users &amp; workflows, 1 shared project, 14-day trial</td></tr>
+<tr><th scope="row">Pro</th><td>€60 (~$66)</td><td>€50/mo (~$55)</td><td>10,000</td><td>20</td><td>3 shared projects, admin roles, global variables, workflow history</td></tr>
+<tr><th scope="row">Business</th><td>€800 (~$880)</td><td>€667/mo (~$735)</td><td>40,000</td><td>30</td><td>SSO/SAML, Git version control, environments, audit log</td></tr>
+<tr><th scope="row">Enterprise</th><td>Custom</td><td>Custom</td><td>Custom</td><td>200+</td><td>Dedicated infrastructure, SLA support</td></tr>
+</tbody></table></div>
+<h3>The Pro-to-Business cliff</h3>
+<p>Notice the gap: Business costs roughly <strong>13 times</strong> Pro while offering only 4 times the executions. That cliff mostly gates governance features — single sign-on, Git version control, multiple environments, audit logs — not raw capacity. If you need more than 10,000 executions a month but not SSO or Git, this is the tier where self-hosting starts looking extremely attractive. Startups with fewer than 20 employees get 50% off Business, which softens the jump. And if the cloud route still feels expensive compared with task-based tools, our <a href="/blog/zapier-alternatives-cheaper-automation/">cheaper Zapier alternatives</a> guide covers the wider field.</p>
+<h3>AI credits, not AI pricing</h3>
+<p>Cloud plans also include a small allowance of AI Workflow Builder credits (50 on Starter, 150 on Pro) for n8n's AI-assisted workflow generation — a builder convenience, not the cost of running AI inside your workflows, which your model provider bills separately. See our <a href="/blog/best-ai-writing-tools-small-business-2026/">best AI writing tools guide</a> and <a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon explainer</a> for what current models cost small businesses.</p>
+<!-- AD SLOT: after-second-h2 -->
+<!-- <div class="ad" id="ad-after-h2-2" style="min-height:250px"></div> -->
+
+<h2 id="self-host-cost">The true cost of self-hosting n8n</h2>
+<p><strong>The Community Edition license is $0, with no execution limit — but "free software" is not the same as "free to run."</strong> n8n ships under the Sustainable Use License (a "fair-code" license): the source is public, and running your own automations for your own business is free forever. You just can't resell n8n itself as a competing hosted service. That license has no usage cap, which is why the real cost of self-hosting is the server plus your time.</p>
+<h3>What the server costs</h3>
+<p>RAM is the number to watch: every active execution holds its data in memory, and n8n's own Docker Compose setup lists a minimum of 4 GB RAM and 2 vCPUs. In practice, third-party 2026 setups put a trial box at roughly $5–10 a month (1–2 vCPU, 2 GB RAM) and a box you'd actually run a small business on at roughly $10–20 a month (2–4 vCPU, 4–8 GB RAM). Add a dollar or two a month if you want off-site backup storage, and possibly a domain name if you don't own one yet.</p>
+<div class="tablewrap"><table>
+<caption>Typical 2026 VPS pricing from major hosts; exact plans and promos change often.</caption>
+<thead><tr><th scope="col">Setup</th><th scope="col">Server spec</th><th scope="col">Typical cost</th><th scope="col">Good for</th></tr></thead>
+<tbody>
+<tr><th scope="row">Trial box</th><td>1–2 vCPU, 2 GB RAM</td><td>$5–10/month</td><td>Testing, a handful of light workflows</td></tr>
+<tr><th scope="row">Small-business box</th><td>2–4 vCPU, 4–8 GB RAM</td><td>$10–20/month</td><td>Real daily workflows, webhooks, moderate volume</td></tr>
+<tr><th scope="row">Managed one-click n8n hosting</th><td>Varies by provider</td><td>$3–7/month</td><td>People who want self-host pricing with less setup</td></tr>
+</tbody></table></div>
+<h3>What your time costs</h3>
+<p>The license is free, but the operations are yours. A standard Docker setup takes roughly an hour the first time, then you own: applying updates, keeping SSL certificates renewing, backing up the database, watching disk space fill with execution logs, and registering your own OAuth apps for each connected service — on the cloud, those are preconfigured. None of this is hard if you've run a server before, but it is real, recurring work.</p>
+<p>All in, self-hosting costs roughly <strong>$72–240 a year</strong> in server bills plus your maintenance time, versus €288 a year for Cloud Starter or €720 a year for Cloud Pro. The gap gets wider the more you run, because your VPS price doesn't move when your executions double.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-pricing-self-hosted-vs-cloud-2.jpg" width="640" height="360" alt="Flat illustration of a cloud server rack connected by a glowing teal line to a small home server box in navy and teal, representing cloud vs self-hosting" loading="lazy" decoding="async"></div>
+
+<h2 id="three-volumes">Cost compared at three volumes</h2>
+<p>Sticker prices don't answer the question — your monthly execution count does. Assumptions: annual cloud billing (17% off), mid-range VPS pricing, €1 ≈ $1.10.</p>
+<div class="tablewrap"><table>
+<caption>Annual cost comparison. Self-hosted assumes a $10–15/month VPS unless noted.</caption>
+<thead><tr><th scope="col">Profile</th><th scope="col">Executions/month</th><th scope="col">n8n Cloud (annual)</th><th scope="col">Self-hosted</th><th scope="col">Winner</th></tr></thead>
+<tbody>
+<tr><th scope="row">Light — solo founder</th><td>~2,000 (10 workflows: daily reports, lead alerts, a few webhooks)</td><td>Starter: €240/yr (~$264)</td><td>$72–120/yr server</td><td>Cheaper self-hosted, but Cloud saves the admin for ~$12–16/mo extra</td></tr>
+<tr><th scope="row">Medium — growing agency</th><td>~9,000 (client onboarding pipelines, CRM sync, AI summaries)</td><td>Pro: €600/yr (~$660)</td><td>$120–180/yr server</td><td>Self-hosted saves ~$480–540/yr — real money once you can run Docker</td></tr>
+<tr><th scope="row">Heavy — automation-heavy shop</th><td>~25,000 (frequent polling, many sub-workflows)</td><td>Pro's 10,000 cap is exceeded — next tier is Business at ~€8,000/yr</td><td>$180–240/yr server</td><td>Self-hosted by a landslide; the cloud cliff is the whole story</td></tr>
+</tbody></table></div>
+<p>The heavy profile exposes the model's sharp edge: with no pay-as-you-go overage top-up on n8n Cloud, outgrowing Pro's 10,000 executions leaves Business at roughly 13x the price as the next step. On your own server, the same growth costs nothing extra — maybe a slightly bigger VPS one day.</p>
+<p class="fact"><strong>Quotable math:</strong> polling an API every five minutes burns ~8,640 executions a month — triple the Starter allowance — and costs €0 extra on a self-hosted server.</p>
+
+<h2 id="cloud-vs-selfhost">When Cloud wins, and when self-hosting wins</h2>
+<p>Cost isn't the only variable. Here's how the two options compare on the factors that actually decide which one a small business sticks with.</p>
+<h3>n8n Cloud wins when</h3>
+<p>You're not comfortable with Docker or Linux server admin — the cloud trial takes minutes and everything just runs. You need an automation live this week, or you want managed backups, automatic updates, and someone else's support team when something breaks. At modest volume (under ~2,000 executions a month), the price gap is small enough that your time is worth more than the savings.</p>
+<h3>Self-hosting wins when</h3>
+<p>Someone on the team can run a Docker container — then the economics are overwhelming: unlimited executions for roughly the price of two coffees a month. Your volume is growing past 10,000 executions a month, where the cloud's pricing cliff turns punitive. Customer data can't leave your infrastructure — with self-hosting, everything sits in your own Postgres database, while cloud data lives on n8n's EU servers in Frankfurt. And experimenting costs nothing on a VPS, so you learn fast instead of watching the execution meter.</p>
+
+<h2 id="selfhost-basics">How self-hosting actually works (the basics)</h2>
+<p>Self-hosting sounds scarier than it is. At its core, you're running n8n's official Docker image on a rented server — the same software as the cloud, with you as the operator.</p>
+<h3>What you install</h3>
+<p>The standard setup is Docker and Docker Compose on a small VPS, with n8n's official Compose file as the starting point: one container for n8n, one for Postgres, and a reverse proxy (Caddy, Traefik, or nginx) for HTTPS. Hosts like Hostinger, DigitalOcean, and Hetzner rent suitable boxes for $5–20 a month, and several offer one-click n8n templates that skip the command line entirely.</p>
+<h3>What you're responsible for</h3>
+<p>Updates — n8n ships them regularly and you apply them with a pull command. Backups — export your workflows and back up the Postgres volume on a schedule, because nobody else will. Security — keep the host OS patched, restrict the editor's exposure, and use strong credentials. Monitoring — watch disk space, since execution logs accumulate. And OAuth — each service you connect (Google, Slack, and the rest) needs its own OAuth app registered in that provider's developer console, a one-time chore per service that's genuinely the most fiddly part of the setup.</p>
+<h3>What you give up</h3>
+<p>A few features are reserved for paid licenses: single sign-on, Git version control, multiple environments, and long-term audit logging. Managed support is replaced by the community forum and documentation. But the editor, the integration nodes, and the execution engine are identical — and workflows export as JSON from the cloud and import into a self-hosted install with zero conversion.</p>
+
+<h2 id="verdict">Our verdict</h2>
+<div class="verdict">
+<div><h3>Choose n8n Cloud if</h3><ul>
+<li>Nobody on the team wants to run a server, and that's fine.</li>
+<li>You need automations live this week with zero setup risk.</li>
+<li>Your volume is under ~2,000 executions a month, where the price gap is small.</li>
+<li>You want managed backups, updates, and support handled for you.</li></ul></div>
+<div><h3>Choose self-hosting if</h3><ul>
+<li>Someone on the team is comfortable with Docker and a VPS.</li>
+<li>Your volume is growing toward or past 10,000 executions a month.</li>
+<li>Customer data must stay on your own infrastructure.</li>
+<li>You want unlimited executions so experimenting costs nothing.</li></ul></div>
+</div>
+<p>The honest one-line rule: <strong>pay for Cloud when your time is worth more than the server bill, self-host when your volume is worth more than the server admin.</strong> Start with the 14-day cloud trial, measure your real execution count, then move to a $5–10 VPS the moment the math says so — the workflows come with you as plain JSON.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is the self-hosted n8n Community Edition really free?</h3>
+<p>Yes, for your own internal business use. The Community Edition ships under n8n's fair-code (Sustainable Use) license: no license fee, no execution limit, no workflow cap. You pay only for your server — roughly $5 to $10 a month for a small VPS — plus the time to maintain it. The one hard limit: you may not resell n8n itself as a hosted service.</p>
+<h3>How much does n8n Cloud cost per month in 2026?</h3>
+<p>Starter is €24/month (€20 billed annually) for 2,500 executions, Pro is €60/month (€50 annual) for 10,000 executions, and Business is €800/month (€667 annual) for 40,000 executions. Annual billing saves about 17%, and every paid plan includes unlimited users and unlimited active workflows. Prices checked October 2026 — verify on n8n.io/pricing before buying.</p>
+<h3>What counts as an execution in n8n?</h3>
+<p>One execution is one complete run of a workflow, no matter how many steps it has — a 3-step workflow and a 30-step workflow each cost one execution per run. Sub-workflows called from a parent workflow can count as their own executions, so modular designs inflate the number faster than the workflow count suggests.</p>
+<h3>Can I start on n8n Cloud and switch to self-hosting later?</h3>
+<p>Yes. n8n workflows export as JSON files that import directly into a self-hosted Community Edition with no conversion. You will need to reconnect your app credentials and set up OAuth apps yourself, but nothing about your workflow logic is lost — which is why starting on the cloud trial and moving down to a VPS later is a common path.</p>
+<h3>Is n8n cheaper than Zapier for a small business?</h3>
+<p>Usually, for anything beyond trivial automations. Zapier counts every action step as a task, so a 10-step workflow run costs ten tasks there and one execution on n8n. Third-party 2026 breakdowns put a workload needing n8n Pro's 10,000 executions at $300+/month on Zapier's Professional plan — roughly six times the price. For the broader field of cheaper options, see our <a href="/blog/zapier-alternatives-cheaper-automation/">Zapier alternatives</a> comparison.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>n8n gives you an unusual choice: pay €24–60 a month for a managed cloud with a hard execution cap, or pay $5–20 a month for a server with no cap at all. The execution model makes n8n Cloud genuinely cheap for complex, multi-step workflows — one run is one execution whether the workflow has three steps or thirty. But past 10,000 executions a month, the cloud's pricing cliff turns self-hosting from a hobbyist option into the obvious business decision. Start with the cloud trial, count your real executions for a month, and let the meter tell you which option to keep. A typical small business wiring up lead capture, a welcome email series (see our <a href="/blog/mailchimp-vs-convertkit-creators/">Mailchimp vs ConvertKit guide</a> for the email side), and reporting lands comfortably under 2,000 executions.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/n8n-vs-make-small-business/">n8n vs Make: Which Is Better for Small Business in 2026?</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/zapier-alternatives-cheaper-automation/">Zapier Alternatives: 7 Cheaper Automation Tools Compared (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-ai-writing-tools-small-business-2026/">Best AI Writing Tools for Small Business (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon Explained for Small Business (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitdefender AI Guardian Explained: Protecting Your AI Agents from Manipulation (2026)</title>
+<meta name="description" content="Bitdefender AI Guardian explained: the free macOS beta that guards AI agents against prompt injection and tool poisoning — how it works and who needs it.">
+<meta name="keywords" content="Bitdefender AI Guardian, AI Guardian explained, AI agent security, MCP tool poisoning, prompt injection protection, secure AI agents macOS">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/bitdefender-ai-guardian-explained/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Bitdefender AI Guardian Explained: Protecting Your AI Agents from Manipulation (2026)">
+<meta property="og:description" content="Bitdefender AI Guardian explained: the free macOS beta that guards AI agents against prompt injection and tool poisoning — how it works and who needs it.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/bitdefender-ai-guardian-explained/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/bitdefender-ai-guardian-explained-1.jpg">
+<meta property="article:published_time" content="2026-10-10">
+<meta property="article:modified_time" content="2026-10-10">
+<meta property="article:section" content="Personal Cybersecurity &amp; Online Safety">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bitdefender AI Guardian Explained: Protecting Your AI Agents from Manipulation (2026)">
+<meta name="twitter:description" content="Bitdefender AI Guardian explained: the free macOS beta that guards AI agents against prompt injection and tool poisoning — how it works and who needs it.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/bitdefender-ai-guardian-explained-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{display:flex;flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/bitdefender-ai-guardian-explained/#article", "headline": "Bitdefender AI Guardian Explained: Protecting Your AI Agents from Manipulation (2026)", "description": "Bitdefender AI Guardian explained: the free macOS beta that guards AI agents against prompt injection and tool poisoning — how it works and who needs it.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/bitdefender-ai-guardian-explained-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-10", "dateModified": "2026-10-10", "mainEntityOfPage": "https://pickmyapp.github.io/blog/bitdefender-ai-guardian-explained/", "articleSection": "Personal Cybersecurity & Online Safety", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Bitdefender AI Guardian free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the macOS open beta is free to download, and Bitdefender says it will stay free for early adopters after the beta ends. No pricing has been announced for the planned Windows and Linux versions."}}, {"@type": "Question", "name": "Which AI agents does AI Guardian support?", "acceptedAnswer": {"@type": "Answer", "text": "In the beta: Claude Code (2.1.121 and later) and OpenClaw (2026.6.6 and later), plus Hermes Agent (2026.5.28+). MCP clients and servers, plus agent skills and plugins, are covered at those layers. IDE-embedded assistants are coming soon; Windows and Linux support is planned but not available in the beta."}}, {"@type": "Question", "name": "How is AI Guardian different from antivirus?", "acceptedAnswer": {"@type": "Answer", "text": "Antivirus looks for known malicious files. AI Guardian watches a trusted program — your AI agent — and judges whether each action it attempts is allowed, suspicious, or forbidden. It is a policy checkpoint for agent behavior, not a malware scanner, and Bitdefender explicitly says it is not a firewall, VPN, or chatbot content filter."}}, {"@type": "Question", "name": "What is MCP tool poisoning?", "acceptedAnswer": {"@type": "Answer", "text": "The Model Context Protocol lets AI agents call external tools. Tool poisoning hides malicious instructions inside a tool's description or output, so the agent follows them as if they were legitimate commands. Research cited by Bitdefender found such attacks succeeded 36.5% of the time on average across 20 tested agents."}}, {"@type": "Question", "name": "Does AI Guardian send my prompts to the cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt analysis runs on your device, so prompt text never leaves it, according to Bitdefender. Only select checks, such as URL reputation, draw on Bitdefender's cloud services."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Personal Cybersecurity & Online Safety", "item": "https://pickmyapp.github.io/category/cybersecurity/"}, {"@type": "ListItem", "position": 3, "name": "Bitdefender AI Guardian Explained", "item": "https://pickmyapp.github.io/blog/bitdefender-ai-guardian-explained/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/cybersecurity/">Personal Cybersecurity &amp; Online Safety</a></li>
+<li aria-current="page">Bitdefender AI Guardian Explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Bitdefender AI Guardian Explained: Protecting Your AI Agents from Manipulation (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Personal Cybersecurity &amp; Online Safety</span></li>
+<li>Published <time datetime="2026-10-10"><strong>Oct 10, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>9 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>Bitdefender AI Guardian is a free macOS security layer, now in public beta, that sits between your AI agents and the tools, files, and credentials they touch.</strong> It checks every agent action against a policy you set and returns a verdict — allowed, flagged, or blocked — stopping prompt injection, MCP tool poisoning, and credential leaks before they happen. It supports Claude Code and OpenClaw today; Windows and Linux are planned. Why it exists: independent research found 20 tested AI agents fell for tool-poisoning attacks 36.5% of the time on average. If you run AI agents with real system access, this is worth installing today.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/bitdefender-ai-guardian-explained-1.jpg" width="640" height="360" alt="Flat illustration of a glowing security shield standing between a robot assistant and a vault of files and keys" loading="lazy" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-it">What AI Guardian is</a></li><li><a href="#the-problem">The problem it solves</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#protections">What it protects against</a></li><li><a href="#compatibility">Compatibility and limits</a></li><li><a href="#who-needs">Who should install it</a></li><li><a href="#privacy">Privacy: what stays on your device</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>AI agents are the new attack surface. Give a coding agent your SSH keys, your API credentials, and access to your file system, and you've extended your entire trust profile to a piece of software — one that can be manipulated by a cleverly poisoned tool description or a hidden instruction in a webpage it reads. Bitdefender's answer, launched in public beta in early October 2026, is <strong>AI Guardian: a security layer that inspects what an agent does and blocks the unsafe actions before they execute.</strong> This guide explains how it works, what it covers, and whether your setup needs it.</p>
+
+<h2 id="what-is-it">What AI Guardian is</h2>
+<p><strong>AI Guardian is a Bitdefender security product — free during its open beta — that adds a baseline security model to autonomous AI agents: policies, permissions, and auditing for tool execution, plus monitoring and response workflows.</strong> It installs as a background service on macOS and plugs into each agent it protects. It is explicitly <em>not</em> a traditional antivirus, a network firewall, a VPN, a replacement for your agent framework or language model, or a content filter for chatbot text. Think of it as a bouncer at the door between your agent and everything the agent can touch.</p>
+
+<h2 id="the-problem">The problem it solves</h2>
+<p>The numbers behind this product are alarming. Research cited by Bitdefender <strong>tested 20 leading AI agents against more than 1,300 tool-poisoning attempts and found an average attack success rate of 36.5%</strong> — more than one in three attacks worked, and one model was manipulated 72.8% of the time. A separate analysis found <strong>over 1.2 million exposed AI service secrets in 2025, up 81% year over year</strong>, including more than 24,000 credentials leaked through publicly available Model Context Protocol (MCP) configurations.</p>
+<p>The attack pattern is simple: MCP lets agents call external tools, and <strong>tool poisoning</strong> hides malicious instructions inside a tool's description or its output. The agent, following instructions faithfully, treats the poisoned text as legitimate commands — exfiltrating an API key, running a script, or opening a file it was never supposed to touch. As agents gain direct access to files, credentials, and tools, the gap between what they're <em>authorized</em> to do and what they can be <em>manipulated into</em> doing is a serious exposure — and it exists on every machine running an agent with real permissions.</p>
+<p class="fact"><strong>Quick fact:</strong> Prompt analysis in AI Guardian runs on your device — prompt text never leaves it. Only select checks, like URL reputation, draw on Bitdefender's cloud services.</p>
+
+<h2 id="how-it-works">How it works</h2>
+<p>AI Guardian runs a three-stage security model:</p>
+<ul>
+<li><strong>Set the policy baseline.</strong> You define what your agents may do — which tools they can call, which files and folders they can access, which actions are permitted. This is the rulebook.</li>
+<li><strong>Real-time verdicts.</strong> Every tool call, file access, prompt, and skill is checked against the baseline before it executes. Each action gets a verdict: <strong>allowed</strong> (proceeds), <strong>flagged</strong> (suspicious — you review), or <strong>blocked</strong> (stopped cold).</li>
+<li><strong>Auditable record.</strong> Every decision is logged, giving you a reviewable trail of exactly what your agents did and what was stopped. That audit log is gold during incident review — or when you're just trying to understand what your agent actually did at 2 a.m.</li>
+</ul>
+<p>The MCP and skill layers are shared across supported agents, so the checks work the same whichever agent is running. Installation adds a dedicated integration plugin into each protected agent environment.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/bitdefender-ai-guardian-explained-2.jpg" width="640" height="360" alt="Flat illustration of a robotic agent arm reaching toward tools, stopped by a glowing security checkpoint gate with a checklist" loading="lazy" decoding="async"></div>
+
+<h2 id="protections">What it protects against</h2>
+<div class="tablewrap"><table>
+<caption>Protections in the AI Guardian public beta, per Bitdefender's product page.</caption>
+<thead><tr><th scope="col">Threat</th><th scope="col">What AI Guardian does</th></tr></thead>
+<tbody>
+<tr><th scope="row">MCP tool poisoning</th><td>Detects and blocks malicious MCP tools before an agent calls them</td></tr>
+<tr><th scope="row">Prompt injection</th><td>Catches hijack attempts via crafted inputs and hidden instructions</td></tr>
+<tr><th scope="row">Credential leakage</th><td>Detects exposure of secrets such as API keys before they leave the machine</td></tr>
+<tr><th scope="row">Unsafe skills</th><td>Scans and validates agent skills before they execute</td></tr>
+<tr><th scope="row">Sensitive file access</th><td>Blocks unauthorized access to files such as SSH keys</td></tr>
+<tr><th scope="row">Unauthorized actions</th><td>Tool-call monitoring watches every invocation in real time</td></tr>
+</tbody></table></div>
+
+<h2 id="compatibility">Compatibility and limits</h2>
+<p>The beta is <strong>macOS-only</strong> — Windows and Linux support is planned but not available yet. Within macOS, the supported agent environments are <strong>Claude Code 2.1.121 and later, OpenClaw 2026.6.6 and later, and Hermes Agent 2026.5.28+</strong>. MCP clients and servers, plus agent skills and plugins, are covered at those layers. IDE-embedded assistants (coding helpers inside your editor with tool access) are listed as coming soon.</p>
+<p>The biggest limit is honest: <strong>AI Guardian only protects the agents it integrates with.</strong> If you run an agent it doesn't support, or a script that calls tools directly without an agent framework, there's nothing for the bouncer to stand in front of. And like any policy tool, it's only as good as the baseline you set — an "allow everything" policy protects nothing.</p>
+
+<h2 id="who-needs">Who should install it</h2>
+<div class="verdict">
+<div><h3>Install it if</h3><ul>
+<li>You run Claude Code or OpenClaw on macOS with real file or credential access.</li>
+<li>You let agents read your codebase, run shell commands, or touch API keys.</li>
+<li>You install MCP servers or agent skills from third parties.</li>
+<li>You want an audit trail of what your agents actually did.</li></ul></div>
+<div><h3>Skip it (for now) if</h3><ul>
+<li>You're on Windows or Linux — wait for platform support.</li>
+<li>You only use chatbots (ChatGPT, Claude web) with no tool access.</li>
+<li>Your agents run in sandboxed environments with no credentials.</li></ul></div>
+</div>
+<p>For solopreneurs and developers, this pairs naturally with a broader security posture. Our <a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon explainer</a> covers why long-horizon AI models make agent security more urgent, and our <a href="/blog/n8n-vs-make-small-business/">n8n vs Make guide</a> compares the automation platforms where agents most often get their permissions.</p>
+
+<h2 id="privacy">Privacy: what stays on your device</h2>
+<p>The one design decision that matters for adoption: <strong>prompt analysis runs on-device, so your prompt text never leaves your machine.</strong> That's a meaningful commitment from a security vendor — the thing being protected (your sensitive prompts and data) isn't being shipped to a cloud for inspection. Only select checks, such as URL reputation lookups, use Bitdefender's cloud services. For a tool whose entire job is guarding sensitive agent behavior, this is the right architecture.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is Bitdefender AI Guardian free?</h3>
+<p>Yes — the macOS open beta is free to download, and Bitdefender says it will stay free for early adopters after the beta ends. No pricing has been announced for the planned Windows and Linux versions.</p>
+<h3>Which AI agents does AI Guardian support?</h3>
+<p>In the beta: Claude Code (2.1.121 and later) and OpenClaw (2026.6.6 and later), plus Hermes Agent (2026.5.28+). MCP clients and servers, plus agent skills and plugins, are covered at those layers. IDE-embedded assistants are coming soon; Windows and Linux support is planned but not available in the beta.</p>
+<h3>How is AI Guardian different from antivirus?</h3>
+<p>Antivirus looks for known malicious files. AI Guardian watches a trusted program — your AI agent — and judges whether each action it attempts is allowed, suspicious, or forbidden. It is a policy checkpoint for agent behavior, not a malware scanner, and Bitdefender explicitly says it is not a firewall, VPN, or chatbot content filter.</p>
+<h3>What is MCP tool poisoning?</h3>
+<p>The Model Context Protocol lets AI agents call external tools. Tool poisoning hides malicious instructions inside a tool's description or output, so the agent follows them as if they were legitimate commands. Research cited by Bitdefender found such attacks succeeded 36.5% of the time on average across 20 tested agents.</p>
+<h3>Does AI Guardian send my prompts to the cloud?</h3>
+<p>Prompt analysis runs on your device, so prompt text never leaves it, according to Bitdefender. Only select checks, such as URL reputation, draw on Bitdefender's cloud services.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Bitdefender AI Guardian is the right product at the right time: AI agents have real permissions, attackers have real techniques to abuse them, and until now nobody offered a free, purpose-built checkpoint between the two. The macOS beta is genuinely useful for Claude Code and OpenClaw users today; everyone else should watch the Windows and Linux roadmap. As models like <a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon</a> push AI toward longer, more autonomous work, the security question stops being optional. Install the bouncer before you need it.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon Explained: What Google's New AI Model Means for Small Business (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-ai-writing-tools-small-business-2026/">Best AI Writing Tools for Small Business (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/n8n-vs-make-small-business/">n8n vs Make: Which Is Better for Small Business? (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/jasper-vs-copy-ai-blog-writing/">Jasper vs Copy.ai for Blog Writing (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false"}});})();
+</script>
+</body>
+</html>

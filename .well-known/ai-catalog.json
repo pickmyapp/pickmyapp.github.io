@@ -97,14 +97,14 @@
     "reading"
    ],
    "description": "AI writing tool comparisons for blogs and marketing: Jasper, Copy.ai and alternatives.",
-   "displayName": "AI Writing Tools Guides",
-   "identifier": "urn:air:pickmyapp.github.io:category:ai-writing",
+   "displayName": "AI Writing Tools — PickMyApp",
+   "identifier": "urn:air:pickmyapp.github.io:category:ai-writing-tools",
    "representativeQueries": [
     "Jasper vs Copy.ai",
     "best AI writing assistant"
    ],
    "type": "text/html",
-   "url": "https://pickmyapp.github.io/category/ai-writing/"
+   "url": "https://pickmyapp.github.io/category/ai-writing-tools/"
   },
   {
    "capabilities": [
@@ -208,6 +208,36 @@
    "representativeQueries": [
     "AI agents explained",
     "new AI model comparison"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:customer-support",
+   "displayName": "Customer Support — PickMyApp",
+   "url": "https://pickmyapp.github.io/category/customer-support/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Customer Support guides and comparisons from PickMyApp: real pricing, no paid placements.",
+   "representativeQueries": [
+    "best customer support tools",
+    "customer support comparison 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:category:website-builders",
+   "displayName": "Website Builders — PickMyApp",
+   "url": "https://pickmyapp.github.io/category/website-builders/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Website Builders guides and comparisons from PickMyApp: real pricing, no paid placements.",
+   "representativeQueries": [
+    "best website builders tools",
+    "website builders comparison 2026"
    ]
   }
  ],

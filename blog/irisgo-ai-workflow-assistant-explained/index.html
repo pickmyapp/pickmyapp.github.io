@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IrisGo Explained: Free AI Workflow Assistant (2026)</title>
+<meta name="description" content="IrisGo explained: the free AI workflow OS that topped Product Hunt on Oct 7, 2026. Watch & Learn, beta limits, pricing, and how it compares to n8n and Make.">
+<meta name="keywords" content="IrisGo, IrisGo AI, IrisGo for solopreneurs, AI workflow assistant, Watch and Learn automation, IrisGo pricing, Product Hunt 2026, IrisGo vs n8n">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/irisgo-ai-workflow-assistant-explained/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="IrisGo Explained: Free AI Workflow Assistant (2026)">
+<meta property="og:description" content="IrisGo explained: the free AI workflow OS that topped Product Hunt on Oct 7, 2026. Watch & Learn, beta limits, pricing, and how it compares to n8n and Make.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/irisgo-ai-workflow-assistant-explained/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/irisgo-ai-workflow-assistant-explained-1.jpg">
+<meta property="article:published_time" content="2026-10-11">
+<meta property="article:modified_time" content="2026-10-11">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IrisGo Explained: Free AI Workflow Assistant (2026)">
+<meta name="twitter:description" content="IrisGo explained: the free AI workflow OS that topped Product Hunt on Oct 7, 2026. Watch & Learn, beta limits, pricing, and how it compares to n8n and Make.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/irisgo-ai-workflow-assistant-explained-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/irisgo-ai-workflow-assistant-explained/#article", "headline": "IrisGo Explained: Free AI Workflow Assistant (2026)", "description": "IrisGo explained: the free AI workflow OS that topped Product Hunt on Oct 7, 2026. Watch & Learn, beta limits, pricing, and how it compares to n8n and Make.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/irisgo-ai-workflow-assistant-explained-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-11", "dateModified": "2026-10-11", "mainEntityOfPage": "https://pickmyapp.github.io/blog/irisgo-ai-workflow-assistant-explained/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is IrisGo really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, during its public beta. The Product Hunt listing and the company's site both describe the beta as free for Windows and Mac, and no paid plans have been announced as of October 2026. Expect paid tiers to appear once the product leaves beta, so treat the current free access as temporary rather than a permanent pricing promise."}}, {"@type": "Question", "name": "What operating systems does IrisGo support?", "acceptedAnswer": {"@type": "Answer", "text": "Windows and Mac are supported in the current public beta. Linux is on the company's longer-term roadmap — the makers say they are stabilizing macOS and Windows first before bringing IrisGo to the Linux community. There are no mobile apps."}}, {"@type": "Question", "name": "Does IrisGo send my data to the cloud?", "acceptedAnswer": {"@type": "Answer", "text": "According to the makers, IrisGo processes your workflows on your device and your sensitive data stays there. That is the company's own description of its architecture, not an independently audited security claim. If you handle regulated or client-confidential data, verify the details directly with the company before relying on it."}}, {"@type": "Question", "name": "How is IrisGo different from n8n or Make?", "acceptedAnswer": {"@type": "Answer", "text": "n8n and Make connect web applications to each other through APIs on a visual canvas — when X happens in app A, do Y in app B. IrisGo instead automates tasks on your own computer by watching you demonstrate them once. They are complementary: use n8n or Make for app-to-app plumbing, and IrisGo for recurring desktop admin."}}, {"@type": "Question", "name": "Is IrisGo reliable enough for real business work?", "acceptedAnswer": {"@type": "Answer", "text": "It is a public beta from a team of under ten people, so expect rough edges. It is fine for trying on low-stakes recurring tasks — inbox triage, filing, meeting notes — but do not hand it anything where a mistake costs real money until you have watched it work reliably for a few weeks."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "IrisGo Explained", "item": "https://pickmyapp.github.io/blog/irisgo-ai-workflow-assistant-explained/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">IrisGo Explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">IrisGo Explained: The Free AI Workflow Assistant That Topped Product Hunt</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-11"><strong>Oct 11, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>IrisGo</strong> is a free (during public beta) AI workflow assistant for Windows and Mac that learns by watching you work: demonstrate a repetitive task once with its <strong>Watch &amp; Learn</strong> feature, and it replays the pattern on its own. It finished <strong>#1 Product of the Day on Product Hunt on October 7, 2026</strong>, with 443 votes. Core features include a Daily Brief, Email Triage, the My Radar to-do list, and Meeting Summaries, with processing that stays on your device. No paid plans have been announced yet, so treat the free beta as temporary.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/irisgo-ai-workflow-assistant-explained-1.jpg" width="640" height="360" alt="Flat illustration of a desktop computer surrounded by floating workflow cards, calendar and email icons circling an assistant spark, representing an AI workflow assistant" loading="lazy" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-irisgo">What is IrisGo?</a></li><li><a href="#product-hunt">The Product Hunt #1 launch</a></li><li><a href="#how-it-works">How IrisGo works</a></li><li><a href="#watch-and-learn">Watch & Learn, in detail</a></li><li><a href="#pricing">Pricing and beta limits</a></li><li><a href="#irisgo-vs-n8n-vs-make">IrisGo vs n8n vs Make</a></li><li><a href="#who-its-for">Who IrisGo is for</a></li><li><a href="#verdict">Our verdict</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>On October 7, 2026, a small AI startup did something hard to ignore. Its new desktop app, <strong>IrisGo for Solopreneurs</strong>, finished <strong>#1 Product of the Day on Product Hunt</strong> with 443 votes and 38 comments, beating an AI landing-page builder, a multiplayer AI workspace, and a video foundation model to the top spot. The pitch that won the day is different from the usual chatbot or workflow builder: instead of asking you to prompt it or wire up integrations, IrisGo watches how you work on your PC, learns your recurring routines, and then runs them for you. This guide explains what IrisGo actually is, what the free public beta includes, what the company has confirmed about pricing, and how it stacks up against the automation tools you may already know, like n8n and Make. If you are weighing the established automation platforms first, our <a href="/blog/n8n-vs-make-small-business/">n8n vs Make comparison</a> is a good companion read, and our roundup of <a href="/blog/zapier-alternatives-cheaper-automation/">cheaper Zapier alternatives</a> covers the wider field.</p>
+
+<h2 id="what-is-irisgo">What is IrisGo?</h2>
+<p><strong>IrisGo is an "AI operating system" (the company's term) for Windows and Mac: a desktop app that observes your work across applications, learns your patterns, and executes workflows automatically on your behalf.</strong> The company is a small Palo Alto startup founded in 2025, built by maker Jeffrey Lai and a team of under ten people, and its site lists backing from Andrew Ng's AI Fund along with partners across the AI PC ecosystem, including Intel, Pegatron Ventures, Google for Startups, and NVIDIA Inception.</p>
+<p>The philosophy, in the company's words, is that software used to help you work — IrisGo does the work. In practice that means an assistant that senses context: which apps you have open, what your calendar looks like, what sits in your inbox — and acts across all of them. A community Skills Catalog offers ready-to-run workflows you can import and then teach with your own variation, so you start from a template rather than a blank page.</p>
+<p>It is worth being precise about what this is and is not. IrisGo is not a cloud workflow builder like Zapier, and it is not a chat window you paste things into. It is closer to a diligent assistant sitting beside you at your own computer, noticing that you do the same five things every morning and offering to take them over. That framing matters, because it defines both the product's appeal and its limits.</p>
+
+<h2 id="product-hunt">The Product Hunt #1 launch, verified</h2>
+<p>The claim in our headline is checkable, so let us check it. On <strong>October 7, 2026</strong>, IrisGo for Solopreneurs launched on Product Hunt and finished the day ranked <strong>#1 Product of the Day</strong> with 443 votes and 38 comments. The day's leaderboard, captured by an independent Product Hunt radar, shows GenPage 3.0 in second place with 418 votes and Velozity in third with 416. IrisGo's own site now carries a "#1 Product of the Day on Product Hunt" badge, and the company's LinkedIn page posted a thank-you note the same week confirming the win.</p>
+<p>Context helps here. This was IrisGo's <strong>second</strong> Product Hunt launch, not its first, and the comments are full of solopreneurs and tiny teams saying the same thing: the product is aimed at people who wear ten hats and spend their evenings on admin. One commenter asked whether the app handles a variable number of files when replaying a demonstrated task — renaming and sorting a different number of resumes each time, for example — and the makers answered that it treats the demonstration as a pattern, processing items one by one rather than clicking fixed coordinates a fixed number of times. That answer is the clearest public explanation of how the core technology differs from a screen macro.</p>
+<p class="fact"><strong>Quick fact:</strong> Product Hunt's "Product of the Day" is decided by community upvotes over a 24-hour cycle. A #1 finish with 443 votes puts IrisGo's launch in genuinely strong territory for a developer-tool launch, not just a participation trophy.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/irisgo-ai-workflow-assistant-explained-2.jpg" width="640" height="360" alt="Flat illustration of a hand demonstrating a desktop task while a robotic arm mirrors the motion on screen, representing teach-by-demonstration automation" loading="lazy" decoding="async"></div>
+
+<h2 id="how-it-works">How IrisGo works: the five core features</h2>
+<p>IrisGo's launch materials describe five headline features. Together they read like a checklist of a solopreneur's most repetitive admin.</p>
+<h3>Daily Brief</h3>
+<p>Each morning, IrisGo assembles your top priorities from your email, calendar, and to-dos into one brief. Instead of opening three apps to figure out what matters today, you read one screen. If you live in your task list, this overlaps with what dedicated tools do — see our <a href="/blog/asana-vs-monday-vs-clickup-small-teams/">Asana vs Monday vs ClickUp comparison</a> — but the point here is that the brief is assembled for you, not maintained by you.</p>
+<h3>Email Triage</h3>
+<p>IrisGo sorts your inbox into what needs an urgent reply and what can wait. Anyone who has watched an important client email sink under newsletters knows the value of triage done before coffee. It is a judgment call the app makes from your patterns, which means the first week is a training period, not instant magic.</p>
+<h3>My Radar</h3>
+<p>A single to-do list that updates continuously as you finish tasks, pulling from Gmail and Google Calendar sources. The makers describe it as the answer to the "50 open browser tabs as reminders" problem — one list, always current, instead of tabs you are afraid to close.</p>
+<h3>Meeting Summary</h3>
+<p>Calls are turned into notes with action items added for you. On Product Hunt, a user asked whether a captured lecture transcript could be turned into a study guide, and a maker confirmed it — generate action items, highlights, or a study summary from the transcript after the fact. For a solo consultant, that is the difference between billable hours and admin hours.</p>
+<h3>Skills Catalog</h3>
+<p>Ready-to-run workflows built by the community. Import one, demonstrate your variation, and let it run. This is the feature that will decide whether IrisGo becomes a platform or stays a clever app: a library of other people's solved problems is what turns a new tool into a habit.</p>
+
+<h2 id="watch-and-learn">Watch &amp; Learn, in detail</h2>
+<p>Watch &amp; Learn is the feature everything else orbits, so it deserves a closer look. The idea: <strong>you perform a recurring task once while IrisGo watches, and it drafts a reusable workflow from the demonstration for your approval.</strong> Show it how you download attachments, rename them, and file them into folders; from then on, it handles the next batch.</p>
+<p>Two details from the makers' own answers make it more interesting than a screen recorder. First, the demonstration is treated as a <strong>pattern</strong>, not a fixed script: the app recognizes the list or folder you are working from, processes each item one by one, and uses visual and accessibility checks to know when there are no items left. A rigid macro clicks coordinate X ten times; Watch &amp; Learn understands "for each candidate in this folder." Second, you can give <strong>natural-language tweaks at replay time</strong>, such as a custom naming format, without rebuilding the workflow.</p>
+<p>That design targets what one commenter called the "long tail" automation problem: the small, specific, repetitive browser and desktop tasks that are too particular for a dedicated integration and too boring to keep doing by hand. Traditional automation tools solve the head of the curve — connect app A to app B via an API. Watch &amp; Learn aims at the thousands of little tasks underneath, where there is no API and never will be.</p>
+<p class="fact"><strong>Quick fact:</strong> IrisGo's maker says your sensitive data stays on your device. That is a meaningful claim for anyone who handles client data, but it is the company's statement about its own architecture — treat it as a design goal to verify, not an audited security certification.</p>
+
+<h2 id="pricing">Pricing and limits during the beta</h2>
+<p>Here is the honest, checkable pricing picture as of October 2026: <strong>IrisGo is free during its public beta, and no paid plans have been announced.</strong> The Product Hunt listing says "Free during beta," and the company's site offers the beta download for Windows and Mac with no pricing page behind it. That means the current price is $0, and the future price is unknown.</p>
+<p>Plan accordingly. Beta-stage AI tools almost always introduce paid tiers once the product stabilizes, so if IrisGo becomes load-bearing for your business, budget for a subscription you cannot see yet. The sensible move is to use the beta to learn whether the concept fits your work, not to build a business process you cannot afford to lose.</p>
+<p>The limits worth knowing before you download:</p>
+<ul>
+<li><strong>Platform:</strong> Windows and Mac are in beta now. Linux is on the longer-term roadmap — the makers say they are stabilizing macOS and Windows first.</li>
+<li><strong>Maturity:</strong> This is a public beta from a team of under ten people. Expect rough edges, and do not hand it anything where a mistake costs real money until you have watched it work.</li>
+<li><strong>Ecosystem:</strong> n8n and Make connect thousands of apps through maintained integrations. IrisGo's Skills Catalog is young by comparison, so niche web-app connections will lag the established tools for a while.</li>
+</ul>
+<p>If you want to understand how the mature tools charge once you outgrow free tiers, our <a href="/blog/n8n-pricing-self-hosted-vs-cloud/">n8n pricing breakdown</a> shows what serious automation actually costs per month.</p>
+
+<h2 id="irisgo-vs-n8n-vs-make">IrisGo vs n8n vs Make: what is actually different?</h2>
+<p>It is tempting to file IrisGo next to n8n and Make as "another automation tool." The comparison is useful, but the tools solve different problems.</p>
+<div class="tablewrap"><table>
+<caption>How the three tools differ, based on vendor sites and launch materials checked October 2026.</caption>
+<thead><tr><th scope="col">Dimension</th><th scope="col">IrisGo</th><th scope="col">n8n</th><th scope="col">Make</th></tr></thead>
+<tbody>
+<tr><th scope="row">What you automate</th><td>Recurring tasks on your own PC, learned by demonstration</td><td>Workflows connecting web apps via APIs, built on a node canvas</td><td>Scenarios connecting 3,000+ apps via modules on a visual canvas</td></tr>
+<tr><th scope="row">Where it runs</th><td>On your Windows or Mac (on-device)</td><td>n8n Cloud or your own server</td><td>Make's cloud only</td></tr>
+<tr><th scope="row">Pricing</th><td>Free during public beta; paid tiers unannounced</td><td>Free self-hosted; Cloud from &euro;24/month</td><td>Free tier; paid from $9/month (annual)</td></tr>
+<tr><th scope="row">Skill required</th><td>None — demonstrate the task</td><td>Comfort with JSON, APIs, some JavaScript helps</td><td>Low — visual, guided</td></tr>
+<tr><th scope="row">Best for</th><td>Desktop admin: filing, triage, recurring PC routines</td><td>Technical teams, long AI workflows, self-hosting</td><td>Connecting web apps cheaply at volume</td></tr>
+</tbody></table></div>
+<p>The practical takeaway: <strong>IrisGo does not replace n8n or Make.</strong> Those tools connect your web apps to each other — when a form is submitted, create a CRM record and send a Slack message. IrisGo handles the stuff that happens on your screen — the morning triage, the filing, the recurring desktop chores. A solopreneur could plausibly use both: Make for the app-to-app plumbing, IrisGo for the personal admin layer. Read our <a href="/blog/n8n-vs-make-small-business/">full n8n vs Make guide</a> if the web-app side is what you need first.</p>
+
+<h2 id="who-its-for">Who IrisGo is for</h2>
+<p>After the launch buzz, the useful question is whether you should download it this week.</p>
+<div class="verdict">
+<div><h3>Try IrisGo if</h3><ul>
+<li>You are a solopreneur or tiny team drowning in repetitive desktop admin.</li>
+<li>You have recurring PC tasks with no API — filing, renaming, copying between apps.</li>
+<li>You like the idea of automation but bounced off canvas builders and API keys.</li>
+<li>You are comfortable beta-testing in exchange for free access.</li></ul></div>
+<div><h3>Skip it (for now) if</h3><ul>
+<li>You need to connect web apps to each other — that is n8n/Make/Zapier territory.</li>
+<li>You run Linux, or need mobile apps — neither is supported yet.</li>
+<li>You need audited, enterprise-grade reliability for client work today.</li>
+<li>You want predictable pricing before committing your workflow to a tool.</li></ul></div>
+</div>
+<p>For the broader solopreneur toolkit — the AI writing and productivity apps that pair well with any automation — our <a href="/blog/best-ai-writing-tools-small-business-2026/">best AI writing tools guide</a> covers what is mature and priced today.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is IrisGo really free?</h3>
+<p>Yes, during its public beta. The Product Hunt listing and the company's site both describe the beta as free for Windows and Mac, and no paid plans have been announced as of October 2026. Expect paid tiers to appear once the product leaves beta, so treat the current free access as temporary rather than a permanent pricing promise.</p><h3>What operating systems does IrisGo support?</h3>
+<p>Windows and Mac are supported in the current public beta. Linux is on the company's longer-term roadmap — the makers say they are stabilizing macOS and Windows first before bringing IrisGo to the Linux community. There are no mobile apps.</p><h3>Does IrisGo send my data to the cloud?</h3>
+<p>According to the makers, IrisGo processes your workflows on your device and your sensitive data stays there. That is the company's own description of its architecture, not an independently audited security claim. If you handle regulated or client-confidential data, verify the details directly with the company before relying on it.</p><h3>How is IrisGo different from n8n or Make?</h3>
+<p>n8n and Make connect web applications to each other through APIs on a visual canvas — when X happens in app A, do Y in app B. IrisGo instead automates tasks on your own computer by watching you demonstrate them once. They are complementary: use n8n or Make for app-to-app plumbing, and IrisGo for recurring desktop admin.</p><h3>Is IrisGo reliable enough for real business work?</h3>
+<p>It is a public beta from a team of under ten people, so expect rough edges. It is fine for trying on low-stakes recurring tasks — inbox triage, filing, meeting notes — but do not hand it anything where a mistake costs real money until you have watched it work reliably for a few weeks.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>IrisGo earned its Product Hunt #1 the hard way — with a genuinely different idea about automation. Instead of asking you to build workflows, it asks to watch you work, then takes the repetitive parts off your plate. The Daily Brief, Email Triage, My Radar, and Meeting Summary cover the admin layer most solopreneurs never get around to automating, and Watch &amp; Learn's pattern-based replay is a real step beyond screen macros. The caveats are equally real: it is a public beta from a tiny team, Linux users wait, the ecosystem is young, and nobody knows what it will cost when the beta ends. Download it, teach it your most annoying recurring task, and judge it on whether that task disappears. If it does, IrisGo has earned its place — free or not.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/n8n-vs-make-small-business/">n8n vs Make: Which Is Better for Small Business? (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/zapier-alternatives-cheaper-automation/">Zapier Alternatives: 7 Cheaper Automation Tools Compared (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/best-ai-writing-tools-small-business-2026/">Best AI Writing Tools for Small Business (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon Explained: What Small Businesses Should Know (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

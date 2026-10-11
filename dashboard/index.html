@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muse Task Dashboard — james</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--txt:#e6edf3;--mut:#8b949e;--lime:#c6ff6b;--amber:#f1c56b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:400 1rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:2rem 1rem}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:2rem;margin:0}h1 span{color:var(--lime)}
+.sub{color:var(--mut);margin:.4rem 0 2rem}
+.grid{display:grid;gap:1.2rem;grid-template-columns:1fr}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.3rem 1.4rem}
+.chead{display:flex;gap:.8rem;align-items:center;margin-bottom:.6rem}
+.cicon{font-size:1.8rem}.chead h3{margin:0;font-size:1.1rem}
+.status{color:var(--lime);font-size:.8rem}
+.ur{color:var(--mut);font-size:.92rem;margin:.4rem 0 .9rem}
+.meta{display:grid;gap:.45rem;margin-bottom:.8rem}
+.meta>div{display:flex;justify-content:space-between;gap:1rem;font-size:.88rem}
+.k{color:var(--mut)}.v{font-weight:600;text-align:right}
+.plabel{font-size:.8rem;color:var(--mut);margin-bottom:.3rem}
+.pbar{background:#0a0d12;border:1px solid var(--line);border-radius:99px;height:10px;overflow:hidden}
+.pfill{background:linear-gradient(90deg,var(--lime),#7fd400);height:100%;border-radius:99px}
+.ptext{font-size:.85rem;color:var(--mut);margin-top:.35rem}
+.foot{text-align:center;color:var(--mut);font-size:.8rem;margin-top:2.5rem}
+.note{background:#1a2332;border:1px solid var(--line);border-radius:12px;padding:1rem 1.3rem;margin-bottom:1.5rem;font-size:.9rem;color:var(--mut)}
+.note b{color:var(--amber)}
+</style></head><body><div class="wrap">
+<h1>Muse Task <span>Dashboard</span></h1>
+<p class="sub">james ke scheduled tasks — last updated: 11 Oct 2026, 02:11 PM PKT</p>
+<div class="note">⏱️ <b>Roz ka total:</b> ~10 articles (blog #1) + 2 trend scans + 1 lead digest + 1 reminder. Blog #2 ka batch sirf tumhare <b>"go"</b> par chalta hai.</div>
+<div class="grid">
+<div class="card">
+      <div class="chead"><span class="cicon">📝</span><div><h3>AdSense Daily Publisher</h3><span class="status">● active</span></div></div>
+      <p class="ur">Blog #1 (PickMyApp) ke liye roz 10 naye articles — research, writing, images, GitHub publish</p>
+      <div class="meta"><div><span class="k">Schedule</span><span class="v">Har 24 ghante (~17:40 PKT)</span></div>
+      <div><span class="k">Roz ka kaam</span><span class="v">10 articles / day</span></div>
+      <div><span class="k">Agli dafa</span><span class="v">Aaj 17:40 PKT</span></div></div>
+      <div class="plabel">articles (Phase 1: 50)</div><div class="pbar"><div class="pfill" style="width:40%"></div></div>
+    <div class="ptext">20/50 — 40%</div>
+    </div><div class="card">
+      <div class="chead"><span class="cicon">🔍</span><div><h3>Trend Scout — Subah</h3><span class="status">● active</span></div></div>
+      <p class="ur">Tech news scan karke trending topics queue mein dalta hai (sirf research, publish nahi)</p>
+      <div class="meta"><div><span class="k">Schedule</span><span class="v">Roz 09:00 PKT</span></div>
+      <div><span class="k">Roz ka kaam</span><span class="v">3–6 trend topics</span></div>
+      <div><span class="k">Agli dafa</span><span class="v">Kal 09:00 PKT</span></div></div>
+      
+    </div><div class="card">
+      <div class="chead"><span class="cicon">🔍</span><div><h3>Trend Scout — Dopehar</h3><span class="status">● active</span></div></div>
+      <p class="ur">Dusri dafa tech news scan — afternoon trends pakarne ke liye</p>
+      <div class="meta"><div><span class="k">Schedule</span><span class="v">Roz 15:00 PKT</span></div>
+      <div><span class="k">Roz ka kaam</span><span class="v">3–6 trend topics</span></div>
+      <div><span class="k">Agli dafa</span><span class="v">Aaj 15:00 PKT</span></div></div>
+      
+    </div><div class="card">
+      <div class="chead"><span class="cicon">🎯</span><div><h3>Tester Lead Radar</h3><span class="status">● active</span></div></div>
+      <p class="ur">Facebook/Instagram/Threads par '12 testers' dhundne walon ki fresh posts — sirf list, reply tum karte ho</p>
+      <div class="meta"><div><span class="k">Schedule</span><span class="v">Har 24 ghante (~15:30 PKT)</span></div>
+      <div><span class="k">Roz ka kaam</span><span class="v">~20–35 fresh leads</span></div>
+      <div><span class="k">Agli dafa</span><span class="v">Aaj 15:30 PKT</span></div></div>
+      <div class="plabel">leads tracked (total)</div><div class="ptext"><b>76</b></div>
+    </div><div class="card">
+      <div class="chead"><span class="cicon">🌙</span><div><h3>Blog #2 'Go' Reminder</h3><span class="status">● active</span></div></div>
+      <p class="ur">getsome.rest ke liye roz raat ko yaad dilata hai — tum 'go' bolo to 10-article batch shuru</p>
+      <div class="meta"><div><span class="k">Schedule</span><span class="v">Roz 22:43 PKT</span></div>
+      <div><span class="k">Roz ka kaam</span><span class="v">1 reminder</span></div>
+      <div><span class="k">Agli dafa</span><span class="v">Aaj 22:43 PKT</span></div></div>
+      <div class="plabel">articles published</div><div class="pbar"><div class="pfill" style="width:25%"></div></div>
+    <div class="ptext">10/40 — 25%</div>
+    </div>
+</div>
+<p class="foot">Ye page roz 17:40 wale run ke sath refresh hota hai · pickmyapp.github.io/dashboard/</p>
+</div></body></html>

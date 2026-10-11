@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude for Google Workspace Explained (2026)</title>
+<meta name="description" content="Claude for Google Workspace: Docs/Sheets/Slides sidebar, Gmail/Calendar access, pricing from $20/mo, and what small businesses should do next in 2026.">
+<meta name="keywords" content="Claude Google Workspace, Claude Docs Sheets Slides, Anthropic Google Workspace integration, Claude pricing 2026, Claude vs Gemini Workspace, Claude Gmail Calendar connector">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/claude-google-workspace-explained/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Claude for Google Workspace Explained (2026)">
+<meta property="og:description" content="Claude for Google Workspace: Docs/Sheets/Slides sidebar, Gmail/Calendar access, pricing from $20/mo, and what small businesses should do next in 2026.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/claude-google-workspace-explained/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-google-workspace-explained-1.jpg">
+<meta property="article:published_time" content="2026-10-11">
+<meta property="article:modified_time" content="2026-10-11">
+<meta property="article:section" content="Emerging Tech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude for Google Workspace Explained (2026)">
+<meta name="twitter:description" content="Claude for Google Workspace: Docs/Sheets/Slides sidebar, Gmail/Calendar access, pricing from $20/mo, and what small businesses should do next in 2026.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-google-workspace-explained-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/claude-google-workspace-explained/#article", "headline": "Claude for Google Workspace Explained (2026)", "description": "Claude for Google Workspace: Docs/Sheets/Slides sidebar, Gmail/Calendar access, pricing from $20/mo, and what small businesses should do next in 2026.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-google-workspace-explained-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-11", "dateModified": "2026-10-11", "mainEntityOfPage": "https://pickmyapp.github.io/blog/claude-google-workspace-explained/", "articleSection": "Emerging Tech", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Claude for Google Workspace free?", "acceptedAnswer": {"@type": "Answer", "text": "No. The public beta is available only on paid Claude plans — Pro (from $20/month), Max, Team, and Enterprise. The Workspace add-on itself has no separate fee, but free-tier Claude users cannot install it. The cheapest way to try it is one month of Pro at $20, cancelable anytime."}}, {"@type": "Question", "name": "Does it work with Gmail and Google Calendar?", "acceptedAnswer": {"@type": "Answer", "text": "The October 6, 2026 launch covers Docs, Sheets, and Slides. Gmail, Calendar, and Drive access already existed through separate Claude connectors: Gmail can be searched, read, drafted, sent, and organized; Calendar events can be viewed, created, updated, and deleted. Those connectors are configured independently of the new sidebar."}}, {"@type": "Question", "name": "How is this different from Gemini's side panel in Workspace?", "acceptedAnswer": {"@type": "Answer", "text": "Gemini is built natively into Google Workspace and bundled into paid Workspace Business and Enterprise plans at no extra cost. Claude arrives as a third-party Marketplace add-on that requires a separate paid Claude subscription. Choose Claude if your team prefers it and the beta's careful, approval-card editing earns its $20/seat/month; stick with Gemini if the bundled panel already does the job."}}, {"@type": "Question", "name": "Is my company data safe with the add-on?", "acceptedAnswer": {"@type": "Answer", "text": "Claude's access mirrors your existing Google sharing permissions, and enterprise controls like customer-managed encryption keys and audit exports carry over. But installing the add-on grants full read, write, and delete access, and Anthropic itself calls this a beta with potentially unreliable features. Have your Workspace admin approve it, keep Ask-before-edits mode on, and set written boundaries on which files it may touch."}}, {"@type": "Question", "name": "Should my small business switch from Gemini to Claude?", "acceptedAnswer": {"@type": "Answer", "text": "Probably not wholesale, and not yet. Run a two-week pilot on one repetitive document workflow, measure hours saved, and compare against the $0 marginal cost of Gemini's bundled panel. Most small businesses should standardize on one primary assistant rather than paying for two — let the pilot numbers pick the winner."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Emerging Tech", "item": "https://pickmyapp.github.io/category/emerging-tech/"}, {"@type": "ListItem", "position": 3, "name": "Claude for Google Workspace", "item": "https://pickmyapp.github.io/blog/claude-google-workspace-explained/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/emerging-tech/">Emerging Tech</a></li>
+<li aria-current="page">Claude for Google Workspace</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Claude for Google Workspace Explained: What It Means for Small Business</h1>
+<ul class="metaline">
+<li><span class="tag">Emerging Tech</span></li>
+<li>Published <time datetime="2026-10-11"><strong>Oct 11, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>Claude for Google Workspace</strong> is Anthropic's public beta (launched <strong>October 6, 2026</strong>) that puts a Claude sidebar inside Google Docs, Sheets, and Slides, where it can read your open file and edit it in place. It is available only on <strong>paid Claude plans</strong> — Pro from <strong>$20/month</strong>, Team from $25/seat/month — via one install from the Google Workspace Marketplace. Gmail and Calendar access already existed through separate Claude connectors. It is a beta: expect rough edges, and start in "Ask before edits" mode.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-google-workspace-explained-1.jpg" width="640" height="360" alt="Flat illustration of a document, a spreadsheet and a slide deck with an AI spark inside a sidebar panel, representing Claude working inside Google Workspace" loading="lazy" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-launched">What launched on October 6, 2026</a></li><li><a href="#how-it-works">How the sidebar works</a></li><li><a href="#docs">What Claude does in Google Docs</a></li><li><a href="#sheets">What Claude does in Google Sheets</a></li><li><a href="#slides">What Claude does in Google Slides</a></li><li><a href="#gmail-calendar">Gmail and Calendar: the part that already existed</a></li><li><a href="#pricing">Pricing and who gets access</a></li><li><a href="#vs-gemini">Claude vs Gemini vs ChatGPT</a></li><li><a href="#action-plan">What your small business should do now</a></li><li><a href="#limits">Honest limits and beta caveats</a></li><li><a href="#verdict">Our verdict</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>On October 6, 2026, Anthropic did something strategically bold: it inserted its AI assistant directly into Google's productivity apps. <strong>Claude for Google Workspace</strong>, now in public beta, puts a Claude sidebar inside Google Docs, Sheets, and Slides, where it can read the file you have open and change it without you switching tabs. This guide explains what the integration actually does in each app, what it costs, how it compares with the Gemini side panel Google already ships, and the concrete steps a small business should take now. If you are still choosing your team's AI writing setup, our <a href="/blog/best-ai-writing-tools-small-business-2026/">best AI writing tools guide</a> covers the wider field.</p>
+
+<h2 id="what-launched">What launched on October 6, 2026</h2>
+<p><strong>Anthropic opened Claude for Google Workspace to a public beta on October 6, 2026.</strong> It is a Google Workspace Marketplace add-on — one installation covers Docs, Sheets, and Slides — that opens Claude in a sidebar next to whatever file you have open. The sidebar offers the same models, connectors, and skills as the main Claude app, and it can read your selected text, cell range, or slides and make changes directly, rather than returning text for you to copy and paste.</p>
+<p>Anthropic also released <strong>separate Docs, Sheets, and Slides connectors</strong> that work in the other direction: start from Claude, paste a file link, and Claude can create or edit Google files from inside the chat, using your existing Google sharing permissions. By default, proposed edits appear as approval cards you accept or dismiss; an "Accept all edits" mode lets Claude work through a task without stopping.</p>
+<p>Why it matters: Gemini has been native to Workspace since June 2024, and ChatGPT added Drive file access in August — Claude is the third major assistant to reach this level of integration, and the only direct rival to Google's own AI running inside Google's apps. Workplace AI competition is increasingly fought inside existing software, not standalone chatbots.</p>
+
+<h2 id="how-it-works">How the sidebar works</h2>
+<p>Installation is straightforward but has one gate that matters for businesses: anyone whose company uses Google Workspace <strong>may need an admin to allow Claude as a trusted application</strong> before the Marketplace add-on can be installed. Individual users on personal Google accounts can install it directly.</p>
+<p>Once installed, the flow is:</p>
+<ul>
+<li><strong>Open a file</strong> in Docs, Sheets, or Slides. The Claude sidebar reads the open file and, more precisely, whatever you have selected.</li>
+<li><strong>Ask or instruct.</strong> You can ask questions about the document with citations, or ask Claude to change it.</li>
+<li><strong>Review the proposal.</strong> In the default "Ask before edits" mode, changes appear as approval cards. You apply or dismiss each one, and everything lands in the file's version history. Flip to "Accept all edits" only once you trust it on that file type.</li>
+</ul>
+<p>You can work in a document at the same time as Claude, with changes syncing to the latest Drive version. One caution from Anthropic's own documentation: <strong>"in a busy file, check the result."</strong> That is the right posture for any beta that edits your documents.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-google-workspace-explained-2.jpg" width="640" height="360" alt="Flat illustration of a document window with a side panel assistant editing text in place, representing AI editing directly inside a Google Doc" loading="lazy" decoding="async"></div>
+
+<h2 id="docs">What Claude does in Google Docs</h2>
+<p>In Docs, Claude behaves like an editor who has read the whole manuscript. According to Anthropic's documentation, it can answer questions about the document with citations, fix a sentence or restyle a heading in place, rewrite and restructure long documents, convert text into tables, check for undefined terms, and fix heading style and numbering.</p>
+<p>The practical wins are the boring ones: ask it to cut a 14-page report to six pages without losing requirements, and it drafts the cut as suggestions you approve one by one. Ask it to fix heading numbering across a 40-page proposal — seconds of work that used to take an intern an afternoon. Selecting a passage first narrows Claude to that section.</p>
+<p>If document drafting is a big part of your week, this is also where the dedicated writing tools still earn their keep — see our <a href="/blog/jasper-vs-copy-ai-blog-writing/">Jasper vs Copy.ai comparison</a> for the specialist options.</p>
+
+<h2 id="sheets">What Claude does in Google Sheets</h2>
+<p>Sheets is where the integration gets genuinely powerful, because spreadsheet work is where small businesses lose the most time to fiddly mechanics. Claude can explain formulas and flag hardcoded values, write and fix formulas, troubleshoot lookup errors (the classic broken VLOOKUP), build models on new tabs, normalize data formats — dates arriving in three different formats is the canonical example — and add native tables and charts.</p>
+<p>It can also pull data into Python for cleaning and analysis before writing results back — the capability to watch, because it turns a two-hour pivot-table wrestling session into a conversation.</p>
+<p>One honest note: if your most important spreadsheet is really a CRM in disguise — contact lists, deal stages, follow-up dates — a spreadsheet assistant will not fix that. Our <a href="/blog/hubspot-vs-pipedrive-small-teams/">HubSpot vs Pipedrive guide</a> covers when to graduate to real pipeline software.</p>
+
+<h2 id="slides">What Claude does in Google Slides</h2>
+<p>In Slides, Claude drafts new slides from your notes, splits dense text-heavy slides into digestible ones, makes titles consistent across a deck, adds charts matched to the deck's colors, and restyles presentations using the existing layouts and themes. Notably, it then checks its own work for the classic AI-deck sins: overlapping elements and text running off the slide.</p>
+<p>The detail that matters: Claude extends your deck's existing theme rather than stamping a generic template over it — which is where most AI slide tools visibly fail.</p>
+
+<h2 id="gmail-calendar">Gmail and Calendar: the part that already existed</h2>
+<p>One clarification: the October 6 launch covers <strong>Docs, Sheets, and Slides only</strong>. Gmail, Calendar, and Drive access already existed through Claude's separate <strong>connectors</strong>, expanded in August 2026:</p>
+<ul>
+<li><strong>Gmail:</strong> search and read emails with natural-language queries, draft emails with formatting and context, and send, reply to, forward, label, and thread-manage messages. Claude can see email metadata including attachment details, but not attachment content.</li>
+<li><strong>Google Calendar:</strong> view events and calendars (including shared ones), create, update, and delete events, find mutual availability across attendees, set up recurring meetings, manage attendee lists, and respond to invitations.</li>
+<li><strong>Google Drive:</strong> search and retrieve Docs, share, move, and trash files, look up metadata, add Docs to chats by pasting URLs, and save Claude-generated files back to Drive.</li>
+</ul>
+<p>Data access is permission-based: Claude's access mirrors your existing Google sharing permissions, and Anthropic says access is session-limited rather than retained. For a small business, the practical meaning is that Claude sees what you see — nothing more, nothing less.</p>
+<p class="fact"><strong>Quick fact:</strong> Enterprise security controls carry over to the Workspace add-on, including the Compliance API, customer-managed encryption keys, and OpenTelemetry audit export. IT admins get visibility into AI-assisted workflows through existing compliance tooling.</p>
+
+<h2 id="pricing">Pricing and who gets access</h2>
+<p><strong>Claude for Google Workspace is available only on paid Claude plans — Pro, Max, Team, and Enterprise.</strong> There is no free-tier access. That makes the cost of entry the cost of a Claude subscription. Prices below are from Anthropic's pricing page as reported in October 2026 coverage; confirm on claude.com/pricing before buying.</p>
+<div class="tablewrap"><table>
+<caption>Claude plan prices as reported in October 2026. The Workspace add-on itself has no separate fee; you need one of these plans.</caption>
+<thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Who it fits</th></tr></thead>
+<tbody>
+<tr><th scope="row">Pro</th><td>$20/month billed monthly, or $17/month billed annually ($200 upfront)</td><td>Individuals; the minimum tier that unlocks the Workspace beta</td></tr>
+<tr><th scope="row">Max 5x / 20x</th><td>$100/month / $200/month (monthly billing only)</td><td>Heavy daily users who burn through Pro limits</td></tr>
+<tr><th scope="row">Team Standard</th><td>$25/seat/month, or $20/seat/month billed annually (2-seat minimum)</td><td>Small teams of 5+ that want shared billing and admin controls</td></tr>
+<tr><th scope="row">Team Premium</th><td>$125/seat/month, or $100/seat/month billed annually</td><td>Teams needing much higher usage plus Claude Cowork</td></tr>
+<tr><th scope="row">Enterprise</th><td>About $20/seat/month billed annually, plus usage at API rates</td><td>Regulated or large organizations with compliance needs</td></tr>
+</tbody></table></div>
+<p>The math is simple: five seats on Team Standard at annual billing cost <strong>$100/month</strong>, and each seat gets the sidebar. A solopreneur pays $20 for one month of Pro, cancelable anytime. Compare that with the $0 marginal cost of Gemini's bundled side panel, and you have the core of the build-vs-bundle decision.</p>
+
+<h2 id="vs-gemini">Claude vs Gemini vs ChatGPT inside Workspace</h2>
+<p>You now have three credible AI assistants that can work with your Google files. They are not interchangeable.</p>
+<div class="tablewrap"><table>
+<caption>How the three assistants reach your Google files, based on vendor announcements through October 2026.</caption>
+<thead><tr><th scope="col">Dimension</th><th scope="col">Claude</th><th scope="col">Gemini</th><th scope="col">ChatGPT</th></tr></thead>
+<tbody>
+<tr><th scope="row">How it gets in</th><td>Marketplace add-on + connectors (public beta, Oct 2026)</td><td>Native side panel, built in since June 2024</td><td>Drive file access added August 2026</td></tr>
+<tr><th scope="row">Edits files in place</th><td>Yes, with approval cards or auto mode</td><td>Yes, within Google's native UI</td><td>Limited compared with the other two</td></tr>
+<tr><th scope="row">Extra cost</th><td>Paid Claude plan required (from $20/mo)</td><td>Bundled in Workspace Business/Enterprise plans</td><td>Paid ChatGPT plan required</td></tr>
+<tr><th scope="row">Strength</th><td>Long-document reasoning, careful editing, citations</td><td>Zero setup, native, cheapest if you already pay for Workspace</td><td>Largest general user base, strong general model</td></tr>
+</tbody></table></div>
+<p>The honest framing: <strong>most small businesses should not pay for two of these.</strong> If Gemini's bundled side panel is adequate, Claude's $20/seat/month must earn its place with work Gemini visibly cannot do — long restructuring jobs, cited document Q&A, careful approval-card editing. If your team already pays for Claude and prefers it, the beta removes the last reason to keep switching tabs. Our <a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon explainer</a> covers Google's side of the race.</p>
+
+<h2 id="action-plan">What your small business should do now</h2>
+<p>Do not roll this out to the whole company on day one. Do this instead:</p>
+<ul>
+<li><strong>1. Check your plan.</strong> Confirm at least one person is on a paid Claude plan (Pro at $20/month is the cheapest entry). Free-tier users get nothing here.</li>
+<li><strong>2. Clear the admin gate.</strong> If you run Google Workspace, ask your admin to allow Claude as a trusted Marketplace app before anyone tries to install it.</li>
+<li><strong>3. Start in "Ask before edits" mode.</strong> Keep the approval cards on. Let Claude propose, you dispose, until you have seen it behave on your actual files.</li>
+<li><strong>4. Pilot one workflow.</strong> Pick one repetitive document job — the monthly report reformat, the proposal cleanup, the spreadsheet normalization — and run it through Claude for two weeks. Measure the time saved.</li>
+<li><strong>5. Write the rules down.</strong> Decide which files Claude may touch and which it may not (client contracts, financials). A beta with edit access deserves explicit boundaries.</li>
+</ul>
+<p>On the security side, the enterprise controls are genuinely reassuring — but they matter mostly to larger companies. For a ten-person business, the control that matters is the human one: <a href="/blog/bitdefender-ai-guardian-explained/">review your AI security posture</a> the same week you grant any AI tool write access to company documents.</p>
+
+<h2 id="limits">Honest limits and beta caveats</h2>
+<p>Anthropic's documentation calls this a beta with potentially limited or unreliable features. Three concrete limits deserve your attention:</p>
+<ul>
+<li><strong>Six-minute cap.</strong> Google cuts off any single operation after six minutes, so very long jobs will stop mid-flight.</li>
+<li><strong>Broad permissions.</strong> Installing the add-on grants full read, write, and delete access to your files, with no visible option to narrow it at install time. Claude asks before acting, but the grant itself is wide — another reason to keep approval mode on.</li>
+<li><strong>Busy files.</strong> The company's own advice — "in a busy file, check the result" — tells you that simultaneous human-and-AI editing is not yet something to trust blindly.</li>
+</ul>
+<p>None of this is disqualifying for a beta. It is disqualifying for blind trust. Treat Claude for Google Workspace the way you would treat a talented new hire: give it real work, check the work, and expand its responsibilities as it earns them.</p>
+
+<h2 id="verdict">Our verdict</h2>
+<div class="verdict">
+<div><h3>Adopt it if</h3><ul>
+<li>Your team already pays for Claude Pro, Max, or Team and prefers it over Gemini.</li>
+<li>Someone on the team spends hours weekly reformatting documents or wrestling spreadsheets.</li>
+<li>You are comfortable piloting a beta with approval-mode editing and clear file boundaries.</li>
+<li>You want cited, careful document work rather than fast generic drafts.</li></ul></div>
+<div><h3>Hold off if</h3><ul>
+<li>You are on Claude's free tier — the beta is paid-plans only.</li>
+<li>Gemini's bundled side panel already handles your team's needs at $0 extra.</li>
+<li>Your Workspace admin will not approve third-party AI add-ons.</li>
+<li>You need guaranteed reliability on client-facing documents today, not a beta.</li></ul></div>
+</div>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is Claude for Google Workspace free?</h3>
+<p>No. The public beta is available only on paid Claude plans — Pro (from $20/month), Max, Team, and Enterprise. The Workspace add-on itself has no separate fee, but free-tier Claude users cannot install it. The cheapest way to try it is one month of Pro at $20, cancelable anytime.</p><h3>Does it work with Gmail and Google Calendar?</h3>
+<p>The October 6, 2026 launch covers Docs, Sheets, and Slides. Gmail, Calendar, and Drive access already existed through separate Claude connectors: Gmail can be searched, read, drafted, sent, and organized; Calendar events can be viewed, created, updated, and deleted. Those connectors are configured independently of the new sidebar.</p><h3>How is this different from Gemini's side panel in Workspace?</h3>
+<p>Gemini is built natively into Google Workspace and bundled into paid Workspace Business and Enterprise plans at no extra cost. Claude arrives as a third-party Marketplace add-on that requires a separate paid Claude subscription. Choose Claude if your team prefers it and the beta's careful, approval-card editing earns its $20/seat/month; stick with Gemini if the bundled panel already does the job.</p><h3>Is my company data safe with the add-on?</h3>
+<p>Claude's access mirrors your existing Google sharing permissions, and enterprise controls like customer-managed encryption keys and audit exports carry over. But installing the add-on grants full read, write, and delete access, and Anthropic itself calls this a beta with potentially unreliable features. Have your Workspace admin approve it, keep Ask-before-edits mode on, and set written boundaries on which files it may touch.</p><h3>Should my small business switch from Gemini to Claude?</h3>
+<p>Probably not wholesale, and not yet. Run a two-week pilot on one repetitive document workflow, measure hours saved, and compare against the $0 marginal cost of Gemini's bundled panel. Most small businesses should standardize on one primary assistant rather than paying for two — let the pilot numbers pick the winner.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Claude for Google Workspace matters because of where it runs: inside the documents, spreadsheets, and decks where work actually happens. The Docs rewriting, Sheets formula work, and theme-aware Slides editing are real, the approval-card model is the right default for a beta with edit access, and $20/month Pro makes it cheap to pilot. The caveats — beta reliability, the six-minute cap, broad install permissions — are manageable with the playbook above: paid plan, admin approval, approval mode on, one pilot workflow, written boundaries. Measure the hours saved, and let the numbers decide whether Claude earns a permanent seat next to your files.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon Explained: What Small Businesses Should Know (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/bitdefender-ai-guardian-explained/">Bitdefender AI Guardian Explained: What It Does (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/best-ai-writing-tools-small-business-2026/">Best AI Writing Tools for Small Business (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/jasper-vs-copy-ai-blog-writing/">Jasper vs Copy.ai for Blog Writing (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic Cyber Mission Explained: The Free Vulnerability Scanner for Open-Source Projects (2026)</title>
+<meta name="description" content="Anthropic's Cyber Mission brings free AI vulnerability scans to open-source projects. Who qualifies, how to get scanned, and what your business should do.">
+<meta name="keywords" content="Anthropic Cyber Mission, Anthropic OSS Scanner, free vulnerability scanner open source, Claude Mythos security, open source vulnerability scanning, software supply chain security, Project Glasswing, OSS-Fuzz alternative">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/anthropic-cyber-mission-explained/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Anthropic Cyber Mission Explained: The Free Vulnerability Scanner for Open-Source Projects (2026)">
+<meta property="og:description" content="Anthropic's Cyber Mission brings free AI vulnerability scans to open-source projects. Who qualifies, how to get scanned, and what your business should do.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/anthropic-cyber-mission-explained/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/anthropic-cyber-mission-explained-1.jpg">
+<meta property="article:published_time" content="2026-10-12">
+<meta property="article:modified_time" content="2026-10-12">
+<meta property="article:section" content="Cybersecurity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Anthropic Cyber Mission Explained: The Free Vulnerability Scanner for Open-Source Projects (2026)">
+<meta name="twitter:description" content="Anthropic's Cyber Mission brings free AI vulnerability scans to open-source projects. Who qualifies, how to get scanned, and what your business should do.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/anthropic-cyber-mission-explained-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card{position:relative}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://pickmyapp.github.io/blog/anthropic-cyber-mission-explained/#article","headline":"Anthropic Cyber Mission Explained: The Free Vulnerability Scanner for Open-Source Projects (2026)","description":"Anthropic's Cyber Mission brings free AI vulnerability scans to open-source projects. Who qualifies, how to get scanned, and what your business should do.","image":"https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/anthropic-cyber-mission-explained-1.jpg","author":{"@type":"Organization","name":"PickMyApp Research Team","url":"https://pickmyapp.github.io/about/"},"publisher":{"@type":"Organization","name":"PickMyApp","logo":{"@type":"ImageObject","url":"https://pickmyapp.github.io/images/logo.svg"}},"datePublished":"2026-10-12","dateModified":"2026-10-12","mainEntityOfPage":"https://pickmyapp.github.io/blog/anthropic-cyber-mission-explained/","articleSection":"Cybersecurity","inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Anthropic OSS Scanner really free?","acceptedAnswer":{"@type":"Answer","text":"Yes, as announced: OSS Scanner runs periodic scans of eligible open-source projects at no cost. There is no published fee or paid tier. The catches: Anthropic decides eligibility case by case, and reports arrive unreviewed, so your team validates them."}},{"@type":"Question","name":"How do I get my open-source project scanned by Anthropic?","acceptedAnswer":{"@type":"Answer","text":"A core maintainer opens a pull request on Anthropic's public oss-scanner GitHub repository, adding a configuration file with the repository URL, a contact email, and a Dockerfile that builds the project. Optional: a threat-model file and a GPG key for encrypted reports. Anthropic manually verifies core-maintainer status, and eligibility is judged case by case."}},{"@type":"Question","name":"Why doesn't Anthropic review the reports before sending them?","acceptedAnswer":{"@type":"Answer","text":"Anthropic says skipping human review lets scans run faster and more often \u2014 in Project Glasswing, models surfaced over 29,000 candidate vulnerabilities in six months, beyond what any human team could triage. The trade-off: maintainers validate every report and should expect false positives."}},{"@type":"Question","name":"How accurate is the OSS Scanner?","acceptedAnswer":{"@type":"Answer","text":"Anthropic expects a true-positive rate above 90%. Early reported checks are encouraging but small: 85 of 97 findings validated (about 88%), and wolfSSL reported 72 of 74 valid (about 97%). Treat these as early, company-reported figures \u2014 the production rate is not yet published."}},{"@type":"Question","name":"I'm not a maintainer. What should my small business do about this?","acceptedAnswer":{"@type":"Answer","text":"You cannot enroll, but your software supply chain is both the beneficiary and the exposure. Build an SBOM of every dependency and version, subscribe to security advisories, automate updates, and keep platforms patched. Faster discovery only helps if your response time keeps up."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pickmyapp.github.io/"},{"@type":"ListItem","position":2,"name":"Cybersecurity","item":"https://pickmyapp.github.io/category/cybersecurity/"},{"@type":"ListItem","position":3,"name":"Anthropic Cyber Mission Explained","item":"https://pickmyapp.github.io/blog/anthropic-cyber-mission-explained/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/cybersecurity/">Cybersecurity</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/cybersecurity/">Cybersecurity</a></li>
+<li aria-current="page">Anthropic Cyber Mission Explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Anthropic Cyber Mission Explained: The Free Vulnerability Scanner for Open-Source Projects (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Cybersecurity</span></li>
+<li>Published <time datetime="2026-10-12"><strong>Oct 12, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>10 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p>On October 8, 2026, Anthropic announced the <strong>Anthropic Cyber Mission</strong>, a long-term defensive cybersecurity initiative with two programs. The one that matters most is <strong>OSS Scanner</strong>: a free, opt-in service running periodic vulnerability scans of eligible open-source projects with Anthropic's strongest models. Reports are <strong>fully model-generated with no human review</strong>; each includes a proof-of-concept exploit, an explanation, and a suggested fix when available. Core maintainers enroll via a pull request to Anthropic's public scanner repository; eligibility is decided case by case. If you run a small business rather than an open-source project, you are not the customer &mdash; but your software supply chain is: this is the right week to map which open-source packages your business depends on.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/anthropic-cyber-mission-explained-1.jpg" width="640" height="360" alt="Abstract illustration of a digital shield scanning glowing code brackets, representing Anthropic's free AI vulnerability scanner for open-source projects" decoding="async"></div>
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is">What is the Anthropic Cyber Mission?</a></li><li><a href="#oss-scanner">OSS Scanner, explained</a></li><li><a href="#key-terms">Key terms, explained simply</a></li><li><a href="#how-different">How it differs from existing scanners</a></li><li><a href="#no-human-review">The boldest decision: no human review</a></li><li><a href="#maintainers">What it means for open-source maintainers</a></li><li><a href="#small-business">What it means for small businesses</a></li><li><a href="#do-now">What your business should do this month</a></li><li><a href="#open-questions">Open questions and what to watch</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>On October 8, 2026, Anthropic announced something unusual for an AI lab: not a model, but a defensive cybersecurity program. The <strong>Anthropic Cyber Mission</strong> aims its AI at defenders &mdash; open-source maintainers and critical-infrastructure operators &mdash; to find and fix vulnerabilities before attackers do. Its centerpiece is <strong>OSS Scanner</strong>, a free, opt-in service that scans eligible open-source projects with Anthropic's strongest models, including Claude Mythos.</p>
+<p>This guide covers what was actually announced, how the scanner works, how it differs from existing scanners, and what to do whether you are a maintainer or a small business whose products depend on open-source code. Facts are framed as reported: the program is days old and several details are not yet published.</p>
+
+<h2 id="what-is">What is the Anthropic Cyber Mission?</h2>
+<p><strong>The Anthropic Cyber Mission is a long-term initiative from Anthropic to direct its AI models toward defensive cybersecurity: finding and fixing vulnerabilities in open-source software and critical infrastructure.</strong> It launched with two programs.</p>
+<p>The first is the <strong>Critical Infrastructure Defense Program</strong>. As reported, Anthropic is putting frontier Claude models, engineers, and threat research with the security firms and integrators that already serve operators of power grids, water systems, transportation, factories, and government systems &mdash; operational technology that often cannot be taken offline to patch. Eleven founding partners were named, including CrowdStrike, Palo Alto Networks, Deloitte, Accenture, and Dragos.</p>
+<p>The second is <strong>OSS Scanner</strong>, the free vulnerability scanner this guide covers. Anthropic says it was inspired by Google's OSS-Fuzz and informed by its own Project Glasswing, an internal AI vulnerability-research effort. As context, over six months Anthropic's models surfaced more than 29,000 candidate vulnerabilities, of which humans reviewed roughly 6,000 and 584 advisories were issued.</p>
+<p class="fact"><strong>Quick fact:</strong> Early coverage reported more than 100 enrollment requests on the scanner's public repository within days of launch &mdash; demand was immediate.</p>
+
+<h2 id="oss-scanner">OSS Scanner, explained</h2>
+<p><strong>OSS Scanner is a free, opt-in service that runs periodic security scans of eligible open-source projects with Anthropic's strongest models and emails maintainers machine-written vulnerability reports.</strong> No fee, no trial, no upsell in the announcement. Here is the pipeline, as described in the program's public repository and coverage of it.</p>
+<h3>How the scanning pipeline works</h3>
+<p>A core maintainer submits a pull request to Anthropic's public oss-scanner GitHub repository, and Anthropic manually confirms the applicant's maintainer status. The pipeline builds the project inside an isolated virtual machine (internet enabled at this stage so the build can fetch dependencies), then moves the environment offline for scanning. Inside the sandbox, agents hunt for bugs while others double-check findings, propose patches, and trace root causes; results are emailed to the project's primary contact, with an optional GPG key encrypting reports.</p>
+<h3>What every report includes</h3>
+<p>Each report is self-contained: an explanation of the flaw, a <strong>proof-of-concept reproducer</strong> demonstrating it is exploitable, plus where possible the commit that introduced it and a candidate fix. Findings can be attributed as "Discovered by Anthropic's OSS Scanner" with an identifier such as ANT-2026-ABCD1234.</p>
+<h3>What has not been published yet</h3>
+<p>Anthropic calls the scans "periodic" but has not published a schedule &mdash; whether projects are scanned weekly, monthly, or otherwise is not yet announced. Supported languages, per-project scan quotas, and any delivery options beyond email are likewise not yet published. Treat third-party claims on those points as speculation.</p>
+<!-- AD SLOT: after-second-h2 -->
+<!-- <div class="ad" id="ad-after-h2-2" style="min-height:250px"></div> -->
+
+<h2 id="key-terms">Key terms, explained simply</h2>
+<p>Cybersecurity coverage assumes background knowledge. Here are the plain-English definitions behind this story.</p>
+<h3>Vulnerability scanning</h3>
+<p><strong>Vulnerability scanning is the automated analysis of software to find security weaknesses an attacker could exploit.</strong> Older scanners match known bad patterns or check dependency flaw lists; OSS Scanner works like a security auditor, reasoning about logic errors, memory bugs, and unsafe input handling.</p>
+<h3>Open-source supply chain</h3>
+<p><strong>The open-source supply chain is the chain of shared libraries and packages your software quietly depends on.</strong> A typical web app is built from hundreds of them. When one has a flaw &mdash; the Log4Shell bug in Log4j is the famous example &mdash; every product including it becomes vulnerable at once. OSS Scanner targets this layer.</p>
+<h3>SBOM (software bill of materials)</h3>
+<p><strong>An SBOM is an inventory of every software component inside a product &mdash; an ingredient list for code.</strong> It records which packages are included and at which versions, so when a new flaw is disclosed you can answer the only question that matters: are we affected?</p>
+<h3>Fuzzing and OSS-Fuzz</h3>
+<p><strong>Fuzzing is throwing huge volumes of random or malformed inputs at software to find crashes.</strong> Google's OSS-Fuzz has run this as a free service since 2016 and is the cited inspiration for OSS Scanner. The method differs: fuzzing crashes code to find bugs, AI auditing reads code. They catch different flaws, so maintainers may want both.</p>
+<h3>Proof of concept and coordinated disclosure</h3>
+<p>A <strong>proof of concept</strong> is a working demonstration that a vulnerability is real &mdash; the "show me" behind every report. <strong>Coordinated disclosure</strong> gives maintainers a private window, commonly 90 days, to fix a validated flaw before it goes public. Anthropic will <em>not</em> apply a 90-day clock to unvalidated, model-generated findings — the clock starts only when a human confirms a finding.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/anthropic-cyber-mission-explained-2.jpg" width="640" height="360" alt="Abstract illustration of layered dependency chains connecting software package icons, representing the open-source supply chain that OSS Scanner protects" loading="lazy" decoding="async"></div>
+
+<h2 id="how-different">How it differs from existing scanners</h2>
+<p>Free scanning already exists, so the honest question is what OSS Scanner adds: existing tools are something <em>you</em> run on <em>your</em> code, while OSS Scanner is something a frontier AI lab runs <em>for</em> open-source projects &mdash; with reasoning ability that catches the logic flaws pattern scanners miss.</p>
+<div class="tablewrap"><table>
+<caption>How OSS Scanner compares with established options, per published program details and vendor docs.</caption>
+<thead><tr><th scope="col">Tool</th><th scope="col">Who runs it</th><th scope="col">Cost</th><th scope="col">How it finds bugs</th><th scope="col">Human review before you see results</th></tr></thead>
+<tbody>
+<tr><th scope="row">Anthropic OSS Scanner</th><td>Anthropic, for enrolled projects</td><td>Free for eligible projects</td><td>AI models reason over code; PoC and candidate patch included</td><td>None &mdash; fully model-generated</td></tr>
+<tr><th scope="row">Google OSS-Fuzz</th><td>Google, for enrolled projects</td><td>Free for eligible projects</td><td>Continuous fuzzing: random inputs hunt for crashes</td><td>Minimal &mdash; automatic deduplication</td></tr>
+<tr><th scope="row">GitHub CodeQL</th><td>You, on your repositories</td><td>Free for public; paid for private</td><td>Semantic code analysis with security queries</td><td>You triage the alerts</td></tr>
+<tr><th scope="row">Snyk (free tier)</th><td>You, on your projects</td><td>Free tier with limits</td><td>Dependency databases + static analysis; strong on known CVEs</td><td>You triage the alerts</td></tr>
+<tr><th scope="row">Semgrep (free tier)</th><td>You, in CI or locally</td><td>Free for individuals/open source</td><td>Pattern-based static analysis</td><td>You triage the findings</td></tr>
+</tbody></table></div>
+<p>These tools overlap less than the table suggests: fuzzing finds crash bugs, dependency scanners find <em>known</em> flaws in libraries you use, and OSS Scanner hunts <em>unknown</em> bugs in widely used open-source code, delivered with a working exploit. That unsolicited, by-email delivery model is what makes it genuinely new.</p>
+<p class="fact"><strong>Quick fact:</strong> The CyberGym benchmark, cited by Anthropic, reportedly showed AI detection rates rising from under 20% to over 85% in about a year &mdash; the jump that makes OSS Scanner plausible now.</p>
+
+<h2 id="no-human-review">The boldest decision: no human review</h2>
+<p>Every OSS Scanner report is generated and delivered without any human reading it first. Anthropic is explicit: removing people from the loop is what lets scans run faster and more often, and as reported, some maintainers had already asked for bulk unreviewed findings rather than waiting for triaged batches.</p>
+<p>The upside is scale. In Project Glasswing, Anthropic reported surfacing more than 29,000 candidate vulnerabilities in six months &mdash; far beyond what any human team could triage. Maintainers described useful results: as reported, curl's Daniel Stenberg flagged multiple real issues including one of the worst curl vulnerabilities in years, and wolfSSL's Todd Ouska said all but two of 74 reports were valid, with five becoming CVEs.</p>
+<p>The downside is noise: Anthropic expects a true-positive rate above 90%, with early reported checks at about 88% and 97% on small samples, while conceding reports may be wrong or mis-severitied. For maintainers, a confident but wrong report is a new kind of toil, and validation is the human work Anthropic says has not gotten cheaper. Its honest framing: attackers keep a near-term advantage because finding flaws got cheap while fixing stays human; it forecasts AI will favor defense within two years.</p>
+
+<h2 id="maintainers">What it means for open-source maintainers</h2>
+<p>If you maintain an open-source project, OSS Scanner is a free security team you did not hire &mdash; one that never sleeps, occasionally hallucinates, and emails you directly.</p>
+<h3>Who is eligible</h3>
+<p>Eligibility is narrow and decided case by case, following the OSS-Fuzz playbook: projects with critical impact on infrastructure and user security, especially libraries exposed to remote attack &mdash; code parsing untrusted network input is the classic example &mdash; with many users and dependents. The program suits teams that already handle verified high- and critical-severity reports; widely used networking, cryptography, or parsing libraries are the target, while a weekend utility library is unlikely to qualify.</p>
+<h3>How to enroll</h3>
+<p>A core maintainer opens a pull request on Anthropic's public oss-scanner GitHub repository, adding a configuration file with the repository URL, a contact email, and a Dockerfile that builds the project for the offline agents. Optional: extra contacts, a threat-model file, and a GPG key for encrypted reports. Anthropic manually verifies core-maintainer status and retains discretion to approve or withdraw projects. Not yet published: how many projects will be accepted and how long review takes.</p>
+<h3>What to expect after enrollment</h3>
+<p>Even at the hoped-for 90%-plus true-positive rate, one in ten reports is noise. If your project is already drowning in issues, adding an automated firehose is a deliberate decision &mdash; and a configuration switch can pause reports if needed.</p>
+
+<h2 id="small-business">What it means for small businesses</h2>
+<p>You cannot enroll your company &mdash; OSS Scanner scans open-source projects, not businesses. But your website, app, or tools almost certainly run on open-source software, and this changes your risk picture: the shared libraries underneath your business get more AI scrutiny at no cost to maintainers, so dependency bugs should surface earlier. The uncomfortable side is that Anthropic says finding flaws is getting cheaper while fixing them stays human work &mdash; so the window between a flaw being discoverable and your systems being patched is what matters, and your patching discipline closes it.</p>
+<p>Notice the direction of travel: AI is moving from chatbots into defensive infrastructure, from <a href="/blog/bitdefender-ai-guardian-explained/">AI guardians in security suites</a> to frontier-model explainers like our <a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon guide</a> and <a href="/blog/claude-google-workspace-explained/">Claude in Google Workspace breakdown</a>. For more on protecting a small operation, browse our <a href="/category/cybersecurity/">cybersecurity guides</a>.</p>
+
+<h2 id="do-now">What your business should do this month</h2>
+<p>OSS Scanner is a reason to act, not a product to buy:</p>
+<div class="verdict">
+<div><h3>If you ship software</h3><ul>
+<li>Build an SBOM: list every open-source dependency and version, regenerated on every release.</li>
+<li>Subscribe to security advisories for your dependencies &mdash; Dependabot, your stack's feeds, your framework's security list.</li>
+<li>Automate dependency updates so fixes ship as fast as scanners find flaws.</li>
+<li>Maintain a widely used library yourself? Evaluate an OSS Scanner enrollment request.</li></ul></div>
+<div><h3>If you run a website or SaaS</h3><ul>
+<li>Keep your platform current: CMS, plugins, themes, server packages. Most small-business breaches come from unpatched known flaws.</li>
+<li>Ask vendors whether they publish an SBOM and how they handle dependency disclosures.</li>
+<li>Review your hosting stack &mdash; our <a href="/blog/best-cheap-web-hosting-wordpress-2026/">cheap WordPress hosting guide</a> covers what to look for in update-friendly hosts.</li></ul></div>
+</div>
+<p>The theme in both columns: <strong>the scanner makes the ecosystem's bugs visible faster, which makes your response time the deciding factor.</strong> That takes a checklist and a calendar reminder, not a security team.</p>
+
+<h2 id="open-questions">Open questions and what to watch</h2>
+<p>The program is days old, so several answers are honestly "not yet published": scan cadence, supported languages, and how many projects will be accepted. The number to watch is the production true-positive rate &mdash; that decides whether OSS Scanner becomes essential infrastructure or an experiment. Watch too whether other frontier labs follow with rival free scanners.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is Anthropic OSS Scanner really free?</h3>
+<p>Yes, as announced: OSS Scanner runs periodic scans of eligible open-source projects at no cost. There is no published fee or paid tier. The catches: Anthropic decides eligibility case by case, and reports arrive unreviewed, so your team validates them.</p>
+<h3>How do I get my open-source project scanned by Anthropic?</h3>
+<p>A core maintainer opens a pull request on Anthropic's public oss-scanner GitHub repository, adding a configuration file with the repository URL, a contact email, and a Dockerfile that builds the project. Optional: a threat-model file and a GPG key for encrypted reports. Anthropic manually verifies core-maintainer status, and eligibility is judged case by case.</p>
+<h3>Why doesn't Anthropic review the reports before sending them?</h3>
+<p>Anthropic says skipping human review lets scans run faster and more often &mdash; in Project Glasswing, models surfaced over 29,000 candidate vulnerabilities in six months, beyond what any human team could triage. The trade-off: maintainers validate every report and should expect false positives.</p>
+<h3>How accurate is the OSS Scanner?</h3>
+<p>Anthropic expects a true-positive rate above 90%. Early reported checks are encouraging but small: 85 of 97 findings validated (about 88%), and wolfSSL reported 72 of 74 valid (about 97%). Treat these as early, company-reported figures &mdash; the production rate is not yet published.</p>
+<h3>I'm not a maintainer. What should my small business do about this?</h3>
+<p>You cannot enroll, but your software supply chain is both the beneficiary and the exposure. Build an SBOM of every dependency and version, subscribe to security advisories, automate updates, and keep platforms patched. Faster discovery only helps if your response time keeps up.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The Anthropic Cyber Mission is the clearest signal yet that frontier AI labs see defensive cybersecurity as part of their job. OSS Scanner's offer &mdash; free, recurring, AI-reasoned scans with a working exploit attached &mdash; is genuinely new, and early maintainer reports suggest the signal is real. The gamble is the no-human-review design: speed and scale at the price of noise. For critical-reach projects, enrollment is worth evaluating. For everyone else: know your dependencies, watch the advisories, and patch quickly &mdash; the scanners are getting faster, and your response time has to match.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare announcements, documentation, and independent coverage, and we note the date every fact was checked. This article covers a program announced October 8, 2026; details marked "not yet published" reflect the public record as of October 12, 2026.</p>
+<p>We take no paid placements, and we update this guide when the program changes. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/bitdefender-ai-guardian-explained/">Bitdefender AI Guardian Explained: What It Does for Small Business (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/claude-google-workspace-explained/">Claude in Google Workspace Explained: What It Does for Small Business (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon Explained for Small Business (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/irisgo-ai-workflow-assistant-explained/">IrisGo AI Workflow Assistant Explained (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/cybersecurity/">Cybersecurity</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloudflare Acquires Deno Explained: What It Means for Workers Developers and Self-Hosting (2026)</title>
+<meta name="description" content="Cloudflare is acquiring Deno (Oct 2026). What the deal means for Workers developers and Deno Deploy users, and what small businesses should do now.">
+<meta name="keywords" content="Cloudflare acquires Deno, Cloudflare Deno acquisition, Deno joins Cloudflare, Cloudflare Workers self-hosting, celld workerd, Deno Deploy shutdown, Workers developers">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/cloudflare-acquires-deno-explained/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Cloudflare Acquires Deno Explained: What It Means for Workers Developers and Self-Hosting (2026)">
+<meta property="og:description" content="Cloudflare is acquiring Deno (Oct 2026). What the deal means for Workers developers and Deno Deploy users, and what small businesses should do now.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/cloudflare-acquires-deno-explained/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/cloudflare-acquires-deno-explained-1.jpg">
+<meta property="article:published_time" content="2026-10-12">
+<meta property="article:modified_time" content="2026-10-12">
+<meta property="article:section" content="Cloud & DevOps">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cloudflare Acquires Deno Explained: What It Means for Workers Developers and Self-Hosting (2026)">
+<meta name="twitter:description" content="Cloudflare is acquiring Deno (Oct 2026). What the deal means for Workers developers and Deno Deploy users, and what small businesses should do now.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/cloudflare-acquires-deno-explained-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/cloudflare-acquires-deno-explained/#article", "headline": "Cloudflare Acquires Deno Explained: What It Means for Workers Developers and Self-Hosting (2026)", "description": "Cloudflare is acquiring Deno (Oct 2026). What the deal means for Workers developers and Deno Deploy users, and what small businesses should do now.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/cloudflare-acquires-deno-explained-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-12", "dateModified": "2026-10-12", "mainEntityOfPage": "https://pickmyapp.github.io/blog/cloudflare-acquires-deno-explained/", "articleSection": "Cloud & DevOps", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What did Cloudflare actually acquire from Deno?", "acceptedAnswer": {"@type": "Answer", "text": "Cloudflare announced on October 9, 2026 that it is acquiring Deno Land, the company behind the Deno runtime, and bringing its entire team in-house, including co-founders Ryan Dahl and Bert Belder. The financial terms were not disclosed. The practical prize is the team's engineering effort: merging Deno's open-source celld project into Cloudflare's workerd runtime so that self-hosting Workers and Durable Objects becomes a first-class, supported option."}}, {"@type": "Question", "name": "Is the Deno runtime being discontinued?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on a fixed timeline. Deno's announcement says the team will keep shipping monthly bug-fix and security releases for one more year, until about October 2027, and then Cloudflare will end its own development of the Deno runtime. The project remains open source, so the community could continue it, but there is no commitment that anyone will. Do not start new projects on the Deno runtime."}}, {"@type": "Question", "name": "What happens to Deno Deploy?", "acceptedAnswer": {"@type": "Answer", "text": "Deno Deploy, the company's hosted application platform, will keep operating for about six more months and then shut down, which points to around April 2027. Deno says it will provide migration support for paying customers moving their applications to Cloudflare Workers. If you run production workloads on Deno Deploy, plan your migration now rather than waiting for the final months."}}, {"@type": "Question", "name": "Will this change Cloudflare Workers pricing?", "acceptedAnswer": {"@type": "Answer", "text": "No pricing or plan changes have been announced as part of the deal. As of October 2026, Cloudflare Workers still offers a free tier of 100,000 requests per day and a paid plan starting at $5 per month with 10 million included requests. Treat any pricing speculation you read elsewhere as rumor until Cloudflare publishes new numbers."}}, {"@type": "Question", "name": "Can I self-host Cloudflare Workers today?", "acceptedAnswer": {"@type": "Answer", "text": "You can run workerd, Cloudflare's open-source runtime, on your own machines today, but its Durable Objects support is limited to single-instance use, which is not sufficient for production-scale self-hosting. The announced plan is to merge celld's multi-instance orchestration into workerd to fix that gap. Until Cloudflare ships the converged runtime and documents it as supported, self-hosting remains a do-it-yourself exercise, not a first-class option."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Cloud & DevOps", "item": "https://pickmyapp.github.io/category/cloud-devops/"}, {"@type": "ListItem", "position": 3, "name": "Cloudflare Acquires Deno", "item": "https://pickmyapp.github.io/blog/cloudflare-acquires-deno-explained/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/cloud-devops/">Cloud &amp; DevOps</a></li>
+<li aria-current="page">Cloudflare Acquires Deno</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Cloudflare Acquires Deno Explained: What It Means for Workers Developers and Self-Hosting (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Cloud &amp; DevOps</span></li>
+<li>Published <time datetime="2026-10-12"><strong>Oct 12, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>11 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>On October 9, 2026, Cloudflare announced it is acquiring Deno</strong> and bringing Ryan Dahl's entire team in-house. The goal is to merge Deno's open-source celld project into Cloudflare's workerd runtime so Workers and Durable Objects can run on your own servers as a first-class, supported option. The Deno runtime gets one more year of maintenance, Deno Deploy shuts down in about six months, and no pricing or roadmap changes have been announced. Workers users should change nothing for now; Deno and Deno Deploy users should start planning a migration.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/cloudflare-acquires-deno-explained-1.jpg" width="640" height="360" alt="Abstract illustration of two interlocking puzzle pieces labeled Cloudflare and Deno joining above a network of global edge nodes" loading="lazy" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-happened">What was announced</a></li><li><a href="#key-terms">The key terms, simply defined</a></li><li><a href="#why">Why Cloudflare wanted Deno</a></li><li><a href="#timeline">The wind-down schedule</a></li><li><a href="#workers-devs">What it means for Workers developers</a></li><li><a href="#self-hosting">What it means for self-hosting</a></li><li><a href="#costs">Cost implications</a></li><li><a href="#what-to-do">What your business should do now</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>In one of the biggest developer-tooling stories of the year, <strong>Cloudflare announced on October 9, 2026, that it is acquiring Deno</strong>, the company behind the Deno JavaScript and TypeScript runtime founded by Node.js creator Ryan Dahl. The entire Deno team is joining Cloudflare, and their mission is to merge Deno's open-source <strong>celld</strong> project into <strong>workerd</strong>, Cloudflare's own runtime, so that self-hosting the Workers platform becomes a supported, first-class option rather than a do-it-yourself exercise. The Deno runtime gets one more year of maintenance, and Deno Deploy closes in about six months. If you build on Workers, change nothing for now; if you build on Deno or Deno Deploy, start planning a migration. Explore the rest of our <a href="/category/cloud-devops/">Cloud &amp; DevOps coverage</a> for more infrastructure news explained for small teams.</p>
+
+<h2 id="what-happened">What was announced</h2>
+<p>The news arrived as joint blog posts on October 9, 2026: one from Cloudflare's principal engineer for Workers, Kenton Varda, alongside Deno co-founder Ryan Dahl, and one from Dahl on the Deno blog. Here is what the announcements say, as reported:</p>
+<ul>
+<li><strong>Cloudflare is acquiring Deno Land</strong>, the company behind the Deno runtime, and the whole team joins Cloudflare, including co-founders <strong>Ryan Dahl and Bert Belder</strong>. The financial terms were not disclosed.</li>
+<li>Dahl and Belder will lead a new effort to merge code and ideas from <strong>celld</strong>, Deno's open-source self-hosting project released in August 2026, into <strong>workerd</strong>, Cloudflare's open-source runtime for Workers and Durable Objects. The stated goal: make workerd self-hosting "a first-class supported way to build and run apps using the Workers programming model."</li>
+<li>Varda pushed back on the popular theory that Cloudflare designed Workers to be different from other cloud platforms in order to create lock-in, arguing instead that "being open source and giving people an escape hatch is good business."</li>
+<li>Deno had raised about <strong>$26 million</strong> in total funding, including a Series A led by Sequoia, according to TechCrunch. That is the only public number anywhere near the deal size; the actual price was not announced.</li>
+</ul>
+<p class="fact"><strong>Quick fact:</strong> In a neat piece of history, Cloudflare once mistakenly blocked Deno's website back in 2021, so this acquisition closes a strange loop between the two companies.</p>
+
+<h2 id="key-terms">The key terms, simply defined</h2>
+<p>This story assumes you know the vocabulary. Here are the definitions in plain language:</p>
+<h3>Deno</h3>
+<p><strong>Deno is a JavaScript and TypeScript runtime</strong>, created by Node.js founder Ryan Dahl as a fresh attempt to fix the design decisions he later regretted in Node.js. A runtime is simply the program that executes your code; Deno executes JavaScript and TypeScript on servers with TypeScript support and a security sandbox built in.</p>
+<h3>Cloudflare Workers</h3>
+<p><strong>Cloudflare Workers is a serverless edge platform</strong> that runs your code on Cloudflare's global network instead of on a server you manage. <strong>Edge computing</strong> means running code near the user instead of in one central data center, which is why a Worker can respond in single-digit milliseconds. The tradeoff is constraints: Workers run inside isolated JavaScript environments with fixed memory (128 MB per isolate) and limits on CPU time per request.</p>
+<h3>Durable Objects</h3>
+<p><strong>Durable Objects are Cloudflare's way of adding state to the Workers model.</strong> Each Durable Object combines code with storage: it holds data in a fast embedded SQLite database, keeps WebSocket connections open, and is guaranteed to be a single logical instance. This makes it a natural fit for real-time collaboration, game servers, and agent backends, and it is exactly the component that has been hardest to self-host, which is why celld matters.</p>
+<h3>workerd</h3>
+<p><strong>workerd is the open-source runtime that powers Cloudflare Workers</strong> in production, released by Cloudflare in 2022. Anyone can download and run it, but the self-hosting story has had a real gap: Durable Objects only worked as single instances, which is not enough for production-scale deployments across multiple machines.</p>
+<h3>celld</h3>
+<p><strong>celld is Deno's open-source implementation of the Workers and Durable Objects programming model</strong>, released in August 2026. It is a Rust binary designed to run Workers and Durable Objects across multiple machines, using an object storage bucket as its main external dependency. This is the project Cloudflare plans to merge into workerd.</p>
+<h3>JSR</h3>
+<p><strong>JSR is Deno's JavaScript and TypeScript package registry</strong>, a place where developers publish and find ready-made pieces of code, similar in spirit to npm. Per the announcements, JSR will keep operating, with its infrastructure moving over to Cloudflare.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/cloudflare-acquires-deno-explained-2.jpg" width="640" height="360" alt="Conceptual illustration of edge server locations connected by lines across a world map, representing distributed Workers running on self-hosted infrastructure" loading="lazy" decoding="async"></div>
+
+<h2 id="why">Why Cloudflare wanted Deno</h2>
+<p>The acquisition is not really about the Deno runtime at all. Cloudflare is buying a <strong>portability strategy</strong>. The theory, as Varda laid it out, is that a company that depends on Cloudflare's network should never feel trapped on it. The strongest answer to vendor lock-in is a credible, supported way to take your applications elsewhere: write once against the Workers model, then run them either on Cloudflare's global network or on your own machines. Varda was unusually candid that Cloudflare had never cracked the developer experience around self-hosting workerd; celld, released by Deno just two months before the deal, solved the missing piece.</p>
+<!-- AD SLOT: after-second-h2 -->
+<!-- <div class="ad" id="ad-after-h2-2" style="min-height:250px"></div> -->
+
+<h2 id="timeline">The wind-down schedule: what happens to Deno's products</h2>
+<p>The announcements are unusually specific about end dates, which is good for planning. Here is the timeline as Deno laid it out:</p>
+<ul>
+<li><strong>Deno runtime:</strong> monthly releases with bug fixes and security updates for one more year, until roughly <strong>October 2027</strong>. After that, Cloudflare ends its own development of the runtime. The project stays open source, and Deno says it welcomes community continuation, but there is no commitment that anyone will take it over.</li>
+<li><strong>Deno Deploy:</strong> keeps operating for about <strong>six more months</strong>, pointing to a shutdown around <strong>April 2027</strong>. Deno says it will provide migration support for paying customers moving their applications to Cloudflare Workers.</li>
+<li><strong>JSR:</strong> the package registry continues operating, with its infrastructure moving to Cloudflare. This is the calmest part of the announcement: package authors should not see disruption.</li>
+<li><strong>rusty_v8:</strong> support for Deno's Rust bindings to the V8 JavaScript engine continues, with plans to integrate the work into workerd.</li>
+<li><strong>celld and workerd:</strong> the convergence project, led by Dahl and Belder, with more detail promised "in the coming months." No shipped product or timeline has been announced yet.</li>
+</ul>
+<div class="tablewrap"><table>
+<caption>What the October 2026 announcements confirm versus what has not been announced. Anything not in the vendors' own posts should be treated as speculation.</caption>
+<thead><tr><th scope="col">Topic</th><th scope="col">Confirmed</th><th scope="col">Not yet announced</th></tr></thead>
+<tbody>
+<tr><th scope="row">Deal price</th><td>Not disclosed</td><td>No price, no filing details</td></tr>
+<tr><th scope="row">Deno runtime</th><td>Monthly fixes for 1 year, then development ends; stays open source</td><td>Whether the community continues it</td></tr>
+<tr><th scope="row">Deno Deploy</th><td>Operates ~6 months, then shuts down; migration support for paying customers</td><td>Exact shutdown date, migration tooling details</td></tr>
+<tr><th scope="row">Self-hosted Workers</th><td>celld merging into workerd; Dahl and Belder lead the effort</td><td>Ship date, documentation, support tiers</td></tr>
+<tr><th scope="row">JSR registry</th><td>Continues, infrastructure moves to Cloudflare</td><td>Any policy or pricing changes</td></tr>
+<tr><th scope="row">Workers pricing</th><td>No changes announced</td><td>Any future pricing adjustments</td></tr>
+</tbody></table></div>
+
+<h2 id="workers-devs">What it means for Workers developers</h2>
+<p>If your applications already run on Cloudflare Workers, the honest short-term answer is: <strong>nothing changes, and that is intentional.</strong> Workers, KV, D1, R2, Queues, and Durable Objects all keep running on Cloudflare's network exactly as before. No API changes, no pricing changes, and no forced migrations were announced.</p>
+<p>The medium-term upside is portability insurance. A standard objection to building on Workers has been lock-in: the programming model differs enough from AWS Lambda or plain containers that leaving feels expensive. A supported, first-class self-hosting path answers that objection with engineering instead of marketing — strengthening the business case for Workers even if you never self-host. As with <a href="/blog/best-cheap-web-hosting-wordpress-2026/">choosing any hosting platform</a>, a credible exit path is part of the product's value.</p>
+<p>The risk to watch is timing. The Deno team's energy now goes into the workerd convergence, and the convergence has no announced ship date. Until Cloudflare publishes the merged runtime and documentation, treat "self-hosting is coming" as a plan, not a feature.</p>
+
+<h2 id="self-hosting">What it means for self-hosting users</h2>
+<p>This is the audience the acquisition is really aimed at. Two groups should pay close attention:</p>
+<h3>If you run workerd on your own infrastructure today</h3>
+<p>Your situation improves on paper: the hardest gap in workerd self-hosting, production-grade Durable Objects across multiple machines, is now officially in scope for the platform team that owns it. But since no merged release or timeline has been announced, the pragmatic move is to keep your current setup exactly as it is and re-evaluate when Cloudflare ships something concrete. If you are weighing self-hosting costs generally, our <a href="/blog/n8n-pricing-self-hosted-vs-cloud/">self-hosted vs cloud cost breakdown</a> walks through the math of running your own infrastructure.</p>
+<h3>If you run the Deno runtime or Deno Deploy</h3>
+<p>You are on the wrong side of the timeline. The Deno runtime has a one-year maintenance clock and no future beyond it; Deno Deploy has roughly six months of life left. New projects should not start on either. If you run production workloads on Deno Deploy, begin migration planning now rather than in the final months, and take Deno up on the promised migration support to Cloudflare Workers.</p>
+
+<h2 id="costs">Cost implications</h2>
+<p>No pricing or plan changes were announced as part of this deal. As of October 2026, Cloudflare Workers still starts with a <strong>free tier of 100,000 requests per day</strong> (with a 10 ms CPU limit per invocation) and a <strong>paid plan at $5 per month</strong> that includes 10 million requests plus 30 million CPU milliseconds, with overages at $0.30 per million requests. The self-hosting angle does not change those numbers today.</p>
+<p>What could change, over time, is the <strong>cost of leaving</strong> rather than the cost of staying. A genuinely supported self-hosted option gives businesses with steady workloads, compliance constraints, or data-residency requirements a negotiating lever: run on Cloudflare's edge when performance is worth it, and the same code on your own hardware when it is not. Our <a href="/blog/cloudways-vs-siteground-agencies/">managed vs agency hosting comparison</a> covers the decision framework, and our <a href="/blog/hostinger-vs-bluehost/">budget hosting guide</a> shows how low the floor goes when you own the infrastructure.</p>
+
+<h2 id="what-to-do">What your business should do now</h2>
+<p>Wait-and-see is the correct default, with one exception. Here is the checklist, split by where you stand today:</p>
+<ul>
+<li><strong>Building on Cloudflare Workers:</strong> do nothing. Keep deploying. Watch for the workerd convergence announcement in the coming months, and treat it as interesting news, not a reason to redesign anything.</li>
+<li><strong>Running on Deno Deploy:</strong> start migration planning this quarter. Six months is a short runway once testing and cutovers are involved. Evaluate Cloudflare Workers, since Deno is offering migration support to paying customers heading there, but also evaluate plain containers or another runtime if Workers' model does not fit your app.</li>
+<li><strong>Running the Deno runtime on your own servers:</strong> stop starting new projects on it. For existing services, the one-year maintenance window buys you time, but you should have a migration target picked by mid-2027 at the latest.</li>
+<li><strong>Considering Workers but worried about lock-in:</strong> this acquisition is genuinely good news for your objection, but it is not yet a reason to commit. Revisit it when the self-hosting story ships. The free tier's 100,000 requests per day is a low-risk way to prototype in the meantime.</li>
+<li><strong>Running workerd self-hosted in production:</strong> keep your current architecture. Do not rebuild around celld's current shape, since the merged product may differ; subscribe to the workerd repository and the Cloudflare developer blog so you hear about the converged runtime first.</li>
+</ul>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>What did Cloudflare actually acquire from Deno?</h3>
+<p>Cloudflare announced on October 9, 2026 that it is acquiring Deno Land, the company behind the Deno runtime, and bringing its entire team in-house, including co-founders Ryan Dahl and Bert Belder. The financial terms were not disclosed. The practical prize is the team's engineering effort: merging Deno's open-source celld project into Cloudflare's workerd runtime so that self-hosting Workers and Durable Objects becomes a first-class, supported option.</p>
+<h3>Is the Deno runtime being discontinued?</h3>
+<p>Yes, on a fixed timeline. Deno's announcement says the team will keep shipping monthly bug-fix and security releases for one more year, until about October 2027, and then Cloudflare will end its own development of the Deno runtime. The project remains open source, so the community could continue it, but there is no commitment that anyone will. Do not start new projects on the Deno runtime.</p>
+<h3>What happens to Deno Deploy?</h3>
+<p>Deno Deploy, the company's hosted application platform, will keep operating for about six more months and then shut down, which points to around April 2027. Deno says it will provide migration support for paying customers moving their applications to Cloudflare Workers. If you run production workloads on Deno Deploy, plan your migration now rather than waiting for the final months.</p>
+<h3>Will this change Cloudflare Workers pricing?</h3>
+<p>No pricing or plan changes have been announced as part of the deal. As of October 2026, Cloudflare Workers still offers a free tier of 100,000 requests per day and a paid plan starting at $5 per month with 10 million included requests. Treat any pricing speculation you read elsewhere as rumor until Cloudflare publishes new numbers.</p>
+<h3>Can I self-host Cloudflare Workers today?</h3>
+<p>You can run workerd, Cloudflare's open-source runtime, on your own machines today, but its Durable Objects support is limited to single-instance use, which is not sufficient for production-scale self-hosting. The announced plan is to merge celld's multi-instance orchestration into workerd to fix that gap. Until Cloudflare ships the converged runtime and documents it as supported, self-hosting remains a do-it-yourself exercise, not a first-class option.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Cloudflare acquiring Deno is less a runtime story than a portability story. The Deno runtime is being wound down on a one-year clock, Deno Deploy gets six months, and the real investment goes into making the Workers model genuinely runnable outside Cloudflare's network. Workers developers should make no changes; Deno and Deno Deploy users should start migration planning now, since the sooner a migration target is picked, the cheaper the move will be.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published vendor announcements, and we note the date every fact was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/n8n-pricing-self-hosted-vs-cloud/">n8n Pricing: Self-Hosted vs Cloud Costs Compared (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-cheap-web-hosting-wordpress-2026/">Best Cheap Web Hosting for WordPress in 2026</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround for Agencies (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/hostinger-vs-bluehost/">Hostinger vs Bluehost: Which Is Better? (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

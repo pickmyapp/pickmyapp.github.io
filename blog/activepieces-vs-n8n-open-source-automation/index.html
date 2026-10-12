@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Activepieces vs n8n: Open-Source Automation Compared (2026)</title>
+<meta name="description" content="Activepieces vs n8n in 2026: MIT vs fair-code licensing, pricing per flow run, pieces vs nodes, and which open-source automation tool fits your team.">
+<meta name="keywords" content="activepieces vs n8n, activepieces pricing, n8n pricing, open source automation, MIT license automation, self-hosted workflow automation, pieces vs nodes">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Activepieces vs n8n: Open-Source Automation Compared (2026)">
+<meta property="og:description" content="Activepieces vs n8n in 2026: MIT vs fair-code licensing, pricing per flow run, pieces vs nodes, and which open-source automation tool fits your team.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/activepieces-vs-n8n-open-source-automation-1.jpg">
+<meta property="article:published_time" content="2026-10-12">
+<meta property="article:modified_time" content="2026-10-12">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Activepieces vs n8n: Open-Source Automation Compared (2026)">
+<meta name="twitter:description" content="Activepieces vs n8n in 2026: MIT vs fair-code licensing, pricing per flow run, pieces vs nodes, and which open-source automation tool fits your team.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/activepieces-vs-n8n-open-source-automation-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/#article","headline":"Activepieces vs n8n: Open-Source Automation Compared (2026)","description":"Activepieces vs n8n in 2026: MIT vs fair-code licensing, pricing per flow run, pieces vs nodes, and which open-source automation tool fits your team.","image":"https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/activepieces-vs-n8n-open-source-automation-1.jpg","author":{"@type":"Organization","name":"PickMyApp Research Team","url":"https://pickmyapp.github.io/about/"},"publisher":{"@type":"Organization","name":"PickMyApp","logo":{"@type":"ImageObject","url":"https://pickmyapp.github.io/images/logo.svg"}},"datePublished":"2026-10-12","dateModified":"2026-10-12","mainEntityOfPage":"https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/","articleSection":"AI Automation Tools","inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Activepieces really open source?","acceptedAnswer":{"@type":"Answer","text":"Yes. Activepieces is licensed under the MIT license, which means you can use, modify, embed, and even resell it with no restrictions, and its self-hosted Community Edition runs unlimited flows on your own server. n8n is source-available rather than open source: its Sustainable Use License allows internal business use and self-hosting, but blocks using it as the basis of a competing hosted service."}},{"@type":"Question","name":"Is Activepieces cheaper than n8n for a small team?","acceptedAnswer":{"@type":"Answer","text":"On managed cloud, usually. Activepieces has a free plan with 1,000 credits a month and a Plus plan at $20 a month for 10,000 credits, where one credit is one flow run regardless of step count. n8n Cloud has no free tier: Starter costs €24 a month (€20 billed annually) for 2,500 executions. Self-hosted, both cost only your server and maintenance time. Prices checked October 2026."}},{"@type":"Question","name":"Which is easier to use for a non-technical team?","acceptedAnswer":{"@type":"Answer","text":"Activepieces is the easier tool to start with. Its builder is a vertical, top-down flow editor with plain-language configuration, and a chat-to-automation feature that drafts flows from a description. n8n’s node canvas assumes you understand JSON data, expressions, and API credentials, so non-technical teams need a longer learning period."}},{"@type":"Question","name":"Can I move my workflows between Activepieces and n8n?","acceptedAnswer":{"@type":"Answer","text":"There is no automatic importer between the two platforms. You rebuild each flow or workflow in the other tool, reconnect your app credentials, and test everything before switching over. Keep the old tool running until the rebuilt workflows are verified, and migrate the simplest automations first."}},{"@type":"Question","name":"Which is better for AI agent workflows?","acceptedAnswer":{"@type":"Answer","text":"Both have genuine AI features. Activepieces ships native AI pieces, an agent builder, Model Context Protocol support, and lets you bring your own AI provider keys on Plus and up, which drops each AI step to one credit. n8n offers LangChain-native AI agent nodes and a Code node, which gives developers deeper control over custom agent behavior."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pickmyapp.github.io/"},{"@type":"ListItem","position":2,"name":"AI Automation Tools","item":"https://pickmyapp.github.io/category/ai-automation/"},{"@type":"ListItem","position":3,"name":"Activepieces vs n8n","item":"https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">Activepieces vs n8n</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Activepieces vs n8n: Open-Source Automation Compared (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-12"><strong>Oct 12, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>10 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>Activepieces</strong> and <strong>n8n</strong> both let you run powerful automation outside the big SaaS vendors, and both charge per workflow run rather than per step. The split: Activepieces is MIT-licensed, has the friendlier builder and a free cloud tier, so it wins for non-technical teams and anyone embedding automation inside a product. <strong>n8n</strong> has the deeper integration catalog, stronger error handling and a far larger community, so it wins for technical teams and complex production workflows. Prices checked October 2026: Activepieces Cloud starts free, n8n Cloud starts at &euro;24/month.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/activepieces-vs-n8n-open-source-automation-1.jpg" width="640" height="360" alt="Abstract flat illustration of two contrasting automation dashboards, one with vertical flow steps and one with a node canvas, connected by a shared workflow line" loading="lazy" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-activepieces">What is Activepieces?</a></li><li><a href="#what-is-n8n">What is n8n?</a></li><li><a href="#licensing">The license difference that actually matters</a></li><li><a href="#pricing">Pricing compared, plan by plan</a></li><li><a href="#cost-example">A real cost example</a></li><li><a href="#ease-of-use">Ease of use for a small team</a></li><li><a href="#integrations">Pieces vs nodes: integrations</a></li><li><a href="#ai-agents">AI and agent workflows</a></li><li><a href="#self-hosting">Self-hosting effort compared</a></li><li><a href="#verdict">Our verdict</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Activepieces and n8n are the two most serious answers when a business wants automation it can run itself, free of a vendor&rsquo;s servers and per-action meter. Both give you a visual builder for multi-step workflows, and both can run on your own infrastructure. But &ldquo;open source&rdquo; means two different things here: Activepieces ships under the MIT license, the most permissive license in software, while n8n uses its own Sustainable Use License, a fair-code license with strings attached. This guide compares the two for small teams of roughly 1 to 20 people, using prices checked against both vendors&rsquo; official pricing pages in October 2026. If you are also weighing hosted-only tools, start with our <a href="/blog/zapier-alternatives-cheaper-automation/">cheaper Zapier alternatives</a> for the wider picture.</p>
+
+<h2 id="what-is-activepieces">What is Activepieces?</h2>
+<p><strong>Activepieces is an MIT-licensed workflow automation platform, founded in 2022, built around modular integrations called &ldquo;pieces.&rdquo;</strong> Each piece is an open-source TypeScript module connecting a third-party app or service, and roughly 60% of them are community-contributed.</p>
+
+<p>The builder is deliberately simple: a vertical, top-down flow editor &mdash; a trigger at the top, then steps in order, like a checklist. Fields are configured in plain language, and a chat-to-automation feature drafts a flow from a written description. The platform also ships built-in Tables (lightweight databases), an agent builder, and native Model Context Protocol support so AI agents can call your flows as tools. For mainstream apps the piece library covers what most small businesses need, and anything with an API is reachable through the HTTP piece or a webhook.</p>
+
+<h2 id="what-is-n8n">What is n8n?</h2>
+<p><strong>n8n is a node-based workflow automation platform, founded in Berlin in 2019, where every automation is a workflow made of connected nodes.</strong> Each node performs one action or transformation, and data flows between them on a free-form canvas. The project lists 400-plus official nodes, with community-built nodes extending the catalog further.</p>
+<p>Where n8n shows its developer roots is control. A Code node runs JavaScript or Python at any point in a workflow, an HTTP Request node can call virtually any API, and LangChain-native AI agent nodes support retrieval, memory, and tool-calling loops. The community is an order of magnitude larger than Activepieces&rsquo; &mdash; roughly 179,000 versus 21,000 GitHub stars &mdash; so most problems you hit have already been solved publicly.</p>
+
+<!-- AD SLOT: after-second-h2 -->
+<!-- <div class="ad" id="ad-after-h2-2" style="min-height:250px"></div> -->
+
+<h2 id="licensing">The license difference that actually matters</h2>
+<p>Most comparisons bury this in a footnote. It deserves its own section, because it is the single biggest structural difference between the two tools.</p>
+<p><strong>Activepieces is MIT-licensed.</strong> You can use it, modify it, embed it inside your own product, and even resell it, with no restrictions beyond keeping the copyright notice. If you are an agency reselling automation to clients, or a SaaS company embedding a workflow builder in your product, the MIT license gives you a clean legal path &mdash; Activepieces even sells a white-label Embed plan (from $36,000 a year) on that foundation. The self-hosted Community Edition is not a trial: it runs unlimited flows on your own server.</p>
+<p><strong>n8n is source-available under its Sustainable Use License, a &ldquo;fair-code&rdquo; license.</strong> You can self-host it and use it for your own internal business automation without paying a cent, but you cannot offer n8n itself as a hosted service to third parties or build a competing automation product on top of it. For most small businesses automating their own operations, this never bites. For agencies, managed-service providers, and software companies embedding automation in something they sell, it is a genuine legal grey area Activepieces simply does not have.</p>
+
+<p class="fact"><strong>Quick fact:</strong> &ldquo;Fair-code&rdquo; means the code is public and free for your own use, but commercial redistribution is restricted. True open source, like the MIT license, imposes no such restrictions.</p>
+
+<h2 id="pricing">Pricing compared, plan by plan</h2>
+<p>Here is where Activepieces and n8n look similar at first and diverge fast. Both charge per run, not per step: <strong>Activepieces spends one credit per flow run however many steps it has, and n8n counts one execution per workflow run however many nodes it has.</strong> Both therefore dodge the per-action pricing that makes Zapier expensive at scale &mdash; but they price the run itself differently.</p>
+<div class="tablewrap"><table>
+<caption>Prices checked October 2026. Activepieces bills in US dollars; n8n bills in euros.</caption>
+<thead><tr><th scope="col">Plan level</th><th scope="col">Activepieces</th><th scope="col">n8n</th></tr></thead>
+<tbody>
+<tr><th scope="row">License</th><td>MIT (fully permissive)</td><td>Sustainable Use License (fair-code, restricts commercial re-hosting)</td></tr>
+<tr><th scope="row">Free cloud option</th><td>Free: $0 forever, 1,000 credits/month with daily refresh, unlimited flows, up to 5 users</td><td>None (14-day cloud trial only); Community Edition self-hosted is free</td></tr>
+<tr><th scope="row">Entry paid</th><td>Plus: $20/month flat, 10,000 credits/month, $0.007 per extra credit, up to 5 users, bring-your-own AI keys</td><td>Starter: &euro;24/month (&euro;20 billed annually), 2,500 executions/month</td></tr>
+<tr><th scope="row">Mid tier</th><td>Team: $200/month flat, 50,000 credits/month, $0.007 per extra credit, 25 users, SSO</td><td>Pro: &euro;60/month (&euro;50 billed annually), 10,000 executions/month</td></tr>
+<tr><th scope="row">Scale</th><td>Ultimate: custom pricing, yearly credit pool, unlimited users</td><td>Business: &euro;800/month (&euro;667 billed annually), 40,000 executions/month, SSO</td></tr>
+<tr><th scope="row">Billing unit</th><td>One credit per flow run</td><td>One execution per workflow run</td></tr>
+<tr><th scope="row">AI model costs</th><td>2 (fast), 10 (smart), or 20 (frontier) extra credits per AI step; 1 per agentic action; 1 with your own API keys on Plus+</td><td>One execution per run, regardless of AI steps; model costs go to your provider bill</td></tr>
+<tr><th scope="row">Self-hosted cost</th><td>Free software, unlimited runs; ~$5&ndash;$10/month server plus your maintenance time</td><td>Free software, unlimited executions; ~$5&ndash;$10/month server plus your maintenance time</td></tr>
+</tbody></table></div>
+
+<h3>Where Activepieces is cheaper</h3>
+<p>The free tier is the headline. Activepieces gives you a usable cloud plan at $0 &mdash; 1,000 flow runs a month, unlimited flows, up to 5 users &mdash; and Plus costs $20 a month for 10,000 credits. n8n has no free cloud tier, and Starter is &euro;24 a month for 2,500 executions. If your volume is modest and you would rather not touch a server, Activepieces is the cheaper managed path at every rung.</p>
+<h3>Where n8n pulls level</h3>
+<p>Self-host, and the difference evaporates: both Community editions run unlimited workflows on your own server, so the bill is just a small virtual server and your maintenance time. Our <a href="/blog/n8n-pricing-self-hosted-vs-cloud/">n8n pricing guide: self-hosted vs cloud costs</a> walks through the plan-by-plan math and the real maintenance burden.</p>
+
+<h2 id="cost-example">A real cost example</h2>
+<p>Take a client follow-up flow with eight steps: a form submission enriches the lead, writes to the CRM, creates a task, and sends a welcome email. At 400 leads a month, Activepieces burns 400 credits &mdash; inside the free plan&rsquo;s 1,000 &mdash; so the managed cost is $0. On n8n, those 400 runs are 400 executions, but with no free cloud tier you either pay &euro;24 a month for Starter or self-host.</p>
+<p>Scale to 4,000 leads a month. Activepieces charges one credit per run: 4,000 credits fits inside Plus at $20 a month. n8n counts 4,000 executions, which exceeds Starter&rsquo;s 2,500 allowance and pushes you to Pro at &euro;60 a month. <strong>The honest rule: for managed cloud at low-to-medium volume, Activepieces is cheaper; self-host, and the decision is about features, not money.</strong></p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/activepieces-vs-n8n-open-source-automation-2.jpg" width="640" height="360" alt="Abstract flat illustration of puzzle-shaped connector blocks snapping into a workflow grid, representing automation pieces and nodes linked between apps" loading="lazy" decoding="async"></div>
+
+<h2 id="ease-of-use">Ease of use for a small team</h2>
+<h3>First week</h3>
+<p>Activepieces is the easier tool to pick up. The vertical step-by-step builder reads like a recipe, configuration is described in plain language, and the chat-to-automation feature gives you a working draft from a sentence like &ldquo;when someone fills in the contact form, add them to the CRM and notify the sales channel.&rdquo; A non-technical owner can build a real workflow on day one.</p>
+<p>n8n is usable without code for common tasks, but its canvas assumes you understand how data items move between nodes and are comfortable writing small expressions. If your team thinks in flowcharts, Activepieces is faster; if your team thinks in backend systems, n8n will feel like home. If you are comparing the two hosted-style builders as well, our <a href="/blog/n8n-vs-make-small-business/">n8n vs Make comparison</a> covers the learning curve in more depth.</p>
+<h3>Debugging and reliability</h3>
+<p>This is where n8n&rsquo;s maturity shows: per-node retry settings, pinned test data for rerunning one node, and dedicated error workflows that alert your team when something fails. Activepieces covers the basics &mdash; retries and run logs &mdash; but its error handling is thinner and its smaller community offers fewer solved edge cases. For mission-critical workflows that run while you sleep, n8n is the safer bet.</p>
+
+<h2 id="integrations">Pieces vs nodes: integrations</h2>
+<p>n8n has the broader catalog: 400-plus official nodes plus community-built ones, with deeper coverage of databases, infrastructure tools, and niche SaaS. Activepieces lists 300-plus pieces, about 60% community-contributed, and cites 760-plus integrations across its platform when every connector variant is counted.</p>
+<p>Both cover the mainstream stack most small businesses run &mdash; Google Workspace, Slack, HubSpot, Stripe, Shopify, Notion &mdash; and both fall back to HTTP modules and webhooks when an app is missing. n8n&rsquo;s HTTP node has a small edge: you can paste a cURL command to generate a request instantly. Activepieces pieces, being open-source TypeScript, are easy to inspect and extend. For mainstream apps the piece catalog is enough; for obscure or custom integrations, n8n&rsquo;s longer catalog and larger community win.</p>
+
+<h2 id="ai-agents">AI and agent workflows</h2>
+<p><strong>Activepieces is the friendlier AI builder:</strong> native AI pieces for major model providers, a visual agent builder, Model Context Protocol support so agents can call your flows as tools, and the option to connect your own AI provider keys on Plus and up &mdash; which drops every AI step from up to 20 credits to one. For an AI layer on top of your existing tools, see our explainer on <a href="/blog/irisgo-ai-workflow-assistant-explained/">IrisGo, the AI workflow assistant</a>.</p>
+<p><strong>n8n is the deeper AI foundation for developers:</strong> LangChain-native AI agent nodes, a Code node for custom logic around models, and the ability to point at models hosted on your own infrastructure, which matters if customer data cannot leave your region. For agents that call tools in loops, retrieval pipelines over your own documents, or private models behind your firewall, n8n&rsquo;s primitives go further.</p>
+
+<h2 id="self-hosting">Self-hosting effort compared</h2>
+<p>Self-hosting is easy on both. Activepieces deploys from a single Docker Compose file with three containers (app, PostgreSQL, Redis); n8n runs in two containers or via npm. Expect five to ten minutes of setup, a $5-to-$10-a-month virtual server, and ongoing responsibility for updates, backups, SSL, and uptime.</p>
+<p>The trade-off is identical for both: self-hosting is the cheapest option at any real volume, but it turns a monthly bill into an ownership job. If nobody on your team wants that job, Activepieces&rsquo; managed cloud is the cheaper off-ramp. Regulated teams should note that Activepieces&rsquo; paid tiers also offer air-gapped self-hosting with SSO, custom roles, and audit logs.</p>
+<h2 id="verdict">Our verdict</h2>
+<div class="verdict">
+<div><h3>Choose Activepieces if</h3><ul>
+<li>You want the easiest open-source automation a non-technical team can actually run.</li>
+<li>You are embedding automation inside a product or reselling it to clients (MIT license, no legal grey area).</li>
+<li>You want a free managed cloud tier and the cheapest paid cloud entry at $20 a month.</li>
+<li>You are building AI-powered flows and want native agent and MCP support out of the box.</li></ul></div>
+<div><h3>Choose n8n if</h3><ul>
+<li>Your team is technical and wants deep control: code at any node, custom agent logic, self-hosted models.</li>
+<li>Your workflows are complex or mission-critical and need serious error handling and retries.</li>
+<li>You need the widest integration catalog and the largest community solving edge cases.</li>
+<li>You plan to self-host anyway, which makes the price difference between them vanish.</li></ul></div>
+</div>
+<p>You are not locked in on day one. Activepieces has a permanent free cloud plan and n8n offers a cloud trial, so build the same small workflow in both and see which one your team actually finishes. Browse more options in our <a href="/category/ai-automation/">AI automation collection</a> &mdash; the tool your team will maintain beats the tool that wins on paper.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is Activepieces really open source?</h3>
+<p>Yes. Activepieces is licensed under the MIT license, which means you can use, modify, embed, and even resell it with no restrictions, and its self-hosted Community Edition runs unlimited flows on your own server. n8n is source-available rather than open source: its Sustainable Use License allows internal business use and self-hosting, but blocks using it as the basis of a competing hosted service.</p>
+<h3>Is Activepieces cheaper than n8n for a small team?</h3>
+<p>On managed cloud, usually. Activepieces has a free plan with 1,000 credits a month and a Plus plan at $20 a month for 10,000 credits, where one credit is one flow run regardless of step count. n8n Cloud has no free tier: Starter costs &euro;24 a month (&euro;20 billed annually) for 2,500 executions. Self-hosted, both cost only your server and maintenance time. Prices checked October 2026.</p>
+<h3>Which is easier to use for a non-technical team?</h3>
+<p>Activepieces is the easier tool to start with. Its builder is a vertical, top-down flow editor with plain-language configuration, and a chat-to-automation feature that drafts flows from a description. n8n&rsquo;s node canvas assumes you understand JSON data, expressions, and API credentials, so non-technical teams need a longer learning period.</p>
+<h3>Can I move my workflows between Activepieces and n8n?</h3>
+<p>There is no automatic importer between the two platforms. You rebuild each flow or workflow in the other tool, reconnect your app credentials, and test everything before switching over. Keep the old tool running until the rebuilt workflows are verified, and migrate the simplest automations first.</p>
+<h3>Which is better for AI agent workflows?</h3>
+<p>Both have genuine AI features. Activepieces ships native AI pieces, an agent builder, Model Context Protocol support, and lets you bring your own AI provider keys on Plus and up, which drops each AI step to one credit. n8n offers LangChain-native AI agent nodes and a Code node, which gives developers deeper control over custom agent behavior.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Activepieces and n8n both solve the same problem &mdash; self-run automation billed per run instead of per action &mdash; but serve different people. <strong>Activepieces wins for non-technical teams, agencies embedding automation in products, and anyone who wants a free cloud tier and a $20 entry plan under the MIT license.</strong> <strong>n8n wins for technical teams building complex, mission-critical workflows</strong>, with a larger catalog, stronger error handling, and a far larger community. Self-host, and the price gap disappears: then the choice is about who builds the workflows, not what they cost.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/n8n-vs-make-small-business/">n8n vs Make: Which Is Better for Small Business? (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/zapier-alternatives-cheaper-automation/">Zapier Alternatives: 7 Cheaper Automation Tools Compared (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/n8n-pricing-self-hosted-vs-cloud/">n8n Pricing: Self-Hosted vs Cloud Costs (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/make-vs-zapier-beginners-which-to-learn/">Make vs Zapier: Which to Learn First? (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/about/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

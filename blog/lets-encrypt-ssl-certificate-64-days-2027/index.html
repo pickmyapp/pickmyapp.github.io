@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Let's Encrypt Is Cutting SSL Certificate Lifetimes to 64 Days: What Website Owners Must Do Before February 2027 (2026)</title>
+<meta name="description" content="Let's Encrypt switches SSL certificates from 90 to 64 days on Feb 10, 2027. The verified timeline, who is affected, and a 5-step checklist to avoid downtime.">
+<meta name="keywords" content="Let's Encrypt 64 day certificates, SSL certificate lifetime change, TLS certificate expiry 2027, ACME renewal automation, CA Browser Forum 47 days, certificate renewal checklist">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Let's Encrypt Is Cutting SSL Certificate Lifetimes to 64 Days: What Website Owners Must Do Before February 2027 (2026)">
+<meta property="og:description" content="Let's Encrypt switches SSL certificates from 90 to 64 days on Feb 10, 2027. The verified timeline, who is affected, and a 5-step checklist to avoid downtime.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/lets-encrypt-ssl-certificate-64-days-2027-1.jpg">
+<meta property="article:published_time" content="2026-10-13">
+<meta property="article:modified_time" content="2026-10-13">
+<meta property="article:section" content="Web Hosting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Let's Encrypt Is Cutting SSL Certificate Lifetimes to 64 Days: What Website Owners Must Do Before February 2027 (2026)">
+<meta name="twitter:description" content="Let's Encrypt switches SSL certificates from 90 to 64 days on Feb 10, 2027. The verified timeline, who is affected, and a 5-step checklist to avoid downtime.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/lets-encrypt-ssl-certificate-64-days-2027-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/#article", "headline": "Let's Encrypt Is Cutting SSL Certificate Lifetimes to 64 Days: What Website Owners Must Do Before February 2027", "description": "Let's Encrypt switches SSL certificates from 90 to 64 days on Feb 10, 2027. The verified timeline, who is affected, and a 5-step checklist to avoid downtime.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/lets-encrypt-ssl-certificate-64-days-2027-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/", "articleSection": "Web Hosting", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need to replace my current 90-day Let's Encrypt certificate?", "acceptedAnswer": {"@type": "Answer", "text": "No. Existing certificates stay valid until they expire, and Let's Encrypt will not revoke any valid certificate as part of this change. The 64-day default applies only to certificates issued or renewed on or after February 10, 2027. The last 90-day certificate is expected to expire around May 11, 2027."}}, {"@type": "Question", "name": "Will my website go down on February 10, 2027?", "acceptedAnswer": {"@type": "Answer", "text": "Not because of the date itself. Nothing changes for certificates already installed on your site. The risk is for sites whose renewal is manual or relies on scripts with hardcoded timing: under a 64-day lifetime those routines can quietly stop working, and the site breaks when the certificate expires unrenewed."}}, {"@type": "Question", "name": "Does the 64-day change apply to paid SSL certificates too?", "acceptedAnswer": {"@type": "Answer", "text": "The 64-day default is specific to Let's Encrypt. But the CA/Browser Forum voted in April 2025 to cap all publicly trusted TLS certificates at 200 days from March 2026, 100 days from March 2027, and 47 days from March 2029, so every certificate authority is moving in the same direction."}}, {"@type": "Question", "name": "What is ACME Renewal Info (ARI) and why does it matter?", "acceptedAnswer": {"@type": "Answer", "text": "ARI is an ACME protocol extension that lets the certificate authority tell your client the ideal time to renew, instead of the client guessing from the expiry date. Let's Encrypt says renewals that are automated with an ARI-capable client should need no changes for the 64-day switch. Check your client's documentation to confirm ARI is implemented."}}, {"@type": "Question", "name": "My host uses cPanel or Plesk with auto-renewing SSL. Do I need to do anything?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not much. Panel-based auto-renewal (AutoSSL and similar) already renews on its own schedule and the vendors are updating their integrations. Still, verify that your panel and its ACME plugin are up to date, confirm one renewal succeeds on schedule, and keep expiry monitoring as a safety net."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Web Hosting", "item": "https://pickmyapp.github.io/category/web-hosting/"}, {"@type": "ListItem", "position": 3, "name": "64-Day SSL Certificates", "item": "https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li aria-current="page">64-Day SSL Certificates</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Let's Encrypt Is Cutting SSL Certificate Lifetimes to 64 Days: What Website Owners Must Do Before February 2027 (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Web Hosting</span></li>
+<li>Published <time datetime="2026-10-13"><strong>Oct 13, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>On February 10, 2027, Let's Encrypt will start issuing certificates valid for 64 days instead of 90.</strong> If your site renews automatically through a modern ACME client, you probably need to change nothing. If renewal is manual or driven by a script with hardcoded timing, act now: inventory your certificates, confirm your client supports ACME Renewal Info, and switch fixed renewal timers to a fraction of the certificate lifetime (about two-thirds). Details verified from Let's Encrypt's October 7, 2026 announcement.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/lets-encrypt-ssl-certificate-64-days-2027-1.jpg" width="640" height="360" alt="Abstract illustration of a digital padlock with a countdown motif representing shrinking SSL certificate lifetimes" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-changing">What is actually changing, and when</a></li><li><a href="#why-shorter">Why certificate lifetimes keep shrinking</a></li><li><a href="#how-it-hits">How this hits a typical small-business website</a></li><li><a href="#five-step-plan">Your 5-step plan before February 2027</a></li><li><a href="#host-managed">If your host manages SSL for you</a></li><li><a href="#own-server">If you run your own server or VPS</a></li><li><a href="#monitoring">Monitoring: the part almost everyone skips</a></li><li><a href="#after-64">What comes after 64 days</a></li><li><a href="#verdict">Who needs to act</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>If your website runs on a free Let's Encrypt certificate — likely, with more than 500 million in circulation — the renewal rhythm you know is about to change. On October 7, 2026, Let's Encrypt announced its default certificate lifetime drops from 90 days to 64 days starting February 10, 2027. This guide is for small-business owners: what the change means, who is affected, and the checklist to run before the deadline so your site never serves an expired certificate.</p>
+<h2 id="what-is-changing">What is actually changing, and when</h2>
+<p>Let’s be precise. Let’s Encrypt is not canceling your certificate, revoking anything, or taking your site down on a magic date. What changes is the <strong>validity period of newly issued certificates</strong>: from February 10, 2027, anything Let’s Encrypt issues or renews is valid for 64 days by default instead of 90. Current certificates stay valid until they expire, and the last 90-day certificate is expected to expire around May 11, 2027.</p>
+<p>It’s a staged plan. Let’s Encrypt starts issuing 64-day certificates in its <strong>staging environment on October 14, 2026</strong> so hosts and administrators can test safely. The 64-day period is a stepping stone: the default drops to 45 days in 2028, and an optional 6-day profile already exists for anyone who wants shorter today.</p>
+<div class="tablewrap"><table>
+<caption>Verified timeline, compiled from Let’s Encrypt’s October 2026 announcement and the CA/Browser Forum ballot. Dates are when new issuance rules take effect.</caption>
+<thead><tr><th scope="col">Date</th><th scope="col">Milestone</th><th scope="col">What changes</th></tr></thead>
+<tbody>
+<tr><th scope="row">Oct 14, 2026</th><td>Let’s Encrypt staging switch</td><td>Staging environment begins issuing 64-day certificates for testing.</td></tr>
+<tr><th scope="row">Feb 10, 2027</th><td>Let’s Encrypt production switch</td><td>Default “classic” ACME profile drops from 90 to 64 days. Last 90-day cert expires ~May 11, 2027.</td></tr>
+<tr><th scope="row">2027</th><td>Let’s Encrypt auth-reuse cut</td><td>Domain validation authorization reuse period reduced to 10 days.</td></tr>
+<tr><th scope="row">Feb 16, 2028</th><td>Let’s Encrypt 45-day default</td><td>Default lifetime drops again to 45 days; auth reuse shrinks to 7 hours.</td></tr>
+<tr><th scope="row">Mar 15, 2026</th><td>CA/Browser Forum step 1 (already live)</td><td>Maximum TLS certificate lifetime across all public CAs capped at 200 days.</td></tr>
+<tr><th scope="row">Mar 15, 2027</th><td>CA/Browser Forum step 2</td><td>Maximum lifetime capped at 100 days for every publicly trusted CA.</td></tr>
+<tr><th scope="row">Mar 15, 2029</th><td>CA/Browser Forum final step</td><td>Maximum lifetime capped at 47 days; domain validation reuse down to 10 days.</td></tr>
+</tbody></table></div>
+<p>The bottom row matters too. The CA/Browser Forum — the industry body of browser makers and certificate authorities — voted in April 2025 to bring <strong>all</strong> publicly trusted certificates to a 47-day maximum by March 2029, in stages. Issuers voted 25–0 in favor (five abstentions); Apple, Google, Microsoft, and Mozilla all voted yes. So even paid commercial certificates are on the same path, on a slightly different schedule.</p>
+
+<h2 id="why-shorter">Why certificate lifetimes keep shrinking</h2>
+<p>The reasoning is straightforward. A stolen private key or mis-issued certificate can be abused for as long as it stays valid — and revocation, the mechanism meant to kill bad certificates early, has never worked reliably at internet scale. The dependable way to limit the damage of a compromised key is to make sure certificates don’t live very long.</p>
+<p>Shorter lifetimes also force the ecosystem toward automation, which is where reliability comes from: a machine that renews certificates on its own doesn’t forget or go on vacation. As Let’s Encrypt’s Sarah Gran put it in the announcement, shorter lifetimes reduce the risk of key compromise and mis-issuance. Every step down the ladder — 398 days, 200, 100, 64, 45, 47 — pushes another batch of manual processes into automation.</p>
+<p class="fact"><strong>Quick fact:</strong> Let’s Encrypt deliberately chose 90-day certificates when it launched in the mid-2010s, at a time when commercial certificates routinely lasted one to three years. Its bet was that short lifetimes plus free automation would drag the whole web toward HTTPS — and it worked.</p>
+
+<h2 id="how-it-hits">How this hits a typical small-business website</h2>
+<p>Whether you must act depends on how your certificates renew today. Three common situations:</p>
+<h3>Fully automated renewal: you are almost certainly fine</h3>
+<p>If your site gets certificates through a modern ACME client that renews on its own — Certbot, your control panel’s auto-SSL, your host’s managed integration — the change should pass unnoticed; certificates simply renew more often. Let’s Encrypt says automated renewals with a client supporting ACME Renewal Info (ARI) “should be all set,” because ARI lets the CA dictate renewal timing instead of the client guessing from the expiry date.</p>
+<h3>Host-managed SSL: check, don’t assume</h3>
+<p>Most shared hosting plans include free SSL the host provisions and renews. Those integrations are being updated, and for most owners nothing breaks. But “the host handles it” is worth verifying once — especially on older or reseller plans. What to ask is covered below.</p>
+<h3>Manual or semi-manual renewal: this is the danger zone</h3>
+<p>If anyone renews certificates by calendar reminder, spreadsheet, or bespoke script, the stakes rise sharply: a routine that tolerates a slip every 90 days is far less forgiving every two months. A 2026 DigiCert–Omdia survey of 400+ IT leaders found <strong>47% still track certificates manually, such as with spreadsheets</strong>, and only 34% have a complete current inventory. If that sounds familiar, the checklist below is for you.</p>
+<img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/lets-encrypt-ssl-certificate-64-days-2027-2.jpg" width="640" height="360" alt="Illustration of a calendar with recurring renewal markers tightening from quarterly to every two months" loading="lazy">
+<p class="fact"><strong>Bottom line:</strong> nothing breaks on February 10, 2027 for certificates already installed. The failure mode is quieter and later: a renewal routine built around 90-day math silently stops working, and the site breaks weeks or months after the switch when a certificate expires unrenewed.</p>
+<!-- AD SLOT: after-second-h2 -->
+
+<h2 id="five-step-plan">Your 5-step plan before February 2027</h2>
+<p>Run through these in order. For a typical small business with one to five domains, this is an afternoon’s work.</p>
+<h3>Step 1: Inventory every certificate</h3>
+<p>List every domain and subdomain, where each certificate is installed (web server, CDN, load balancer, mail server), its issuer, expiry, and who owns renewal. Include the forgotten ones: checkout subdomains, staging sites, the blog on a separate host. A certificate you don’t know about is one you can’t automate.</p>
+<h3>Step 2: Find out how each one renews</h3>
+<p>For each certificate: what performs the renewal, and when did it last demonstrably succeed? “Certbot runs twice daily via systemd” is an answer; “I think the host does it” is not — go verify. If the host manages it, confirm the panel and its ACME integration are current.</p>
+<h3>Step 3: Check for ARI support and kill hardcoded timers</h3>
+<p>This is the step Let’s Encrypt specifically calls out. Setups built around 90-day certificates may assume “renew with 30 days left” (fine) or “renew 60 days after issuance” (broken at 64 days). Renew at approximately <strong>two-thirds of the certificate lifetime</strong>, and grep cron jobs, wrapper scripts, and runbooks for hardcoded numbers like 83, 80, or 60. If your client supports ACME Renewal Info, the CA handles timing for you — confirm ARI in your client’s docs.</p>
+<h3>Step 4: Test in staging</h3>
+<p>From October 14, 2026, Let’s Encrypt’s staging environment issues 64-day certificates so you can rehearse. Run one full renewal against staging and confirm the new certificate installs and your web server picks it up — many outages come not from failed issuance but from a server never reloaded after renewal. Certbot’s dry-run mode exercises staging.</p>
+<h3>Step 5: Add expiry monitoring independent of the renewal tool</h3>
+<p>The renewal tool should never be the only thing watching expiry. Set up monitoring that checks the live certificate from the outside and alerts you well before expiry. The alert math needs adjusting for shorter lifetimes — see the monitoring section below.</p>
+<h2 id="host-managed">If your host manages SSL for you</h2>
+<p>On shared or managed hosting, SSL is usually a control-panel checkbox, and the 64-day change is mostly your provider’s problem. Confirm you’re covered:</p>
+<ul>
+<li><strong>Find the toggle.</strong> In cPanel it’s under Security → SSL/TLS Status (AutoSSL); in Plesk, under the domain’s SSL/TLS Certificates. Confirm auto-renewal is on for every domain, including add-ons and subdomains.</li>
+<li><strong>Ask your host one question.</strong> “Are your AutoSSL/ACME integrations updated for Let’s Encrypt’s 64-day default from February 2027, and will renewals continue with no action from me?” If support sounds confused, that tells you something about your host.</li>
+<li><strong>Confirm one successful renewal.</strong> Check the certificate’s issuance date in your browser (padlock → connection details) and make sure it’s recent relative to the 64-day window.</li>
+</ul>
+<p>If hands-off SSL matters in your hosting choice, our <a href="/blog/hostinger-vs-bluehost/">Hostinger vs Bluehost</a> and <a href="/blog/best-cheap-web-hosting-wordpress-2026/">cheap WordPress hosting</a> comparisons cover how shared hosts handle certificates, and <a href="/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround</a> looks at managed platforms where renewal is entirely the provider’s job.</p>
+
+<h2 id="own-server">If you run your own server or VPS</h2>
+<p>On a VPS or dedicated server, renewals are yours to own. The standard tooling handles this well — the change mostly needs verification, not surgery.</p>
+<ul>
+<li><strong>Keep your ACME client current.</strong> Update Certbot, acme.sh, lego, or cert-manager, and confirm ARI support in its docs. Clients that follow the CA’s renewal guidance adapt automatically.</li>
+<li><strong>Verify the deploy step, not just issuance.</strong> The classic failure: renewal succeeds but the web server keeps serving the old certificate because nothing reloaded it. Your renewal hook must reload the web server (or signal the reverse proxy) after every renewal — test that path end to end.</li>
+<li><strong>Mind multi-server setups.</strong> If certificates are issued on one machine and copied elsewhere, or terminated at a load balancer, every copy needs refreshing. Centralize issuance where possible; otherwise script distribution and monitor every endpoint.</li>
+<li><strong>Review validation reliability.</strong> Shorter lifetimes mean more frequent domain validation — keep port 80 (HTTP-01) or DNS API credentials (DNS-01) dependable. Let’s Encrypt is also shrinking validation reuse to 10 days in 2027 and 7 hours in 2028, so expect fresh validation on nearly every renewal.</li>
+</ul>
+<p>Our <a href="/blog/best-vps-hosting-for-developers/">VPS hosting comparison</a> helps if you’re weighing self-managing a server against moving to a managed platform.</p>
+
+<h2 id="monitoring">Monitoring: the part almost everyone skips</h2>
+<p>Most expired-certificate outages hit people who <em>had</em> automation. The renewal failed silently — an expired DNS credential, a changed firewall rule, a broken hook script — and nobody noticed until visitors saw a warning page. Independent expiry monitoring is the cheapest insurance here.</p>
+<p>Thresholds need rethinking. Alerting at 30, 14, and 7 days was designed for 90-day and 365-day certificates; on a 64-day certificate a 30-day alert fires at half life. Use <strong>percentage-based alerting</strong> instead: warn at 50% of lifetime used, escalate at 75%, page someone at 90%. That math keeps working when the default drops to 45 days in 2028.</p>
+<p>Most uptime monitors include certificate-expiry checks — enable them for every public hostname, and route alerts to a shared channel rather than one inbox. Certificates expiring while the owner is on leave is a classic.</p>
+
+<h2 id="after-64">What comes after 64 days</h2>
+<p>Treat the 64-day switch as a rehearsal, not the destination. The direction of travel is set for the rest of the decade:</p>
+<ul>
+<li><strong>February 2028:</strong> Let’s Encrypt’s default drops to 45 days.</li>
+<li><strong>March 2027:</strong> the CA/Browser Forum caps <em>all</em> publicly trusted certificates at 100 days — relevant if you buy commercial certificates.</li>
+<li><strong>March 2029:</strong> that cap falls to 47 days, with domain validation reusable for only 10 days.</li>
+</ul>
+<p>The practical takeaway: invest once in proper automation and monitoring now, and each subsequent step down costs you nothing. The organizations that will suffer are the ones that patch their scripts for 64 days and declare victory, only to repeat the scramble at 45. Build the renewal pipeline around the CA’s guidance (ARI where available, renew at a fraction of lifetime otherwise, percentage-based monitoring), and the 2028 and 2029 deadlines become non-events.</p>
+
+<h2 id="verdict">Who needs to act</h2>
+<div class="verdict">
+<div><h3>You can relax if</h3><ul>
+<li>Your hosting provider or control panel renews certificates automatically and is on a current version.</li>
+<li>Your ACME client is up to date and supports ACME Renewal Info.</li>
+<li>You have independent expiry monitoring with alerts that reach the team.</li>
+<li>You tested one full renewal cycle and confirmed the server serves the new certificate.</li></ul></div>
+<div><h3>Act before February 2027 if</h3><ul>
+<li>Anyone renews certificates manually, by calendar reminder or spreadsheet.</li>
+<li>Renewal timing is hardcoded in cron jobs, scripts, or runbooks (grep for 83, 80, 60).</li>
+<li>You are unsure which system performs renewals, or when the last one succeeded.</li>
+<li>Your certificates are copied across multiple servers or a load balancer by hand.</li></ul></div>
+</div>
+<p>If you’re in the second box, the five-step plan is an afternoon’s work. The highest-leverage move is fully automated renewal with a client that follows the CA’s guidance — everything else is a safety net.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Do I need to replace my current 90-day Let’s Encrypt certificate?</h3>
+<p>No. Existing certificates stay valid until they expire, and Let’s Encrypt will not revoke any valid certificate as part of this change. The 64-day default applies only to certificates issued or renewed on or after February 10, 2027. The last 90-day certificate is expected to expire around May 11, 2027.</p>
+<h3>Will my website go down on February 10, 2027?</h3>
+<p>Not because of the date itself. Nothing changes for certificates already installed on your site. The real risk is for sites whose renewal is manual or driven by scripts with hardcoded timing: under a 64-day lifetime those routines can quietly stop working, and the site breaks when a certificate later expires unrenewed.</p>
+<h3>Does the 64-day change apply to paid SSL certificates too?</h3>
+<p>The 64-day default is specific to Let’s Encrypt. But the CA/Browser Forum voted in April 2025 to cap all publicly trusted TLS certificates at 200 days from March 2026, 100 days from March 2027, and 47 days from March 2029, so every certificate authority is moving in the same direction on a slightly different schedule.</p>
+<h3>What is ACME Renewal Info (ARI) and why does it matter?</h3>
+<p>ARI is an ACME protocol extension that lets the certificate authority tell your client the ideal time to renew, instead of the client guessing from the expiry date. Let’s Encrypt says renewals that are automated with an ARI-capable client should need no changes for the 64-day switch. Check your ACME client’s documentation to confirm ARI is implemented.</p>
+<h3>My host uses cPanel or Plesk with auto-renewing SSL. Do I need to do anything?</h3>
+<p>Usually not much. Panel-based auto-renewal already renews on its own schedule and vendors are updating their integrations for the new lifetimes. Still, verify that your panel and its ACME plugin are up to date, confirm one renewal succeeds on schedule, and keep expiry monitoring as a safety net.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Let’s Encrypt’s 64-day move is the latest turn of a decade-long ratchet toward shorter, fully automated certificate lifetimes — and with the industry headed to 47 days by 2029, it won’t be the last. For most small-business sites it’s a non-event, provided renewals are automated with a current client and expiry dates are monitored independently. Spend an afternoon on the five-step plan before February 2027: inventory certificates, fix hardcoded timers, test in staging, set up monitoring. Do it once, and the 45-day default in 2028 passes quietly too.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/best-cheap-web-hosting-wordpress-2026/">Best Cheap Web Hosting for WordPress in 2026</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround for Agencies</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-vps-hosting-for-developers/">Best VPS Hosting for Developers Compared (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/hostinger-vs-bluehost/">Hostinger vs Bluehost Compared Honestly</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

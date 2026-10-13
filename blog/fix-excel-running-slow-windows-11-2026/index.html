@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Fix Excel Running Slow on Windows 11 (2026): 9 Fixes That Work</title>
+<meta name="description" content="Excel running slow on Windows 11? Diagnose the cause first, then apply 9 proven fixes: add-ins, hardware acceleration, volatile functions, file bloat, and more.">
+<meta name="keywords" content="excel running slow windows 11, excel slow to respond, speed up excel, excel lagging, excel not responding, excel performance fix">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/fix-excel-running-slow-windows-11-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="How to Fix Excel Running Slow on Windows 11 (2026): 9 Fixes That Work">
+<meta property="og:description" content="Excel running slow on Windows 11? Diagnose the cause first, then apply 9 proven fixes: add-ins, hardware acceleration, volatile functions, file bloat, and more.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/fix-excel-running-slow-windows-11-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-excel-running-slow-windows-11-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-13">
+<meta property="article:modified_time" content="2026-10-13">
+<meta property="article:section" content="Software Tutorials">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Fix Excel Running Slow on Windows 11 (2026): 9 Fixes That Work">
+<meta name="twitter:description" content="Excel running slow on Windows 11? Diagnose the cause first, then apply 9 proven fixes: add-ins, hardware acceleration, volatile functions, file bloat, and more.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-excel-running-slow-windows-11-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://pickmyapp.github.io/blog/fix-excel-running-slow-windows-11-2026/#article","headline":"How to Fix Excel Running Slow on Windows 11 (2026): 9 Fixes That Work","description":"Excel running slow on Windows 11? Diagnose the cause first, then apply 9 proven fixes: add-ins, hardware acceleration, volatile functions, file bloat, and more.","image":"https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-excel-running-slow-windows-11-2026-1.jpg","author":{"@type":"Organization","name":"PickMyApp Research Team","url":"https://pickmyapp.github.io/about/"},"publisher":{"@type":"Organization","name":"PickMyApp","logo":{"@type":"ImageObject","url":"https://pickmyapp.github.io/images/logo.svg"}},"datePublished":"2026-10-13","dateModified":"2026-10-13","mainEntityOfPage":"https://pickmyapp.github.io/blog/fix-excel-running-slow-windows-11-2026/","articleSection":"Software Tutorials","inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is Excel slow on Windows 11 but was fine on Windows 10?","acceptedAnswer":{"@type":"Answer","text":"The usual culprits are display-related: outdated GPU drivers clashing with Excel's hardware graphics acceleration, and a stale default printer that Excel queries at startup. Disabling hardware graphics acceleration and resetting the default printer fix most of these cases."}},{"@type":"Question","name":"Does more RAM fix slow Excel?","acceptedAnswer":{"@type":"Answer","text":"Sometimes, but it is rarely the first thing to try. If you are running 32-bit Excel, you are capped at 2 GB of virtual memory no matter how much RAM is installed \u2014 switching to 64-bit Excel removes that ceiling entirely. Above 8 GB of RAM, slow Excel is almost always caused by the workbook itself: volatile formulas, add-ins, or file bloat."}},{"@type":"Question","name":"Should I use 32-bit or 64-bit Excel?","acceptedAnswer":{"@type":"Answer","text":"Use 64-bit Excel unless you depend on old 32-bit-only COM add-ins. The 32-bit version is limited to 2 GB of virtual memory, which large workbooks exhaust quickly. The 64-bit version has effectively no memory ceiling for spreadsheet work. Check yours under File, then Account, then About Excel."}},{"@type":"Question","name":"Will saving as .xlsb lose anything in my workbook?","acceptedAnswer":{"@type":"Answer","text":"No. The binary .xlsb format stores everything a normal .xlsx file does \u2014 formulas, formatting, charts, and VBA macros \u2014 but in a compact binary layout that opens and saves faster and produces a smaller file. The only downside is that some third-party tools cannot read .xlsb files, so keep an .xlsx copy if you share with systems that might."}},{"@type":"Question","name":"Why does Excel freeze for a few seconds every time I type one character?","acceptedAnswer":{"@type":"Answer","text":"That pattern points to volatile functions or automatic calculation on a large workbook. Functions like OFFSET, INDIRECT, NOW, and TODAY recalculate on every change, so each keystroke triggers a full recalculation. Switch to manual calculation mode (Formulas tab, then Calculation Options, then Manual) and replace volatile functions where you can."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pickmyapp.github.io/"},{"@type":"ListItem","position":2,"name":"Software Tutorials","item":"https://pickmyapp.github.io/category/software-tutorials/"},{"@type":"ListItem","position":3,"name":"Fix Excel Running Slow","item":"https://pickmyapp.github.io/blog/fix-excel-running-slow-windows-11-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/software-tutorials/">Software Tutorials</a></li>
+<li aria-current="page">Fix Excel Running Slow</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">How to Fix Excel Running Slow on Windows 11 (2026): 9 Fixes That Work</h1>
+<ul class="metaline">
+<li><span class="tag">Software Tutorials</span></li>
+<li>Published <time datetime="2026-10-13"><strong>Oct 13, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>The three fixes that resolve most slow-Excel cases on Windows 11:</strong> (1) disable faulty add-ins by testing in Safe Mode (<strong>Win + R</strong>, then <strong>excel /safe</strong>), (2) turn off hardware graphics acceleration under <strong>File &gt; Options &gt; Advanced &gt; Display</strong>, and (3) switch calculation to manual on formula-heavy workbooks (<strong>Formulas &gt; Calculation Options &gt; Manual</strong>). If only one file is slow, the workbook itself is bloated — clear conditional formatting, reset the used range, and save as <strong>.xlsb</strong>.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-excel-running-slow-windows-11-2026-1.jpg" width="640" height="360" alt="Illustration of a spreadsheet with a stopwatch, representing diagnosing slow Excel performance" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#diagnose">Step 0: Diagnose before you fix</a></li><li><a href="#fix-addins">Fix 1: Run Safe Mode and disable bad add-ins</a></li><li><a href="#fix-hardware-acceleration">Fix 2: Turn off hardware graphics acceleration</a></li><li><a href="#fix-calculation">Fix 3: Switch to manual calculation and tame volatile functions</a></li><li><a href="#fix-file-bloat">Fix 4: Shrink the bloated workbook</a></li><li><a href="#fix-office">Fix 5: Repair Office, update, and check 32-bit vs 64-bit</a></li><li><a href="#windows-11">Fix 6: Windows 11-specific settings</a></li><li><a href="#ranked">What actually helps most, ranked</a></li><li><a href="#hardware">When it is the hardware, not Excel</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Excel running slow on Windows 11 is one of the most common Office complaints. The good news: the causes are well understood. In almost every case the slowdown comes from one of five things — a misbehaving add-in, GPU rendering conflicts, constant recalculation, a bloated workbook, or a damaged Office install — and each has a concrete fix. Diagnose first (two minutes), then apply the fixes that match your symptoms.</p>
+
+<h2 id="diagnose">Step 0: Diagnose before you fix</h2>
+<p>Two minutes of diagnosis saves an hour of random tweaking. Answer these three questions:</p>
+<ul>
+<li><strong>Is it one file or every file?</strong> Open a blank workbook and type in a few cells. If the blank workbook is fast but your real file crawls, the problem is the workbook (Fix 3 and Fix 4). If every file is slow, the problem is Excel or Windows (Fix 1 and Fix 2).</li>
+<li><strong>Is it fast in Safe Mode?</strong> Press <strong>Win + R</strong>, type <strong>excel /safe</strong>, and press Enter. If your file suddenly behaves, an add-in is the culprit (Fix 1).</li>
+<li><strong>What does Task Manager say?</strong> Press <strong>Ctrl + Shift + Esc</strong> and watch CPU and memory while Excel lags. One CPU core pinned at 100% points to recalculation (Fix 3). Memory climbing toward 2 GB on 32-bit Excel points to the memory ceiling (Fix 5).</li>
+</ul>
+<p>Write down what you found. Every fix below maps to one of these symptoms.</p>
+
+<h2 id="fix-addins">Fix 1: Run Safe Mode and disable bad add-ins</h2>
+<p>Add-ins are the most common cause of Excel-wide slowness. COM add-ins from PDF tools, antivirus suites, and data connectors load with every Excel session, and one poorly written add-in can add seconds to every action. Microsoft's own support engineers start here, and so should you.</p>
+<p><strong>Confirm it:</strong> launch Excel in Safe Mode (<strong>Win + R</strong>, type <strong>excel /safe</strong>, press Enter) — or hold <strong>Ctrl</strong> while clicking the Excel icon and accept the prompt. If Excel feels normal, an add-in is guilty.</p>
+<p><strong>Find the culprit:</strong></p>
+<ol class="list">
+<li>In normal Excel, go to <strong>File &gt; Options &gt; Add-ins</strong>.</li>
+<li>At the bottom, set the Manage dropdown to <strong>COM Add-ins</strong> and click <strong>Go</strong>.</li>
+<li>Uncheck everything and click <strong>OK</strong>, then restart Excel normally.</li>
+<li>Re-enable add-ins one at a time, restarting Excel after each, until the slowness returns. The last one you enabled is the problem — leave it off or check the vendor's site for an update.</li>
+</ol>
+<p>Repeat the same process for the <strong>Excel Add-ins</strong> entry in the Manage dropdown. Common offenders include PDF printer add-ins, antivirus Office plugins, and old data-analysis toolbars you installed years ago and forgot about.</p>
+
+<h2 id="fix-hardware-acceleration">Fix 2: Turn off hardware graphics acceleration</h2>
+<p>Excel uses your GPU to render the interface, and on Windows 11 this is a frequent source of lag — scrolling stutters, typing delays, and charts that redraw slowly — especially with integrated graphics or outdated display drivers. Disabling it forces Excel to render with the CPU, which is often faster in practice on affected systems.</p>
+<ol class="list">
+<li>Open Excel and go to <strong>File &gt; Options &gt; Advanced</strong>.</li>
+<li>Scroll to the <strong>Display</strong> section.</li>
+<li>Check <strong>Disable hardware graphics acceleration</strong>.</li>
+<li>Click <strong>OK</strong> and restart Excel.</li>
+</ol>
+<p>If the lag disappears, leave it off — you lose nothing except GPU-rendered animations. Also update your display driver (Intel, AMD, or NVIDIA) through Windows Update or the manufacturer's site, because the underlying conflict is usually a driver issue; a fixed driver may let you re-enable acceleration later.</p>
+<!-- AD SLOT: after-second-h2 -->
+<!-- <div class="ad" id="ad-after-h2-2" style="min-height:250px"></div> -->
+
+<h2 id="fix-calculation">Fix 3: Switch to manual calculation and tame volatile functions</h2>
+<p>If Excel freezes for a second or two every time you edit a cell, you are watching recalculation happen. Excel recalculates every formula in the workbook on each change by default. On a workbook with thousands of formulas, that turns typing into a slideshow.</p>
+<h3>Switch to manual calculation</h3>
+<ol class="list">
+<li>Go to the <strong>Formulas</strong> tab and click <strong>Calculation Options</strong>.</li>
+<li>Select <strong>Manual</strong>.</li>
+<li>Press <strong>F9</strong> whenever you want Excel to recalculate.</li>
+</ol>
+<p>Typing becomes instant because Excel stops recalculating after every keystroke. Respect the tradeoff: formulas do not update until you press F9, so press F9 before trusting any number, and switch back to Automatic when you finish editing a heavy model.</p>
+<h3>Replace volatile functions</h3>
+<p>Some functions recalculate on <em>every</em> change no matter what. These volatile functions — <strong>OFFSET</strong>, <strong>INDIRECT</strong>, <strong>NOW</strong>, <strong>TODAY</strong>, <strong>RAND</strong>, <strong>RANDBETWEEN</strong> — are the reason a few hundred careless formulas can make a whole workbook feel broken.</p>
+<ul>
+<li>Replace <strong>OFFSET</strong> with <strong>INDEX</strong> for dynamic ranges — INDEX is not volatile and does the same job in most cases.</li>
+<li>Replace <strong>INDIRECT</strong> with direct sheet references or <strong>CHOOSE</strong> where possible.</li>
+<li>Replace <strong>NOW()</strong> and <strong>TODAY()</strong> used as timestamps with a pasted static value if the date does not need to update live.</li>
+<li>Press <strong>Ctrl + [</strong> on a formula cell to trace its precedents and find which volatile calls feed the slowdown.</li>
+</ul>
+<p class="fact"><strong>Quick fact:</strong> also check <strong>File &gt; Options &gt; Advanced &gt; Formulas</strong> and confirm multi-threaded calculation is enabled — it lets Excel use all your CPU cores for recalculation instead of one.</p>
+
+<h2 id="fix-file-bloat">Fix 4: Shrink the bloated workbook</h2>
+<p>When one specific file is slow, the file itself is almost always the problem. Workbooks accumulate invisible weight: formatting applied to entire columns, conditional formatting rules copied down thousands of rows, uncompressed images, and links to files that no longer exist. Here are the bloat culprits, roughly in order of impact:</p>
+<div class="tablewrap"><table>
+<caption>The most common sources of workbook bloat and how to clear each one.</caption>
+<thead><tr><th scope="col">Culprit</th><th scope="col">Why it slows Excel</th><th scope="col">Fix</th></tr></thead>
+<tbody>
+<tr><th scope="row">Conditional formatting</th><td>Rules evaluated on every recalculation across large ranges</td><td><strong>Home &gt; Conditional Formatting &gt; Clear Rules</strong> on sheets that do not need it; keep rules to the smallest range possible</td></tr>
+<tr><th scope="row">Oversized used range</th><td>Excel remembers formatting far below your real data</td><td>Press <strong>Ctrl + End</strong> — if it lands far past your data, delete the excess rows and columns, then save</td></tr>
+<tr><th scope="row">Full-column references</th><td>Formulas like SUM(A:A) force Excel to scan a million rows</td><td>Replace with bounded ranges (A1:A5000) or Excel Tables (Ctrl + T), which expand automatically</td></tr>
+<tr><th scope="row">Uncompressed images</th><td>Embedded photos bloat file size and redraw time</td><td>Select a picture, then <strong>Picture Format &gt; Compress Pictures</strong>, and apply to all pictures</td></tr>
+<tr><th scope="row">External links</th><td>Excel tries to reach dead network paths on open and recalc</td><td><strong>Data &gt; Edit Links</strong> — break links to files you no longer use</td></tr>
+</tbody></table></div>
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-excel-running-slow-windows-11-2026-2.jpg" width="640" height="360" alt="Illustration of a spreadsheet being cleaned up, with excess rows and formatting being removed" decoding="async" loading="lazy"></div>
+<p>After cleaning, save in binary format: press <strong>F12</strong>, choose <strong>Excel Binary Workbook (*.xlsb)</strong>, and save. The .xlsb format stores the same content — formulas, formatting, charts, even macros — in a compact binary layout that opens and saves noticeably faster. Keep an .xlsx copy only if you share with third-party tools that cannot read binary workbooks.</p>
+
+<h2 id="fix-office">Fix 5: Repair Office, update everything, and check 32-bit vs 64-bit</h2>
+<p>If Excel is slow across all files and Safe Mode did not help, the installation itself may be damaged or outdated.</p>
+<h3>Run the Office repair tool</h3>
+<ol class="list">
+<li>Open <strong>Settings &gt; Apps &gt; Installed apps</strong> (press <strong>Win + I</strong> first).</li>
+<li>Find <strong>Microsoft 365</strong> or <strong>Microsoft Office</strong>, click the three dots, and choose <strong>Modify</strong>.</li>
+<li>Choose <strong>Quick Repair</strong> and click <strong>Repair</strong> — it takes a few minutes and keeps your files and settings.</li>
+<li>If the problem persists, repeat and choose <strong>Online Repair</strong>, which re-downloads damaged components from Microsoft's servers.</li>
+</ol>
+<h3>Install updates</h3>
+<p>Run Windows Update (<strong>Settings &gt; Windows Update</strong>) and, inside any Office app, <strong>File &gt; Account &gt; Update Options &gt; Update Now</strong>. Bad Office builds cause performance regressions often enough that many "Excel suddenly got slow" threads end with an update.</p>
+<h3>Make sure you are on 64-bit Excel</h3>
+<p>Go to <strong>File &gt; Account &gt; About Excel</strong> and look at the top line. If it says 32-bit, you have a hard ceiling: 32-bit Excel is limited to 2 GB of virtual memory no matter how much RAM your PC has. The 64-bit version removes the ceiling almost entirely. Unless you depend on ancient 32-bit-only COM add-ins, reinstall the 64-bit version.</p>
+
+<h2 id="windows-11">Fix 6: Windows 11-specific settings</h2>
+<p>A few slowdowns are specific to how Windows 11 interacts with Office. Work through these if the generic fixes did not fully resolve it:</p>
+<ul>
+<li><strong>Update your GPU driver.</strong> Windows 11's display stack is pickier than Windows 10's. Get the latest driver from Intel, AMD, or NVIDIA directly — display-driver bugs cause a large share of Excel rendering lag.</li>
+<li><strong>Set the power mode to Best performance.</strong> On laptops, Windows 11 throttles the CPU on battery-friendly plans. Go to <strong>Settings &gt; System &gt; Power &amp; battery</strong> and set Power mode to <strong>Best performance</strong> while plugged in.</li>
+<li><strong>Fix the default printer.</strong> Excel queries the default printer at startup and sometimes during recalculation. If your default is a network printer that no longer responds, Excel hangs waiting for it. Go to <strong>Settings &gt; Bluetooth &amp; devices &gt; Printers &amp; scanners</strong> and set <strong>Microsoft Print to PDF</strong> as the default.</li>
+<li><strong>Clear temporary files.</strong> Press <strong>Win + R</strong>, type <strong>%temp%</strong>, press Enter, and delete what Windows allows. Corrupted temp files cause mysterious Office slowdowns that nothing else explains.</li>
+<li><strong>Close background resource hogs.</strong> Browsers with dozens of tabs, Teams, and antivirus scans compete for the same CPU and memory Excel wants. Check Task Manager's Processes tab sorted by CPU while Excel lags.</li>
+</ul>
+
+<h2 id="ranked">What actually helps most, ranked</h2>
+<p>No honest guide can give you lab benchmarks that hold on every PC — results depend on your file, add-ins, and hardware. But across Microsoft's own support threads and independent troubleshooting guides, the same fixes keep resolving the most cases. Ranked by typical impact versus effort:</p>
+<div class="tablewrap"><table>
+<caption>Fixes ranked by how often they resolve slow-Excel cases, based on the consensus across Microsoft support threads and independent guides.</caption>
+<thead><tr><th scope="col">Rank</th><th scope="col">Fix</th><th scope="col">Typical impact</th><th scope="col">Effort</th></tr></thead>
+<tbody>
+<tr><th scope="row">1</th><td>Disable the bad add-in (Safe Mode test)</td><td>High — the most common cause of Excel-wide slowness</td><td>10 minutes</td></tr>
+<tr><th scope="row">2</th><td>Switch to manual calculation</td><td>High — typing goes from freezing to instant on formula-heavy files</td><td>30 seconds</td></tr>
+<tr><th scope="row">3</th><td>Disable hardware graphics acceleration</td><td>High on systems with driver conflicts — fixes scrolling and typing lag</td><td>1 minute</td></tr>
+<tr><th scope="row">4</th><td>Clear conditional formatting and shrink the used range</td><td>High for bloated single files</td><td>10–20 minutes</td></tr>
+<tr><th scope="row">5</th><td>Replace volatile functions (OFFSET, INDIRECT)</td><td>Medium to high — depends on how many the workbook uses</td><td>30+ minutes</td></tr>
+<tr><th scope="row">6</th><td>Save as .xlsb</td><td>Medium — smaller file, faster open and save</td><td>1 minute</td></tr>
+<tr><th scope="row">7</th><td>Repair Office / install updates</td><td>Medium — fixes installation-level corruption</td><td>15–30 minutes</td></tr>
+<tr><th scope="row">8</th><td>Switch from 32-bit to 64-bit Excel</td><td>High for large files hitting the 2 GB ceiling, otherwise none</td><td>Reinstall</td></tr>
+<tr><th scope="row">9</th><td>Fix the default printer</td><td>Low to high — niche, but instant when it is the cause</td><td>1 minute</td></tr>
+</tbody></table></div>
+<p>If you only have five minutes, do the top three: Safe Mode test, manual calculation, and hardware acceleration. Those three alone resolve the majority of cases.</p>
+
+<h2 id="hardware">When it is the hardware, not Excel</h2>
+<p>Sometimes Excel is slow because the PC is genuinely underpowered. Signs: the whole system lags (not just Excel), Task Manager shows memory above 85% with Excel open, and the file is hundreds of megabytes with Power Pivot models or millions of rows. In that case software tweaks have limits — an SSD, 16 GB of RAM, and a modern multi-core CPU each make a real difference. But try every fix above first: most slow-Excel complaints on modern hardware are software problems wearing a hardware disguise.</p>
+<p>One more consideration: if your team is running the business out of monster spreadsheets — shared workbooks with dozens of tabs acting as a CRM, project tracker, and inventory system — the cheapest long-term fix may be moving that workflow to a purpose-built tool. Our <a href="/blog/notion-vs-asana-project-tracking/">Notion vs Asana</a> and <a href="/blog/asana-vs-monday-vs-clickup-small-teams/">Asana vs Monday vs ClickUp</a> comparisons cover project tracking alternatives, and <a href="/blog/clickup-pricing-explained-2026/">our ClickUp pricing breakdown</a> shows what a dedicated tool actually costs.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Why is Excel slow on Windows 11 but was fine on Windows 10?</h3>
+<p>The usual culprits are display-related: outdated GPU drivers clashing with Excel's hardware graphics acceleration, and a stale default printer that Excel queries at startup. Disabling hardware graphics acceleration and resetting the default printer fix most of these cases.</p>
+<h3>Does more RAM fix slow Excel?</h3>
+<p>Sometimes, but it is rarely the first thing to try. If you are running 32-bit Excel, you are capped at 2 GB of virtual memory no matter how much RAM is installed — switching to 64-bit Excel removes that ceiling entirely. Above 8 GB of RAM, slow Excel is almost always caused by the workbook itself: volatile formulas, add-ins, or file bloat.</p>
+<h3>Should I use 32-bit or 64-bit Excel?</h3>
+<p>Use 64-bit Excel unless you depend on old 32-bit-only COM add-ins. The 32-bit version is limited to 2 GB of virtual memory, which large workbooks exhaust quickly. The 64-bit version has effectively no memory ceiling for spreadsheet work. Check yours under File, then Account, then About Excel.</p>
+<h3>Will saving as .xlsb lose anything in my workbook?</h3>
+<p>No. The binary .xlsb format stores everything a normal .xlsx file does — formulas, formatting, charts, and VBA macros — but in a compact binary layout that opens and saves faster and produces a smaller file. The only downside is that some third-party tools cannot read .xlsb files, so keep an .xlsx copy if you share with systems that might.</p>
+<h3>Why does Excel freeze for a few seconds every time I type one character?</h3>
+<p>That pattern points to volatile functions or automatic calculation on a large workbook. Functions like OFFSET, INDIRECT, NOW, and TODAY recalculate on every change, so each keystroke triggers a full recalculation. Switch to manual calculation mode (Formulas tab, then Calculation Options, then Manual) and replace volatile functions where you can.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Slow Excel on Windows 11 is almost never mysterious once you diagnose it: test in Safe Mode to catch bad add-ins, disable hardware graphics acceleration to rule out GPU conflicts, and switch heavy workbooks to manual calculation. If only one file is slow, clean the workbook — conditional formatting, the used range, and full-column references are the usual suspects. Work the list in order, and blame the hardware only after the software fixes have had their say.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/notion-vs-asana-project-tracking/">Notion vs Asana for Project Tracking</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/asana-vs-monday-vs-clickup-small-teams/">Asana vs Monday vs ClickUp for Small Teams in 2026</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/trello-alternatives-kanban-tools/">Trello Alternatives: 6 Kanban Tools Compared</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/clickup-pricing-explained-2026/">ClickUp Pricing Explained: Is It Worth It in 2026?</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

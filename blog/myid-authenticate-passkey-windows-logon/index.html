@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyID Authenticate Explained: Passkey Windows Logon for Phishing-Resistant Small Teams (2026)</title>
+<meta name="description" content="MyID Authenticate brings FIDO passkeys to Windows logon, VPNs and legacy apps. What Intercede's platform is, how it works, pricing, and small-team alternatives.">
+<meta name="keywords" content="MyID Authenticate, Intercede passkeys, passkey Windows logon, FIDO2 Windows login, phishing resistant authentication, small business passkeys, Entra passkey alternatives">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="MyID Authenticate Explained: Passkey Windows Logon for Phishing-Resistant Small Teams (2026)">
+<meta property="og:description" content="MyID Authenticate brings FIDO passkeys to Windows logon, VPNs and legacy apps. What Intercede's platform is, how it works, pricing, and small-team alternatives.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/myid-authenticate-passkey-windows-logon-1.jpg">
+<meta property="article:published_time" content="2026-10-13">
+<meta property="article:modified_time" content="2026-10-13">
+<meta property="article:section" content="Personal Cybersecurity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MyID Authenticate Explained: Passkey Windows Logon for Phishing-Resistant Small Teams (2026)">
+<meta name="twitter:description" content="MyID Authenticate brings FIDO passkeys to Windows logon, VPNs and legacy apps. What Intercede's platform is, how it works, pricing, and small-team alternatives.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/myid-authenticate-passkey-windows-logon-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/#article", "headline": "MyID Authenticate Explained: Passkey Windows Logon for Phishing-Resistant Small Teams", "description": "MyID Authenticate brings FIDO passkeys to Windows logon, VPNs and legacy apps. What Intercede's platform is, how it works, pricing, and small-team alternatives.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/myid-authenticate-passkey-windows-logon-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/", "articleSection": "Personal Cybersecurity", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is MyID Authenticate the same as Microsoft Entra's passkey support?", "acceptedAnswer": {"@type": "Answer", "text": "No. Entra's passkey support covers Microsoft's own identity stack. MyID Authenticate is a standalone FIDO authentication server and passkey issuer that federates with Entra ID and Microsoft 365, and extends passkeys to Windows desktops (including offline logon), on-premise applications, VPNs, and legacy systems via RADIUS."}}, {"@type": "Question", "name": "Can users sign in to Windows with a passkey when the device is offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Intercede states that Passkey Windows Logon works on Windows 10 and 11 including offline sign-in. The cryptographic verification happens locally on the device against the previously registered credential, so no server round-trip is required at logon time."}}, {"@type": "Question", "name": "What kinds of passkeys does MyID Authenticate support?", "acceptedAnswer": {"@type": "Answer", "text": "FIDO2 security keys, device-bound passkeys, and synced passkeys, with self-service enrollment for users. That range matters for mixed fleets: hardware keys for high-assurance roles, device-bound passkeys for standard laptops, and synced passkeys where convenience matters more."}}, {"@type": "Question", "name": "How much does MyID Authenticate cost?", "acceptedAnswer": {"@type": "Answer", "text": "Intercede publishes no public pricing for MyID Authenticate; it is sold through their enterprise sales team. Small teams should request a quote and compare it against alternatives with transparent pricing, such as Microsoft Entra ID P1 at about $6 per user per month or passwordless platforms with free tiers."}}, {"@type": "Question", "name": "Our team uses Google Workspace, not Microsoft 365. Is MyID Authenticate relevant?", "acceptedAnswer": {"@type": "Answer", "text": "Partly. Its public positioning centers on Windows desktops and federation with Microsoft Entra ID and Microsoft 365, but SAML 2.0 and OpenID Connect support means the same passkeys can extend to other cloud applications. Google-centric teams without a Windows footprint will likely find Google's own passkey support simpler."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Personal Cybersecurity", "item": "https://pickmyapp.github.io/category/cybersecurity/"}, {"@type": "ListItem", "position": 3, "name": "MyID Authenticate", "item": "https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/cybersecurity/">Personal Cybersecurity</a></li>
+<li aria-current="page">MyID Authenticate</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">MyID Authenticate Explained: Passkey Windows Logon for Phishing-Resistant Small Teams (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Personal Cybersecurity</span></li>
+<li>Published <time datetime="2026-10-13"><strong>Oct 13, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>MyID Authenticate is a new FIDO passkey platform from UK digital-identity company Intercede, launched October 12, 2026.</strong> It works as both a FIDO authentication server and a passkey issuer, bringing phishing-resistant passkey sign-in to Windows 10 and 11 desktops (including offline), and extending the same passkeys to cloud and on-premise apps via SAML 2.0 and OpenID Connect, plus VPNs and legacy systems via RADIUS. Pricing is not public — it is enterprise, quote-based software — so small teams should weigh it against Microsoft Entra passkeys and other alternatives below.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/myid-authenticate-passkey-windows-logon-1.jpg" width="640" height="360" alt="Abstract illustration of a laptop login screen with a security key representing passkey-based Windows sign-in" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-myid">What is MyID Authenticate?</a></li><li><a href="#how-it-works">How passkey Windows logon actually works</a></li><li><a href="#why-phishing-resistant">Why passkeys are phishing-resistant</a></li><li><a href="#what-it-covers">What the platform covers beyond the desktop</a></li><li><a href="#who-its-for">Who it is for — and who should skip it</a></li><li><a href="#alternatives">Alternatives for small teams</a></li><li><a href="#setup">Setup basics: what deployment looks like</a></li><li><a href="#pricing">Pricing: what is publicly known</a></li><li><a href="#verdict">Should your team evaluate it?</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Passkeys have won the argument on paper: everyone in security agrees they beat passwords. The hard part has been deployment — getting passkeys onto every desktop, into every application, and across the VPNs and legacy systems small businesses actually run. That gap is exactly what Intercede’s new MyID Authenticate, launched October 12, 2026, claims to close. This guide explains what the product is, how passkey Windows logon works in practice, why it resists phishing, and — honestly — whether a small team without a dedicated identity staff should care.</p>
+<h2 id="what-is-myid">What is MyID Authenticate?</h2>
+<p><strong>MyID Authenticate is a FIDO passkey authentication platform from Intercede Group plc, the UK digital-identity company listed on the London Stock Exchange.</strong> Announced on October 12, 2026, it is designed to give organizations phishing-resistant sign-in to Windows desktops, cloud services, and on-premise applications from a single platform. It launched with a major European public-sector digital services organisation as its lead customer, and made its international debut at GovWare 2026 in Singapore, October 13–15.</p>
+<p>The product plays two roles at once. It is a <strong>FIDO authentication server</strong> — the backend that verifies passkey sign-ins — and a <strong>passkey issuer</strong>, meaning it handles creating and distributing passkeys to users, with self-service enrollment. It supports FIDO2 security keys as well as device-bound and synced passkeys, so it fits mixed fleets: hardware keys for high-assurance roles, device-bound passkeys on standard laptops, synced passkeys where convenience matters.</p>
+<p>Intercede’s chief product officer, Dan McLoughlin, framed the pitch bluntly: everyone agrees passkeys are among the strongest defenses against phishing, but getting them onto every desktop and into every modern application has been the hard part — and that is what MyID Authenticate is built to do.</p>
+<p class="fact"><strong>Context:</strong> MyID Authenticate extends Intercede’s existing MyID suite, the credential-lifecycle platform behind much of its government and enterprise business. Existing MyID MFA customers get a dedicated migration tool, and the product integrates with MyID CMS for organizations that also issue high-assurance credentials such as PKI smart cards.</p>
+
+<h2 id="how-it-works">How passkey Windows logon actually works</h2>
+<p>Passkeys have mostly lived in the browser — signing into websites and web apps. The Windows desktop has been the stubborn exception, because logging into an operating system involves different plumbing than logging into a website. MyID Authenticate’s headline feature, Passkey Windows Logon, closes that gap on Windows 10 and 11.</p>
+<p>In practice it works like this: instead of typing a password at the lock screen, the user presents a FIDO2 security key (typically a tap on a USB or NFC key) or authenticates with a device-bound passkey unlocked by biometrics or a PIN. Windows then verifies the cryptographic response against the credential registered for that user. <strong>No password is typed, transmitted, or stored anywhere in the flow.</strong></p>
+<p>Two details matter for real-world teams. First, logon works <strong>offline</strong>: verification happens locally on the device against the previously registered credential, so a laptop with no network connection still signs in. Second, the same passkey identity extends beyond the desktop — the platform federates with Microsoft Entra ID and Microsoft 365, so one enrollment covers the workstation and the cloud apps behind it.</p>
+
+<h2 id="why-phishing-resistant">Why passkeys are phishing-resistant</h2>
+<p>“Phishing-resistant” is doing heavy lifting in every vendor’s marketing, so it is worth pinning down what it actually means. A FIDO passkey is a pair of cryptographic keys: the private key never leaves the user’s device, and the public key is registered with the service. At sign-in, the service sends a challenge, the device signs it, and the signature is verified. Crucially, the credential is <strong>bound to the legitimate origin</strong> — the real domain or system it was created for.</p>
+<p>That binding is what defeats phishing. A fake login page can trick a user into typing a password or reading out a one-time code, because those are shared secrets that work anywhere. But a passkey simply will not complete an authentication ceremony for the wrong origin: there is nothing for the phishing site to capture and replay, and an adversary-in-the-middle gets a signature that is useless anywhere else.</p>
+<p>It helps to see where this sits relative to what most small teams use today:</p>
+<ul>
+<li><strong>Passwords:</strong> replayable by design. Phished once, usable until changed.</li>
+<li><strong>SMS and email one-time codes:</strong> interceptable and phishable; users can be talked into handing them over in real time.</li>
+<li><strong>Authenticator-app TOTP codes:</strong> better, but still phishable through real-time relay attacks.</li>
+<li><strong>FIDO passkeys:</strong> no shared secret exists to steal, and the origin binding blocks the relay. This is why standards bodies treat FIDO2 as the phishing-resistant tier.</li>
+</ul>
+<p>None of this makes passkeys magic — a stolen unlocked device is still a problem, which is why enrollment, recovery, and device policies matter. But it removes the single most common breach path: credentials harvested through deception. For more on the phishing landscape small businesses face, see our <a href="/blog/bitdefender-ai-guardian-explained/">Bitdefender AI Guardian explainer</a>.</p>
+<img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/myid-authenticate-passkey-windows-logon-2.jpg" width="640" height="360" alt="Illustration comparing a phished password with a passkey that only works on its legitimate site" loading="lazy">
+<!-- AD SLOT: after-second-h2 -->
+
+<h2 id="what-it-covers">What the platform covers beyond the desktop</h2>
+<p>Windows logon is the headline, but the reason Intercede pitches this as a platform rather than a feature is the breadth of protocols around it. Most small and mid-sized organizations do not live entirely in the browser; they have a VPN, a couple of on-premise applications, maybe a legacy system that only speaks RADIUS. MyID Authenticate’s answer:</p>
+<ul>
+<li><strong>Cloud and on-premise applications</strong> through SAML 2.0 and OpenID Connect — the standard federation protocols behind single sign-on.</li>
+<li><strong>VPNs and legacy systems</strong> through RADIUS, alongside a range of strong and multi-factor authentication methods for systems that cannot do FIDO natively.</li>
+<li><strong>Microsoft environments</strong> through federation with Microsoft Entra ID and Microsoft 365.</li>
+<li><strong>High-assurance credentials</strong> through integration with MyID CMS, for organizations that also manage PKI smart cards alongside passkeys.</li>
+</ul>
+<p>The deployment story is flexible on paper: on-premise on Windows Server 2022 and 2025, in the cloud on AWS, Azure, or private cloud, or hybrid — installed with a scriptable PowerShell-based installer. Intercede also describes the design as crypto-agile with post-quantum cryptography capabilities, aimed at organizations planning authentication infrastructure for the quantum era. That is a forward-looking claim worth noting rather than evaluating here; the practical value for a small team today is the protocol coverage above.</p>
+<h2 id="who-its-for">Who it is for — and who should skip it</h2>
+<p>MyID Authenticate is built for organizations that need passkeys <strong>everywhere</strong>: the Windows desktop, the VPN, the legacy app that predates the cloud, and the Microsoft 365 tenant — managed from one place, without a large identity engineering team to stitch it together. That profile fits regulated industries, public-sector bodies, and mid-sized companies with compliance requirements and a real Windows fleet. The lead customer being a European public-sector digital services organisation tells you where Intercede is aiming first.</p>
+<p>For a small team, the honest filter is simpler. You are a plausible fit if most of your staff work on Windows laptops, you already run (or plan) Microsoft Entra ID, and you have systems — VPN, on-premise tools — that consumer passkey rollouts never reach. You should probably skip it if your team is five people on MacBooks and Google Workspace with no Windows footprint and no legacy systems; the product’s strengths would sit idle. Google-centric teams may also find <a href="/blog/claude-google-workspace-explained/">Google Workspace’s own ecosystem</a> the simpler path for now.</p>
+<p>And a note on posture: going passwordless is one layer of a security program, not the program. Vulnerability scanning, patching, and backups still matter — see our <a href="/blog/anthropic-cyber-mission-explained/">Anthropic Cyber Mission explainer</a> for the free scanning side of that equation.</p>
+
+<h2 id="alternatives">Alternatives for small teams</h2>
+<p>MyID Authenticate is far from the only route to phishing-resistant sign-in. What you should compare depends on your stack:</p>
+<div class="tablewrap"><table>
+<caption>Passwordless and passkey options a small team might evaluate instead. Pricing checked October 2026; enterprise products are quote-based.</caption>
+<thead><tr><th scope="col">Option</th><th scope="col">Best fit</th><th scope="col">Pricing signal</th></tr></thead>
+<tbody>
+<tr><th scope="row">Microsoft Entra passkeys</th><td>Teams already on Microsoft 365 / Entra ID</td><td>Entra ID P1 is about $6 per user per month; passkey support included in Microsoft’s stack</td></tr>
+<tr><th scope="row">Beyond Identity</th><td>Small teams wanting passwordless quickly</td><td>Published free tier for workforce use; paid plans above that</td></tr>
+<tr><th scope="row">HYPR</th><td>Mid-market to enterprise passwordless</td><td>Enterprise, sales-led; no public pricing</td></tr>
+<tr><th scope="row">FIDO2 security keys + native OS</th><td>DIY teams comfortable configuring it themselves</td><td>Hardware keys are a one-time purchase per user; Windows Hello for Business is built into Windows</td></tr>
+</tbody></table></div>
+<p>The key distinction: Microsoft’s own passkey support covers Microsoft’s identity stack well, but extending passkeys to Windows desktop logon at scale, legacy RADIUS systems, and non-Microsoft infrastructure is precisely the gap Intercede is selling into. If your world is entirely Microsoft 365 and modern web apps, Entra’s native passkeys may already be enough. If you have the messy middle — desktops, VPNs, legacy — that is where a dedicated FIDO server earns its keep.</p>
+
+<h2 id="setup">Setup basics: what deployment looks like</h2>
+<p>Public information on MyID Authenticate is still at the launch-announcement level — detailed administrator documentation will follow the product’s rollout — but Intercede has disclosed the shape of a deployment:</p>
+<ul>
+<li><strong>Choose where it runs.</strong> On-premise on Windows Server 2022 or 2025, on AWS, Azure, or private cloud, or hybrid across both.</li>
+<li><strong>Install and connect.</strong> Installation uses a scriptable PowerShell-based installer; you then federate with Microsoft Entra ID and Microsoft 365 and wire up applications via SAML 2.0 / OpenID Connect and VPNs or legacy systems via RADIUS.</li>
+<li><strong>Enroll users with self-service.</strong> Users register their FIDO2 security keys or device passkeys themselves rather than queuing at the helpdesk — important for teams without dedicated identity staff.</li>
+<li><strong>Plan for lost keys on day one.</strong> Any passkey rollout needs a recovery story: how a user who loses a security key gets back in, and how you revoke the lost credential. Define this before the pilot, not during it.</li>
+<li><strong>Pilot, then expand.</strong> Roll out to IT and a friendly department first, confirm offline Windows logon and VPN access work in your environment, then expand in waves.</li>
+</ul>
+<p>Existing MyID MFA customers have a dedicated migration tool and vendor support for the move. Everyone else is looking at a fresh deployment evaluated like any enterprise identity project: a proof of concept against your actual mix of desktops, apps, and VPNs.</p>
+
+<h2 id="pricing">Pricing: what is publicly known</h2>
+<p>Here is the honest answer: <strong>Intercede publishes no pricing for MyID Authenticate.</strong> It is enterprise software sold through Intercede’s sales team, with scoping that depends on user count, deployment model, and which parts of the MyID suite you need. If you are evaluating it, request a quote and insist on a pilot tied to your actual environment before committing.</p>
+<p>For budgeting context, the alternatives set the range: Microsoft Entra ID P1 runs about $6 per user per month, passwordless platforms like Beyond Identity offer free tiers for small workforces, and hardware FIDO2 keys are a one-time purchase per user. MyID Authenticate will be competing on breadth — one platform for desktops, apps, VPNs, and legacy — rather than on being the cheapest way to get passkeys into a browser.</p>
+
+<h2 id="verdict">Should your team evaluate it?</h2>
+<div class="verdict">
+<div><h3>Take a meeting if</h3><ul>
+<li>Your team runs on Windows 10/11 and you want passkeys on the desktop, not just in the browser.</li>
+<li>You have VPNs or legacy systems that need phishing-resistant auth via RADIUS or federation.</li>
+<li>You are in a regulated industry or public sector where phishing-resistant MFA is a compliance checkbox.</li>
+<li>You lack a dedicated identity team and want one platform instead of stitching pieces together.</li></ul></div>
+<div><h3>Look elsewhere if</h3><ul>
+<li>You are a tiny all-cloud team with no Windows footprint — native passkeys in your existing stack are simpler.</li>
+<li>You need transparent per-user pricing today; Intercede’s pricing is quote-based.</li>
+<li>Your identity needs are fully covered by Microsoft Entra’s built-in passkey support.</li>
+<li>You want a self-serve trial this week; this is an enterprise sales motion, not a signup page.</li></ul></div>
+</div>
+<p>The product is days old at publication time, so treat early claims with the usual caution and evaluate against a pilot in your own environment. The underlying direction is sound: passkeys are the right answer to phishing, and the desktop-plus-legacy gap is real. Whether MyID Authenticate is your vehicle for closing it depends on your stack, your compliance pressure, and what the quote says.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is MyID Authenticate the same as Microsoft Entra’s passkey support?</h3>
+<p>No. Entra’s passkey support covers Microsoft’s own identity stack. MyID Authenticate is a standalone FIDO authentication server and passkey issuer that federates with Entra ID and Microsoft 365, and extends passkeys to Windows desktops (including offline logon), on-premise applications, VPNs, and legacy systems via RADIUS.</p>
+<h3>Can users sign in to Windows with a passkey when the device is offline?</h3>
+<p>Yes. Intercede states that Passkey Windows Logon works on Windows 10 and 11 including offline sign-in. The cryptographic verification happens locally on the device against the previously registered credential, so no server round-trip is required at logon time.</p>
+<h3>What kinds of passkeys does MyID Authenticate support?</h3>
+<p>FIDO2 security keys, device-bound passkeys, and synced passkeys, with self-service enrollment for users. That range matters for mixed fleets: hardware keys for high-assurance roles, device-bound passkeys for standard laptops, and synced passkeys where convenience matters more.</p>
+<h3>How much does MyID Authenticate cost?</h3>
+<p>Intercede publishes no public pricing for MyID Authenticate; it is sold through their enterprise sales team. Small teams should request a quote and compare it against alternatives with transparent pricing, such as Microsoft Entra ID P1 at about $6 per user per month or passwordless platforms with free tiers.</p>
+<h3>Our team uses Google Workspace, not Microsoft 365. Is MyID Authenticate relevant?</h3>
+<p>Partly. Its public positioning centers on Windows desktops and federation with Microsoft Entra ID and Microsoft 365, but SAML 2.0 and OpenID Connect support means the same passkeys can extend to other cloud applications. Google-centric teams without a Windows footprint will likely find Google’s own passkey support simpler.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>MyID Authenticate arrives at the right moment: passkeys have won the security argument, and the industry’s unfinished business is getting them onto desktops, VPNs, and legacy systems — exactly the gap Intercede is targeting with FIDO server plus passkey issuer in one platform, offline Windows logon included. For small teams, the calculus is practical, not ideological. If your staff live on Windows, you run Entra ID, and you have systems that consumer passkey rollouts never reach, it deserves a pilot. If you are a small all-cloud team, start with the passkey support already in your existing stack. Either way, the direction of travel is clear: passwords are on their way out, and phishing-resistant sign-in is becoming table stakes.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/bitdefender-ai-guardian-explained/">Bitdefender AI Guardian Explained: Protecting Your AI Agents from Manipulation (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/anthropic-cyber-mission-explained/">Anthropic Cyber Mission Explained: The Free Vulnerability Scanner for Open-Source Projects (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/claude-google-workspace-explained/">Claude for Google Workspace Explained: What It Means for Small Business</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

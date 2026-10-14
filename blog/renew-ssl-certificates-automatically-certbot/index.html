@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Renew SSL Certificates Automatically with Certbot (2026 Guide)</title>
+<meta name="description" content="Set up Certbot automatic SSL renewal in six steps: install Certbot, get a free Let's Encrypt certificate, test with certbot renew --dry-run, verify the systemd timer or cron job, and add reload hooks.">
+<meta name="keywords" content="certbot renew, automatic ssl renewal, certbot auto renew, lets encrypt certbot, certbot systemd timer, certbot cron, certbot dry run">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="How to Renew SSL Certificates Automatically with Certbot (2026 Guide)">
+<meta property="og:description" content="Set up Certbot automatic SSL renewal in six steps: install Certbot, get a free Let's Encrypt certificate, test with certbot renew --dry-run, verify the systemd timer or cron job, and add reload hooks.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/renew-ssl-certificates-automatically-certbot-1.jpg">
+<meta property="article:published_time" content="2026-10-14">
+<meta property="article:modified_time" content="2026-10-14">
+<meta property="article:section" content="Web Hosting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Renew SSL Certificates Automatically with Certbot (2026 Guide)">
+<meta name="twitter:description" content="Set up Certbot automatic SSL renewal in six steps: install Certbot, get a free Let's Encrypt certificate, test with certbot renew --dry-run, verify the systemd timer or cron job, and add reload hooks.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/renew-ssl-certificates-automatically-certbot-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/#article", "headline": "How to Renew SSL Certificates Automatically with Certbot (2026 Guide)", "description": "Set up Certbot automatic SSL renewal in six steps: install Certbot, get a free Let's Encrypt certificate, test with certbot renew --dry-run, verify the systemd timer or cron job, and add reload hooks.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/renew-ssl-certificates-automatically-certbot-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-14", "dateModified": "2026-10-14", "mainEntityOfPage": "https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/", "articleSection": "Web Hosting", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Certbot renew SSL certificates automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most Certbot installs ship with a systemd timer or cron job that runs certbot renew twice a day. The command checks every certificate and renews any that expire within 30 days. You usually only need to confirm the timer exists and test renewal once with certbot renew --dry-run."}}, {"@type": "Question", "name": "How do I test Certbot renewal without hitting rate limits?", "acceptedAnswer": {"@type": "Answer", "text": "Run sudo certbot renew --dry-run. The dry run simulates renewal against Let's Encrypt's staging server, so it does not count against production rate limits and does not replace your real certificates. Run it any time after changing renewal settings."}}, {"@type": "Question", "name": "How often should certbot renew run?", "acceptedAnswer": {"@type": "Answer", "text": "Twice a day. Running certbot renew frequently is safe because the command renews only certificates due within 30 days of expiry, so most runs change nothing. The official documentation's example cron entry schedules it at 0:00 and 12:00 with a randomized sleep offset."}}, {"@type": "Question", "name": "Why didn't my certificate renew automatically?", "acceptedAnswer": {"@type": "Answer", "text": "The most common causes are a renewal test nobody ran (port 80 blocked or a changed webroot), a missing reload hook, a certificate obtained with the manual plugin (which cannot auto-renew without hooks), or a timer that was never enabled. Check the timer and run certbot renew --dry-run."}}, {"@type": "Question", "name": "Do I need to do anything for the Let's Encrypt 64-day certificate change?", "acceptedAnswer": {"@type": "Answer", "text": "If Certbot's automatic renewal is working, almost nothing. certbot renew triggers on certificates expiring within 30 days, which covers 64-day certificates too. Let's Encrypt suggests that renewals hardcoded to a date from expiration should instead renew at about two-thirds of the certificate lifetime."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Web Hosting", "item": "https://pickmyapp.github.io/category/web-hosting/"}, {"@type": "ListItem", "position": 3, "name": "Renew SSL Certificates Automatically with Certbot", "item": "https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li aria-current="page">Renew SSL Certificates Automatically with Certbot</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">How to Renew SSL Certificates Automatically with Certbot (2026 Guide)</h1>
+<ul class="metaline">
+<li><span class="tag">Web Hosting</span></li>
+<li>Published <time datetime="2026-10-14"><strong>Oct 14, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>11 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p>Install Certbot on your server, get a free Let's Encrypt certificate with <strong>certbot --nginx</strong> (or --apache, or --standalone), then confirm automation: most Certbot installs ship with a systemd timer or cron job that runs <strong>certbot renew</strong> twice a day, renewing any certificate due to expire within 30 days. Test it once with <strong>sudo certbot renew --dry-run</strong>, verify the timer with <strong>systemctl list-timers</strong>, and add a deploy hook so your web server reloads after each renewal. That's the whole job — and with Let's Encrypt switching to 64-day certificates on February 10, 2027, setting this up now is no longer optional.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/renew-ssl-certificates-automatically-certbot-1.jpg" width="640" height="360" alt="Illustration of a padlock surrounded by circular renewal arrows next to a server rack, representing automatic SSL certificate renewal" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#why-automation">Why automatic renewal is now mandatory</a></li><li><a href="#how-renewal-works">How Certbot renewal works</a></li><li><a href="#install">Step 1: Install Certbot</a></li><li><a href="#obtain">Step 2: Get your first certificate</a></li><li><a href="#test-renewal">Step 3: Test renewal safely</a></li><li><a href="#verify-timer">Step 4: Confirm the automatic timer</a></li><li><a href="#hooks">Step 5: Add reload hooks</a></li><li><a href="#reference">Quick command reference</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#summary">Summary</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Every Let's Encrypt SSL certificate expires, by design. That is the whole point of free short-lived certificates: if one is compromised or misissued, it stops working soon. The trade-off is that you cannot install one and forget it. <strong>Certbot, the official client from the Electronic Frontier Foundation, handles the forgetting for you</strong> — it obtains the certificate, installs it, and renews it on a schedule without you touching the terminal again.</p>
+<p>This guide walks through the complete setup: installing Certbot, getting your first certificate for nginx, Apache, or a standalone server, proving that renewal works with a dry run, verifying the automatic timer, and adding hooks so your web server picks up the new certificate. It is written for owners of a small virtual server — a $5 to $10 VPS from a provider like the ones in our <a href="/blog/best-cheap-web-hosting-wordpress-2026/">cheap WordPress hosting guide</a> works fine. Every command below follows the official Certbot documentation.</p>
+
+<h2 id="why-automation">Why automatic renewal is now mandatory, not optional</h2>
+<p><strong>On February 10, 2027, Let's Encrypt starts issuing certificates valid for 64 days instead of 90, and 45-day certificates follow in 2028.</strong> We covered the full timeline in our guide to <a href="/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let's Encrypt's 64-day certificate change</a>, including a five-step checklist for website owners.</p>
+<p>The security logic is simple: shorter lifetimes shrink the window in which a stolen or misissued certificate can be abused. Let's Encrypt's own recommendation makes the operational consequence plain — <strong>renewals hardcoded to a fixed number of days from expiration should be switched to renewing at about two-thirds of the certificate lifetime</strong>. A cron job that renews 60 days after issuance works at 90 days but silently fails at 64.</p>
+<p>Certbot's built-in behavior survives this change gracefully: <strong>certbot renew renews any certificate due to expire within 30 days</strong>, which is correct for both 90-day and 64-day lifetimes. That is exactly why the one-time setup below is worth doing before February 2027. Every publicly trusted certificate authority is moving the same direction — the CA/Browser Forum is capping lifetimes at 200 days from March 2026, 100 days from March 2027, and 47 days from March 2029 — so manual renewal is a dead end for every kind of certificate.</p>
+<p class="fact"><strong>Quick fact:</strong> Let's Encrypt began issuing 64-day certificates in staging on October 14, 2026, so test your renewal setup there before the February 2027 production switch.</p>
+
+<h2 id="how-renewal-works">How Certbot renewal actually works</h2>
+<p>Certbot remembers everything you tell it. When you obtain a certificate, it saves your authenticator, installer, domains, and options in a renewal configuration file at <strong>/etc/letsencrypt/renewal/yourdomain.com.conf</strong>, and points your web server at symlinks under <strong>/etc/letsencrypt/live/yourdomain.com/</strong> (fullchain.pem and privkey.pem). When renewal time comes, Certbot replays those same options — you never re-enter them.</p>
+<p>The automation itself is a scheduled task: a systemd timer or cron job runs <strong>certbot renew</strong> twice a day, and each run <strong>renews only certificates expiring in less than 30 days</strong>; everything else is skipped untouched. Most runs change nothing, and the official docs note that adding your own scheduled task alongside a pre-installed one causes no harm.</p>
+<p>One caveat to know up front: <strong>certificates created with the --manual plugin do not support automatic renewal</strong> unless you provide authentication hook scripts to automate the domain validation steps. If you used --manual, re-obtain the certificate with one of the automated plugins in Step 2 instead.</p>
+
+<h2 id="install">Step 1: Install Certbot</h2>
+<p>Install Certbot plus your web server's plugin. On Ubuntu or Debian:</p>
+<p class="mono">sudo apt update</p>
+<p class="mono">sudo apt install certbot python3-certbot-nginx</p>
+<p>Replace <strong>python3-certbot-nginx</strong> with <strong>python3-certbot-apache</strong> if you run Apache. The EFF also publishes Certbot as a snap, which works on most distributions; follow the system-specific instructions at certbot.eff.org if your setup differs.</p>
+<p>If your host manages SSL for you — many of the managed plans in our <a href="/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround comparison</a> install and renew certificates automatically — check your panel first. You only need this guide if you control the server yourself, typically a VPS or dedicated box.</p>
+
+<h2 id="obtain">Step 2: Get your first certificate</h2>
+<p>Pick the command that matches your server. In each case, replace example.com with your domain, and add -d www.example.com if you serve the www variant. Every command below authenticates you by proving control of the domain, then obtains the certificate.</p>
+
+<h3>If you run nginx</h3>
+<p class="mono">sudo certbot --nginx -d example.com -d www.example.com</p>
+<p>The nginx plugin acts as both authenticator and installer: it proves control of your domains over HTTP (port 80) and edits your nginx configuration to use the new certificate and redirect HTTP to HTTPS. The official docs recommend backing up your nginx configuration first, and you can roll back with <strong>certbot --nginx rollback</strong> if something looks wrong.</p>
+
+<h3>If you run Apache</h3>
+<p class="mono">sudo certbot --apache -d example.com -d www.example.com</p>
+<p>The apache plugin works the same way: it obtains the certificate and writes the HTTPS virtual host for you, including the SSLCertificateFile and SSLCertificateKeyFile directives that point at /etc/letsencrypt/live/. It can also set up the 301 redirect from HTTP to HTTPS.</p>
+
+<h3>If you run a different web server, or none at all</h3>
+<p>When Certbot cannot edit your server's configuration — HAProxy, OpenLiteSpeed, a Node app behind a reverse proxy — obtain the certificate only and install it yourself:</p>
+<p class="mono">sudo certbot certonly --webroot -w /var/www/html -d example.com -d www.example.com</p>
+<p>The <strong>webroot</strong> plugin writes a challenge file to <strong>/var/www/html/.well-known/acme-challenge/</strong>, which your running server must serve publicly on port 80. If nothing is listening on port 80 at all, use the <strong>standalone</strong> plugin instead — it starts its own temporary web server, but it needs port 80 free, so stop your existing server first:</p>
+<p class="mono">sudo certbot certonly --standalone -d example.com -d www.example.com</p>
+<p>For wildcard certificates (one certificate covering *.example.com and example.com), the official docs require a <strong>DNS plugin</strong> — DNS-01 is the only challenge type that issues wildcards. These plugins are not bundled with Certbot; install them separately for your DNS provider, for example:</p>
+<p class="mono">sudo apt install python3-certbot-dns-cloudflare</p>
+<p>then run with the plugin's flag. Check the plugin's own documentation for its credentials file.</p>
+
+<h2 id="test-renewal">Step 3: Test renewal safely with --dry-run</h2>
+<p>Do not wait 60 days to discover that renewal is broken. Certbot ships with a dry-run mode that simulates the full renewal against Let's Encrypt's staging server:</p>
+<p class="mono">sudo certbot renew --dry-run</p>
+<p>A dry run <strong>does not touch your real certificates and does not count against Let's Encrypt's rate limits</strong>, so you can run it as often as you like. What it does: it loads each renewal configuration, replays the original authentication, and reports success or failure. If this fails, your automatic renewals will fail the same way — read the error, fix the underlying cause (usually port 80 blocked or a moved webroot), and run the dry run again. Only proceed to Step 4 when the dry run passes for every certificate.</p>
+<p>Two supporting commands worth knowing: <strong>sudo certbot certificates</strong> lists every certificate, its domains, and its expiry date; <strong>sudo certbot renew --cert-name example.com --dry-run</strong> tests one certificate in isolation.</p>
+
+<h2 id="verify-timer">Step 4: Confirm the automatic timer exists</h2>
+<p>Here is the part most tutorials skip. Obtaining a certificate does not guarantee renewal runs on schedule — verify that the scheduled task actually exists on your machine. The official docs say most installs come with automatic renewal preconfigured, via a systemd timer or cron job. Check both:</p>
+<p class="mono">systemctl list-timers | grep certbot</p>
+<p>On apt-based installs this usually shows <strong>certbot.timer</strong>; on snap installs it appears as <strong>snap.certbot.renew.timer</strong>. Check its status with <strong>systemctl status certbot.timer</strong>. If your system uses cron instead, look for the renew command in the system crontabs:</p>
+<p class="mono">cat /etc/cron.d/certbot</p>
+<p>If no timer and no cron entry exist — or you just want your own — add the cron job exactly as the official documentation prescribes. This appends a twice-daily renew to /etc/crontab with a random delay so millions of servers do not all hit Let's Encrypt at once:</p>
+<p class="mono">SLEEPTIME=$(awk 'BEGIN{srand(); print int(rand()*(3600+1))}'); echo "0 0,12 * * * root sleep $SLEEPTIME && certbot renew -q" | sudo tee -a /etc/crontab &gt; /dev/null</p>
+<p>Two runs a day looks like overkill, but remember: certbot renew only acts on certificates expiring within 30 days, so the extra runs cost almost nothing. The official docs explicitly say it is safe to add this even if a pre-installed timer already exists.</p>
+
+<h2 id="hooks">Step 5: Add a reload hook so servers use the new certificate</h2>
+<p>There is one more trap. Renewal replaces the files on disk, but <strong>nginx and Apache read their certificates at startup and keep the old ones in memory</strong>. Without a reload, visitors keep getting the expired certificate even though the new one is already on the server.</p>
+<p>If you used --nginx or --apache in Step 2, the installer plugin handles the reload itself during renewal — nothing to do. Everyone else needs a hook. Certbot automatically runs every executable script placed in <strong>/etc/letsencrypt/renewal-hooks/deploy/</strong> after a successful renewal. Create one:</p>
+<p class="mono">sudo sh -c 'printf "#!/bin/sh\nsystemctl reload nginx\n" &gt; /etc/letsencrypt/renewal-hooks/deploy/reload-nginx.sh'</p>
+<p class="mono">sudo chmod 755 /etc/letsencrypt/renewal-hooks/deploy/reload-nginx.sh</p>
+<p>Swap in <strong>systemctl reload apache2</strong> for Apache, or a restart command for your application. A reload is graceful — it does not drop connections — which is why it is preferable to restart. Note the directory names: scripts in <strong>pre/</strong> and <strong>post/</strong> run around every attempt, while <strong>deploy/</strong> scripts run only when a certificate was actually renewed.</p>
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/renew-ssl-certificates-automatically-certbot-2.jpg" width="640" height="360" alt="Illustration of calendar pages looping around a glowing shield with renewal checkmarks, representing repeated automatic certificate renewals" decoding="async"></div>
+
+<!-- AD SLOT: after-second-h2 -->
+<!-- <div class="ad" id="ad-after-h2-2" style="min-height:250px"></div> -->
+
+<h2 id="reference">Quick command reference</h2>
+<div class="tablewrap"><table>
+<caption>Every command in this guide, verified against the official Certbot documentation. Replace example.com with your domain.</caption>
+<thead><tr><th scope="col">Task</th><th scope="col">Command</th></tr></thead>
+<tbody>
+<tr><th scope="row">Install (Ubuntu/Debian, nginx)</th><td>sudo apt update<br>sudo apt install certbot python3-certbot-nginx</td></tr>
+<tr><th scope="row">Get certificate (nginx)</th><td>sudo certbot --nginx -d example.com -d www.example.com</td></tr>
+<tr><th scope="row">Get certificate (Apache)</th><td>sudo certbot --apache -d example.com -d www.example.com</td></tr>
+<tr><th scope="row">Get certificate only (webroot)</th><td>sudo certbot certonly --webroot -w /var/www/html -d example.com</td></tr>
+<tr><th scope="row">Get certificate only (standalone)</th><td>sudo certbot certonly --standalone -d example.com</td></tr>
+<tr><th scope="row">Test renewal (staging)</th><td>sudo certbot renew --dry-run</td></tr>
+<tr><th scope="row">Renew one certificate (test)</th><td>sudo certbot renew --cert-name example.com --dry-run</td></tr>
+<tr><th scope="row">List certificates and expiry dates</th><td>sudo certbot certificates</td></tr>
+<tr><th scope="row">Check renewal timer</th><td>systemctl list-timers | grep certbot</td></tr>
+<tr><th scope="row">Add cron renewal (if missing)</th><td>SLEEPTIME=$(awk 'BEGIN{srand(); print int(rand()*(3600+1))}'); echo "0 0,12 * * * root sleep $SLEEPTIME &amp;&amp; certbot renew -q" | sudo tee -a /etc/crontab &gt; /dev/null</td></tr>
+</tbody></table></div>
+
+<h2 id="troubleshooting">Troubleshooting automatic renewal</h2>
+<h3>The dry run fails with a connection error</h3>
+<p>HTTP-01 challenges need the public internet to reach your server on port 80. Check the firewall (<strong>sudo ufw allow 80</strong> on Ubuntu if UFW is running), confirm your DNS A record points at the server, and make sure time sync is enabled, since clock drift also breaks validation — make sure time sync is enabled.</p>
+<h3>Renewal succeeds but visitors still see the old certificate</h3>
+<p>The server did not reload after renewal. This is the missing-hook problem from Step 5. Confirm your deploy hook exists in /etc/letsencrypt/renewal-hooks/deploy/, that it is executable, and that it reloads the right service. Then manually reload once to fix the current state.</p>
+<h3>certbot renew says "not due for renewal yet" and exits</h3>
+<p>That is not an error — it is the correct behavior. The command only renews certificates expiring in less than 30 days. Do not use --force-renewal to work around it; the official docs warn that repeated forced renewals can run into Let's Encrypt's rate limits.</p>
+<h3>The certificate was obtained with --manual</h3>
+<p>Manual certificates do not auto-renew unless you supplied --manual-auth-hook and --manual-cleanup-hook scripts. The official recommendation is to re-obtain the certificate with one of the automated plugins instead, then let the normal timer handle it.</p>
+
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>Install Certbot with your web server's plugin</strong> — python3-certbot-nginx or python3-certbot-apache on Debian/Ubuntu.</li>
+<li><strong>Obtain certificates with an automated plugin</strong> (--nginx, --apache, --webroot, --standalone, or a DNS plugin for wildcards); avoid --manual if you want auto-renewal.</li>
+<li><strong>Test with sudo certbot renew --dry-run</strong> — safe, free, and hits the staging server, not your rate limits.</li>
+<li><strong>Verify the timer</strong> — systemctl list-timers or /etc/cron.d/certbot; add the official cron line if nothing is there.</li>
+<li><strong>Add a deploy hook</strong> so nginx/Apache reloads after each renewal; the plugin installers already do this for you.</li>
+<li><strong>Act before February 2027:</strong> certbot renew's 30-day window works with 64-day certificates, but hardcoded custom renewal timers must move to about two-thirds of the certificate lifetime.</li>
+</ul>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Does Certbot renew SSL certificates automatically?</h3>
+<p>Yes. Most Certbot installs ship with a systemd timer or cron job that runs certbot renew twice a day. The command checks every certificate and renews any that expire within 30 days. You usually only need to confirm the timer exists and test renewal once with certbot renew --dry-run.</p>
+<h3>How do I test Certbot renewal without hitting rate limits?</h3>
+<p>Run sudo certbot renew --dry-run. The dry run simulates renewal against Let's Encrypt's staging server, so it does not count against production rate limits and does not replace your real certificates. Run it any time after changing renewal settings.</p>
+<h3>How often should certbot renew run?</h3>
+<p>Twice a day. Running certbot renew frequently is safe because the command renews only certificates due within 30 days of expiry, so most runs change nothing. The official documentation's example cron entry schedules it at 0:00 and 12:00 with a randomized sleep offset.</p>
+<h3>Why didn't my certificate renew automatically?</h3>
+<p>The most common causes are a renewal test nobody ran (port 80 blocked or a changed webroot), a missing reload hook, a certificate obtained with the manual plugin (which cannot auto-renew without hooks), or a timer that was never enabled. Check the timer and run certbot renew --dry-run.</p>
+<h3>Do I need to do anything for the Let's Encrypt 64-day certificate change?</h3>
+<p>If Certbot's automatic renewal is working, almost nothing. certbot renew triggers on certificates expiring within 30 days, which covers 64-day certificates too. Let's Encrypt suggests that renewals hardcoded to a date from expiration should instead renew at about two-thirds of the certificate lifetime.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Automatic SSL renewal with Certbot is a one-time, five-step job: install, obtain with an automated plugin, dry-run, verify the timer, and hook the reload. Once those are in place, your certificates renew themselves for years — the industry's shift to 64-day certificates in February 2027 and 45-day certificates in 2028 demands. If your host manages SSL for you, confirm in your panel that renewal is active. Either way, keep expiry dates monitored — automation plus verification is what keeps the padlock green.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let's Encrypt Is Cutting SSL Certificate Lifetimes to 64 Days: What Website Owners Must Do Before February 2027</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-cheap-web-hosting-wordpress-2026/">Best Cheap Web Hosting for WordPress (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround for Agencies</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

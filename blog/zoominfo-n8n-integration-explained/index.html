@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZoomInfo's Native n8n Integration Explained: Enrich Leads Automatically (2026)</title>
+<meta name="description" content="ZoomInfo's native n8n node (Oct 2026) enriches leads automatically inside your workflows. See what it does, how to set it up, and what it costs.">
+<meta name="keywords" content="ZoomInfo n8n integration, n8n ZoomInfo node, ZoomInfo GTM.AI, lead enrichment automation, n8n lead enrichment, B2B data enrichment n8n">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/zoominfo-n8n-integration-explained/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="ZoomInfo's Native n8n Integration Explained: Enrich Leads Automatically (2026)">
+<meta property="og:description" content="ZoomInfo's native n8n node (Oct 2026) enriches leads automatically inside your workflows. See what it does, how to set it up, and what it costs.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/zoominfo-n8n-integration-explained/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/zoominfo-n8n-integration-explained-1.jpg">
+<meta property="article:published_time" content="2026-10-14">
+<meta property="article:modified_time" content="2026-10-14">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZoomInfo's Native n8n Integration Explained: Enrich Leads Automatically (2026)">
+<meta name="twitter:description" content="ZoomInfo's native n8n node (Oct 2026) enriches leads automatically inside your workflows. See what it does, how to set it up, and what it costs.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/zoominfo-n8n-integration-explained-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+.ad{margin:0 auto}
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/zoominfo-n8n-integration-explained/#article", "headline": "ZoomInfo's Native n8n Integration Explained: Enrich Leads Automatically (2026)", "description": "ZoomInfo's native n8n node (Oct 2026) enriches leads automatically inside your workflows. See what it does, how to set it up, and what it costs.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/zoominfo-n8n-integration-explained-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-14", "dateModified": "2026-10-14", "mainEntityOfPage": "https://pickmyapp.github.io/blog/zoominfo-n8n-integration-explained/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a ZoomInfo subscription to use the n8n node?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The node authenticates with your own ZoomInfo account through OAuth 2.0, and lookups draw on your ZoomInfo credits. GTM.AI self-serve access starts free with no credit card, and data credits cost $0.45 per enriched record at the base tier."}}, {"@type": "Question", "name": "Can the ZoomInfo node enrich leads without a CRM?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. n8n can feed the node leads from a form, a CSV, a webhook, or any app, then write the enriched records back to a spreadsheet, email them, or push them into a CRM. A CRM is a common destination, not a requirement."}}, {"@type": "Question", "name": "Does the ZoomInfo n8n integration work with n8n AI agents?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. n8n lists the ZoomInfo node as compatible with AI Agent workflows: an agent can decide mid-run to research a company, enrich a contact, or check an intent signal, and use the result to plan its next action."}}, {"@type": "Question", "name": "How is the native node different from calling the ZoomInfo API with an HTTP Request node?", "acceptedAnswer": {"@type": "Answer", "text": "The native node is built and maintained by ZoomInfo, uses OAuth 2.0 instead of hand-managed tokens, and returns one item per result for easy looping. A raw HTTP Request node works too, but you manage authentication, field mapping, and pagination yourself."}}, {"@type": "Question", "name": "What happens when ZoomInfo finds no match for a lead?", "acceptedAnswer": {"@type": "Answer", "text": "On the GTM.AI self-serve tier, enrichment is free on a miss: the credit is only consumed when a match is returned. In n8n, route misses through an IF node or continue-on-fail so one unmatched lead never stops the rest of the batch."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "ZoomInfo's Native n8n Integration Explained", "item": "https://pickmyapp.github.io/blog/zoominfo-n8n-integration-explained/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">ZoomInfo's Native n8n Integration Explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">ZoomInfo's Native n8n Integration Explained: Enrich Leads Automatically (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-14"><strong>Oct 14, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>9 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>ZoomInfo launched a native, verified n8n node on October 12, 2026</strong> that connects n8n workflows directly to ZoomInfo's GTM Context Graph — data covering more than 100 million companies, 500 million contacts, and billions of buying signals. The node can search contacts and companies, enrich existing records, read intent and news signals, and work as a tool inside n8n AI Agent workflows. It authenticates with your own ZoomInfo account via OAuth 2.0, so <strong>leads are enriched automatically at run time</strong> instead of from stale CSV exports. You need a ZoomInfo subscription or GTM.AI self-serve credits; the node itself ships inside n8n at no extra charge.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/zoominfo-n8n-integration-explained-1.jpg" width="1280" height="720" alt="Illustration of two automation workflow nodes connected by a pipeline, with a lead profile card flowing between them" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-it-is">What the integration is</a></li><li><a href="#what-it-does">What the node can do</a></li><li><a href="#how-it-works">How lead enrichment works inside n8n</a></li><li><a href="#ai-agents">Using it with n8n AI agents</a></li><li><a href="#cost">What it costs</a></li><li><a href="#vs-manual-api">Native node vs the manual API route</a></li><li><a href="#who-should-use">Who should use it (and who should skip it)</a></li><li><a href="#get-started">How to get started</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Every outbound team has the same painful spreadsheet: a list of half-empty leads — a name, a company, maybe an email — that someone has to research one by one before outreach can start. For years, stitching ZoomInfo's B2B database into an automation meant scheduled CSV exports, uploads that went stale within weeks, or a hand-built HTTP Request node against ZoomInfo's API. On October 12, 2026, that changed: ZoomInfo announced a native, verified node for n8n, built and maintained by ZoomInfo itself, that pulls current company and contact intelligence at run time. This guide explains exactly what the integration does, what it costs, and how to use it. If you are still deciding between automation platforms, our <a href="https://pickmyapp.github.io/blog/n8n-vs-make-small-business/">n8n vs Make comparison</a> is a good starting point.</p>
+
+<h2 id="what-it-is">What the ZoomInfo n8n integration is</h2>
+<p><strong>The ZoomInfo n8n integration is a verified node, built and maintained by ZoomInfo, that lets n8n workflows query ZoomInfo's GTM Context Graph directly.</strong> ZoomInfo announced it on October 12, 2026 through its GTM.AI program — the company's headless go-to-market context layer, which also powers its connections to Salesforce, Microsoft, Claude, and ChatGPT. The node listing on n8n.io confirms ZoomInfo as the creator and n8n as the verifier, and the source lives in ZoomInfo's own GitHub repository (github.com/Zoominfo/n8n-nodes-zoominfo).</p>
+<p>ZoomInfo describes the underlying data as covering more than 100 million companies, 500 million contacts, and billions of signals. To be clear about what that means: it is the size of ZoomInfo's platform database, and what your workflow can reach depends on your account's access. Authentication is tied to your own ZoomInfo credentials through OAuth 2.0, so your existing permissions, data lineage, and audit logging carry over — access control works the same way across every surface GTM.AI powers.</p>
+<p>The launch matters because of timing. n8n's Head of Partnerships said the verified node gives workflow teams "current company and contact intelligence at run time" — the difference between enriching a lead against today's record and against a spreadsheet someone exported weeks ago.</p>
+
+<h2 id="what-it-does">What the ZoomInfo node can do</h2>
+<p>The official n8n integration listing identifies seven supported functions. They cover three jobs: finding records, enriching records you already have, and reading signals.</p>
+<div class="tablewrap"><table>
+<caption>The ZoomInfo node's supported operations, per the n8n integration listing (October 2026).</caption>
+<thead><tr><th scope="col">Operation</th><th scope="col">What it does</th></tr></thead>
+<tbody>
+<tr><th scope="row">Search</th><td>Find companies matching criteria such as size, revenue, industry, or location.</td></tr>
+<tr><th scope="row">Enrich</th><td>Add ZoomInfo data to companies you already have on file.</td></tr>
+<tr><th scope="row">Enrich Corporate Hierarchy</th><td>Get a company's family tree and parentage chain — useful for enterprise account mapping.</td></tr>
+<tr><th scope="row">Enrich Hashtags</th><td>Get categorical hashtags describing what a company does, for segmentation.</td></tr>
+<tr><th scope="row">Enrich Org Chart</th><td>Get contacts for a company organized by department and seniority.</td></tr>
+<tr><th scope="row">Enrich Technologies</th><td>Get the technologies ZoomInfo associates with a company — technographic targeting.</td></tr>
+<tr><th scope="row">Get Lookalikes</th><td>Find companies similar to a reference company, for building lookalike account lists.</td></tr>
+</tbody></table></div>
+<p>Beyond those seven, the node can search contacts by company, title, seniority, and location, and monitor buyer intent, organizational changes, and news coverage on target accounts. Every result returns as an individual n8n item, so downstream nodes can loop, filter, and pass the data on to a CRM or another system. The node supports JSON attributes for all filters, which keeps advanced queries compact, and it works as a tool an n8n AI Agent can call on its own.</p>
+<p class="fact"><strong>Quick fact:</strong> ZoomInfo's ticker on Nasdaq is GTM — the same name as its GTM.AI platform — and the company says its intent signals draw from web activity across thousands of B2B topics.</p>
+
+<h2 id="how-it-works">How automatic lead enrichment works inside n8n</h2>
+<p>The classic use case is simple: a lead arrives with almost nothing on it — a name and a company, or just an email address — and the workflow fills in the rest before anyone sees it. Here is how that plays out with the native node.</p>
+<h3>A typical enrichment workflow</h3>
+<p>Picture a team that captures inbound demo requests through a website form. Before the integration, a sales rep opened each request, looked the person up manually, and typed the results into the CRM. With the node, the workflow runs the moment the form submits: the ZoomInfo node matches the lead against contact and company records, pulls in job title, seniority, direct phone, LinkedIn URL, company size, industry, and revenue band, and writes the enriched record to the CRM — all before a human touches it. A follow-up email or Slack alert can fire from the enriched data, routing hot leads to senior reps based on seniority or company size.</p>
+<h3>Why run-time lookups beat scheduled exports</h3>
+<p>The older pattern was a scheduled CSV export from ZoomInfo, uploaded into a database or matched against leads on a timer. That data starts decaying the moment it is exported: people change jobs, companies get acquired, phone numbers change. The native node reads the current record at run time instead of a snapshot a person uploaded weeks earlier. For high-velocity outbound, that freshness is the whole point.</p>
+<p>There is a cost dimension too. On the GTM.AI self-serve tier, data credits cost about $0.45 per enriched record at the base tier (dropping to about $0.38 at the $1,000 spend tier), and enrichment is free on a miss — you only pay when a match returns. Enriching at run time, exactly when a lead arrives, means you never spend credits on stale lists that never get worked.</p>
+<h3>Handling misses and failures</h3>
+<p>Not every lead matches. A practical pattern carried over from the old HTTP-based approach still applies: keep <strong>Continue on Fail</strong> behavior in mind and check whether a person match came back before mapping fields. An IF node after the ZoomInfo node can branch on whether enrichment data exists — the true branch maps enriched fields into your CRM, the false branch flags the lead for manual review and lets the rest of the batch continue. One failed lookup should never break an entire run. If you are automating outreach at scale, this pattern pairs well with the <a href="https://pickmyapp.github.io/blog/zapier-alternatives-cheaper-automation/">cheaper automation options we compare for high-volume teams</a>.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/zoominfo-n8n-integration-explained-2.jpg" width="1280" height="720" alt="Illustration of a sales dashboard with enriched lead contact cards coming out of an automation gear" decoding="async" loading="lazy"></div>
+
+<h2 id="ai-agents">Using ZoomInfo with n8n AI agents</h2>
+<p>This is the part of the announcement that matters most for teams building agents. The ZoomInfo node can be attached to an n8n AI Agent as a tool, so the agent decides on its own when to use it. Instead of running on a fixed schedule with fixed parameters, an agent can decide mid-workflow to research a company, enrich a contact, or check an intent signal, and use the result to plan its next action.</p>
+<p>Concretely, that enables agent workflows that were awkward before. A research agent given a list of target accounts can pull org charts and technographics itself before drafting account plans. A triage agent can check buyer-intent signals on a fresh lead and route it differently depending on what it finds. A meeting-prep agent can assemble a briefing from current company news and contact details an hour before the call. In each case, the agent is working from live data rather than whatever was in the prompt's context or a cached file.</p>
+<p>There is a guardrail worth noting from ZoomInfo's own tooling terms: data accessed through its agent-native surfaces must not be used to train AI models, and its MCP documentation asks users to disable training in their client before connecting. Treat the node as a read-time data source for decisions and outputs, not as training data. If you are new to agent builders in general, our guide to the <a href="https://pickmyapp.github.io/blog/best-ai-agent-builders-non-developers-2026/">best AI agent builders for non-developers</a> explains where n8n fits among the options.</p>
+
+<h2 id="cost">What the integration costs</h2>
+<p>Two bills are in play: what you pay n8n, and what you pay ZoomInfo. The node itself ships inside n8n at no extra charge — installing and using a verified node costs nothing beyond your n8n plan. n8n's cloud plans start at €24 per month (€20 billed annually) for 2,500 executions, and the free self-hosted Community Edition has no execution limit at all. For pricing detail, see our <a href="https://pickmyapp.github.io/blog/n8n-vs-make-small-business/">n8n pricing comparison</a>.</p>
+<p>The ZoomInfo side is where the real money is. ZoomInfo does not publish its core platform pricing — every contract is quoted by sales, with third-party research putting annual commitments at $15,000 and up. What the node authenticates against, however, can be either a traditional ZoomInfo plan or the newer GTM.AI self-serve tier, which is the interesting part for small teams:</p>
+<ul>
+<li><strong>Start free:</strong> GTM.AI self-serve starts free with no credit card required, including a starter credit allowance.</li>
+<li><strong>Data credits:</strong> each one enriches or exports a single company, contact, or intent record — about $0.45 per record at the base tier, dropping to about $0.38 at the $1,000 spend tier.</li>
+<li><strong>AI credits:</strong> pay for AI work like account research, at a flat $0.05 per credit; most actions use 1–20 credits.</li>
+<li><strong>Free on a miss:</strong> enrichment draws nothing when no match is found, and search and lookup calls are always free.</li>
+</ul>
+<p>The practical math for a small team: enriching 500 leads a month uses about 500 data credits — roughly $225 at the base tier, with pay-as-you-go top-ups starting at $20 and no seat fees. Gate enrichment behind a quick qualification filter so credits go only to leads worth working.</p>
+
+<h2 id="vs-manual-api">Native node vs the manual API route</h2>
+<p>Before this launch, the standard way to get ZoomInfo data into n8n was an HTTP Request node pointed at ZoomInfo's API, with a manually managed JWT token, hand-mapped request fields, and your own pagination logic. It worked — practitioners wrote entire guides around it — but every part of it was yours to maintain. The table below shows how the two approaches compare.</p>
+<div class="tablewrap"><table>
+<caption>Native ZoomInfo node vs a hand-built HTTP Request node (October 2026).</caption>
+<thead><tr><th scope="col">Factor</th><th scope="col">Native ZoomInfo node</th><th scope="col">Manual HTTP Request node</th></tr></thead>
+<tbody>
+<tr><th scope="row">Authentication</th><td>OAuth 2.0 credential built in</td><td>You generate and store the JWT token yourself, and handle refresh</td></tr>
+<tr><th scope="row">Maintenance</th><td>Built and maintained by ZoomInfo; verified by n8n</td><td>You fix it when the API changes</td></tr>
+<tr><th scope="row">Output format</th><td>One item per result, ready for loops and filters</td><td>Raw JSON you parse and reshape</td></tr>
+<tr><th scope="row">Filters</th><td>JSON attributes for all filters, exposed in the node</td><td>You construct the request body by hand</td></tr>
+<tr><th scope="row">AI agent use</th><td>Works directly as an AI Agent tool</td><td>Possible, but you describe the API to the agent yourself</td></tr>
+<tr><th scope="row">Availability</th><td>Requires the verified node version of n8n</td><td>Works with any n8n version that has HTTP nodes</td></tr>
+</tbody></table></div>
+<p>The manual route still has a place: older n8n instances, endpoints the node does not expose, or full control over retry logic. For everything else, the native node removes the brittle middle layer. Teams comparing options should also read our <a href="https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/">Activepieces vs n8n comparison</a>.</p>
+
+<h2 id="who-should-use">Who should use it — and who should skip it</h2>
+<div class="verdict">
+<div><h3>Use it if</h3><ul>
+<li>You already pay for ZoomInfo or qualify for GTM.AI self-serve credits.</li>
+<li>Your leads arrive faster than your team can research them.</li>
+<li>You run outbound or inbound workflows in n8n and want run-time data freshness.</li>
+<li>You are building n8n AI agents that need live company and contact intelligence.</li>
+</ul></div>
+<div><h3>Skip it if</h3><ul>
+<li>You enrich fewer than a few dozen leads a month — manual lookup is cheaper.</li>
+<li>You have no ZoomInfo account and no budget for data credits.</li>
+<li>Your audience is consumers, not B2B buyers — ZoomInfo is a B2B database.</li>
+<li>Your team sells in regions where ZoomInfo's coverage is thin; spot-check match rates first.</li>
+</ul></div>
+</div>
+<p class="fact"><strong>Quick fact:</strong> ZoomInfo says its data is used through more than 120 CRM, marketing, and sales-tool integrations — the n8n node now puts that same data inside arbitrary workflows, not just packaged app connectors.</p>
+
+<h2 id="get-started">How to get started</h2>
+<p>Setup is short if your accounts are ready. Here is the practical path:</p>
+<ol class="list">
+<li><strong>Make sure your n8n is current.</strong> The verified node shipped with the October 2026 release line, so update n8n Cloud or your self-hosted instance first.</li>
+<li><strong>Add the ZoomInfo node.</strong> Open the Nodes panel, search for ZoomInfo, and drop the node into your workflow.</li>
+<li><strong>Connect your account.</strong> Create a ZoomInfo credential in n8n and authenticate with OAuth 2.0 using your own ZoomInfo or GTM.AI account.</li>
+<li><strong>Pick your operation.</strong> Start with Search or Enrich: feed in a small test batch of leads and inspect the returned fields.</li>
+<li><strong>Wire the failure path.</strong> Add an IF node that checks for a match before mapping fields, so misses get flagged instead of breaking the run.</li>
+<li><strong>Push downstream.</strong> Send enriched records to your CRM, spreadsheet, or outreach tool, and add intent-signal checks for priority routing.</li>
+</ol>
+<p>Run the whole thing against ten to twenty leads first and watch the match rate before you point it at thousands. If fewer than half match, your audience may sit outside ZoomInfo's strongest coverage, and the credits are better spent elsewhere.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Do I need a ZoomInfo subscription to use the n8n node?</h3>
+<p>Yes. The node authenticates with your own ZoomInfo account through OAuth 2.0, and lookups draw on your ZoomInfo credits. GTM.AI self-serve access starts free with no credit card, and data credits cost about $0.45 per enriched record at the base tier.</p>
+<h3>Can the ZoomInfo node enrich leads without a CRM?</h3>
+<p>Yes. n8n can feed the node leads from a form, a CSV, a webhook, or any app, then write the enriched records back to a spreadsheet, email them, or push them into a CRM. A CRM is a common destination, not a requirement.</p>
+<h3>Does the ZoomInfo n8n integration work with n8n AI agents?</h3>
+<p>Yes. n8n lists the ZoomInfo node as compatible with AI Agent workflows: an agent can decide mid-run to research a company, enrich a contact, or check an intent signal, and use the result to plan its next action.</p>
+<h3>How is the native node different from calling the ZoomInfo API with an HTTP Request node?</h3>
+<p>The native node is built and maintained by ZoomInfo, uses OAuth 2.0 instead of hand-managed tokens, and returns one item per result for easy looping. A raw HTTP Request node works too, but you manage authentication, field mapping, and pagination yourself.</p>
+<h3>What happens when ZoomInfo finds no match for a lead?</h3>
+<p>On the GTM.AI self-serve tier, enrichment is free on a miss: the credit is only consumed when a match is returned. In n8n, route misses through an IF node or continue-on-fail so one unmatched lead never stops the rest of the batch.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<ul>
+<li><strong>Real and verified:</strong> ZoomInfo's native n8n node launched October 12, 2026, is built and maintained by ZoomInfo, and is verified by n8n — not a community workaround.</li>
+<li><strong>What it does:</strong> search and enrich contacts and companies, read buyer-intent and news signals, and serve as a tool inside n8n AI Agent workflows, all at run time.</li>
+<li><strong>What it costs:</strong> the node is free inside n8n; you pay ZoomInfo through your existing plan or GTM.AI self-serve credits (about $0.45 per enriched record at the base tier, free on a miss).</li>
+<li><strong>Biggest win:</strong> leads are enriched against today's record at the moment they arrive, replacing stale scheduled exports.</li>
+<li><strong>First step:</strong> update n8n, connect the ZoomInfo node with OAuth 2.0, and test it on 10–20 leads before scaling.</li>
+</ul>
+<p>If your team lives in n8n and already pays for ZoomInfo data, switching enrichment to the native node is the obvious move. The manual HTTP route remains a fine fallback, but for most teams it is now technical debt.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/n8n-vs-make-small-business/">n8n vs Make: Which Is Better for Small Business in 2026?</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/">Activepieces vs n8n: Open-Source Automation Compared</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-ai-agent-builders-non-developers-2026/">Best AI Agent Builders for Non-Developers (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/zapier-alternatives-cheaper-automation/">Zapier Alternatives: Cheaper Automation Tools Compared</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

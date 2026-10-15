@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>best SSL expiry monitoring tools for 64-day certificates (2026)</title>
+<meta name="description" content="64-day TLS certificates make expiry monitoring essential. We compare the best SSL monitoring tools — UptimeRobot, Better Stack, StatusCake, Oh Dear and more.">
+<meta name="keywords" content="ssl expiry monitoring, 64 day certificates, ssl certificate monitoring tools, uptimerobot ssl monitoring, better stack ssl alerts, lets encrypt monitoring">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="best SSL expiry monitoring tools for 64-day certificates (2026)">
+<meta property="og:description" content="64-day TLS certificates make expiry monitoring essential. We compare the best SSL monitoring tools — UptimeRobot, Better Stack, StatusCake, Oh Dear and more.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/best-ssl-expiry-monitoring-tools-64-day-certificates-1.jpg">
+<meta property="article:published_time" content="2026-10-15">
+<meta property="article:modified_time" content="2026-10-15">
+<meta property="article:section" content="Web Hosting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="best SSL expiry monitoring tools for 64-day certificates (2026)">
+<meta name="twitter:description" content="64-day TLS certificates make expiry monitoring essential. We compare the best SSL monitoring tools — UptimeRobot, Better Stack, StatusCake, Oh Dear and more.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/best-ssl-expiry-monitoring-tools-64-day-certificates-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/#article", "headline": "best SSL expiry monitoring tools for 64-day certificates (2026)", "description": "64-day TLS certificates make expiry monitoring essential. We compare the best SSL monitoring tools — UptimeRobot, Better Stack, StatusCake, Oh Dear and more.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/best-ssl-expiry-monitoring-tools-64-day-certificates-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-15", "dateModified": "2026-10-15", "mainEntityOfPage": "https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/", "articleSection": "Web Hosting", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I still need SSL expiry monitoring if my certificates renew automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Automation fails silently: a broken cron job, an expired DNS API token, or a rate limit can all stop renewals. With 64-day certificates there are only about 42 days between the last safe renewal point and expiry, so a late-discovered failure leaves almost no buffer. Monitoring is the seatbelt over the airbag."}}, {"@type": "Question", "name": "How many days before expiry should SSL alerts fire?", "acceptedAnswer": {"@type": "Answer", "text": "For 64-day certificates, set alerts at 21, 14, and 7 days remaining. Healthy renewals happen around day 42, so a 21-day alert means renewal already missed its window. For 45-day certificates, compress that ladder to 14, 7, and 3 days."}}, {"@type": "Question", "name": "Can free monitoring tools watch SSL certificate expiry?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. UptimeRobot's free plan includes SSL and domain expiry monitoring (50 monitors, but non-commercial use only since late 2024). Better Stack's free tier covers 10 monitors with 3-minute checks and SSL alerts, and Site24x7's free plan includes SSL and domain expiry tracking with 1-minute checks."}}, {"@type": "Question", "name": "Does UptimeRobot monitor SSL certificates on the free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — SSL and domain expiry monitoring are included on every UptimeRobot plan, including the free one (50 monitors, 5-minute checks). The catch: the free plan is personal, non-commercial use only, so businesses need a paid plan starting at around $9 per month."}}, {"@type": "Question", "name": "When do 64-day certificates actually start?", "acceptedAnswer": {"@type": "Answer", "text": "Let's Encrypt starts issuing 64-day certificates in staging on October 14, 2026; the default classic ACME profile switches to 64 days on February 10, 2027. The last 90-day certificates expire around May 11, 2027, and the default moves to 45 days on February 16, 2028."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Web Hosting", "item": "https://pickmyapp.github.io/category/web-hosting/"}, {"@type": "ListItem", "position": 3, "name": "SSL expiry monitoring tools", "item": "https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li aria-current="page">SSL expiry monitoring tools</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">best SSL expiry monitoring tools for 64-day certificates (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Web Hosting</span></li>
+<li>Published <time datetime="2026-10-15"><strong>Oct 15, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>11 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p>With Let's Encrypt moving to <strong>64-day certificates in February 2027</strong> (and 45 days in 2028), expiry monitoring is no longer optional. <strong>Better Stack</strong> is the best free option, <strong>UptimeRobot</strong> the cheapest paid one, and <strong>Oh Dear</strong> the strongest all-in-one for agencies. Set alerts at <strong>21, 14, and 7 days</strong> before expiry and route them somewhere a human actually reads.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/best-ssl-expiry-monitoring-tools-64-day-certificates-1.jpg" width="1280" height="720" alt="Illustration of a browser padlock and calendar tracking a 64-day SSL certificate expiry countdown across multiple domains" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#why-64-day-certs">Why 64-day certificates change monitoring</a></li><li><a href="#what-to-monitor">What to monitor (and when to alert)</a></li><li><a href="#tools">The 8 best SSL expiry monitoring tools</a></li><li><a href="#compare">SSL monitoring tools compared</a></li><li><a href="#free-vs-paid">Free vs paid: what you get</a></li><li><a href="#setup">Setting up expiry monitoring in 6 steps</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>An expired SSL certificate is one of the most embarrassing outages a site can have: browsers flash a full-page warning, visitors bounce, and checkout stops. Prevention used to be easy, because 90-day certificates gave you weeks of slack. That changes with Let's Encrypt's new schedule — <strong>64-day certificates by default from February 10, 2027, and 45-day certificates from February 16, 2028</strong> (staging tests start October 14, 2026; full timeline in our <a href="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let's Encrypt 64-day certificates guide</a>). A failed renewal discovered late leaves three weeks with 64-day certificates, barely two with 45-day ones. This guide reviews the best monitoring tools for the short-lived certificate era, compares costs, and shows you exactly what to set up.</p>
+
+<h2 id="why-64-day-certs">Why 64-day certificates change monitoring</h2>
+<p>The schedule follows the CA/Browser Forum's decision to cap publicly trusted certificates at 47 days by March 2029:</p>
+<ul>
+<li><strong>May 13, 2026:</strong> the optional <em>tlsserver</em> ACME profile begins issuing 45-day certificates for early adopters and testing.</li>
+<li><strong>October 14, 2026:</strong> 64-day certificates arrive in Let's Encrypt's staging environment so administrators can test their automation.</li>
+<li><strong>February 10, 2027:</strong> the default <em>classic</em> profile switches to <strong>64-day certificates</strong>, with domain authorization reuse dropping to 10 days.</li>
+<li><strong>February 16, 2028:</strong> the default moves to <strong>45-day certificates</strong>, with authorization reuse collapsing to 7 hours.</li>
+<li>The last 90-day certificates are expected to expire on <strong>May 11, 2027</strong>.</li>
+</ul>
+<p>Three consequences matter. First, renewals happen twice as often — twice as many chances to fail. Second, the authorization reuse window shrinks (30 days → 10 days → 7 hours), making failed renewals slower to recover. Third, manual renewal becomes impractical. Let's Encrypt's guidance: renew at roughly <strong>two-thirds of the certificate's lifetime</strong> (around day 42 of 64). Our <a href="https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/">Certbot auto-renewal guide</a> covers automation; this article covers the safety net.</p>
+<p class="fact"><strong>Quick fact:</strong> shorter certificate lifetimes are a deliberate security improvement: they narrow the window for abused keys and make revocation less critical. The price is that everyone now needs automation <em>and</em> monitoring.</p>
+
+<h2 id="what-to-monitor">What to monitor (and when to alert)</h2>
+<p>Expiry monitoring is not just "warn me before the date." A good setup watches four things:</p>
+<ul>
+<li><strong>Days until expiry.</strong> With 64-day certificates, use an escalating ladder: <strong>21 days (warning), 14 days (urgent), 7 days (critical)</strong>. With 45-day certificates, compress that to <strong>14, 7, and 3 days</strong>.</li>
+<li><strong>Certificate chain and validity.</strong> A renewed certificate with the wrong intermediate chain still breaks the site — check the certificate is actually valid, not just non-expired.</li>
+<li><strong>All domains and subdomains.</strong> The main site renews fine; the forgotten <em>api.yoursite.com</em> expires. Monitor every hostname your visitors touch.</li>
+<li><strong>Renewal success itself.</strong> Watch that the "not after" date advances after renewal day — if it does not, the renewal failed silently.</li>
+</ul>
+<p>Route alerts where a human will act — email minimum, plus a chat message and mobile push. For client work, add the client's technical contact, and test the path once by lowering a threshold temporarily.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/best-ssl-expiry-monitoring-tools-64-day-certificates-2.jpg" width="1280" height="720" alt="Illustration of SSL certificate expiry alerts firing at 21, 14 and 7 day thresholds across a set of monitored domains" decoding="async"></div>
+
+<h2 id="tools">The 8 best SSL expiry monitoring tools</h2>
+<p>We rated each tool on SSL features, check frequency, alert channels, free-plan generosity, and price. Here is how they land.</p>
+
+<h3 id="uptimerobot">1. UptimeRobot — cheapest way to cover many domains</h3>
+<p>UptimeRobot is the value pick: every plan — including free — includes <strong>SSL and domain expiry monitoring</strong>, with 50 monitors checked every 5 minutes on the free tier. The caveat: <strong>since late 2024, the free plan is personal, non-commercial use only.</strong> Businesses need a paid plan: Solo from roughly <strong>$9/month billed annually</strong> for 1-minute checks, Team from ~$38/month (100 monitors), Enterprise from ~$69/month (30-second checks). Paid tiers add Slack/Teams alerts, webhooks, Zapier, and PagerDuty; SMS and voice calls cost extra credits on all plans.</p>
+<p><strong>Best for:</strong> covering many domains cheaply with SSL expiry plus basic uptime in one tool.</p>
+
+<h3 id="better-stack">2. Better Stack — best free plan for serious monitoring</h3>
+<p>Better Stack (formerly Better Uptime) has the most generous free tier here: <strong>10 monitors checked every 3 minutes, hourly SSL expiry checks, a public status page, and on-call style alert routing</strong> — all for $0. Its incident management is the differentiator: you define the first alert, the escalation, and the incident communication. SSL checks on all plans have customizable expiry thresholds, with email, Slack, Teams, phone, SMS, PagerDuty, and webhook alerts. Paid team plans start higher than most rivals here (2026 reviews place the team tier around $85/month — confirm the current list).</p>
+<p><strong>Best for:</strong> small teams that want real incident management, not just pings, without paying for it.</p>
+
+<h3 id="statuscake">3. StatusCake — solid all-rounder with generous SMS</h3>
+<p>StatusCake's free plan includes <strong>10 uptime monitors (5-minute checks) and 1 SSL monitor checked daily</strong> — enough for your most important certificate. Superior (about <strong>€19.99/month</strong>) raises that to 100 uptime monitors at 1-minute intervals and <strong>50 SSL monitors every 30 minutes</strong>; Business (about <strong>€69.99/month</strong>) goes to 300 monitors and 100 SSL monitors every 10 minutes. It offers 14+ notification channels — including <strong>75 free SMS credits per month on the free plan</strong> — from 43 probe locations in 30 countries. The daily SSL interval on free is its main weakness for the 45-day future; pair it with a renewal-hook alert as backup.</p>
+<p><strong>Best for:</strong> teams that want SMS alerts without paying for credits.</p>
+
+<h3 id="pingdom">4. Pingdom — the old reliable, but no free plan</h3>
+<p>Pingdom (part of SolarWinds) has monitored sites since 2007. It does SSL well: automatic expiry alerts, 1-minute checks on paid tiers, transaction monitoring for multi-step user flows, and page speed plus real user monitoring (RUM) as companions. The dealbreaker: <strong>there is no free plan</strong> — only a 14- to 30-day trial. Entry pricing sits around <strong>$10–15/month for 10 checks</strong>, with transaction monitoring and RUM as add-ons. It makes sense if you already pay for it and value checkout-flow testing; it is hard to justify as a new purchase purely for SSL expiry when free tools cover the core need.</p>
+<p><strong>Best for:</strong> existing Pingdom users and teams wanting uptime, transaction checks, and RUM in one place.</p>
+
+<h3 id="site24x7">5. Site24x7 — the most complete free plan</h3>
+<p>Site24x7's free plan is the most complete here: <strong>1-minute check intervals</strong>, SSL certificate monitoring, domain expiry tracking, and 100+ free diagnostic tools — no credit card required. Paid plans start at just <strong>$9/month</strong>, adding 130+ locations, AI anomaly detection, and full infrastructure monitoring from one console. SSL expiry sits alongside server, APM, and log monitoring — good if you want one dashboard for the whole stack, though the interface is denser than UptimeRobot's.</p>
+<p><strong>Best for:</strong> teams wanting SSL monitoring bundled with a broader infrastructure platform.</p>
+
+<h3 id="oh-dear">6. Oh Dear — the agency favorite, all features on every plan</h3>
+<p>Oh Dear unlocks <strong>every feature on every plan</strong> — uptime, SSL, DNS, broken-link crawling, cron monitoring, status pages, SSO, and unlimited users. Only the site count scales: Solo <strong>€15/month</strong> (2 sites), Freelance <strong>€49/month</strong> (10), Studio <strong>€99/month</strong> (25), Agency <strong>€149/month</strong> (50), with two months free on annual billing. Certificate monitoring verifies expiry dates and alerts on changes, with every alert confirmed from a second location — a real false-alarm killer. One caveat: reviews note its documentation is inconsistent about default SSL alert timing (30 days per marketing, 14/7 days per technical docs), so <strong>verify the timing on your plan</strong>.</p>
+<p><strong>Best for:</strong> agencies and freelancers managing client portfolios who want one bill and every feature unlocked.</p>
+
+<h3 id="datadog">7. Datadog — for teams already inside the Datadog ecosystem</h3>
+<p>Datadog's synthetic monitoring includes <strong>SSL certificate checks</strong> alongside API and browser tests from global locations, integrated with its APM, logs, and dashboards. Pricing is usage-based: roughly <strong>$5 per 10,000 API test runs</strong> and <strong>$12 per 1,000 browser test runs</strong> on an annual commitment, with a limited free tier. The catch: every check from every location burns runs, so costs compound fast — a mid-size setup can reach hundreds of dollars per month. <strong>Only choose Datadog if you already live in Datadog</strong>; buying it standalone for certificate expiry is like renting a warehouse to store a bicycle.</p>
+<p><strong>Best for:</strong> engineering teams already running Datadog who want expiry checks in existing dashboards.</p>
+
+<h3 id="uptime-kuma">8. Uptime Kuma — free and self-hosted, you own it</h3>
+<p>Uptime Kuma is the open-source outlier: <strong>free, self-hosted, unlimited monitors, and automatic SSL expiry monitoring</strong> with 90+ notification services. It runs on your own server — even a $5/month VPS — with no per-monitor costs and no commercial-use restrictions. The tradeoff is ownership: you maintain the server, the updates, and the alerts about the monitor itself (a dead monitor monitors nothing). If you already run a <a href="https://pickmyapp.github.io/blog/best-vps-hosting-for-developers/">VPS you manage yourself</a>, Kuma is the cheapest serious option.</p>
+<p><strong>Best for:</strong> developers who already run a VPS and want unlimited, private monitoring at near-zero cost.</p>
+
+<h2 id="compare">SSL monitoring tools compared</h2>
+<div class="tablewrap"><table>
+<caption>Prices checked October 2026 against vendor pages and 2026 reviews. Tools change prices often — confirm on the vendor pricing page before buying.</caption>
+<thead><tr><th scope="col">Tool</th><th scope="col">Free plan</th><th scope="col">Check frequency</th><th scope="col">Alert channels</th><th scope="col">Price (entry paid)</th></tr></thead>
+<tbody>
+<tr><th scope="row">UptimeRobot</th><td>50 monitors, non-commercial use only</td><td>5 min free; 1 min paid; 30 sec Enterprise</td><td>Email; app; SMS/voice via credits; Slack/Teams (paid); webhooks (Team)</td><td>~$9/mo (annual)</td></tr>
+<tr><th scope="row">Better Stack</th><td>10 monitors, 3-min checks, status page</td><td>3 min free; faster on paid</td><td>Email, Slack, Teams, phone, SMS, PagerDuty, webhooks</td><td>Free tier goes far; team plans ~$85/mo</td></tr>
+<tr><th scope="row">StatusCake</th><td>10 uptime + 1 SSL monitor</td><td>5 min uptime free; SSL daily free; 1 min / 30 sec paid</td><td>14+ incl. 75 free SMS credits/mo</td><td>~€19.99/mo (Superior)</td></tr>
+<tr><th scope="row">Pingdom</th><td>None (trial only)</td><td>1 min on paid tiers</td><td>Email, SMS credits, Slack, PagerDuty, webhooks</td><td>~$10–15/mo (10 checks)</td></tr>
+<tr><th scope="row">Site24x7</th><td>1-min checks, SSL + domain expiry</td><td>1 min free and paid</td><td>Email, SMS, voice, Slack, Teams, PagerDuty, webhooks</td><td>$9/mo</td></tr>
+<tr><th scope="row">Oh Dear</th><td>None (10-day trial)</td><td>Minute-level uptime checks</td><td>Email, SMS, Slack, Teams, Telegram, PagerDuty, webhooks</td><td>€15/mo (2 sites)</td></tr>
+<tr><th scope="row">Datadog</th><td>Limited synthetic test runs</td><td>Configurable, billed per run</td><td>Native + PagerDuty, Slack, webhooks</td><td>~$5/10k API test runs</td></tr>
+<tr><th scope="row">Uptime Kuma</th><td>Free, unlimited, self-hosted</td><td>Configurable (your server)</td><td>90+ notification services</td><td>$0 + your server</td></tr>
+</tbody></table></div>
+
+<h2 id="free-vs-paid">Free vs paid: what you actually get</h2>
+<p>For SSL expiry specifically, free plans are surprisingly capable — a daily SSL check is plenty when certificates last 64 days. What matters is the rest of the package:</p>
+<ul>
+<li><strong>Stay free if:</strong> under 50 domains and email or app alerts suffice. Better Stack and Site24x7 are the strongest free options for business use; UptimeRobot's free plan is personal projects only.</li>
+<li><strong>Pay when:</strong> you manage client sites, need 1-minute uptime checks, want SMS/phone escalation, or need webhooks for your on-call rotation.</li>
+<li><strong>The sweet spot:</strong> most small businesses land on Site24x7's free plan or UptimeRobot Solo (~$9/month) and invest the savings in reliable renewal automation.</li>
+</ul>
+
+<h2 id="setup">Setting up expiry monitoring in 6 steps</h2>
+<p>The setup is nearly identical in every tool:</p>
+<ul>
+<li><strong>1. Inventory every certificate.</strong> List every public hostname — main domain, www, API subdomains, staging, client sites. The certificates that expire are always the ones you forgot.</li>
+<li><strong>2. Add one SSL monitor per hostname.</strong> Most tools auto-detect the certificate when you add an HTTPS monitor. Where a dedicated SSL monitor type exists (StatusCake, Datadog), use it — it checks the chain and issuer, not just the date.</li>
+<li><strong>3. Set escalating thresholds.</strong> 21 / 14 / 7 days for 64-day certificates (14 / 7 / 3 for 45-day). The first threshold should fire <em>before</em> your renewal automation's latest safe date.</li>
+<li><strong>4. Route alerts to two places.</strong> A chat channel (Slack/Teams) for visibility and a mobile push or email for when you are away from the desk. For client sites, add the client's technical contact.</li>
+<li><strong>5. Cover the domain too.</strong> Enable domain expiry alerts while you are there — a lapsed registration takes down everything, SSL included. UptimeRobot, Site24x7, and Oh Dear all include this.</li>
+<li><strong>6. Test the alert path.</strong> Set one threshold to 90 days, confirm every channel fires, then set it back.</li>
+</ul>
+<p>Finally, pair monitoring with automation: our <a href="https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/">Certbot auto-renewal guide</a> covers the renewal side, and our <a href="https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/">cheap WordPress hosting guide</a> and <a href="https://pickmyapp.github.io/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround for agencies</a> cover which hosts automate TLS well.</p>
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Do I still need SSL expiry monitoring if my certificates renew automatically?</h3>
+<p>Yes. Automation fails silently: a broken cron job, an expired DNS API token, or a rate limit can all stop renewals. With 64-day certificates there are only about 42 days between the last safe renewal point and expiry, so a late-discovered failure leaves almost no buffer. Monitoring is the seatbelt over the airbag.</p>
+<h3>How many days before expiry should SSL alerts fire?</h3>
+<p>For 64-day certificates, set alerts at 21, 14, and 7 days remaining. Healthy renewals happen around day 42, so a 21-day alert means renewal already missed its window. For 45-day certificates, compress that ladder to 14, 7, and 3 days.</p>
+<h3>Can free monitoring tools watch SSL certificate expiry?</h3>
+<p>Yes. UptimeRobot's free plan includes SSL and domain expiry monitoring (50 monitors, but non-commercial use only since late 2024). Better Stack's free tier covers 10 monitors with 3-minute checks and SSL alerts, and Site24x7's free plan includes SSL and domain expiry tracking with 1-minute checks.</p>
+<h3>Does UptimeRobot monitor SSL certificates on the free plan?</h3>
+<p>Yes — SSL and domain expiry monitoring are included on every UptimeRobot plan, including the free one (50 monitors, 5-minute checks). The catch: the free plan is personal, non-commercial use only, so businesses need a paid plan starting at around $9 per month.</p>
+<h3>When do 64-day certificates actually start?</h3>
+<p>Let's Encrypt starts issuing 64-day certificates in staging on October 14, 2026; the default classic ACME profile switches to 64 days on February 10, 2027. The last 90-day certificates expire around May 11, 2027, and the default moves to 45 days on February 16, 2028.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<div class="verdict">
+<div><h3>Our picks</h3><ul>
+<li><strong>Best overall:</strong> Better Stack — free for 10 sites with real incident management that scales into on-call workflows.</li>
+<li><strong>Best value paid:</strong> UptimeRobot Solo (~$9/month) — 1-minute checks and SSL monitoring on everything.</li>
+<li><strong>Best for agencies:</strong> Oh Dear — every feature on every plan, alerts verified from a second location.</li></ul></div>
+<div><h3>Best for specific cases</h3><ul>
+<li><strong>Best free infrastructure bundle:</strong> Site24x7 — 1-minute checks and 100+ diagnostic tools at $0.</li>
+<li><strong>Best self-hosted:</strong> Uptime Kuma — unlimited monitors, total privacy, near-zero cost.</li>
+<li><strong>Best inside Datadog:</strong> Datadog Synthetics — only if you already pay for Datadog.</li></ul></div>
+</div>
+<p>The 64-day era makes expiry monitoring a baseline requirement, not a nice-to-have. Pick a tool today, inventory your hostnames, set escalating alerts at 21/14/7 days, and verify your renewal automation handles the shorter cycle. Your future self — the one not woken up by a browser warning page — will be grateful.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let's Encrypt 64-Day SSL Certificates: What Changes in 2027</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/">How to Renew SSL Certificates Automatically with Certbot</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround for Agencies Compared</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/">Best Cheap Web Hosting for WordPress in 2026</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

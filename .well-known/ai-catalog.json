@@ -239,6 +239,156 @@
     "best website builders tools",
     "website builders comparison 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:osto-ai-cyber-soc2-startups-explained",
+   "displayName": "OSTO explained: the AI-native cyber platform promising SOC 2 readiness in 7 days for startups and small teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/osto-ai-cyber-soc2-startups-explained/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "OSTO explained: the AI-native cybersecurity platform promising SOC 2 readiness in 7 days for startups. Features, pricing gaps, and how it compares to Vanta and Drata.",
+   "representativeQueries": [
+    "osto explained: the ai-native cyber platform",
+    "osto explained: the ai-native cyber platform 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:citations-io-brand-mentions-chatgpt-perplexity",
+   "displayName": "Citations.io explained: see what ChatGPT and Perplexity say about your brand (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/citations-io-brand-mentions-chatgpt-perplexity/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Citations.io explained: see what ChatGPT and Perplexity say about your brand. Features, pricing gaps, and how it compares to Peec AI, Otterly.AI and Profound.",
+   "representativeQueries": [
+    "citations.io explained: see what chatgpt and",
+    "citations.io explained: see what chatgpt and 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:relay-app-shutdown-no-code-ai-agent-alternatives",
+   "displayName": "Relay.app shutdown: best no-code AI agent alternatives after September 2026 — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/relay-app-shutdown-no-code-ai-agent-alternatives/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Relay.app shut down on September 14, 2026. Compare the best no-code AI agent alternatives — Zapier, Make, n8n, Lindy, Gumloop, Relevance AI — plus a migration checklist.",
+   "representativeQueries": [
+    "relay.app shutdown: best no-code ai agent",
+    "relay.app shutdown: best no-code ai agent 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:substack-vs-beehiiv-free-newsletters-2026",
+   "displayName": "Substack vs beehiiv for free newsletters (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/substack-vs-beehiiv-free-newsletters-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Substack vs beehiiv for free newsletters: free plan limits, fees, website builder, discovery and analytics compared — which is better in 2026?",
+   "representativeQueries": [
+    "substack vs beehiiv for free newsletters",
+    "substack vs beehiiv for free newsletters 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:hubspot-vs-freshsales-small-teams-2026",
+   "displayName": "HubSpot vs Freshsales for small teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/hubspot-vs-freshsales-small-teams-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "HubSpot vs Freshsales for small teams: pricing, free plans, features and hidden costs compared, with a clear verdict on which CRM to pick in 2026.",
+   "representativeQueries": [
+    "hubspot vs freshsales for small teams",
+    "hubspot vs freshsales for small teams 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:asana-free-vs-paid-limits-2026",
+   "displayName": "Asana free vs paid: what the limits really mean (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/asana-free-vs-paid-limits-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Asana free vs paid in 2026: what the Personal plan limits really mean, what Starter and Advanced add, and when your team should actually upgrade.",
+   "representativeQueries": [
+    "asana free vs paid: what the",
+    "asana free vs paid: what the 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-ssl-expiry-monitoring-tools-64-day-certificates",
+   "displayName": "best SSL expiry monitoring tools for 64-day certificates (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "64-day TLS certificates make expiry monitoring essential. We compare the best SSL monitoring tools — UptimeRobot, Better Stack, StatusCake, Oh Dear and more.",
+   "representativeQueries": [
+    "best ssl expiry monitoring tools for",
+    "best ssl expiry monitoring tools for 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:jasper-vs-writesonic-agencies-compared",
+   "displayName": "Jasper vs Writesonic for agencies compared (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/jasper-vs-writesonic-agencies-compared/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Jasper vs Writesonic for agencies: pricing, seats, brand voices, team workflows and client billing compared — with a verdict by agency size.",
+   "representativeQueries": [
+    "jasper vs writesonic for agencies compared",
+    "jasper vs writesonic for agencies compared 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:squarespace-vs-format-photographers",
+   "displayName": "Squarespace vs Format for photographers (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/squarespace-vs-format-photographers/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Squarespace vs Format for photographers: pricing, portfolio templates, client galleries, proofing and print sales compared, with a verdict by photographer type.",
+   "representativeQueries": [
+    "squarespace vs format for photographers 2026",
+    "squarespace vs format for photographers 2026 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:tawk-to-vs-chaport-small-business",
+   "displayName": "Tawk.to vs Chaport for small business compared (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/tawk-to-vs-chaport-small-business/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Tawk.to vs Chaport for small business: free plans, pricing, chatbots, integrations and setup compared, with an honest verdict on which live chat to pick.",
+   "representativeQueries": [
+    "tawk.to vs chaport for small business",
+    "tawk.to vs chaport for small business 2026"
+   ]
   }
  ],
  "host": {

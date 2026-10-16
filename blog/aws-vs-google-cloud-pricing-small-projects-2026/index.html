@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AWS vs Google Cloud pricing for small projects (2026)</title>
+<meta name="description" content="AWS vs Google Cloud pricing for small projects: free tiers, VM, storage and egress costs compared with a worked monthly bill.">
+<meta name="keywords" content="AWS vs Google Cloud pricing 2026, AWS vs GCP small project, Google Cloud free tier 2026, AWS free tier 2026, cheapest cloud for small projects, EC2 vs Compute Engine pricing">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/aws-vs-google-cloud-pricing-small-projects-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="AWS vs Google Cloud pricing for small projects (2026)">
+<meta property="og:description" content="AWS vs Google Cloud pricing for small projects: free tiers, VM, storage and egress costs compared with a worked monthly bill.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/aws-vs-google-cloud-pricing-small-projects-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aws-vs-google-cloud-pricing-small-projects-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-16">
+<meta property="article:modified_time" content="2026-10-16">
+<meta property="article:section" content="Cloud &amp; DevOps">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AWS vs Google Cloud pricing for small projects (2026)">
+<meta name="twitter:description" content="AWS vs Google Cloud pricing for small projects: free tiers, VM, storage and egress costs compared with a worked monthly bill.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aws-vs-google-cloud-pricing-small-projects-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://pickmyapp.github.io/blog/aws-vs-google-cloud-pricing-small-projects-2026/#article","headline":"AWS vs Google Cloud pricing for small projects (2026)","description":"AWS vs Google Cloud pricing for small projects: free tiers, VM, storage and egress costs compared with a worked monthly bill.","image":"https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aws-vs-google-cloud-pricing-small-projects-2026-1.jpg","author":{"@type":"Organization","name":"PickMyApp Research Team","url":"https://pickmyapp.github.io/about/"},"publisher":{"@type":"Organization","name":"PickMyApp","logo":{"@type":"ImageObject","url":"https://pickmyapp.github.io/images/logo.svg"}},"datePublished":"2026-10-16","dateModified":"2026-10-16","mainEntityOfPage":"https://pickmyapp.github.io/blog/aws-vs-google-cloud-pricing-small-projects-2026/","articleSection":"Cloud & DevOps","inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is AWS or Google Cloud cheaper for a small project in 2026?","acceptedAnswer":{"@type":"Answer","text":"For most small projects, Google Cloud \u2014 thanks to the $300 90-day trial credit, an always-free e2-micro VM tier, and slightly cheaper egress and object storage list prices. AWS's free options are also solid, but its 12-month free tier eventually expires while Google's always-free tier doesn't."}},{"@type":"Question","name":"Can I run a small project completely free on AWS or Google Cloud?","acceptedAnswer":{"@type":"Answer","text":"Yes, but watch the terms. AWS offers trial credits plus always-free usage on select services, while Google Cloud gives new accounts a $300 credit valid for 90 days plus always-free tiers on 20+ products \u2014 including one e2-micro VM per month in select US regions, 5 GB of storage, and 1 TiB of BigQuery queries monthly. Always confirm current terms on each vendor's pricing page before signing up."}},{"@type":"Question","name":"Which cloud has cheaper storage for small projects?","acceptedAnswer":{"@type":"Answer","text":"Both are very close: around $0.023/GB-month on AWS S3 versus $0.020/GB-month on Google Cloud Storage for standard single-region storage. At small-project scale \u2014 a few dozen gigabytes \u2014 the difference is a few dollars a month; request fees and egress usually matter more."}},{"@type":"Question","name":"What is the biggest surprise cost on a small cloud bill?","acceptedAnswer":{"@type":"Answer","text":"Egress \u2014 data leaving the cloud to the internet. Both charge roughly $0.08\u20130.09 per GB after generous free allowances, so a small app serving 500 GB/month can pay $40+ just on bandwidth \u2014 often more than the VM itself. The other surprise is idle resources: forgotten VMs, disks, snapshots, and static IPs keep billing silently."}},{"@type":"Question","name":"Does billing granularity matter for small projects?","acceptedAnswer":{"@type":"Answer","text":"Probably not the clouds' fault \u2014 the biggest beginner cost trap is choosing a large instance when a micro one suffices, or leaving resources running. AWS bills EC2 per second with a 60-second minimum; Google Compute Engine bills per second with a 1-second minimum, which favors short-lived and bursty workloads."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pickmyapp.github.io/"},{"@type":"ListItem","position":2,"name":"Cloud & DevOps","item":"https://pickmyapp.github.io/category/cloud-devops/"},{"@type":"ListItem","position":3,"name":"AWS vs Google Cloud","item":"https://pickmyapp.github.io/blog/aws-vs-google-cloud-pricing-small-projects-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/cloud-devops/">Cloud &amp; DevOps</a></li>
+<li aria-current="page">AWS vs Google Cloud</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">AWS vs Google Cloud pricing for small projects (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Cloud &amp; DevOps</span></li>
+<li>Published <time datetime="2026-10-16"><strong>Oct 16, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>10 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p><strong>For small projects in 2026, Google Cloud is usually cheaper.</strong> It offers a $300 credit for new accounts, an always-free micro VM tier, and list prices slightly under AWS for small compute, storage, and egress. AWS counters with a deeper ecosystem and generous trial credits — but for a side project, a small SaaS, or a portfolio app, Google's free tiers stretch further and its billing is simpler to predict.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aws-vs-google-cloud-pricing-small-projects-2026-1.jpg" width="1280" height="720" alt="Vector illustration of two cloud platforms with price tags and a calculator" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#free-tiers">Free tiers: what you actually get</a></li><li><a href="#compute">Compute: what a small VM costs per month</a></li><li><a href="#storage">Storage and egress: the real bill drivers</a></li><li><a href="#scenario">A concrete monthly bill: blog + small app</a></li><li><a href="#hidden">Hidden costs that ambush small bills</a></li><li><a href="#billing">Billing complexity: which is easier to predict?</a></li><li><a href="#alternatives">When neither hyperscaler is the answer</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Comparing AWS and Google Cloud pricing for a small project feels like comparing two phone plans written in different languages. Both charge per second for compute, per gigabyte for storage, and per gigabyte for data transfer — but the free tiers, discount mechanics, and surprise charges differ in ways that decide whether your side project costs $8/month or $48. This guide uses current 2026 numbers, attributed to their sources, and ends with a concrete monthly bill for a realistic small project.</p>
+
+<h2 id="free-tiers">Free tiers: what you actually get</h2>
+<p>Both clouds try hard to get you in the door for free — but the shape of the free offer matters more than the headline number. According to a guide that verified each provider's pricing pages in October 2026, here's the current landscape:</p>
+<ul>
+<li><strong>Google Cloud:</strong> $300 in credit for new accounts, valid 90 days, plus always-free usage on 20+ products — including one e2-micro VM per month in three US regions, 5 GB-months of Cloud Storage, and 1 TiB of BigQuery queries per month. The always-free tier has no expiry.</li>
+<li><strong>AWS:</strong> trial credits (up to $200 in the current free-plan structure, lasting up to 6 months or until credits run out), plus 30+ services with always-free usage up to monthly limits — including 750 hours/month of small EC2 instances and 5 GB of S3 storage on the classic free tier.</li>
+</ul>
+<p class="fact">The longevity difference is the key insight for small projects: Google's always-free e2-micro tier does not expire, while AWS's classic free tier is a 12-month runway. A hobby project that lives on Google's free tier can run at $0 indefinitely; the same project on AWS eventually graduates to on-demand pricing.</p>
+<p>Both free tiers come with region traps. Google's always-free VM applies only in specific regions (typically us-west1, us-central1, us-east1) — deploy in the wrong region and you pay full price from minute one. Read the free-tier conditions on the vendor's own page before you launch anything.</p>
+
+<h2 id="compute">Compute: what a small VM costs per month</h2>
+<p>For a small project — a blog, a small API, a side-project SaaS — you need one small virtual machine running 24/7. Here's what that costs at list prices, based on a comparison published days before this article:</p>
+<div class="tablewrap"><table>
+<caption>Small-instance list pricing, AWS vs Google Cloud (2026)</caption>
+<thead><tr><th>Instance</th><th>Specs</th><th>Hourly rate</th><th>~Monthly (730 hrs)</th></tr></thead>
+<tbody>
+<tr><td>AWS t4g.nano (ARM)</td><td>2 vCPU burstable, 0.5 GB RAM</td><td>$0.0116/hr</td><td>~$8.47</td></tr>
+<tr><td>Google e2-micro</td><td>2 vCPU (0.25 sustained), 1 GB RAM</td><td>$0.0104/hr</td><td>~$7.59</td></tr>
+<tr><td>Google e2-micro (always-free)</td><td>Same as above, in eligible US regions</td><td>$0</td><td>$0</td></tr>
+</tbody>
+</table></div>
+<p>The per-hour gap is small — roughly a dollar a month between the two paid options — and both are ARM or shared-core instances that punch above their weight for light workloads. Note the burstable caveat: both instance types bank CPU credits and throttle to a baseline when credits run dry, so a sudden traffic spike on a burstable micro instance can make your site crawl. For steady, light traffic they're ideal; for spiky traffic, step up one size.</p>
+<p>Billing granularity is a genuine difference worth knowing. Google Compute Engine bills per second with a 1-second minimum; AWS bills EC2 per second with a 60-second minimum. For a VM running 24/7 the minimums don't matter — but for short-lived jobs, CI runners, and bursty workloads, Google's finer granularity trims waste. It's a small edge that compounds if your architecture spins instances up and down.</p>
+<p class="fact">Google also applies sustained-use discounts automatically — up to 30% off for VMs that run consistently — with no commitment required. AWS's equivalent savings (Savings Plans, Reserved Instances, up to ~75% off) require 1- or 3-year commitments, which rarely make sense for a small project's first year.</p>
+
+<h2 id="storage">Storage and egress: the real bill drivers</h2>
+<p>Object storage prices are nearly identical at small scale, per September 2026 comparisons: <strong>AWS S3 Standard at $0.023/GB-month</strong> (first 50 TB) versus <strong>Google Cloud Storage Standard at $0.020/GB-month</strong> (single region) — about a 13% edge to Google. On 20 GB of uploads and backups, that's $0.46 versus $0.40 a month. Not the deciding factor — but request fees (per thousand PUT/GET operations) and, far more importantly, <strong>egress</strong> are where small bills get ambushed.</p>
+<p>Egress — data leaving the cloud to the internet — is the cost beginners never see coming. Current entry-tier rates: <strong>AWS charges $0.09/GB</strong> after 100 GB free per month; <strong>Google charges $0.085/GB on Standard Tier</strong> after roughly 200 GB free (or $0.12/GB on the faster Premium Tier). That means a small app serving 500 GB of images or downloads in a month pays around $36–$45 in bandwidth alone — often <em>more than the VM itself</em>. Ingress (data coming in) is free on both. If your project is content-heavy — video, images, downloads — model the egress before anything else, and consider putting a CDN in front (CloudFront or Cloud CDN) which can cut delivery costs substantially.</p>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aws-vs-google-cloud-pricing-small-projects-2026-2.jpg" width="1280" height="720" alt="Abstract illustration of cloud servers with price tags and a calculator" decoding="async"></div>
+
+<h2 id="scenario">A concrete monthly bill: blog + small app</h2>
+<p>Let's price a realistic small project: one micro VM running 24/7, 20 GB of object storage, and 50 GB/month of egress (a modest-traffic blog with images). Using the 2026 list prices above, outside any free tier:</p>
+<div class="tablewrap"><table>
+<caption>Estimated monthly cost: 1 micro VM + 20 GB storage + 50 GB egress</caption>
+<thead><tr><th>Line item</th><th>AWS</th><th>Google Cloud</th></tr></thead>
+<tbody>
+<tr><td>Compute (1 micro VM, 730 hrs)</td><td>~$8.47 (t4g.nano)</td><td>~$7.59 (e2-micro)</td></tr>
+<tr><td>Object storage (20 GB)</td><td>~$0.46</td><td>~$0.40</td></tr>
+<tr><td>Egress (50 GB)</td><td>$0 (within 100 GB free)</td><td>$0 (within ~200 GB free)</td></tr>
+<tr><td><strong>Estimated total</strong></td><td><strong>~$8.93/mo</strong></td><td><strong>~$7.99/mo</strong></td></tr>
+<tr><td>With free tier applied</td><td>$0 for 12 months (then ~$8.93)</td><td>$0 indefinitely (always-free e2-micro)</td></tr>
+</tbody>
+</table></div>
+<p>At this scale the paid difference is about a dollar a month — but the free-tier row is the real story. A project that fits Google's always-free limits can run at $0 forever; the same project on AWS is free for a year and then ~$9/month. For a side project with an uncertain future, that permanence is Google's strongest argument.</p>
+<p class="fact">Scale the egress up to 500 GB/month and the math flips: both clouds charge ~$36–$41 in bandwidth, dwarfing the ~$8 VM. At that point, the cloud choice matters less than the architecture — a CDN and image optimization will save more than any provider switch.</p>
+
+<h2 id="hidden">Hidden costs that ambush small bills</h2>
+<p>Talk to anyone who's been surprised by a cloud bill and the culprit is rarely the headline rates. The usual suspects:</p>
+<ul>
+<li><strong>Idle resources.</strong> A VM you spun up to test something, an unattached disk, a static IP you're not using, old snapshots — they all bill 24/7. Set a calendar reminder to audit your console monthly, or better, use the provider's cost alerts (both offer free billing alerts).</li>
+<li><strong>Egress spikes.</strong> One viral post, one hotlinked image, one misconfigured backup syncing outward — bandwidth is the fastest way to turn a $9 bill into a $90 bill. Cap it with budget alerts that notify you before the damage compounds.</li>
+<li><strong>Logs and monitoring.</strong> Verbose application logs shipped to CloudWatch or Cloud Logging can quietly cost more than the app generating them. Set retention limits early.</li>
+<li><strong>Premium support.</strong> Fast human support costs extra on both platforms (and AWS's is famously pricey). For a small project, community forums and documentation are the support plan.</li>
+<li><strong>Wrong-region deployment.</strong> Free tiers and the cheapest rates are region-specific. A single click in the wrong region can mean paying full price for what you assumed was free.</li>
+</ul>
+
+<h2 id="billing">Billing complexity: which is easier to predict?</h2>
+<p>Ask finance teams why they dread cloud bills and the answer is usually "AWS." With 200+ services, each with its own pricing page, discount instruments (On-Demand, Spot, Reserved Instances, Savings Plans), and data-transfer rules, forecasting an AWS bill requires genuine expertise. Google's catalog is smaller (~150+ services) and its discounting is simpler — sustained-use discounts apply automatically, and committed-use contracts are straightforward. For a small project with one person watching the bill, Google's invoice is meaningfully easier to read.</p>
+<p>That said, AWS's complexity exists because its ecosystem is deeper: more services, broad regional coverage (AWS lists 33 regions, Google 39 — check current counts when you deploy), more third-party integrations, and far more Stack Overflow answers when something breaks. If your small project might grow into something that needs a niche AWS service, starting there avoids a migration later. But be honest with yourself: most small projects use a VM, a database, storage, and a CDN — all of which both clouds do well.</p>
+<p>If predictable billing is the top priority, also weigh managed platforms: our comparison of <a href="https://pickmyapp.github.io/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround for agencies</a> and our <a href="https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/">cheap WordPress hosting roundup</a> cover flat-rate options where the price on the tin is the price you pay. For developers who want raw VMs with simpler pricing, see our <a href="https://pickmyapp.github.io/blog/best-vps-hosting-for-developers/">best VPS hosting for developers</a> guide.</p>
+
+<h2 id="alternatives">When neither hyperscaler is the answer</h2>
+<p>Here's the honest footnote: for many small projects, neither AWS nor Google Cloud is the cheapest or simplest option. A $5–$6/month fixed-price VPS from a provider like DigitalOcean, Hetzner, or Linode gives you a predictable bill, a simpler console, and plenty of power for a blog, API, or small SaaS — no per-GB egress anxiety, no 200-service catalog. AWS's own Lightsail offers the same fixed-price simplicity inside the AWS ecosystem. And for static sites and JAMstack projects, the free tiers at Cloudflare Pages, Netlify, or Vercel can host you at $0 with no credit card at all — Cloudflare's developer platform, which <a href="https://pickmyapp.github.io/blog/cloudflare-acquires-deno-explained/">expanded significantly with its Deno acquisition</a>, is worth a look if your project is mostly frontend.</p>
+<p>Choose a hyperscaler when you expect to grow into its services, need a specific feature (like BigQuery or a particular AWS managed service), or want the free credits to fund your first year. Choose fixed-price hosting when you want the bill to be boring.</p>
+
+<div class="verdict"><div><h3>Pick Google Cloud when…</h3><p>You want the cheapest long-term home for a small project: the $300 trial credit, the always-free e2-micro tier, slightly lower list prices on compute, storage, and egress, automatic sustained-use discounts, and a bill you can actually read. Ideal for side projects, MVPs, and anything that might run at $0 for a long time.</p></div><div><h3>Pick AWS when…</h3><p>You value ecosystem depth over a dollar a month: 200+ services, the largest third-party integration ecosystem, the biggest community for troubleshooting, and generous trial credits to fund year one. Ideal if your roadmap includes AWS-specific services or you expect to hire engineers who already know AWS.</p></div></div>
+
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2>
+<h3>Is AWS or Google Cloud cheaper for a small project in 2026?</h3>
+<p>For most small projects, Google Cloud — thanks to the $300 90-day trial credit, an always-free e2-micro VM tier, and slightly cheaper egress and object storage list prices. AWS's free options are also solid, but its 12-month free tier eventually expires while Google's always-free tier doesn't.</p>
+<h3>Can I run a small project completely free on AWS or Google Cloud?</h3>
+<p>Yes, but watch the terms. AWS offers trial credits plus always-free usage on select services, while Google Cloud gives new accounts a $300 credit valid for 90 days plus always-free tiers on 20+ products — including one e2-micro VM per month in select US regions, 5 GB of storage, and 1 TiB of BigQuery queries monthly. Always confirm current terms on each vendor's pricing page before signing up.</p>
+<h3>Which cloud has cheaper storage for small projects?</h3>
+<p>Both are very close: around $0.023/GB-month on AWS S3 versus $0.020/GB-month on Google Cloud Storage for standard single-region storage. At small-project scale — a few dozen gigabytes — the difference is a few dollars a month; request fees and egress usually matter more.</p>
+<h3>What is the biggest surprise cost on a small cloud bill?</h3>
+<p>Egress — data leaving the cloud to the internet. Both charge roughly $0.08–0.09 per GB after generous free allowances, so a small app serving 500 GB/month can pay $40+ just on bandwidth — often more than the VM itself. The other surprise is idle resources: forgotten VMs, disks, snapshots, and static IPs keep billing silently.</p>
+<h3>Does billing granularity matter for small projects?</h3>
+<p>Probably not the clouds' fault — the biggest beginner cost trap is choosing a large instance when a micro one suffices, or leaving resources running. AWS bills EC2 per second with a 60-second minimum; Google Compute Engine bills per second with a 1-second minimum, which favors short-lived and bursty workloads.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>For small projects in 2026, the AWS vs Google Cloud decision is closer than the marketing suggests: about a dollar a month separates equivalent micro-VM setups at list prices. Google Cloud wins on the things that matter to small budgets — a $300 trial credit, an always-free VM tier that never expires, slightly cheaper storage and egress, and simpler billing. AWS wins on ecosystem depth, community size, and the long list of services your project might grow into. Price the egress for your actual workload, set billing alerts on day one, and remember that a fixed-price VPS is often the sanest choice of all when the bill just needs to be boring.</p>
+<aside class="aside"><p><strong>A note from the author:</strong> I've watched more side projects die from surprise bandwidth bills than from any technical failure. Whatever cloud you pick, set a $20 budget alert on day one. It takes two minutes and it's the highest-ROI configuration in all of cloud computing.</p></aside>
+</div>
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/cloudways-vs-siteground-agencies/">Cloudways vs SiteGround for Agencies</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-vps-hosting-for-developers/">Best VPS Hosting for Developers Compared (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/">Best Cheap Web Hosting for WordPress (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/cloudflare-acquires-deno-explained/">Cloudflare Acquires Deno Explained: What It Means for Workers Developers and Self-Hosting (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

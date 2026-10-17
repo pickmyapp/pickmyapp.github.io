@@ -539,6 +539,156 @@
     "mailerlite vs kit pricing at 25k",
     "mailerlite vs kit pricing at 25k 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:pancake-ai-agent-gtm-playbook-explained-2026",
+   "displayName": "Pancake explained: the AI-agent GTM playbook that topped Product Hunt in October 2026 (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/pancake-ai-agent-gtm-playbook-explained-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Pancake (pancake.ai), \"The Vercel for GTM,\" topped Product Hunt on October 14, 2026 by letting founders deploy AI-agent outreach plays through one MCP connection. This guide explains what it does, what 60,000 credits buy, and whether the $99/month plan is worth it for a small business.",
+   "representativeQueries": [
+    "pancake explained: the ai-agent gtm playbook",
+    "pancake explained: the ai-agent gtm playbook 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:openai-ads-manager-explained-chatgpt-advertising-2026",
+   "displayName": "OpenAI Ads Manager explained: advertising inside ChatGPT, what it costs, and what small businesses should do first (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/openai-ads-manager-explained-chatgpt-advertising-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "OpenAI is selling ads inside ChatGPT through a self-serve Ads Manager with CPC/CPM bidding and a $1B annualized run rate. How the ads work, what they cost, and the first moves a small business should make.",
+   "representativeQueries": [
+    "openai ads manager explained: advertising inside",
+    "openai ads manager explained: advertising inside 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-crm-built-in-invoicing-consultants-2026",
+   "displayName": "best CRM with built-in invoicing for consultants (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-crm-built-in-invoicing-consultants-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "HoneyBook is the best all-in-one CRM with invoicing for US-based consultants, while FreshBooks wins for invoicing-first hourly billing and Dubsado offers the best automation value worldwide. This guide compares six tools on real 2026 pricing, payment fees, and time-tracking tie-in.",
+   "representativeQueries": [
+    "best crm with built-in invoicing for",
+    "best crm with built-in invoicing for 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:jira-alternatives-small-software-teams",
+   "displayName": "jira alternatives for small software teams — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/jira-alternatives-small-software-teams/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Linear is the best Jira alternative for most small software teams, but ClickUp, Shortcut, Plane, YouTrack, and Asana each win for different team shapes. Compare real 2026 pricing, sprint support, and migration effort.",
+   "representativeQueries": [
+    "jira alternatives for small software teams",
+    "jira alternatives for small software teams 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:how-to-set-up-autossl-cpanel-64-day-certificates-2026",
+   "displayName": "how to set up AutoSSL in cPanel for 64-day certificates (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "AutoSSL is cPanel's free automatic SSL system. This step-by-step guide covers WHM and cPanel setup, provider choice (Sectigo vs Let's Encrypt), every settings toggle, and troubleshooting — updated for the 64-day certificate era.",
+   "representativeQueries": [
+    "how to set up autossl in",
+    "how to set up autossl in 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-ai-tools-writing-newsletters-2026",
+   "displayName": "best AI tools for writing newsletters (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-ai-tools-writing-newsletters-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "The best AI tools for writing newsletters in 2026, compared with real pricing: beehiiv AI, Substack, Kit, MailerLite, Jasper, Copy.ai, Writesonic, Notion AI, Lex, and chatbot workflows — plus why workflow beats tool.",
+   "representativeQueries": [
+    "best ai tools for writing newsletters",
+    "best ai tools for writing newsletters 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-website-builder-videographers-2026",
+   "displayName": "best website builder for videographers (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-website-builder-videographers-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Format is the best website builder for videographers in 2026 — video-first templates, built-in client proofing, and video backgrounds from $10/month. We compare 8 builders on pricing, video hosting, booking tools, and local SEO.",
+   "representativeQueries": [
+    "best website builder for videographers 2026",
+    "best website builder for videographers 2026 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:mailchimp-vs-klaviyo-ecommerce-pricing",
+   "displayName": "Mailchimp vs Klaviyo for ecommerce: pricing compared — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/mailchimp-vs-klaviyo-ecommerce-pricing/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Mailchimp and Klaviyo cost the same up to 5,000 contacts — then diverge. We compare exact dollar pricing at 6 list sizes, send limits, overage rules, and what each plan includes for ecommerce.",
+   "representativeQueries": [
+    "mailchimp vs klaviyo for ecommerce: pricing",
+    "mailchimp vs klaviyo for ecommerce: pricing 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-no-code-ai-agent-builders-beginners-2026",
+   "displayName": "Best no-code AI agent builders for beginners (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-no-code-ai-agent-builders-beginners-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "The best no-code AI agent builders for beginners in 2026 compared on price, free tiers, and learning curve — with Relevance AI and Zapier Agents the best free on-ramps, Lindy the easiest paid start, and Gumloop and Voiceflow the strongest for data and chat workflows.",
+   "representativeQueries": [
+    "best no-code ai agent builders for",
+    "best no-code ai agent builders for 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:mailerlite-vs-mailchimp-small-business-2026",
+   "displayName": "mailerlite vs mailchimp for small business (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/mailerlite-vs-mailchimp-small-business-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "MailerLite vs Mailchimp for small business in 2026: real dollar comparisons at 500, 2,500, 10,000 and 25,000 subscribers, annual-billing math, free plans, send limits, and how each counts subscribers — MailerLite saves $552/year at 10k and $1,572/year at 25k.",
+   "representativeQueries": [
+    "mailerlite vs mailchimp for small business",
+    "mailerlite vs mailchimp for small business 2026"
+   ]
   }
  ],
  "host": {

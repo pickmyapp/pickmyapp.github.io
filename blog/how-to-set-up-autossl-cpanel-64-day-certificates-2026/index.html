@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>how to set up AutoSSL in cPanel for 64-day certificates (2026)</title>
+<meta name="description" content="Set up AutoSSL in cPanel and WHM step by step: provider choice, settings, and troubleshooting, updated for 64-day certificates in 2026.">
+<meta name="keywords" content="AutoSSL cPanel, cPanel SSL setup, 64-day certificates, Let&#x27;s Encrypt 64 days, Sectigo AutoSSL, cPanel AutoSSL troubleshooting, DCV error fix">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="how to set up AutoSSL in cPanel for 64-day certificates (2026)">
+<meta property="og:description" content="Set up AutoSSL in cPanel and WHM step by step: provider choice, settings, and troubleshooting, updated for 64-day certificates in 2026.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/how-to-set-up-autossl-cpanel-64-day-certificates-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-17">
+<meta property="article:modified_time" content="2026-10-17">
+<meta property="article:section" content="Web Hosting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="how to set up AutoSSL in cPanel for 64-day certificates (2026)">
+<meta name="twitter:description" content="Set up AutoSSL in cPanel and WHM step by step: provider choice, settings, and troubleshooting, updated for 64-day certificates in 2026.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/how-to-set-up-autossl-cpanel-64-day-certificates-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/#article","headline":"how to set up AutoSSL in cPanel for 64-day certificates (2026)","description":"Set up AutoSSL in cPanel and WHM step by step: provider choice, settings, and troubleshooting, updated for 64-day certificates in 2026.","image":"https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/how-to-set-up-autossl-cpanel-64-day-certificates-2026-1.jpg","author":{"@type":"Organization","name":"PickMyApp Research Team","url":"https://pickmyapp.github.io/about/"},"publisher":{"@type":"Organization","name":"PickMyApp","logo":{"@type":"ImageObject","url":"https://pickmyapp.github.io/images/logo.svg"}},"datePublished":"2026-10-17","dateModified":"2026-10-17","mainEntityOfPage":"https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/","articleSection":"Web Hosting","inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does AutoSSL work with 64-day certificates?","acceptedAnswer":{"@type":"Answer","text":"Yes. AutoSSL already issues short-lived certificates (90 days from both Sectigo and Let's Encrypt) and renews them on its own schedule, so it absorbs the move to 64-day Let's Encrypt certificates on February 10, 2027 without any settings change. Just make sure AutoSSL stays enabled and validation keeps working."}},{"@type":"Question","name":"Do I need to change anything when certificates shrink to 64 days?","acceptedAnswer":{"@type":"Answer","text":"Not inside AutoSSL itself \u2014 it renews based on expiry, not a fixed calendar. The things to fix are outside it: custom cron jobs or scripts with hardcoded renewal intervals (values like 83, 80, or 60 days), and any manual renewal process. Let's Encrypt recommends renewing at roughly two-thirds of the certificate's lifetime."}},{"@type":"Question","name":"Which AutoSSL provider should I choose: Sectigo or Let's Encrypt?","acceptedAnswer":{"@type":"Answer","text":"Sectigo is the default and works well for typical servers. Choose Let's Encrypt if you hit Sectigo's recurring \"cannot currently accept incoming requests\" outages, run a high volume of domains, or want better compatibility with CDNs. Let's Encrypt's 50-certificates-per-domain-per-week rate limit is the main constraint to watch."}},{"@type":"Question","name":"Why does AutoSSL keep failing with a DCV error?","acceptedAnswer":{"@type":"Answer","text":"DCV errors almost always mean the certificate authority could not reach the validation file on your domain. The usual causes are DNS not pointing at the cPanel server, a CDN or proxy intercepting the request, .htaccess rules blocking the .well-known directory, or a CAA record that does not authorize your provider. Check the Logs tab's View Log output for the exact failing domain."}},{"@type":"Question","name":"Does AutoSSL renew automatically, or do I need a cron job?","acceptedAnswer":{"@type":"Answer","text":"AutoSSL renews automatically \u2014 it runs a check every night and requests new certificates before the old ones expire. No cron job or manual action is needed. You only need to intervene when validation fails, which the Logs tab and failure notification emails will tell you about."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pickmyapp.github.io/"},{"@type":"ListItem","position":2,"name":"Web Hosting","item":"https://pickmyapp.github.io/category/web-hosting/"},{"@type":"ListItem","position":3,"name":"AutoSSL in cPanel","item":"https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li aria-current="page">AutoSSL in cPanel</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">how to set up AutoSSL in cPanel for 64-day certificates (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Web Hosting</span></li>
+<li>Published <time datetime="2026-10-17"><strong>Oct 17, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>AutoSSL is cPanel's free automatic SSL system: it requests, installs, and renews Domain Validated certificates for every domain on your account with no manual work. To set it up in WHM, go to <strong>SSL/TLS → Manage AutoSSL</strong>, choose a provider (Sectigo or Let's Encrypt), accept the terms of service, enable it for your users, and click <strong>Run AutoSSL For All Users</strong>. In cPanel, open <strong>SSL/TLS Status</strong>, select your domains, and click <strong>Run AutoSSL</strong>. This matters more than ever: Let's Encrypt cuts default certificate lifetimes from 90 days to <strong>64 days on February 10, 2027</strong>, so reliable automatic renewal is no longer optional.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/how-to-set-up-autossl-cpanel-64-day-certificates-2026-1.jpg" width="1280" height="720" alt="Flat vector illustration of a server rack, padlock, and SSL certificate with circular renewal arrows and a calendar showing short certificate cycles" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-autossl">What AutoSSL is (and why the 64-day era changes everything)</a></li><li><a href="#what-changes-64-day">What changes with 64-day certificates</a></li><li><a href="#before-you-start">Before you start: requirements</a></li><li><a href="#setup-whm">Step-by-step: set up AutoSSL in WHM</a></li><li><a href="#setup-cpanel-user">Enable AutoSSL in cPanel (site-owner level)</a></li><li><a href="#provider-choice">Choosing a provider: Sectigo vs Let's Encrypt vs ZeroSSL</a></li><li><a href="#settings-reference">AutoSSL settings reference</a></li><li><a href="#troubleshooting">Troubleshooting common AutoSSL errors</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-is-autossl">What AutoSSL is (and why the 64-day era changes everything)</h2>
+<p>AutoSSL is cPanel's built-in system for issuing and renewing free Domain Validated (DV) SSL certificates automatically. Once it is enabled, the server checks your domains every night, requests certificates from your chosen certificate authority, installs them, and renews them before they expire. You never upload a CSR, paste a certificate bundle, or set calendar reminders.</p>
+<p>For years, AutoSSL was a convenience feature. In 2026 and 2027 it is becoming infrastructure. Let's Encrypt — the authority behind a huge share of the web's free certificates — announced on October 7, 2026 that default certificate lifetimes will drop from 90 days to 64 days on February 10, 2027, and to 45 days in February 2028. The CA/Browser Forum's Ballot SC-081v3 adds a parallel industry-wide schedule: maximum public TLS validity falls to 200 days (already in force since March 15, 2026), 100 days in March 2027, and 47 days in March 2029. The days of renewing a certificate once a year by hand are over; your renewal pipeline either runs itself or your site goes dark.</p>
+<p class="fact">By 2029, a single domain will need roughly 8 certificate renewals per year, up from about 2 today. Any renewal step that requires a human click will not survive that cadence.</p>
+<h2 id="what-changes-64-day">What changes with 64-day certificates</h2>
+<p>The shift to short-lived certificates changes operations, not the setup steps. Here is the timeline that affects cPanel servers:</p>
+<div class="tablewrap"><table><caption>Certificate lifetime reductions affecting AutoSSL users</caption><thead><tr><th>Effective date</th><th>Maximum validity</th><th>Renewals per year</th></tr></thead><tbody><tr><td>15 March 2026 (in force)</td><td>200 days (CA/Browser Forum)</td><td>~2</td></tr><tr><td>10 February 2027</td><td>64 days (Let's Encrypt default)</td><td>~6</td></tr><tr><td>15 March 2027</td><td>100 days (CA/Browser Forum)</td><td>~4</td></tr><tr><td>16 February 2028</td><td>45 days (Let's Encrypt default)</td><td>~8</td></tr><tr><td>15 March 2029</td><td>47 days (CA/Browser Forum)</td><td>~8</td></tr></tbody></table></div>
+<p>Three practical consequences follow. First, <strong>renewal frequency doubles and doubles again</strong>, so AutoSSL's automatic nightly check becomes the only sane renewal method — nothing else on a shared cPanel server keeps up. Second, <strong>domain validation gets stricter</strong>: Let's Encrypt is cutting authorization reuse from 30 days to 10 days in February 2027, which means more renewals require a fresh proof of domain control rather than a cached one. Third, <strong>fixed renewal schedules break</strong>: Let's Encrypt now recommends renewing at roughly two-thirds of a certificate's lifetime instead of hardcoding day counts, so any custom cron jobs or wrapper scripts with values like 83, 80, or 60 days need updating. The good news is that AutoSSL already behaves this way — it watches expiry and revalidates on its own schedule.</p>
+<p>If you want to watch your certificates as lifetimes shrink, pairing AutoSSL with a dedicated expiry monitor is cheap insurance. Our roundup of <a href="https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/">SSL expiry monitoring tools for the 64-day era</a> covers the best options for independent alerting that catches failures AutoSSL misses.</p>
+<h2 id="before-you-start">Before you start: requirements</h2>
+<p>AutoSSL works at two levels: the server level (WHM, for resellers and VPS/dedicated owners) and the account level (cPanel, for individual site owners). You need WHM root access for the full setup below; if you only have cPanel, skip to the account-level section and ask your host about the server-level provider choice.</p>
+<p>Before enabling AutoSSL, confirm these prerequisites:</p>
+<ul>
+<li><strong>DNS points at the server.</strong> Each domain's A record (and the www record) must resolve to the cPanel server's IP. AutoSSL cannot validate domains that point elsewhere.</li>
+<li><strong>Port 80 is open.</strong> Domain control validation happens over HTTP, so the server must answer on port 80 even if you redirect everything to HTTPS.</li>
+<li><strong>A current cPanel license.</strong> The Sectigo-backed provider requires a valid license; Let's Encrypt works on any licensed server with the plugin installed.</li>
+<li><strong>A hosting plan with cPanel.</strong> If you are shopping for one, our comparison of the <a href="https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/">best cheap web hosting for WordPress in 2026</a> notes which budget hosts include free AutoSSL and which charge extra for certificates.</li>
+</ul>
+<h2 id="setup-whm">Step-by-step: set up AutoSSL in WHM</h2>
+<p>Log in to WHM as root and open <strong>Home → SSL/TLS → Manage AutoSSL</strong>. The screen has five tabs: Providers, Options, Manage Users, Pending Queue, and Logs.</p>
+<h3>Step 1: Choose your provider (Providers tab)</h3>
+<p>Select the radio button for your certificate authority. The standard choices are <strong>cPanel (powered by Sectigo)</strong>, the default, and <strong>Let's Encrypt™</strong>. If Let's Encrypt is not listed, install it first from <strong>Home → cPanel → Manage Plugins</strong>, or run <code>/scripts/install_lets_encrypt_autossl_provider</code> over SSH. Read the provider's terms of service, check the <strong>I agree to these terms of service</strong> box, and click <strong>Save</strong>. See the provider comparison below before deciding.</p>
+<h3>Step 2: Set your renewal options (Options tab)</h3>
+<p>The key setting here is <strong>Allow AutoSSL to replace invalid or expiring non-AutoSSL certificates</strong>. Enable it if you want AutoSSL to swap out certificates that were not issued by AutoSSL — for example, to migrate paid certificates to free ones automatically. Leave it <strong>off</strong> if any domain uses a paid OV or EV certificate, because a DV AutoSSL certificate would overwrite it and you would lose the higher validation level. The Options tab also holds the notification toggles that control whether account owners get emailed about successful installations and failures — keep failure notifications on, because a silent failure is how sites expire.</p>
+<h3>Step 3: Enable it for your users and run it (Manage Users tab)</h3>
+<p>The Manage Users tab lists every cPanel account. Select the accounts you want covered and choose one of three actions:</p>
+<ul>
+<li><strong>Enable AutoSSL</strong> — force AutoSSL on for the selected accounts.</li>
+<li><strong>Disable AutoSSL</strong> — turn it off for the selected accounts.</li>
+<li><strong>Reset to Feature List Setting</strong> — return the accounts to whatever the account's feature list specifies (the default on most servers).</li>
+</ul>
+<p>To check a single user immediately, use the <strong>Check</strong> button next to their name. For the first run across the whole server, click <strong>Run AutoSSL For All Users</strong> at the top of the page. Then watch the <strong>Logs</strong> tab — click <strong>View Log</strong> on a run and look for success messages per domain. The first run can take several minutes on a busy server.</p>
+<h2 id="setup-cpanel-user">Enable AutoSSL in cPanel (site-owner level)</h2>
+<p>If you do not have WHM access, you can still trigger AutoSSL for your own domains — your host controls the provider and server-level switches, but the per-domain request is yours:</p>
+<ol>
+<li>Log in to cPanel and open <strong>Security → SSL/TLS Status</strong>.</li>
+<li>Tick the checkboxes next to the domains and subdomains you want secured. You can select several at once.</li>
+<li>Click <strong>Run AutoSSL</strong>.</li>
+<li>The request queues immediately and usually processes within a few minutes. Refresh the page to see per-domain results.</li>
+</ol>
+<p>AutoSSL also runs by itself every night, so after the first successful run you should never need to click this again — but it is the fastest way to force a certificate when you have just pointed DNS at the server or fixed a validation problem. Advanced users with SSH access can do the same thing from the command line with <code>/usr/local/cpanel/bin/autossl_check --user=username</code>, or <code>--all</code> for every account on the server.</p>
+<h2 id="provider-choice">Choosing a provider: Sectigo vs Let's Encrypt vs ZeroSSL</h2>
+<p>Your provider choice affects issuance speed, rate limits, and which domains get covered. Here is how the options compare inside AutoSSL:</p>
+<div class="tablewrap"><table><caption>AutoSSL provider comparison</caption><thead><tr><th></th><th>Sectigo (cPanel default)</th><th>Let's Encrypt</th><th>ZeroSSL</th></tr></thead><tbody><tr><td>Availability</td><td>Built in, requires valid cPanel license</td><td>Needs the free plugin installed</td><td>Only via host-installed plugin; not on stock cPanel</td></tr><tr><td>Certificate lifetime</td><td>~90 days, auto-renewed</td><td>90 days now, 64 days from Feb 2027, 45 days from Feb 2028</td><td>90 days</td></tr><tr><td>Rate limits</td><td>Generous; occasional provider-side outages</td><td>50 certificates per domain per week; 100 names per certificate</td><td>Varies by plan</td></tr><tr><td>Wildcard domains</td><td>Not supported by AutoSSL</td><td>Not supported by AutoSSL</td><td>Not supported by AutoSSL</td></tr><tr><td>Best for</td><td>Set-and-forget on licensed servers</td><td>High-volume servers; better CDN compatibility</td><td>Hosts that standardize on it</td></tr></tbody></table></div>
+<p>Sectigo is the path of least resistance and issues quickly, but it has a recurring, well-documented failure mode: the error <em>"The cPanel (powered by Sectigo) provider cannot currently accept incoming requests"</em>, which appears when Sectigo's side throttles or rejects bulk requests. When that happens, switching to Let's Encrypt usually clears the queue immediately. Let's Encrypt's stricter rate limits (50 certificates per domain per week) only bite servers that repeatedly force runs for hundreds of domains, so do not hammer the Run button. For a deeper look at the 64-day change itself, see our explainer on <a href="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let's Encrypt's 64-day certificates and what they mean for 2027</a>.</p>
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/how-to-set-up-autossl-cpanel-64-day-certificates-2026-2.jpg" width="1280" height="720" alt="Flat vector illustration of SSL certificate renewal: a shield and padlock connecting secured browser windows, with a gear and wrench for configuration" decoding="async"></div>
+<h2 id="settings-reference">AutoSSL settings reference</h2>
+<p>Every toggle that matters, and exactly where to find it:</p>
+<div class="tablewrap"><table><caption>Where each AutoSSL setting lives in WHM and cPanel</caption><thead><tr><th>Setting</th><th>Where to find it</th><th>What it does</th></tr></thead><tbody><tr><td>AutoSSL provider selection</td><td>WHM → Manage AutoSSL → Providers</td><td>Chooses Sectigo or Let's Encrypt as the issuing CA</td></tr><tr><td>Provider terms of service</td><td>WHM → Manage AutoSSL → Providers</td><td>Must be accepted before the selected provider can issue</td></tr><tr><td>Allow AutoSSL to replace invalid or expiring non-AutoSSL certificates</td><td>WHM → Manage AutoSSL → Options</td><td>Lets AutoSSL overwrite certs it did not issue; keep off to protect paid certs</td></tr><tr><td>Notification preferences</td><td>WHM → Manage AutoSSL → Options</td><td>Emails account owners about installation successes and failures</td></tr><tr><td>Enable / Disable / Reset to Feature List Setting</td><td>WHM → Manage AutoSSL → Manage Users</td><td>Controls AutoSSL per cPanel account</td></tr><tr><td>Run AutoSSL For All Users</td><td>WHM → Manage AutoSSL (top button)</td><td>Triggers an immediate server-wide issuance run</td></tr><tr><td>Pending Queue</td><td>WHM → Manage AutoSSL → Pending Queue</td><td>Certificates activated but not yet installed; clearable if stuck</td></tr><tr><td>Logs / View Log</td><td>WHM → Manage AutoSSL → Logs</td><td>Per-run, per-domain issuance details for debugging</td></tr><tr><td>Run AutoSSL (per domain)</td><td>cPanel → SSL/TLS Status</td><td>Site-owner on-demand certificate request</td></tr><tr><td>AutoSSL feature availability</td><td>WHM → Feature Manager</td><td>Controls whether a package's users see AutoSSL features in cPanel</td></tr></tbody></table></div>
+<h2 id="troubleshooting">Troubleshooting common AutoSSL errors</h2>
+<p>Most AutoSSL failures come down to domain validation (DCV) — the certificate authority could not prove you control the domain.</p>
+<h3>DCV failures: the domain does not resolve correctly</h3>
+<p>AutoSSL's HTTP validation fetches a token file from your domain, so the domain must resolve to the cPanel server. If you recently changed DNS, migrated, or use a CDN like Cloudflare, the validation request may land on the wrong machine. Check the A record with <code>dig yourdomain.com +short</code> and confirm it returns the server's IP. Domains proxied through a CDN can fail if the CDN intercepts the validation path — temporarily pausing the proxy or using DNS-based validation usually resolves it.</p>
+<h3>The .well-known directory is blocked</h3>
+<p>Validation files live under <code>/.well-known/</code> (Sectigo uses <code>pki-validation</code>, Let's Encrypt uses <code>acme-challenge</code>). Overly aggressive <code>.htaccess</code> rewrite rules, security plugins, or a forced HTTPS redirect loop can make these files unreachable, producing errors like "Local HTTP DCV error". Test with <code>curl -v http://yourdomain.com/.well-known/pki-validation/test.txt</code> and add a rewrite exception for <code>.well-known</code> if requests are being redirected or blocked.</p>
+<h3>Rate limits after repeated forced runs</h3>
+<p>Clicking Run AutoSSL over and over is the fastest way to hit Let's Encrypt's limit of 50 certificates per domain per week. The Logs tab will show rate-limit errors plainly. The fix is patience: wait for the limit window to clear and let the nightly run handle it. The same advice applies in the 64-day era — because authorization reuse is shrinking to 10 days, wasted validation attempts cost more than they used to.</p>
+<h3>"The cPanel (powered by Sectigo) provider cannot currently accept incoming requests"</h3>
+<p>This is a known recurring provider-side problem, not a misconfiguration on your server. The community-tested workarounds are: run <code>/usr/local/cpanel/bin/autossl_check --user=username</code> once at an off-peak time, clear the Pending Queue in WHM, or switch the provider to Let's Encrypt for the affected accounts..</p>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>Does AutoSSL work with 64-day certificates?</h3><p>Yes. AutoSSL already issues short-lived certificates (90 days from both Sectigo and Let's Encrypt) and renews them on its own schedule, so it absorbs the move to 64-day Let's Encrypt certificates on February 10, 2027 without any settings change. Just make sure AutoSSL stays enabled and validation keeps working.</p><h3>Do I need to change anything when certificates shrink to 64 days?</h3><p>Not inside AutoSSL itself — it renews based on expiry, not a fixed calendar. The things to fix are outside it: custom cron jobs or scripts with hardcoded renewal intervals (values like 83, 80, or 60 days), and any manual renewal process. Let's Encrypt recommends renewing at roughly two-thirds of the certificate's lifetime.</p><h3>Which AutoSSL provider should I choose: Sectigo or Let's Encrypt?</h3><p>Sectigo is the default and works well for typical servers. Choose Let's Encrypt if you hit Sectigo's recurring "cannot currently accept incoming requests" outages, run a high volume of domains, or want better compatibility with CDNs. Let's Encrypt's 50-certificates-per-domain-per-week rate limit is the main constraint to watch.</p><h3>Why does AutoSSL keep failing with a DCV error?</h3><p>DCV errors almost always mean the certificate authority could not reach the validation file on your domain. The usual causes are DNS not pointing at the cPanel server, a CDN or proxy intercepting the request, .htaccess rules blocking the .well-known directory, or a CAA record that does not authorize your provider. Check the Logs tab's View Log output for the exact failing domain.</p><h3>Does AutoSSL renew automatically, or do I need a cron job?</h3><p>AutoSSL renews automatically — it runs a check every night and requests new certificates before the old ones expire. No cron job or manual action is needed. You only need to intervene when validation fails, which the Logs tab and failure notification emails will tell you about.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Setting up AutoSSL in cPanel takes about ten minutes: pick a provider in WHM's Manage AutoSSL, set the replacement option to match your certificate strategy, enable it for your users, and run it once. From there it looks after itself — which is exactly what the 64-day certificate era demands. With Let's Encrypt moving to 64-day defaults in February 2027 and the industry heading to 47 days by 2029, the servers that stay secure will be the ones whose renewal pipeline runs without human intervention. Enable AutoSSL now, keep failure notifications on, and let the automation do the worrying.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/">best SSL expiry monitoring tools for 64-day certificates (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let&#x27;s Encrypt Is Cutting SSL Certificate Lifetimes to 64 Days: What Website Owners Must Do Before February 2027 (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/">How to Renew SSL Certificates Automatically with Certbot (2026 Guide)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/">Best Cheap Web Hosting for WordPress (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

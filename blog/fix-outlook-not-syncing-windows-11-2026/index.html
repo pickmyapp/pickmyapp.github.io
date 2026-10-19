@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to fix Outlook not syncing email on Windows 11 (2026)</title>
+<meta name="description" content="Outlook not syncing on Windows 11? This 2026 guide walks through 15 fixes for new and classic Outlook — Work Offline, F9 sync, OST rebuild, add-ins, and more.">
+<meta name="keywords" content="fix Outlook not syncing, Outlook not syncing Windows 11, Outlook email not updating, new Outlook not syncing, Outlook Working Offline fix, rebuild OST file, Outlook sync slider, Microsoft 365 service health, Outlook safe mode add-ins, Outlook not syncing 2026">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/fix-outlook-not-syncing-windows-11-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="How to fix Outlook not syncing email on Windows 11 (2026)">
+<meta property="og:description" content="Outlook not syncing on Windows 11? This 2026 guide walks through 15 fixes for new and classic Outlook — Work Offline, F9 sync, OST rebuild, add-ins, and more.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/fix-outlook-not-syncing-windows-11-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-outlook-not-syncing-windows-11-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-18">
+<meta property="article:modified_time" content="2026-10-18">
+<meta property="article:section" content="Software Tutorials">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to fix Outlook not syncing email on Windows 11 (2026)">
+<meta name="twitter:description" content="Outlook not syncing on Windows 11? This 2026 guide walks through 15 fixes for new and classic Outlook — Work Offline, F9 sync, OST rebuild, add-ins, and more.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-outlook-not-syncing-windows-11-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://pickmyapp.github.io/blog/fix-outlook-not-syncing-windows-11-2026/#article","headline":"How to fix Outlook not syncing email on Windows 11 (2026)","description":"Outlook not syncing on Windows 11? This 2026 guide walks through 15 fixes for new and classic Outlook \u2014 Work Offline, F9 sync, OST rebuild, add-ins, and more.","image":"https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-outlook-not-syncing-windows-11-2026-1.jpg","author":{"@type":"Organization","name":"PickMyApp Research Team","url":"https://pickmyapp.github.io/about/"},"publisher":{"@type":"Organization","name":"PickMyApp","logo":{"@type":"ImageObject","url":"https://pickmyapp.github.io/images/logo.svg"}},"datePublished":"2026-10-18","dateModified":"2026-10-18","mainEntityOfPage":"https://pickmyapp.github.io/blog/fix-outlook-not-syncing-windows-11-2026/","articleSection":"Software Tutorials","inLanguage":"en-US"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is Outlook not syncing but my phone's email works fine?","acceptedAnswer":{"@type":"Answer","text":"That points at your PC, not the server. The usual suspects are Work Offline mode, a stalled sync process, an expired authentication token, a corrupted OST cache, or the new Outlook being suspended by Windows 11 power management. Work through Fixes 1\u20134 and 9 in order."}},{"@type":"Question","name":"How do I force Outlook to sync my email right now?","acceptedAnswer":{"@type":"Answer","text":"Press F9 \u2014 it works in both versions. In the new Outlook you can also use View > Sync; in classic, Send/Receive > Send/Receive All Folders. If it throws an error, read it: a connection error means the problem is network or server-side; no error suggests the automatic timer was simply stuck."}},{"@type":"Question","name":"Will deleting or rebuilding the OST file delete my emails?","acceptedAnswer":{"@type":"Answer","text":"No \u2014 for Microsoft 365, Exchange, and IMAP accounts the OST is only a local cache. Renaming it to .old and letting Outlook rebuild just re-downloads everything; your mail, folders, and rules on the server are untouched. The exception is POP accounts, where messages may exist only on your PC \u2014 back those up (File > Open & Export) before touching any data file."}},{"@type":"Question","name":"Why does the new Outlook stop syncing when I minimize it?","acceptedAnswer":{"@type":"Answer","text":"Windows 11 power management (notably on 24H2) can suspend the new Outlook's background process when it is not the active window, silently stopping auto-sync. Go to Settings > Apps > Installed apps > Outlook for Windows > Advanced options and set Background apps permissions to Always. Also turn off offline email under Settings (gear) > General > Offline."}},{"@type":"Question","name":"How can I tell whether Outlook is offline or actually syncing?","acceptedAnswer":{"@type":"Answer","text":"In classic Outlook, read the bottom status bar: \"Working Offline\" or \"Disconnected\" means no connection; \"Connected\" means it is syncing. In the new Outlook, a red \"You're offline\" banner means no connection; the account status under Settings > Accounts shows the last successful sync. No banner plus a recent sync time means Outlook is current \u2014 if mail is still missing, check sort order and filters (Fix 3)."}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pickmyapp.github.io/"},{"@type":"ListItem","position":2,"name":"Software Tutorials","item":"https://pickmyapp.github.io/category/software-tutorials/"},{"@type":"ListItem","position":3,"name":"Fix Outlook not syncing","item":"https://pickmyapp.github.io/blog/fix-outlook-not-syncing-windows-11-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/software-tutorials/">Software Tutorials</a></li>
+<li aria-current="page">Fix Outlook not syncing</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">How to fix Outlook not syncing email on Windows 11 (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Software Tutorials</span></li>
+<li>Published <time datetime="2026-10-18"><strong>Oct 18, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>When Outlook stops syncing email on Windows 11, the cause is almost always one of five things: Outlook is stuck in Work Offline mode, the sync process has stalled, the app or Windows is out of date, the mailbox is full, or the local cache file (OST) is corrupted. Fastest recovery: check the status bar and turn off Work Offline, press F9 to force a sync, restart Outlook completely, update Outlook and Windows, then check mailbox storage and service health. If those fail, disable add-ins in safe mode, remove and re-add the account, rebuild the OST file, or create a fresh Outlook profile. Every fix below includes exact steps for both the new Outlook and classic Outlook.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-outlook-not-syncing-windows-11-2026-1.jpg" width="1280" height="720" alt="Flat vector illustration of a laptop with an email envelope and broken circular sync arrows being fixed by a wrench, no text or logos drawn" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#quick-fixes">Quick fixes that work for most people</a></li><li><a href="#classic-vs-new">Classic vs new Outlook: which one are you running?</a></li><li><a href="#fixes">The fixes, ordered easiest to hardest</a></li><li><a href="#at-a-glance">Fixes at a glance</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="quick-fixes">Quick fixes that work for most people</h2>
+<p>These eight checks resolve the large majority of Outlook sync failures on Windows 11 in about five minutes. Work top to bottom; stop as soon as new mail arrives.</p>
+<ol><li><strong>Read the status bar.</strong> "Working Offline," "Disconnected," or "Trying to connect" means the fix is a toggle, not a bug (Fix 1).</li><li><strong>Force a manual sync.</strong> New Outlook: <strong>View &gt; Sync</strong>. Classic Outlook: <strong>Send/Receive &gt; Send/Receive All Folders</strong>. <strong>F9</strong> works in both.</li><li><strong>Restart Outlook completely.</strong> Close it, end any lingering <em>OUTLOOK.EXE</em> or <em>Olk.exe</em> process in Task Manager, then relaunch.</li><li><strong>Update everything.</strong> Classic: <strong>File &gt; Office Account &gt; Update Options &gt; Update Now</strong>. New Outlook updates via the Microsoft Store; Windows via <strong>Settings &gt; Windows Update</strong>.</li><li><strong>Check mailbox storage.</strong> A full mailbox silently stops receiving. Check <strong>File &gt; Info</strong> (classic) or the storage meter in Outlook on the web.</li><li><strong>Check Microsoft 365 service status.</strong> If webmail and your colleagues' Outlook are also broken, the outage is on Microsoft's side.</li><li><strong>Restart in safe mode.</strong> Classic: press <strong>Win+R</strong>, type <em>outlook.exe /safe</em>, Enter. If sync works there, an add-in is the culprit.</li><li><strong>Remove and re-add the account.</strong> Fixes broken authentication and corrupted account settings without touching your other accounts.</li></ol>
+<h2 id="classic-vs-new">Classic vs new Outlook: which one are you running?</h2>
+<p>Windows 11 has two Outlooks with completely different menus. Every fix below is labeled for both:</p>
+<ul><li><strong>New Outlook ("Outlook for Windows")</strong> ships with Windows 11 as a blue-envelope tile updated through the Microsoft Store. It has a Settings gear in the top-right and is web-powered: it needs a continuous connection to Microsoft 365 to keep syncing.</li><li><strong>Classic Outlook</strong> comes with a Microsoft 365 subscription. It has a <strong>File</strong> tab, a <strong>Send/Receive</strong> tab, and keeps a local mailbox cache (.ost) on disk.</li><li>Switch between them with the <strong>"Try the new Outlook"</strong> toggle in the title bar.</li></ul>
+<p class="fact">A red "You're offline" banner means the new Outlook; "Working Offline" or "Disconnected" in the bottom status bar means classic Outlook.</p>
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/fix-outlook-not-syncing-windows-11-2026-2.jpg" width="1280" height="720" alt="Flat vector illustration of a laptop showing an email inbox with circular sync arrows being repaired by a wrench, representing fixing Outlook email sync on Windows 11" decoding="async"></div>
+<h2 id="fixes">The fixes, ordered easiest to hardest</h2>
+<p>Each fix says <em>why</em> it works and <em>when</em> it applies, so skip the ones that do not match your symptoms.</p>
+<h3>Fix 1: Check the status bar and turn off Work Offline</h3>
+<p><strong>Why:</strong> the most common accidental cause — airplane mode, a dropped connection, or a Windows update can silently flip Outlook offline. <strong>Classic:</strong> if the bottom status bar says <strong>Working Offline</strong> or <strong>Disconnected</strong>, click <strong>Work Offline</strong> on the <strong>Send/Receive</strong> tab to turn it off. <strong>New Outlook:</strong> click the red <strong>"You're offline"</strong> banner to reconnect, or turn off "Enable offline email" under <strong>Settings (gear) &gt; General &gt; Offline</strong> to force a live connection.</p>
+<h3>Fix 2: Force a manual sync</h3>
+<p><strong>Why:</strong> sync sometimes stalls even with a fine connection; a manual push restarts the conversation with the server and shows whether the connection is broken (you get an error) or just the automatic timer is stuck. <strong>Steps:</strong> press <strong>F9</strong> in either version (<strong>View &gt; Sync</strong> in new Outlook; <strong>Send/Receive &gt; Send/Receive All Folders</strong> in classic). In classic, also confirm the schedule under <strong>Send/Receive &gt; Send/Receive Groups &gt; Define Send/Receive Groups</strong>: automatic send/receive every 5–10 minutes.</p>
+<h3>Fix 3: Check the sort order — it may not be a sync failure</h3>
+<p><strong>Why:</strong> an inbox sorted <strong>Oldest on top</strong> or filtered to <strong>Unread</strong> only hides new mail that is arriving fine. <strong>When:</strong> you know mail arrived (a notification fired, webmail shows it) but the inbox looks unchanged. <strong>Classic:</strong> on the <strong>View</strong> tab set sorting to <strong>By Date &gt; Newest on top</strong>, clear any filter, and press <strong>Ctrl+Home</strong>. <strong>New Outlook:</strong> clear the <strong>Filter</strong> above the message list and set sorting to <strong>Date &gt; Newest on top</strong>.</p>
+<h3>Fix 4: Restart Outlook completely</h3>
+<p><strong>Why:</strong> clears a stalled sync state that a manual sync cannot. The new Outlook is especially prone: as a web-powered app, its background sync process can hang while the window looks normal. <strong>When:</strong> after updates, after sleep, or when sync silently stopped. <strong>Both:</strong> close Outlook, open <strong>Task Manager (Ctrl+Shift+Esc)</strong>, end any lingering <em>OUTLOOK.EXE</em> (classic) or <em>Olk.exe</em> (new) process, then relaunch.</p>
+<h3>Fix 5: Update Outlook and Windows</h3>
+<p><strong>Why:</strong> Microsoft changes Exchange Online regularly, and old builds quietly lose compatibility — sync and sign-in break first. Windows 11 builds also carry networking and power-management fixes affecting background sync. <strong>Classic:</strong> <strong>File &gt; Office Account &gt; Update Options &gt; Update Now</strong>. <strong>New Outlook:</strong> <strong>Microsoft Store &gt; Library &gt; Get updates</strong>. <strong>Windows:</strong> <strong>Settings &gt; Windows Update &gt; Check for updates</strong>, then restart.</p>
+<h3>Fix 6: Check Microsoft 365 service health</h3>
+<p><strong>Why:</strong> if Microsoft's servers are down, no local fix on your PC can help. <strong>When:</strong> nothing changed on your PC, sync broke suddenly, and your phone or colleagues are affected too. <strong>How:</strong> open Outlook on the web on another device — if webmail also fails, it is server-side; wait it out. Ask IT to check <strong>admin center &gt; Health &gt; Service health</strong>.</p>
+<h3>Fix 7: Check your mailbox storage quota</h3>
+<p><strong>Why:</strong> a mailbox at its storage limit stops receiving new mail — freeing space is the only fix. <strong>When:</strong> you also cannot <em>send</em>, or you saw a "mailbox almost full" warning. <strong>Check:</strong> <strong>File &gt; Info</strong> in classic (usage bar; typically 50 GB) or <strong>Settings (gear) &gt; General &gt; Storage</strong> in Outlook on the web. <strong>Free space:</strong> right-click <strong>Deleted Items &gt; Empty Folder</strong>, clear Sent Items and old newsletters, save large attachments to disk, then force a sync (F9).</p>
+<h3>Fix 8: Check the sync slider and offline mail settings</h3>
+<p><strong>Why:</strong> Outlook can be set to keep only the last 1–3 months of mail on your PC — new mail arrives, but older messages never download, which looks like a partial sync failure. <strong>When:</strong> recent mail syncs but older mail is missing only on this PC. <strong>Classic:</strong> <strong>File &gt; Account Settings &gt; Account Settings</strong>, double-click your account, move <strong>"Mail to keep offline"</strong> to <strong>All</strong>. <strong>New Outlook:</strong> check the download window under <strong>Settings &gt; Accounts &gt; your account</strong> and <strong>General &gt; Offline</strong>.</p>
+<h3>Fix 9: Sign out, clear cached credentials, and sign back in</h3>
+<p><strong>Why:</strong> an expired or corrupted authentication token silently breaks the connection — Outlook looks connected but never syncs. <strong>When:</strong> sign-in loops, sync broke after a password change, or you recently switched between the new and classic Outlook. <strong>Classic:</strong> in <strong>Credential Manager &gt; Windows Credentials</strong>, remove entries for Microsoft Office, Outlook, and ADAL, restart, and sign in fresh. Confirm your PC clock is correct — time drift breaks multi-factor authentication. <strong>New Outlook:</strong> <strong>Settings &gt; Accounts &gt; Email accounts &gt; Manage</strong>, remove the account, and add it again. If device sign-in itself is flaky, see our guide to <a href="https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/">passkey authentication for Windows logon</a>.</p>
+<h3>Fix 10: Disable or update add-ins (safe mode test)</h3>
+<p><strong>Why:</strong> third-party add-ins — antivirus email scanners, CRM plugins — hook into the send/receive pipeline, and a buggy one can stall it. <strong>When:</strong> sync broke after installing new software, or Outlook is slow <em>and</em> not syncing. <strong>Classic:</strong> press <strong>Win+R</strong>, type <em>outlook.exe /safe</em>, Enter. If sync works in safe mode, go to <strong>File &gt; Options &gt; Add-ins</strong>, set <strong>Manage: COM Add-ins &gt; Go</strong>, uncheck everything, restart normally, and re-enable one at a time. <strong>New Outlook:</strong> web add-ins are sandboxed and rarely cause this — focus on the classic steps, or move to Fix 11. If Outlook is merely sluggish, our <a href="https://pickmyapp.github.io/blog/how-to-speed-up-outlook-windows-11-2026/">guide to speeding up Outlook on Windows 11</a> covers the performance-only fixes.</p>
+<h3>Fix 11: Remove and re-add the email account</h3>
+<p><strong>Why:</strong> replaces corrupted account configuration and forces a fresh Autodiscover handshake, without touching your other accounts. <strong>When:</strong> only <em>one</em> account fails while others sync fine. <strong>Classic:</strong> <strong>File &gt; Account Settings &gt; Account Settings</strong>, select the account, <strong>Remove</strong>, then <strong>File &gt; Add Account</strong>. <strong>New Outlook:</strong> <strong>Settings &gt; Accounts &gt; Email accounts &gt; Manage &gt; Remove</strong>, then add it again. <strong>Warning:</strong> Microsoft 365, Exchange, and IMAP mail re-downloads from the server, but <strong>POP</strong> messages may live only on your PC — back them up first.</p>
+<h3>Fix 12: Check firewall, antivirus, and VPN</h3>
+<p><strong>Why:</strong> security software can block Outlook's server connection entirely (errors like 0x800CCC0E); VPNs can route traffic through tunnels Microsoft throttles or refuses. <strong>When:</strong> sync fails with a connection error, or broke after a security-software update. <strong>How:</strong> temporarily disable your third-party firewall or antivirus and force a sync (F9). If mail flows, re-enable protection and add Outlook as an exception. If you use a VPN, disconnect and test — if that fixes it, exclude <em>outlook.office365.com</em> and <em>autodiscover.outlook.com</em> from VPN routing.</p>
+<h3>Fix 13: Repair or rebuild the local cache (OST file)</h3>
+<p><strong>Why:</strong> classic Outlook keeps a local mailbox copy in an .ost file; when it corrupts, folders stop matching the server and webmail shows mail Outlook never displays. <strong>When:</strong> sync errors keep returning, or only some folders stay stale. <strong>Classic:</strong> close Outlook fully, press <strong>Win+R</strong>, type <em>%LOCALAPPDATA%\Microsoft\Outlook</em>, Enter. Rename the .ost named after your address to <em>.old</em> — Outlook rebuilds a fresh cache from the server on relaunch. Large mailboxes take hours; leave it running. For .pst files, run <strong>scanpst.exe</strong> (the Inbox Repair Tool in your Office install folder) instead.</p>
+<p class="fact">Rename the .ost to .old instead of deleting it: the rename forces a clean rebuild while keeping the old file as a safety copy you can restore if anything goes wrong.</p>
+<h3>Fix 14: Create a new Outlook profile</h3>
+<p><strong>Why:</strong> the profile holds all account configuration; when it corrupts, the damage survives OST rebuilds and account re-adds — only a fresh profile clears it. <strong>When:</strong> everything above failed, multiple accounts are broken, or sync breaks again days after an OST rebuild. <strong>Classic:</strong> close Outlook, search Windows for <strong>"Mail"</strong> (or Control Panel in icon view &gt; <strong>Mail (Microsoft Outlook)</strong>), click <strong>Show Profiles &gt; Add</strong>, name the new profile, add your account, and set it as default. Allow the full re-sync — several hours for large mailboxes.</p>
+<h3>Fix 15: Repair the Office install, reset the app, and check background permissions</h3>
+<p><strong>Why:</strong> the last resort for app-level damage. On Windows 11 24H2 there is a power-management angle: battery settings can suspend the new Outlook's background process when it is not the active window, silently killing auto-sync. <strong>When:</strong> nothing else worked, or the new Outlook only syncs while its window is in focus. <strong>Classic:</strong> <strong>Settings &gt; Apps &gt; Installed apps</strong>, find <strong>Microsoft 365</strong>, three-dot menu &gt; <strong>Modify</strong>. Run <strong>Quick Repair</strong> first; if that fails, <strong>Online Repair</strong> (downloads fresh files; you will sign in again). The same repair helps other Office apps — if <a href="https://pickmyapp.github.io/blog/fix-excel-running-slow-windows-11-2026/">Excel is dragging on your PC too</a>, that guide covers Office-wide slowness. <strong>New Outlook:</strong> on the same page open <strong>Outlook for Windows &gt; Advanced options</strong>, click <strong>Repair</strong>, then <strong>Reset</strong> if needed (server mail is untouched). On the same page set <strong>Background apps permissions</strong> to <strong>Always</strong> so Windows never suspends syncing.</p>
+<h2 id="at-a-glance">Fixes at a glance</h2>
+<div class="tablewrap"><table><caption>Outlook sync fixes at a glance — what each fix solves and how long it takes</caption><thead><tr><th>Fix</th><th>What it solves</th><th>Time needed</th></tr></thead><tbody><tr><td>1. Work Offline / status bar</td><td>Accidentally enabled offline mode</td><td>10 seconds</td></tr><tr><td>2. Force a manual sync (F9)</td><td>Stalled automatic sync</td><td>30 seconds</td></tr><tr><td>3. Sort order / filters</td><td>New mail hidden by view settings</td><td>1 minute</td></tr><tr><td>4. Full restart</td><td>Hung sync process</td><td>2 minutes</td></tr><tr><td>5. Update Outlook + Windows</td><td>Outdated build vs. Exchange Online</td><td>10–20 minutes</td></tr><tr><td>6. Microsoft 365 service health</td><td>Server-side outage</td><td>5 minutes to check</td></tr><tr><td>7. Mailbox storage quota</td><td>Full mailbox blocking delivery</td><td>10 minutes</td></tr><tr><td>8. Sync slider / offline mail</td><td>Only recent mail downloading</td><td>2 minutes</td></tr><tr><td>9. Clear credentials, sign in again</td><td>Expired auth tokens, password loops</td><td>5 minutes</td></tr><tr><td>10. Safe mode / add-ins</td><td>Add-in blocking the sync pipeline</td><td>10 minutes</td></tr><tr><td>11. Remove and re-add account</td><td>Corrupted account configuration</td><td>10 minutes</td></tr><tr><td>12. Firewall / antivirus / VPN</td><td>Blocked server connection</td><td>10 minutes</td></tr><tr><td>13. Rebuild the OST file</td><td>Corrupted local mailbox cache</td><td>1–3 hours to re-sync</td></tr><tr><td>14. New Outlook profile</td><td>Corrupted profile configuration</td><td>1–3 hours to re-sync</td></tr><tr><td>15. Repair install / reset app</td><td>Damaged files, background suspend</td><td>20–60 minutes</td></tr></tbody></table></div>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>Why is Outlook not syncing but my phone's email works fine?</h3><p>That points at your PC, not the server. The usual suspects are Work Offline mode, a stalled sync process, an expired authentication token, a corrupted OST cache, or the new Outlook being suspended by Windows 11 power management. Work through Fixes 1–4 and 9 in order.</p><h3>How do I force Outlook to sync my email right now?</h3><p>Press <strong>F9</strong> — it works in both versions. In the new Outlook you can also use <strong>View &gt; Sync</strong>; in classic, <strong>Send/Receive &gt; Send/Receive All Folders</strong>. If it throws an error, read it: a connection error means the problem is network or server-side; no error suggests the automatic timer was simply stuck.</p><h3>Will deleting or rebuilding the OST file delete my emails?</h3><p>No — for Microsoft 365, Exchange, and IMAP accounts the OST is only a local cache. Renaming it to .old and letting Outlook rebuild just re-downloads everything; your mail, folders, and rules on the server are untouched. The exception is <strong>POP</strong> accounts, where messages may exist only on your PC — back those up (<strong>File &gt; Open &amp; Export</strong>) before touching any data file.</p><h3>Why does the new Outlook stop syncing when I minimize it?</h3><p>Windows 11 power management (notably on 24H2) can suspend the new Outlook's background process when it is not the active window, silently stopping auto-sync. Go to <strong>Settings &gt; Apps &gt; Installed apps &gt; Outlook for Windows &gt; Advanced options</strong> and set <strong>Background apps permissions</strong> to <strong>Always</strong>. Also consider turning off offline email under <strong>Settings (gear) &gt; General &gt; Offline</strong>.</p><h3>How can I tell whether Outlook is offline or actually syncing?</h3><p>In classic Outlook, read the bottom status bar: "Working Offline" or "Disconnected" means no connection; "Connected" means it is syncing. In the new Outlook, a red "You're offline" banner means no connection; the account status under <strong>Settings &gt; Accounts</strong> shows the last successful sync. No banner plus a recent sync time means Outlook is current — if mail is still missing, check sort order and filters (Fix 3).</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Outlook sync failures on Windows 11 look alarming but are rarely serious. The culprit is almost always mundane: an accidental Work Offline toggle, a stalled sync timer, an outdated build, a full mailbox, or a corrupted local cache. That is why the order matters — the ten-second status-bar check (Fix 1) fixes more cases than the three-hour OST rebuild (Fix 13), and jumping to the nuclear options first just wastes your afternoon.</p>
+<p>The one thing worth doing differently in 2026 is identifying which Outlook you run before you start. The two Outlooks share a name but almost nothing else: different menus, sync engines, and failure modes. Every fix above is labeled for both, so match the steps to your client and work top to bottom. And if all fifteen fixes fail, check the one thing no setting can fix — Microsoft's service health — before assuming your PC is the problem.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/how-to-speed-up-outlook-windows-11-2026/">how to speed up outlook on windows 11 (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/fix-excel-running-slow-windows-11-2026/">How to Fix Excel Running Slow on Windows 11 (2026): 9 Fixes That Work</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/">MyID Authenticate Explained: Passkey Windows Logon for Phishing-Resistant Small Teams (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-free-email-marketing-tools-2026/">Best Free Email Marketing Tools in 2026</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

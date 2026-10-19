@@ -689,6 +689,51 @@
     "mailerlite vs mailchimp for small business",
     "mailerlite vs mailchimp for small business 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:openai-chatgpt-chrome-extension-browser-automation-2026",
+   "displayName": "OpenAI's upgraded ChatGPT Chrome extension explained: browser automation and tab control for small teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/openai-chatgpt-chrome-extension-browser-automation-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "OpenAI's October 15, 2026 ChatGPT Chrome extension upgrade adds Chat mode tab reading and Work mode browser automation — form filling, messages, downloads, tab grouping. This explainer covers setup, small-team prompts, pricing, privacy, and how it compares to Gemini auto-browse.",
+   "representativeQueries": [
+    "openai's upgraded chatgpt chrome extension explained:",
+    "openai's upgraded chatgpt chrome extension explained: 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:fix-outlook-not-syncing-windows-11-2026",
+   "displayName": "How to fix Outlook not syncing email on Windows 11 (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/fix-outlook-not-syncing-windows-11-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Outlook stopped syncing email on Windows 11? This step-by-step 2026 guide orders all 15 fixes from easiest to hardest, with exact menu paths for both the new Outlook and classic Outlook — so you stop at the first one that works.",
+   "representativeQueries": [
+    "how to fix outlook not syncing",
+    "how to fix outlook not syncing 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-free-dashboard-tools-small-business-2026",
+   "displayName": "Best free dashboard tools for small business (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-free-dashboard-tools-small-business-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "We checked the free tiers of seven dashboard tools — Looker Studio, Metabase, Apache Superset, Tableau Public, Google Sheets, Zoho Analytics, and Power BI Desktop — so you know exactly where each free plan stops before you commit your business data to it.",
+   "representativeQueries": [
+    "best free dashboard tools for small",
+    "best free dashboard tools for small 2026"
+   ]
   }
  ],
  "host": {

@@ -734,6 +734,51 @@
     "best free dashboard tools for small",
     "best free dashboard tools for small 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:shopify-canvas-explained-ai-storefront-workspace",
+   "displayName": "Shopify Canvas explained: tweak storefront layouts and code in one AI workspace without a designer (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/shopify-canvas-explained-ai-storefront-workspace/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Shopify launched Canvas on October 1, 2026: a visual workspace where you redesign your whole store by chatting with Sidekick, its AI agent. This explainer covers how it works, what it can build in about 20 minutes, the two irreversible catches on Shopify's own requirements page, and a safe workflow to test it without risking your live store.",
+   "representativeQueries": [
+    "shopify canvas explained: tweak storefront layouts",
+    "shopify canvas explained: tweak storefront layouts 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:gumloop-vs-lindy-solopreneurs",
+   "displayName": "Gumloop vs Lindy for solopreneurs: pricing compared at 1 user, 6 months, and your first hire (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/gumloop-vs-lindy-solopreneurs/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Lindy Plus looks cheaper at $29.99 vs Gumloop Pro's $37 — but Gumloop gives ~6.6x more credits per dollar, and Lindy bills per user while Gumloop Pro seats are unlimited. We run the real cost math across three solopreneur scenarios, with the August 2026 Lindy price cut and credit-burn risks factored in.",
+   "representativeQueries": [
+    "gumloop vs lindy for solopreneurs: pricing",
+    "gumloop vs lindy for solopreneurs: pricing 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:activecampaign-vs-klaviyo-ecommerce",
+   "displayName": "ActiveCampaign vs Klaviyo for ecommerce: which costs less as your list grows (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/activecampaign-vs-klaviyo-ecommerce/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Klaviyo and ActiveCampaign both changed how they count billable contacts in 2025 — and the cost gap between them is U-shaped: ActiveCampaign is cheaper at 1,000 and 50,000 contacts, near-parity around 25,000. We model the band-by-band math, the add-on stack tax, and what switching actually costs.",
+   "representativeQueries": [
+    "activecampaign vs klaviyo for ecommerce: which",
+    "activecampaign vs klaviyo for ecommerce: which 2026"
+   ]
   }
  ],
  "host": {

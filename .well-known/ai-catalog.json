@@ -779,6 +779,51 @@
     "activecampaign vs klaviyo for ecommerce: which",
     "activecampaign vs klaviyo for ecommerce: which 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:mistral-timestral-explained-sales-forecasting-no-gpu-2026",
+   "displayName": "Mistral Timestral explained: forecast sales and server demand in milliseconds, no GPU needed (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/mistral-timestral-explained-sales-forecasting-no-gpu-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "On October 15, 2026, Mistral released Timestral — forecasting models that predict sales, server load, and traffic in milliseconds on an ordinary CPU. How the four sizes work, what the benchmark claims mean, the zero-shot advantage, and the one license catch (a $20M/month revenue cap) every business should read before using it.",
+   "representativeQueries": [
+    "mistral timestral explained: forecast sales and",
+    "mistral timestral explained: forecast sales and 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:hubspot-free-vs-paid-free-crm-missing-2026",
+   "displayName": "HubSpot free vs paid: what the free CRM is missing (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/hubspot-free-vs-paid-free-crm-missing-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "HubSpot's free CRM is genuinely free — no time limit, real contact management, one pipeline, 2,000 marketing emails a month. But since September 2024 new accounts are capped at 2 users and 1,000 contacts, branding is stamped on everything, and automation is nearly absent. What Free includes, what Starter adds at ~$20/seat/month, and where the Professional price cliff starts.",
+   "representativeQueries": [
+    "hubspot free vs paid: what the",
+    "hubspot free vs paid: what the 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:basecamp-vs-asana-remote-teams-2026",
+   "displayName": "Basecamp vs Asana for remote teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/basecamp-vs-asana-remote-teams-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Basecamp charges a flat $299/month for unlimited users while Asana charges per seat — but the real difference is philosophy: Basecamp is communication-first (message boards, automatic check-ins, Hill Charts) and Asana is task-and-workflow-first (timelines, dependencies, portfolios). The break-even math, the feature gaps that decide it, and a pick-this-not-that checklist for remote teams.",
+   "representativeQueries": [
+    "basecamp vs asana for remote teams",
+    "basecamp vs asana for remote teams 2026"
+   ]
   }
  ],
  "host": {

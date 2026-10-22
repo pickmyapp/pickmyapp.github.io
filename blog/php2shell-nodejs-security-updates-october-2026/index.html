@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PHP2Shell and the Node.js October 2026 security updates explained: what website owners must check today (2026)</title>
+<meta name="description" content="PHP2Shell (CVE-2026-109618, CVE-2026-109619) is a pair of critical remote-code-execution flaws in the PHP runtime, patched Oct 21, 2026 in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. Plus the Node.js October 2026 security release (10 fixes) and a checklist for website owners.">
+<meta name="keywords" content="PHP2Shell explained, CVE-2026-109618, CVE-2026-109619, Node.js October 2026 security update, PHP security patch 2026">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/php2shell-nodejs-security-updates-october-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="PHP2Shell and the Node.js October 2026 security updates explained: what website owners must check today (2026)">
+<meta property="og:description" content="PHP2Shell (CVE-2026-109618, CVE-2026-109619) is a pair of critical remote-code-execution flaws in the PHP runtime, patched Oct 21, 2026 in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. Plus the Node.js October 2026 security release (10 fixes) and a checklist for website owners.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/php2shell-nodejs-security-updates-october-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/php2shell-nodejs-security-updates-october-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-22">
+<meta property="article:modified_time" content="2026-10-22">
+<meta property="article:section" content="Web Hosting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PHP2Shell and the Node.js October 2026 security updates explained: what website owners must check today (2026)">
+<meta name="twitter:description" content="PHP2Shell (CVE-2026-109618, CVE-2026-109619) is a pair of critical remote-code-execution flaws in the PHP runtime, patched Oct 21, 2026 in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. Plus the Node.js October 2026 security release (10 fixes) and a checklist for website owners.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/php2shell-nodejs-security-updates-october-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/php2shell-nodejs-security-updates-october-2026/#article", "headline": "PHP2Shell and the Node.js October 2026 security updates explained: what website owners must check today (2026)", "description": "PHP2Shell (CVE-2026-109618, CVE-2026-109619) is a pair of critical remote-code-execution flaws in the PHP runtime, patched Oct 21, 2026 in PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35. Plus the Node.js October 2026 security release (10 fixes) and a checklist for website owners.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/php2shell-nodejs-security-updates-october-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-22", "dateModified": "2026-10-22", "mainEntityOfPage": "https://pickmyapp.github.io/blog/php2shell-nodejs-security-updates-october-2026/", "articleSection": "Web Hosting", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is PHP2Shell?", "acceptedAnswer": {"@type": "Answer", "text": "PHP2Shell is the researchers' name for two critical remote-code-execution vulnerabilities in the PHP runtime itself \u2014 CVE-2026-109618 and CVE-2026-109619, both rated CVSS v4.0 9.2. They let an attacker execute code on the server via an unauthenticated HTTP request, before application code like WordPress even runs. The PHP Foundation disclosed and patched them on October 21, 2026."}}, {"@type": "Question", "name": "Which PHP versions fix PHP2Shell?", "acceptedAnswer": {"@type": "Answer", "text": "The patched releases are PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, all released October 21, 2026. PHP 8.1 and older received no official release \u2014 only minimal source-only backports for 7.4, 8.0 and 8.1 \u2014 and there is no official fix for 7.3 and earlier or 5.x. Sites on end-of-life branches must upgrade, not just update."}}, {"@type": "Question", "name": "Does updating WordPress, plugins or themes fix PHP2Shell?", "acceptedAnswer": {"@type": "Answer", "text": "No. PHP2Shell is a vulnerability in the PHP runtime/infrastructure layer, and CMS or plugin updates do not apply the fix \u2014 only updating the PHP runtime to a patched build remediates it. Still update WordPress core, plugins and themes as general security hygiene, and restart PHP processes (e.g. PHP-FPM) after the runtime update."}}, {"@type": "Question", "name": "Is PHP2Shell being exploited in the wild?", "acceptedAnswer": {"@type": "Answer", "text": "The picture is contested as of October 22, 2026. Cloudflare reported early attack traffic before the patches shipped, watchTowr observed exploitation in its honeypot network from October 21, and Aikido reported in-the-wild exploitation. But the PHP Foundation said inspected PoCs weren't functional exploits at release time, CISA said it had not observed exploitation, BSI/Huntress/ACSC reported none confirmed, and PHP2Shell is not in CISA's Known Exploited Vulnerabilities catalog. No confirmed public compromise had been attributed to it \u2014 but the technical details are public, so treat patching as urgent regardless."}}, {"@type": "Question", "name": "Do I need to worry about the Node.js updates if my site is WordPress on shared hosting?", "acceptedAnswer": {"@type": "Answer", "text": "Almost certainly not \u2014 Node.js doesn't run a typical WordPress stack. The October 2026 Node.js security release (22.23.4, 24.22.1, 26.12.1, fixing 10 vulnerabilities including a High-severity Brotli RCE) matters if you run Node.js apps, servers, APIs or build pipelines. If that's you: upgrade, rebuild container images, restart services, and rebuild any Single Executable Apps against the patched runtime."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Web Hosting", "item": "https://pickmyapp.github.io/category/web-hosting/"}, {"@type": "ListItem", "position": 3, "name": "PHP2Shell & Node.js updates", "item": "https://pickmyapp.github.io/blog/php2shell-nodejs-security-updates-october-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li aria-current="page">PHP2Shell & Node.js updates</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">PHP2Shell and the Node.js October 2026 security updates explained: what website owners must check today (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Web Hosting</span></li>
+<li>Published <time datetime="2026-10-22"><strong>Oct 22, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>14 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>On October 21, 2026, the PHP Foundation patched PHP2Shell — two critical remote-code-execution flaws (CVE-2026-109618 and CVE-2026-109619, both CVSS 9.2) in the PHP runtime itself, exploitable by an unauthenticated HTTP request with no login. The fixed builds are PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35; PHP 7.4–8.1 and older get no official release. The same day, Node.js shipped security releases (22.23.4, 24.22.1, 26.12.1) fixing 10 vulnerabilities, including a High-severity Brotli RCE. If your site runs PHP, check your version today — in cPanel under “Select PHP Version” or in WordPress under Tools → Site Health → Info → Server. Updating WordPress core, plugins or themes will not fix PHP2Shell; only the PHP runtime update does.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/php2shell-nodejs-security-updates-october-2026-1.jpg" width="1280" height="720" alt="Flat vector illustration of a metallic security shield patching cracked code brackets with a warning alert symbol over server racks" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-php2shell-is">What PHP2Shell is — and why it&#x27;s not a WordPress problem</a></li><li><a href="#the-two-flaws">The two flaws: CVE-2026-109618 and CVE-2026-109619</a></li><li><a href="#affected-versions">Which PHP versions are fixed — and which get no patch at all</a></li><li><a href="#timeline-exploitation">Disclosure timeline — and the contested exploitation picture</a></li><li><a href="#nodejs-updates">The Node.js October 2026 security release: 10 fixes across three lines</a></li><li><a href="#check-today">What website owners must check today: the 7-step list</a></li><li><a href="#myths">Three myths to ignore</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-php2shell-is">What PHP2Shell is — and why it&#x27;s not a WordPress problem</h2>
+
+<p>Most website security scares are plugin problems: a vulnerable contact form, a sloppy theme, a page-builder with a hole. PHP2Shell is different. It lives in <strong>the PHP runtime itself</strong> — the engine that executes your site's code before WordPress, Joomla, Drupal or your custom app even starts. Two critical remote-code-execution (RCE) vulnerabilities, disclosed by the PHP Foundation on October 21, 2026, let an attacker run arbitrary code on the server with <strong>no login and no credentials</strong> — just a crafted HTTP request to a PHP endpoint.</p>
+<p>PHP's own advisory demonstrates an unauthenticated exploit against Apache <strong>mod_php</strong> in a default configuration that fires <em>before any application code runs</em> — meaning your WordPress security plugin never gets a chance to intervene. All PHP web setups are in scope: mod_php (which PHP rates the highest risk), PHP-FPM, php-cgi, FrankenPHP and LiteSpeed.</p>
+<p>The scale of exposure is what makes this a check-today story rather than a read-later one. PHP runs on 69.3% of websites with a known server-side language (W3Techs, cited by CriticalStart on October 21). Exposure estimates put roughly 1.3–5.1 million internet-exposed PHP hosts in reach, and BlackKite's scanning found about 1.9 million internet-facing PHP hosts — of which 72.5% of those disclosing a version run end-of-life branches that will never receive an official fix.</p>
+<h2 id="the-two-flaws">The two flaws: CVE-2026-109618 and CVE-2026-109619</h2>
+
+<p>“PHP2Shell” is the researchers' name for the pair. Both score <strong>CVSS v4.0 9.2</strong> — firmly in critical territory — and both are memory-safety flaws in how PHP handles requests:</p>
+<div class="tablewrap"><table><caption>PHP2Shell: the two CVEs at a glance</caption><thead><tr><th>CVE</th><th>What it is</th><th>How it's reached</th></tr></thead><tbody>
+<tr><td><strong>CVE-2026-109618</strong></td><td>RCE via out-of-memory corruption: OOM handling can interrupt PHP while internal request data is only partially initialized, and request cleanup then treats the invalid data as valid</td><td>Multipart (file upload) request parsing</td></tr>
+<tr><td><strong>CVE-2026-109619</strong></td><td>RCE via stale global state: request-owned internal state survives after its backing memory is freed, and a later request on the same worker reuses that stale state</td><td>A later request on the same worker process</td></tr>
+</tbody></table></div>
+<p>Validated RCE setups: mod_php for CVE-2026-109618; mod_php and PHP-FPM for CVE-2026-109619. Two things matter for non-engineers. First, <strong>there is no configuration workaround</strong> — PHP's own developers state that patching is the only complete fix and no configuration closes either hole. Second, the flaws were reported back in August 2026, and the researchers credit frontier AI models with compressing an exceptionally complex exploit chain into roughly one week of work — a reminder that the window between disclosure and weaponization keeps shrinking.</p>
+<h2 id="affected-versions">Which PHP versions are fixed — and which get no patch at all</h2>
+
+<p>The PHP Foundation shipped patched builds on October 21, 2026, about 25 minutes ahead of its announced 14:00 UTC target. If your server runs one of these, you're covered once updated:</p>
+<ul>
+<li><strong>PHP 8.5.12</strong> (current branch)</li>
+<li><strong>PHP 8.4.27</strong></li>
+<li><strong>PHP 8.3.36</strong></li>
+<li><strong>PHP 8.2.35</strong></li>
+</ul>
+<p>Everything older is bad news. <strong>PHP 8.1 and older received no official release</strong> — the PHP security team published only minimal source-only backports for 7.4, 8.0 and 8.1, which most shared hosts will never apply. There is <strong>no official fix for 7.3 and earlier or 5.x</strong>. Given BlackKite's finding that nearly three-quarters of version-disclosing PHP hosts run end-of-life branches, a huge share of the internet's PHP footprint is sitting on versions that can never be patched in place — those sites need to <em>upgrade</em>, not just update.</p>
+<p>If your host still runs you on 7.4, 8.0 or 8.1, treat this as the forcing event to plan the upgrade you kept postponing. Those branches were already past end-of-life before PHP2Shell; now they're past it <em>and</em> exposed to a critical unauthenticated RCE.</p>
+<h2 id="timeline-exploitation">Disclosure timeline — and the contested exploitation picture</h2>
+
+<p>The timeline moved fast, and the exploitation picture as of October 22 is genuinely contested — worth stating carefully rather than picking the scariest headline:</p>
+<ul>
+<li><strong>August 2026:</strong> researchers report the flaws to PHP. The PHP Foundation credited Calif (Calif.io), OpenAI and Wiz for research and responsible disclosure.</li>
+<li><strong>October 20, 2026 (morning):</strong> a now-removed Hacker News post leaks the two reserved CVE IDs; watchTowr confirms and reproduces CVE-2026-109618. The PHP Foundation issues an advance notice of an emergency release, moved up a day from the originally planned October 22 disclosure. CERT-EU issues advisory 2026-018.</li>
+<li><strong>October 21, ~03:02 UTC:</strong> Cloudflare activates default WAF rules for free and paid plans. Cloudflare's CTO reported early attack traffic at 07:43 UTC — <em>before</em> the patches shipped.</li>
+<li><strong>October 21, ~13:35 UTC:</strong> patches ship. Researcher writeups and a demonstration video appear; proof-of-concept code surfaces on GitHub. watchTowr reports exploitation observed in its global honeypot network from October 21; Aikido reports exploitation in the wild.</li>
+</ul>
+<p>On the other side: the PHP Foundation said the PoCs circulating after the leak that it inspected were <strong>not functional exploits</strong> at release time; CISA said it had <strong>not observed exploitation</strong> at advisory publication; Germany's BSI, Huntress (as of Oct 21, 16:30 ET) and Australia's ACSC reported <strong>no confirmed exploitation</strong>; and PHP2Shell is <strong>not in the CISA Known Exploited Vulnerabilities catalog</strong> (catalog version 2026-10-21, checked October 22). No confirmed public report of an actual compromise attributed to PHP2Shell had surfaced as of October 22.</p>
+<p>The honest read: attack attempts are real and documented, functional exploitation is plausible and expected soon given the public technical details — but confirmed compromises had not been established when this article was written. Patch anyway, and patch today.</p>
+<h2 id="nodejs-updates">The Node.js October 2026 security release: 10 fixes across three lines</h2>
+
+<p>Bundled into the same news cycle, Node.js shipped its own security release on October 21, 2026. If you run Node.js apps, servers or APIs (build tools, headless CMS backends, real-time services), this one is yours to act on. If your site is WordPress on shared hosting, Node.js almost certainly doesn't touch your stack — skip to the checklist.</p>
+<p><strong>Patched versions: Node.js 26.12.1 (Current), 24.22.1 (LTS, codename Krypton), 22.23.4 (Maintenance LTS, codename Jod).</strong> Ten vulnerabilities were fixed — 4 High, 3 Medium, 3 Low by the Node.js project's own severity labels:</p>
+<div class="tablewrap"><table><caption>Node.js October 2026 security release: the 10 CVEs</caption><thead><tr><th>CVE</th><th>Severity</th><th>Issue</th><th>Lines affected</th></tr></thead><tbody>
+<tr><td>CVE-2026-111497</td><td><strong>High</strong></td><td>Brotli decoder out-of-bounds write permitting remote code execution</td><td>22, 24, 26</td></tr>
+<tr><td>CVE-2026-105482</td><td><strong>High</strong></td><td><code>dns.resolve</code> truncates names containing a NUL character mid-string</td><td>22, 24, 26</td></tr>
+<tr><td>CVE-2026-105483</td><td><strong>High</strong></td><td>TLS hostname verification bypass when an IP uses full-width digits</td><td>24, 26</td></tr>
+<tr><td>CVE-2026-106069</td><td><strong>High</strong></td><td>TLS hostname verification bypass when a host loosely resolves to an IP</td><td>22, 24, 26</td></tr>
+<tr><td>CVE-2026-105481</td><td>Medium</td><td>HTTP keep-alive: a response written before its request is processed</td><td>22, 24, 26</td></tr>
+<tr><td>CVE-2026-106072</td><td>Medium</td><td>TLS weak IPv4 validation lets DNS names in a cert authenticate IP endpoints</td><td>22, 24, 26</td></tr>
+<tr><td>CVE-2026-106074</td><td>Medium</td><td><code>crypto.randomUUID()</code>/<code>randomInt()</code> entropy caches stored in startup snapshots and single-executable apps — every process generates identical “random” values</td><td>22, 24, 26</td></tr>
+<tr><td>CVE-2026-106070</td><td>Low</td><td>ZipFile: attacker-controlled prefix bytes returned after ZIP header validation fails</td><td>26 only</td></tr>
+<tr><td>CVE-2026-106071</td><td>Low</td><td>Permission model: wildcard radix lookup grants excessive filesystem permissions</td><td>26 only</td></tr>
+<tr><td>CVE-2026-106073</td><td>Low</td><td>Permission model bypass via <code>fs.realpathSync</code></td><td>22, 24, 26</td></tr>
+</tbody></table></div>
+<p>The worst is <strong>CVE-2026-111497</strong>: a Brotli decoder out-of-bounds write that can permit remote code execution from crafted compressed data, on all three lines. Exact exploitation prerequisites aren't public — the advisory confirms impact, not exploitability conditions. The TLS hostname-verification bypasses are the sleeper risk for API-heavy backends: a certificate that shouldn't authenticate an endpoint suddenly can.</p>
+<p>Two things bundled into this release deserve attention beyond the CVEs. First, the bundled root certificates were updated to NSS 3.131.1, including removal of trust tied to the <strong>eMudhra intermediate CA compromise</strong> — eMudhra's intermediate private keys could be reconstructed from public certificates, ~16 certificates were revoked, browsers blocked them October 17–20, and roughly 30,000 certificates need reissuing. If your services pin or depend on affected chains, check them. Second, <strong>end-of-life lines get no fixes</strong>: Node 18, 20 and 25 are unpatched (Node 20 reached EOL April 30, 2026). Note the transitions: Node 26 becomes LTS on October 28, 2026, and Node 24 moved to maintenance mode on October 20.</p>
+<p>Upgrade path: run <code>node -v</code>, move to 22.23.4, 24.22.1 or 26.12.1 for your line, <strong>rebuild container images</strong> and restart services, then confirm the running binary reports the patched version. Single Executable Applications must be rebuilt against the patched runtime — and note CVE-2026-106074, which means previously-built snapshots may have been generating predictable “random” values.</p>
+<h2 id="check-today">What website owners must check today: the 7-step list</h2>
+
+<p>No theory — here's the actual checklist, in order:</p>
+<h3>1. Find out which PHP version your site runs</h3>
+<p>In cPanel, open <strong>“Select PHP Version”</strong> (or MultiPHP Manager / PHP Selector, depending on your host's skin). In WordPress, go to <strong>Tools → Site Health → Info → Server</strong> and read the PHP version line. If you can't find it, ask your host's support chat — this is a five-minute question, and right now it's the most important one.</p>
+<h3>2. Get onto a patched build — or push your host to</h3>
+<p>The fixed releases are <strong>8.5.12, 8.4.27, 8.3.36 and 8.2.35</strong>. On shared hosting, the host controls the PHP binaries — you can't patch the runtime yourself. Your job: verify your site is on a patched version (or on an 8.x branch your host has patched), and open a ticket pushing support if they haven't deployed it yet. If you're still on 7.4, 8.0 or 8.1 — which get no official release, only source-only backports — plan the upgrade now, not next quarter. If you're on 7.3 or older, you're on an unfixable branch: upgrading is the only remediation.</p>
+<h3>3. Back up before you touch anything</h3>
+<p>Run a full backup first — cPanel's Backup Wizard, or your backup plugin — before any PHP version switch or update. A PHP minor-version change can break old plugins; you want a rewind button.</p>
+<h3>4. Understand what does NOT fix PHP2Shell</h3>
+<p>Updating WordPress core, plugins and themes <strong>will not fix PHP2Shell</strong> — the fix is at the PHP runtime/infrastructure level, and CMS or plugin updates don't apply it. Do update everything anyway as general hygiene, and after the runtime update, <strong>restart PHP processes</strong> (e.g. a PHP-FPM restart) so the patched binary is actually what's running.</p>
+<h3>5. Treat your WAF as a bandage, not a cure</h3>
+<p>Cloudflare enabled default WAF rules on October 21 and reports blocking attack traffic — genuinely useful as a stopgap. But PHP's own developers are explicit: <strong>patching is the only complete fix</strong>; no configuration closes either hole. A WAF buys you time; it doesn't close the vulnerability. If you're behind Cloudflare already, you're partially shielded — keep going with steps 1–2.</p>
+<h3>6. Node.js users: upgrade, rebuild, restart</h3>
+<p>Only relevant if you run Node.js apps or APIs. Run <code>node -v</code>, upgrade to the patched release for your line (22.23.4 / 24.22.1 / 26.12.1), rebuild your container images, restart the services, and verify the running binary. Single Executable Apps need a rebuild against the patched runtime.</p>
+<h3>7. If you suspect compromise, rotate secrets</h3>
+<p>Especially on a server that was unpatched while attack traffic was observed: change admin passwords, reissue API keys, and rotate salts/keys. A patched server with stolen credentials is still a compromised site. For the certificate side of this news cycle, our <a href="https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/">AutoSSL in cPanel guide</a> and our explainer on <a href="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let's Encrypt's 64-day certificates</a> cover keeping TLS healthy, and our <a href="https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/">SSL expiry monitoring tools</a> roundup helps you catch the next expiry before it becomes an outage. You can also <a href="https://pickmyapp.github.io/blog/renew-ssl-certificates-automatically-certbot/">renew certificates automatically with Certbot</a> so renewals stop being a manual chore. And if this scare has you rethinking your host entirely, see our <a href="https://pickmyapp.github.io/blog/best-cheap-web-hosting-wordpress-2026/">best cheap web hosting for WordPress</a> comparison.</p>
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/php2shell-nodejs-security-updates-october-2026-2.jpg" width="1280" height="720" alt="Flat vector illustration of a website owner clicking a big update button beside a server with a padlock and a floating checklist" decoding="async"></div><h2 id="myths">Three myths to ignore</h2>
+
+<p><strong>“I updated WordPress, so I'm safe.”</strong> No — the vulnerability is below WordPress, in the runtime. Application updates are hygiene, not remediation.</p>
+<p><strong>“My WAF blocks it, so I can wait.”</strong> WAF rules (like Cloudflare's October 21 defaults) blunt attack traffic, but attackers iterate on bypasses. The window between a WAF rule and a bypass is measured in days. Patch.</p>
+<p><strong>“My host handles security.”</strong> Maybe — but verify. Open the ticket, ask for the patched PHP build by version number, and confirm your site is actually running it. Trust, but verify, especially on budget shared hosting.</p>
+
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>What is PHP2Shell?</h3><p>PHP2Shell is the researchers&#x27; name for two critical remote-code-execution vulnerabilities in the PHP runtime itself — CVE-2026-109618 and CVE-2026-109619, both rated CVSS v4.0 9.2. They let an attacker execute code on the server via an unauthenticated HTTP request, before application code like WordPress even runs. The PHP Foundation disclosed and patched them on October 21, 2026.</p><h3>Which PHP versions fix PHP2Shell?</h3><p>The patched releases are PHP 8.5.12, 8.4.27, 8.3.36 and 8.2.35, all released October 21, 2026. PHP 8.1 and older received no official release — only minimal source-only backports for 7.4, 8.0 and 8.1 — and there is no official fix for 7.3 and earlier or 5.x. Sites on end-of-life branches must upgrade, not just update.</p><h3>Does updating WordPress, plugins or themes fix PHP2Shell?</h3><p>No. PHP2Shell is a vulnerability in the PHP runtime/infrastructure layer, and CMS or plugin updates do not apply the fix — only updating the PHP runtime to a patched build remediates it. Still update WordPress core, plugins and themes as general security hygiene, and restart PHP processes (e.g. PHP-FPM) after the runtime update.</p><h3>Is PHP2Shell being exploited in the wild?</h3><p>The picture is contested as of October 22, 2026. Cloudflare reported early attack traffic before the patches shipped, watchTowr observed exploitation in its honeypot network from October 21, and Aikido reported in-the-wild exploitation. But the PHP Foundation said inspected PoCs weren&#x27;t functional exploits at release time, CISA said it had not observed exploitation, BSI/Huntress/ACSC reported none confirmed, and PHP2Shell is not in CISA&#x27;s Known Exploited Vulnerabilities catalog. No confirmed public compromise had been attributed to it — but the technical details are public, so treat patching as urgent regardless.</p><h3>Do I need to worry about the Node.js updates if my site is WordPress on shared hosting?</h3><p>Almost certainly not — Node.js doesn&#x27;t run a typical WordPress stack. The October 2026 Node.js security release (22.23.4, 24.22.1, 26.12.1, fixing 10 vulnerabilities including a High-severity Brotli RCE) matters if you run Node.js apps, servers, APIs or build pipelines. If that&#x27;s you: upgrade, rebuild container images, restart services, and rebuild any Single Executable Apps against the patched runtime.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>PHP2Shell is the rare vulnerability that deserves the urgent tone: an unauthenticated RCE in the runtime powering most of the web, with attack traffic already observed and patches available since October 21, 2026. The fix is simple — get on PHP 8.5.12, 8.4.27, 8.3.36 or 8.2.35, or push your host to — and the trap is equally simple: believing a WordPress or plugin update covers you. It doesn&#x27;t. Check your PHP version today, back up first, update the runtime, and restart PHP. Node.js shops: upgrade to the patched line release, rebuild your images, and move on. The internet&#x27;s patch window for flaws like this is measured in days, not months.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/lets-encrypt-ssl-certificate-64-days-2027/">Let&#x27;s Encrypt is cutting SSL certificate lifetimes to 64 days: what website owners must do</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/how-to-set-up-autossl-cpanel-64-day-certificates-2026/">How to set up AutoSSL in cPanel for 64-day certificates (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-ssl-expiry-monitoring-tools-64-day-certificates/">Best SSL expiry monitoring tools for 64-day certificates (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

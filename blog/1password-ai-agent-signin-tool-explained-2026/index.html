@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1Password&#x27;s AI agent sign-in tool explained: let AI agents log into your accounts without ever seeing a password, and what it means for small teams (2026)</title>
+<meta name="description" content="1Password for Agents (launched Oct 22, 2026) lets AI agents like ChatGPT and Claude sign into your accounts without ever seeing your password. How the approval flow works, supported agents, pricing, security limits, and what it means for small teams.">
+<meta name="keywords" content="1Password for Agents, 1Password AI agent sign-in, AI agents login password, 1Password agents explained, can AI log into accounts safely">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="1Password&#x27;s AI agent sign-in tool explained: let AI agents log into your accounts without ever seeing a password, and what it means for small teams (2026)">
+<meta property="og:description" content="1Password for Agents (launched Oct 22, 2026) lets AI agents like ChatGPT and Claude sign into your accounts without ever seeing your password. How the approval flow works, supported agents, pricing, security limits, and what it means for small teams.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/1password-ai-agent-signin-tool-explained-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-23">
+<meta property="article:modified_time" content="2026-10-23">
+<meta property="article:section" content="Personal Cybersecurity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="1Password&#x27;s AI agent sign-in tool explained: let AI agents log into your accounts without ever seeing a password, and what it means for small teams (2026)">
+<meta name="twitter:description" content="1Password for Agents (launched Oct 22, 2026) lets AI agents like ChatGPT and Claude sign into your accounts without ever seeing your password. How the approval flow works, supported agents, pricing, security limits, and what it means for small teams.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/1password-ai-agent-signin-tool-explained-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/#article", "headline": "1Password's AI agent sign-in tool explained: let AI agents log into your accounts without ever seeing a password, and what it means for small teams (2026)", "description": "1Password for Agents (launched Oct 22, 2026) lets AI agents like ChatGPT and Claude sign into your accounts without ever seeing your password. How the approval flow works, supported agents, pricing, security limits, and what it means for small teams.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/1password-ai-agent-signin-tool-explained-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/", "articleSection": "Personal Cybersecurity", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is 1Password for Agents?", "acceptedAnswer": {"@type": "Answer", "text": "A platform launched October 22, 2026, that lets supported AI agents sign into your accounts without ever seeing your password. When an agent reaches a login form, you approve the sign-in on your own device; 1Password fills the username, password and one-time code directly into the form through its own channel. The secret never enters the AI model. It's included free with 1Password Individual ($3.99/mo) and Family ($5.99/mo) plans on 1Password.com."}}, {"@type": "Question", "name": "Which AI assistants work with 1Password for Agents?", "acceptedAnswer": {"@type": "Answer", "text": "At launch: Meta's Muse and Grok Bot, rolling out first. Coming soon: Anthropic's Claude Duet, OpenAI's ChatGPT Work and 'dots,' and Town's Townie. Nine more companies (including Browserbase, Perplexity and Ramp) are building integrations. Notably absent: Google's Gemini Spark and Microsoft's Scout."}}, {"@type": "Question", "name": "Does the AI agent ever see my password?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 the password and one-time codes stay inside 1Password and are filled directly into the site's form. But the practical distinction matters: the agent operates inside a live logged-in session afterward, so it can still place orders, change settings or send messages. 1Password for Agents solves credential exposure, not session delegation \u2014 delegate low-stakes logins, never banking or payroll."}}, {"@type": "Question", "name": "Does 1Password for Agents cost extra?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 it's included at no extra cost in 1Password Individual and Family plans on 1Password.com (14-day trial available). Two caveats: 1Password.eu and 1Password.ca region accounts aren't supported at launch, and Teams/Business accounts aren't supported yet either \u2014 it's consumer plans only for now."}}, {"@type": "Question", "name": "Is it safe to let an AI agent log into my business accounts?", "acceptedAnswer": {"@type": "Answer", "text": "Safer than pasting your password into a chatbot, which is the habit this replaces \u2014 but apply a policy. Safe to delegate: travel booking, supplier portals, research accounts, social scheduling. Never delegate: banking, payroll/tax, medical portals, domain registrar/DNS, and email (the skeleton key to password resets). Approve per task, review weekly, and remember prompt injection can still steer a logged-in agent's actions even though it can't steal the password."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Personal Cybersecurity", "item": "https://pickmyapp.github.io/category/cybersecurity/"}, {"@type": "ListItem", "position": 3, "name": "1Password for Agents", "item": "https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/cybersecurity/">Personal Cybersecurity</a></li>
+<li aria-current="page">1Password for Agents</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">1Password&#x27;s AI agent sign-in tool explained: let AI agents log into your accounts without ever seeing a password, and what it means for small teams (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Personal Cybersecurity</span></li>
+<li>Published <time datetime="2026-10-23"><strong>Oct 23, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>11 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>On October 22, 2026, 1Password launched &lt;strong&gt;1Password for Agents&lt;/strong&gt;: a platform that lets supported AI agents (Meta&#x27;s Muse and Grok Bot first, with Claude Duet, ChatGPT Work and others coming) sign into your accounts while your password — and one-time codes — stay inside 1Password. When an agent reaches a login form, it presents a unique digital key; you get an alert on your own device showing which agent wants which login and why; you approve or decline; 1Password fills the credentials directly into the form through its own channel; the secret never enters the model. It&#x27;s included free in 1Password Individual ($3.99/mo) and Family ($5.99/mo) plans on 1Password.com. For small teams, the honest read: it solves credential exposure — the &#x27;paste your password into the chatbot&#x27; problem — but the agent still operates inside a live logged-in session, so it can place orders, change settings and send messages. Delegate low-stakes logins (travel booking, supplier portals, research accounts); never delegate banking, payroll or medical.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/1password-ai-agent-signin-tool-explained-2026-1.jpg" width="1280" height="720" alt="Flat vector illustration of a robot assistant, a browser login form, a protective shield with a keyhole, and a phone approval notification" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-it-is">What 1Password for Agents is — and the problem it kills</a></li><li><a href="#how-it-works">How it works: the five-step flow</a></li><li><a href="#which-agents">Which agents work with it — and when</a></li><li><a href="#what-it-doesnt-fix">What it doesn&#x27;t protect against: the honest security read</a></li><li><a href="#delegation-playbook">The small-team playbook: what to delegate, what to never delegate</a></li><li><a href="#pricing-box">Pricing: what it costs (and the March 2026 price context)</a></li><li><a href="#verdict">Verdict: the trust layer the agentic era needed</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-it-is">What 1Password for Agents is — and the problem it kills</h2>
+
+<p>The fastest-growing security bad habit of 2026 is pasting your actual password into a chatbot. You want an AI assistant to check a shipment, rebook a flight, or pull a report from a supplier portal — and the assistant can't get past the login screen. So people hand over credentials. As 1Password's own blog put it (via TechCrunch): handing over a password or secret "can leave people with sensitive information in places they can no longer control as a copy gets saved for the next time."</p>
+<p><strong>1Password for Agents</strong>, announced Thursday, October 22, 2026, is the sanctioned alternative. It's a platform — not a feature inside one app — that brokers the relationship between AI agents and your vault. The core promise is simple: <strong>the agent can get past the login without ever possessing the credential.</strong> No copy of your password in a chat log, no secret in a model's context window, no token sitting in a third-party database after the task ends.</p>
+<p>The timing isn't accidental. The same week, Axios reported that US banks had begun detecting agentic activity inside customer accounts — software acting as users — and Chase publicly warned customers never to share credentials. The industry's position, in other words, is "don't do the thing everyone is doing." 1Password's answer is a way to do the useful part of it safely.</p>
+<p>Context on the company: 1Password protects 1.6+ billion credentials in vaults and counts 200,000+ businesses among its users. This is the biggest password-manager vendor planting a flag in the agentic era — and, notably, no rival (Bitwarden, Dashlane, Keeper) has announced an equivalent agent platform. Our <a href="https://pickmyapp.github.io/blog/best-password-managers-small-teams-compared/">password manager comparison</a> covers the current field; this launch redraws one corner of it.</p>
+<h2 id="how-it-works">How it works: the five-step flow</h2>
+
+<p>The mechanism is a mediated sign-in — 1Password sits between the agent and the credential at every step:</p>
+<ol>
+<li><strong>The agent reaches a login form</strong> and presents a <strong>unique digital key</strong> to 1Password, verifying its identity. (Key format and rotation details haven't been published — one of the open questions below.)</li>
+<li><strong>The request names the specific credential and the reason.</strong> You see which agent, which login, and why — on your own device, not in the agent's chat.</li>
+<li><strong>You approve or decline.</strong> The agent cannot approve its own access. Approvals are per task, with scope and duration you control.</li>
+<li><strong>1Password fills the username, password and one-time code</strong> directly into the site's form through its own channel. The secret never enters the model.</li>
+<li><strong>The agent continues past the login.</strong> If it creates a new account during the task, the details are saved to your vault — a nice touch for the "the agent signed up for something with my email" problem.</li>
+</ol>
+<p>The design principles worth noting: <strong>scope is per-login, not per-vault</strong> — an approved agent gets the logins you approved, not the whole vault. Browser-saved passwords and notes are not usable (only vault items). Session-scoped access doesn't carry to later tasks. And the integration can be disconnected at any time.</p>
+<p>This builds on an earlier, narrower product: <strong>1Password for Claude</strong> (July 2026), which was Mac-only, Chrome-only, needed the desktop app plus extension, and used an "Agentic Mode" that hid the extension UI while the agent was in control. For Agents is the general platform that idea was auditioning for.</p>
+<h2 id="which-agents">Which agents work with it — and when</h2>
+
+<p>Launch partners, announced October 22:</p>
+<ul>
+<li><strong>First:</strong> Meta's Muse and SpaceX's Grok Bot — rolling out "over the coming days" from launch.</li>
+<li><strong>Coming soon:</strong> Anthropic's Claude Duet, OpenAI's ChatGPT Work and "dots," and Town's Townie.</li>
+<li><strong>Building integrations:</strong> nine more — Browserbase, Browser Use, Dana, Instinct, KERNEL, Perplexity, Ramp, Tomo, and Wajo.</li>
+<li><strong>Notably absent:</strong> Google's Gemini Spark and Microsoft's Scout.</li>
+</ul>
+<p>Two availability footnotes that matter for planning. First, it's <strong>consumer plans only at launch</strong> — Individual and Family accounts on 1Password.com. Teams and Business accounts are not supported yet, which is awkward for the exact audience (small teams) this article is written for; the individual-plan path works for a founder today, but shared-vault delegation for a team is a future release. Second, <strong>1Password.eu and 1Password.ca region accounts are excluded at launch</strong>, unexplained.</p>
+<p>The competitive picture: nobody else has this. Bitwarden, Dashlane, Keeper — no agent-sign-in platform announced. For a small-business blog, "which password manager is ready for AI agents" is currently an unowned explainer, and the answer today is a one-horse race.</p>
+<h2 id="what-it-doesnt-fix">What it doesn&#x27;t protect against: the honest security read</h2>
+
+<p>This is the section the launch coverage mostly skipped, and it's the one that matters most. 1Password for Agents solves <strong>credential exposure</strong> — the agent never holds your password. It does not solve <strong>session delegation</strong>. Once the agent is past the login, it's operating inside a live, authenticated session. It can place orders, change account settings, send messages, download data. The password staying secret and the agent being safe are different claims, and only the first one is what this product guarantees.</p>
+<p>Three risks to hold in your head alongside the approval flow:</p>
+<ul>
+<li><strong>Prompt injection survives this design.</strong> If a malicious page hijacks the agent mid-task, the attacker can't steal your password — but they can steer what the logged-in agent <em>does</em>. "The secret never enters the model" is true and important; it's not the whole security story.</li>
+<li><strong>Approval fatigue is real.</strong> Per-task approvals on your own device are the control — and also the friction. Every security system that asks a busy human to approve things eventually trains them to tap "yes." How approvals age, how long they last, and whether there's a reviewable audit log of every agent sign-in are all unpublished as of launch. Those are the questions a business buyer should ask before delegating anything that matters.</li>
+<li><strong>The bank problem is unsolved.</strong> Chase told customers "never to share credentials" the same week this launched. Banks detecting agentic activity can't tell user-requested automation from fraud — and a sanctioned sign-in flow doesn't change what the bank's fraud model sees. Expect financial logins to be the last frontier, not the first use case.</li>
+</ul>
+<p>None of this is an argument against the product — credential exposure was the dumbest, most common failure mode, and it's now handled. It's an argument for <strong>delegating with a policy</strong>, which is the next section. If you're evaluating the broader identity landscape, our <a href="https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/">passkey explainer</a> covers the parallel track: passkeys, where sign-in success runs 93% vs ~63% for passwords (FIDO Alliance, 2026).</p>
+<h2 id="delegation-playbook">The small-team playbook: what to delegate, what to never delegate</h2>
+
+<p>For a founder or a five-person team, the practical question isn't "how does the cryptography work" — it's "which logins do I let the agent touch." Here's the policy, in two lists:</p>
+<h3>Safe to delegate (low stakes, high annoyance)</h3>
+<ul>
+<li><strong>Travel booking:</strong> airline and hotel logins for rebooking and check-in — the classic "the agent can't get past the login" task.</li>
+<li><strong>Supplier and vendor portals:</strong> checking order status, downloading invoices, reordering consumables. Approve per task; the agent never needs standing access.</li>
+<li><strong>Research and price-checking accounts:</strong> the logins you created for one comparison and never used again.</li>
+<li><strong>Social and publishing tools:</strong> scheduling posts, pulling analytics — actions you'd undo in one click if something went sideways.</li>
+</ul>
+<h3>Never delegate (high stakes, irreversible)</h3>
+<ul>
+<li><strong>Banking and payment processors:</strong> Chase's warning stands — banks can't distinguish your agent from fraud, and a frozen business account is not a "whoops."</li>
+<li><strong>Payroll and tax:</strong> irreversible money movement plus the most sensitive PII you hold.</li>
+<li><strong>Medical and benefits portals:</strong> HIPAA-adjacent data with no upside to agent access.</li>
+<li><strong>Domain registrar and DNS:</strong> whoever controls DNS controls your business. This login should barely be touchable by <em>humans</em>, let alone agents.</li>
+<li><strong>The password manager itself and email:</strong> email is the skeleton key to every "reset password" flow on earth. It stays human-only.</li>
+</ul>
+<p>The operating rule: <strong>approve per task, review weekly.</strong> Treat agent approvals like expense approvals — routine for small amounts, scrutinized for large ones, and audited on a schedule. And keep the human in the loop for anything where the "undo" button doesn't exist.</p>
+<h2 id="pricing-box">Pricing: what it costs (and the March 2026 price context)</h2>
+
+<p>1Password for Agents is <strong>included at no extra cost</strong> in 1Password Individual and Family plans on 1Password.com — there's no agent add-on SKU, at least at launch. The plan prices themselves, after 1Password's across-the-board price increase in March 2026 (+$12/year):</p>
+<div class="tablewrap"><table><caption>1Password plans that include For Agents (2026, annual billing)</caption><thead><tr><th>Plan</th><th>Price</th><th>Notes</th></tr></thead><tbody>
+<tr><td><strong>Individual</strong></td><td>$3.99/mo ($47.88/yr)</td><td>$2.99 first-year promo; For Agents included</td></tr>
+<tr><td><strong>Families</strong></td><td>$5.99/mo ($71.88/yr)</td><td>Up to 5 members; $4.49 first-year promo; For Agents included</td></tr>
+</tbody></table></div>
+<p>For the team plans (not yet supported by For Agents, but the context matters): Teams Starter is $24.95/month flat for up to 10 users; Business is $8.99/user/month. All business tiers are annual-only with a 14-day trial. The pricing question to watch: whether For Agents stays free when it eventually reaches Business plans, or becomes the upsell. Today's answer — free on consumer plans — is the launch incentive; don't assume it's permanent.</p>
+<h2 id="verdict">Verdict: the trust layer the agentic era needed</h2>
+
+<p>"Agents are starting to do real work on our behalf. The old model where you hand over a credential and hope for the best doesn't work," 1Password CPO Aashish Tripathi told The Verge at launch. He's right about the diagnosis. The prescription — mediated sign-in with per-task human approval — is the first serious answer to the password-pasting habit, and the fact that it's free on consumer plans means it'll actually get used.</p>
+<p>The honest scorecard: <strong>credential exposure, solved.</strong> Session risk, prompt injection, and approval fatigue, not solved — managed, with a policy. Business accounts, the EU/CA regions, and audit logging, still to come. For a small team today, the move is: get it on the founder's Individual plan, delegate the annoying low-stakes logins, keep banking and payroll human-only, and revisit when the Business tier arrives. The agentic era needed a trust layer. This is the first credible draft of one.</p>
+
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>What is 1Password for Agents?</h3><p>A platform launched October 22, 2026, that lets supported AI agents sign into your accounts without ever seeing your password. When an agent reaches a login form, you approve the sign-in on your own device; 1Password fills the username, password and one-time code directly into the form through its own channel. The secret never enters the AI model. It&#x27;s included free with 1Password Individual ($3.99/mo) and Family ($5.99/mo) plans on 1Password.com.</p><h3>Which AI assistants work with 1Password for Agents?</h3><p>At launch: Meta&#x27;s Muse and Grok Bot, rolling out first. Coming soon: Anthropic&#x27;s Claude Duet, OpenAI&#x27;s ChatGPT Work and &#x27;dots,&#x27; and Town&#x27;s Townie. Nine more companies (including Browserbase, Perplexity and Ramp) are building integrations. Notably absent: Google&#x27;s Gemini Spark and Microsoft&#x27;s Scout.</p><h3>Does the AI agent ever see my password?</h3><p>No — the password and one-time codes stay inside 1Password and are filled directly into the site&#x27;s form. But the practical distinction matters: the agent operates inside a live logged-in session afterward, so it can still place orders, change settings or send messages. 1Password for Agents solves credential exposure, not session delegation — delegate low-stakes logins, never banking or payroll.</p><h3>Does 1Password for Agents cost extra?</h3><p>No — it&#x27;s included at no extra cost in 1Password Individual and Family plans on 1Password.com (14-day trial available). Two caveats: 1Password.eu and 1Password.ca region accounts aren&#x27;t supported at launch, and Teams/Business accounts aren&#x27;t supported yet either — it&#x27;s consumer plans only for now.</p><h3>Is it safe to let an AI agent log into my business accounts?</h3><p>Safer than pasting your password into a chatbot, which is the habit this replaces — but apply a policy. Safe to delegate: travel booking, supplier portals, research accounts, social scheduling. Never delegate: banking, payroll/tax, medical portals, domain registrar/DNS, and email (the skeleton key to password resets). Approve per task, review weekly, and remember prompt injection can still steer a logged-in agent&#x27;s actions even though it can&#x27;t steal the password.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>1Password for Agents is the first product that treats AI-agent logins as a design problem instead of a user error — and the design is right: per-task human approval, scoped access, secrets that never touch the model, free on the plans people already buy. Its limits are honest ones: the agent still acts inside a live session, prompt injection still matters, and business teams are waiting for their tier. Use it for the annoying logins, keep the dangerous ones human, and you&#x27;ve got the sanest agent-security posture available in 2026.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-password-managers-small-teams-compared/">Best password managers for small teams compared</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/">MyID Authenticate explained: passkey Windows logon</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/bitdefender-ai-guardian-explained/">Bitdefender AI Guardian explained</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/openai-chatgpt-chrome-extension-browser-automation-2026/">OpenAI&#x27;s ChatGPT Chrome extension: browser automation explained</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

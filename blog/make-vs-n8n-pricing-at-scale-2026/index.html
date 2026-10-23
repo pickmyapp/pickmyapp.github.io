@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make scenarios vs n8n workflows: what pricing at scale really looks like (2026)</title>
+<meta name="description" content="Make vs n8n pricing at scale in 2026: credits vs executions, Make&#x27;s slider table (10k to 8M credits), credit-counting traps, n8n Cloud tiers, the 100k-runs/month worked example, and the ~80–100k crossover where self-hosted n8n takes the lead.">
+<meta name="keywords" content="Make vs n8n pricing, Make scenarios cost at scale, n8n vs Make cost, Make credits pricing 2026, n8n executions pricing">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/make-vs-n8n-pricing-at-scale-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Make scenarios vs n8n workflows: what pricing at scale really looks like (2026)">
+<meta property="og:description" content="Make vs n8n pricing at scale in 2026: credits vs executions, Make&#x27;s slider table (10k to 8M credits), credit-counting traps, n8n Cloud tiers, the 100k-runs/month worked example, and the ~80–100k crossover where self-hosted n8n takes the lead.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/make-vs-n8n-pricing-at-scale-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/make-vs-n8n-pricing-at-scale-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-23">
+<meta property="article:modified_time" content="2026-10-23">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Make scenarios vs n8n workflows: what pricing at scale really looks like (2026)">
+<meta name="twitter:description" content="Make vs n8n pricing at scale in 2026: credits vs executions, Make&#x27;s slider table (10k to 8M credits), credit-counting traps, n8n Cloud tiers, the 100k-runs/month worked example, and the ~80–100k crossover where self-hosted n8n takes the lead.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/make-vs-n8n-pricing-at-scale-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/make-vs-n8n-pricing-at-scale-2026/#article", "headline": "Make scenarios vs n8n workflows: what pricing at scale really looks like (2026)", "description": "Make vs n8n pricing at scale in 2026: credits vs executions, Make's slider table (10k to 8M credits), credit-counting traps, n8n Cloud tiers, the 100k-runs/month worked example, and the ~80\u2013100k crossover where self-hosted n8n takes the lead.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/make-vs-n8n-pricing-at-scale-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://pickmyapp.github.io/blog/make-vs-n8n-pricing-at-scale-2026/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Make or n8n cheaper at scale?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on workflow shape, not volume alone. Make bills per module-step (credits); n8n bills per complete run (executions). Short, high-frequency workflows favor Make \u2014 Core's slider is $9\u201399/mo up to 150k credits. Long, multi-step workflows favor n8n, since a 40-node workflow still costs 1 execution. Above ~80\u2013100k credits/month, self-hosted n8n on a $10\u201320 VPS (unlimited executions) undercuts both Cloud options."}}, {"@type": "Question", "name": "What is a Make credit vs an operation?", "acceptedAnswer": {"@type": "Answer", "text": "They're the same billing unit \u2014 Make renamed 'operations' to 'credits' in August 2025. One credit = one module execution. Many guides still say 'operations'; if a comparison uses that term, its pricing data is probably stale. Current pricing: every paid tier starts at 10,000 credits/month ($9/mo Core annual) and scales on a slider to 8M credits."}}, {"@type": "Question", "name": "Why are my Make credits running out so fast?", "acceptedAnswer": {"@type": "Answer", "text": "The usual culprits: polling triggers (a 1-minute poll burns ~43,200 credits/month before any action runs), filters (1 credit each \u2014 free on Zapier), iterators multiplying per line item, and the Code app at 2 credits/second. The highest-ROI fix is switching polling triggers to webhooks (1 credit per real event)."}}, {"@type": "Question", "name": "How many executions does n8n Cloud Starter really include?", "acceptedAnswer": {"@type": "Answer", "text": "2,500/month \u2014 but the practical capacity is much smaller. A 5-minute poller alone uses ~8,640 executions/month (over triple the limit); a 15-minute poller uses ~2,880 (already past it). Starter realistically holds about three hourly workflows. Most real setups land on Pro (\u20ac50/mo, 10,000 executions) or self-host for unlimited runs."}}, {"@type": "Question", "name": "At what point should I self-host n8n instead of using Cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly when your Cloud bill passes $50\u2013100/month \u2014 typically around 80\u2013100k runs/month on polling-heavy or long workflows. A $10\u201320/month VPS gives unlimited executions, but budget 2\u20135 hours setup and 1\u20133 hours/month maintenance (~$50/month at $25/hr). If nobody on the team wants server duty, the crossover point is where n8n Cloud Pro 50K (\u20ac121/mo) becomes the honest price."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "Make vs n8n at scale", "item": "https://pickmyapp.github.io/blog/make-vs-n8n-pricing-at-scale-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">Make vs n8n at scale</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Make scenarios vs n8n workflows: what pricing at scale really looks like (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-23"><strong>Oct 23, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>10 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>At scale, Make and n8n are priced on different units — and that decides everything. Make bills &lt;strong&gt;credits&lt;/strong&gt; (one per module execution; 10,000/month starts at $9/mo annual and scales on a slider to 8M), while n8n bills &lt;strong&gt;executions&lt;/strong&gt; (one per complete workflow run; Cloud Pro is €50/mo for 10,000, Pro 50K is €1,450/yr). At 100,000 workflow runs a month, Make lands around $99–$410/month (150k–500k credits on the slider, annual), n8n Cloud lands at €121–€1,438/month depending on the tier — but the winner flips with workflow shape: short, high-frequency workflows favor Make; long, loop-heavy workflows favor n8n, because one n8n run can contain dozens of Make credits. Above roughly 80–100k credits/month, self-hosted n8n on a $10–20 VPS (unlimited executions) starts beating both — if you have someone to run the server.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/make-vs-n8n-pricing-at-scale-2026-1.jpg" width="1280" height="720" alt="Flat vector illustration of two balance scales comparing workflow blocks, with a rising bar chart and magnifying glass" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#stop-comparing-plans">Stop comparing plans. Convert your volume first.</a></li><li><a href="#make-credits">How Make really counts credits (and where they leak)</a></li><li><a href="#n8n-executions">n8n&#x27;s execution math: generous and treacherous at once</a></li><li><a href="#worked-example">The 100k-runs worked example</a></li><li><a href="#workflow-shape">The workflow-shape rule: the takeaway worth memorizing</a></li><li><a href="#crossover">The crossover: where self-hosted n8n wins</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="stop-comparing-plans">Stop comparing plans. Convert your volume first.</h2>
+
+<p>Every "Make vs n8n" pricing comparison makes the same mistake: it lines up the plans side by side. Starter vs Core, Pro vs Pro. That's comparing apples to bicycles, because the two platforms don't bill the same thing at all.</p>
+<p><strong>Make bills credits.</strong> One credit = one module execution. A scenario with 12 modules that runs once burns 12 credits. Since August 2025 the billing unit is officially called "credits" (many guides still say "operations" — same thing, new name; if a blog says operations, it's either old or sloppy).</p>
+<p><strong>n8n bills executions.</strong> One execution = one complete workflow run, <em>however many steps it has</em>. A 40-node workflow that runs once burns 1 execution. Unlimited steps included.</p>
+<p>This is the entire pricing-at-scale question in one paragraph: <strong>Make charges per step, n8n charges per run.</strong> Everything below — the sliders, the traps, the crossover math — follows from that. If you take nothing else from this article, take this: don't ask "which is cheaper." Ask "how many credits does my workload burn, and how many executions?" Our <a href="https://pickmyapp.github.io/blog/n8n-vs-make-small-business/">n8n vs Make overview</a> covers features and fit; this article is the money.</p>
+<h2 id="make-credits">How Make really counts credits (and where they leak)</h2>
+
+<p>Make's paid tiers all start at the same place, which surprises people: <strong>every paid plan includes 10,000 credits/month</strong>, and you scale from there on a slider. Core starts at $9/month annual ($10.59 monthly) for 10k; Pro at $16/month ($18.82) adds priority execution and full-text log search; Teams at $29/month ($34.12) adds roles and shared templates. The free plan gets 1,000 credits and 2 active scenarios with a 15-minute minimum interval — fine for learning, not for production.</p>
+<p>The slider (annual billing) runs: 10k $9 → 20k $16 → 40k $29 → 80k $55 → 150k $99 → 300k $182 (Core caps here); Pro continues to 500k ($410.27), 1M ($748.73), 2M ($1,377.67), 8M ($4,811.40). Per-thousand-credit pricing falls from $0.90 at 10k to $0.60 at 8M — real volume discounts, but monthly billing runs 15–30% higher and extra credit packs carry ~25% markup. Unused credits roll over one month, a small mercy.</p>
+<p>Now the traps — the places credits burn faster than newcomers expect:</p>
+<ul>
+<li><strong>Polling triggers burn credits on every poll.</strong> A 1-minute poll is ~43,200 checks a month <em>before any action runs</em>. This is the single biggest leak on Make, and it's why webhook triggers — 1 credit per real event — are the highest-ROI optimization most teams can make.</li>
+<li><strong>Filters cost a credit.</strong> On Zapier, filters are free. On Make, each filter evaluation is a module execution. A filter-heavy scenario doubles its expected burn.</li>
+<li><strong>Iterators multiply.</strong> Processing 10 line items through an iterator is 10 operations, not one. Routers and aggregators add operations too.</li>
+<li><strong>The Make Code app bills 2 credits per second.</strong> A 30-second script is 60 credits a run — the kind of line item that hides in "why is my bill so high" investigations.</li>
+<li><strong>Data transfer caps matter at volume:</strong> 5 GB per 10,000 operations. Media-heavy scenarios can hit this before the credit count does.</li>
+</ul>
+<p>The practitioner rule of thumb for SMB bands: light (2–5k credits) lives on Free/Core; moderate (15–40k) needs Core/Pro with a bigger bucket; heavy (100k+) means Pro or Teams high on the slider — and that's where you should be pricing n8n against it.</p>
+<h2 id="n8n-executions">n8n&#x27;s execution math: generous and treacherous at once</h2>
+
+<p>n8n Cloud is simpler to read and harder to predict. The tiers (EUR, October 2026, annual): Starter €20/month for 2,500 executions; Pro €50/month for 10,000; Pro 50K €1,450/year (~€121/month) for 50,000; Business (self-hosted license) from €8,000/year for 40,000, sliding to 500,000 executions at €52,450/year.</p>
+<p>The generous part: steps are free. A 40-node workflow with loops, code nodes and AI calls costs exactly 1 execution per run. The treacherous part: <strong>everything that triggers counts</strong>. A 5-minute poller is ~8,640 executions/month — over triple Starter's limit. A 15-minute poller is ~2,880 — already past Starter. Starter's real capacity is about three hourly workflows and nothing else, as we show in our <a href="https://pickmyapp.github.io/blog/n8n-self-hosting-cost-breakdown-vps-2026/">n8n self-hosting cost breakdown</a> — which is why so many teams skip Starter entirely.</p>
+<p>The third path is self-hosted Community Edition: €0 license, unlimited executions, on a $6–20/month VPS. The software is free; the server and your maintenance time are the price. It's the option that changes the whole comparison above ~80k runs a month.</p>
+<h2 id="worked-example">The 100k-runs worked example</h2>
+
+<p>Let's make this concrete. Your business runs <strong>100,000 workflow runs a month</strong> — say an order-sync workflow firing on every sale plus a few pollers. What does each platform cost?</p>
+<div class="tablewrap"><table><caption>100,000 runs/month: the bill (annual billing, 2026)</caption><thead><tr><th>Platform</th><th>What you buy</th><th>Monthly cost</th></tr></thead><tbody>
+<tr><td><strong>Make</strong></td><td>150k–500k credits on the slider (depends on steps per run)</td><td>$99–$410/mo</td></tr>
+<tr><td><strong>n8n Cloud</strong></td><td>Pro 50K (€121/mo) if runs fit 50k; Business tier (€1,438/mo) for 100k</td><td>€121–€1,438/mo</td></tr>
+<tr><td><strong>n8n self-hosted</strong></td><td>$10–20/mo VPS, unlimited executions</td><td>$10–20/mo</td></tr>
+<tr><td><strong>Zapier</strong> (reference)</td><td>Enterprise-scale task slider</td><td>~$2,800–$3,500/mo</td></tr>
+</tbody></table></div>
+<p>Notice the Make range is the widest — because Make's cost depends on <em>workflow shape</em>, not just run count. A 3-step order sync at 100k runs is ~300k credits (~$182/mo on Core's slider). A 25-step version of the same workflow is 2.5M credits (~$1,600+/mo on Pro). The same 100k runs on n8n Cloud cost the same whether the workflow is 3 steps or 40 — executions don't care about length.</p>
+<p>Zapier is in the table for context, not competition: at serious volume it's 3–5× Make's price, and our <a href="https://pickmyapp.github.io/blog/zapier-alternatives-cheaper-automation/">Zapier alternatives guide</a> covers the escape routes in detail.</p>
+<h2 id="workflow-shape">The workflow-shape rule: the takeaway worth memorizing</h2>
+
+<p>Here's the decision rule that replaces the plan-comparison spreadsheet:</p>
+<ul>
+<li><strong>Short, high-frequency workflows favor Make.</strong> A 2–3 module scenario firing constantly is a few credits a run — Make's per-step billing is cheap when there are barely any steps, and its 1-minute intervals and webhook-first design are built for exactly this.</li>
+<li><strong>Long, loop-heavy workflows favor n8n.</strong> A 30-node workflow with iterators, code and AI calls is still 1 execution. The more steps per run, the bigger n8n's advantage grows — at the extreme, an n8n run can contain dozens of Make-equivalent credits.</li>
+<li><strong>Polling-heavy workloads punish both Cloud plans</strong> and are the #1 reason to either switch to webhooks or self-host. A 1-minute poller burns ~43,200 Make credits or ~43,200 n8n executions a month. On webhooks, the same workload is a fraction of that.</li>
+</ul>
+<p>This is the insight missing from most comparisons: the question isn't "Make or n8n," it's <strong>"what shape are my workflows?"</strong> Audit your five busiest automations, count steps-per-run and runs-per-month, and the answer usually falls out of the math.</p>
+<h2 id="crossover">The crossover: where self-hosted n8n wins</h2>
+
+<p>Put the two Cloud curves together and they cross at roughly <strong>80–100k credits/month</strong>: below it, Make's Core slider ($55–99/mo) is the value pick for most SMB workloads; above it, the Make bill climbs past $100/month while self-hosted n8n sits flat at $10–20 on a VPS with unlimited executions.</p>
+<p>The honest version of the crossover has a condition attached: <strong>self-hosted wins on money only if someone runs the server.</strong> 2–5 hours to set up, 1–3 hours a month of updates and backup checks — at $25/hour that's ~$50/month of time, roughly n8n Cloud Pro. Teams without server comfort should read the crossover as "the point where n8n Cloud Pro 50K (€121/mo) becomes the honest price" rather than "the point where everything is free."</p>
+<p>Between the two Cloud options at scale, the tiebreaker is workflow shape again: short workflows keep Make competitive surprisingly high (its per-thousand pricing drops to $0.60 at 8M credits), while long workflows make n8n Cloud's per-run billing look cheap even at Business-tier prices. And if you're migrating rather than choosing, our <a href="https://pickmyapp.github.io/blog/make-vs-zapier-beginners-which-to-learn/">Make vs Zapier guide</a> is the gentler on-ramp before this math matters.</p>
+<h2 id="verdict">Verdict</h2>
+
+<p>At small volume, Make wins on price — Core at $9/month for 10,000 credits is the best value in automation, full stop. At serious volume, the billing units take over: convert your workload to credits-vs-executions before you compare a single plan. Short and frequent goes to Make; long and loopy goes to n8n. And past ~100k runs a month, the real question stops being Make-vs-n8n and becomes Cloud-vs-self-hosted — where a $15 VPS with unlimited executions beats every Cloud tier on money, and loses on exactly one thing: somebody has to babysit the server.</p>
+
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>Is Make or n8n cheaper at scale?</h3><p>It depends on workflow shape, not volume alone. Make bills per module-step (credits); n8n bills per complete run (executions). Short, high-frequency workflows favor Make — Core&#x27;s slider is $9–99/mo up to 150k credits. Long, multi-step workflows favor n8n, since a 40-node workflow still costs 1 execution. Above ~80–100k credits/month, self-hosted n8n on a $10–20 VPS (unlimited executions) undercuts both Cloud options.</p><h3>What is a Make credit vs an operation?</h3><p>They&#x27;re the same billing unit — Make renamed &#x27;operations&#x27; to &#x27;credits&#x27; in August 2025. One credit = one module execution. Many guides still say &#x27;operations&#x27;; if a comparison uses that term, its pricing data is probably stale. Current pricing: every paid tier starts at 10,000 credits/month ($9/mo Core annual) and scales on a slider to 8M credits.</p><h3>Why are my Make credits running out so fast?</h3><p>The usual culprits: polling triggers (a 1-minute poll burns ~43,200 credits/month before any action runs), filters (1 credit each — free on Zapier), iterators multiplying per line item, and the Code app at 2 credits/second. The highest-ROI fix is switching polling triggers to webhooks (1 credit per real event).</p><h3>How many executions does n8n Cloud Starter really include?</h3><p>2,500/month — but the practical capacity is much smaller. A 5-minute poller alone uses ~8,640 executions/month (over triple the limit); a 15-minute poller uses ~2,880 (already past it). Starter realistically holds about three hourly workflows. Most real setups land on Pro (€50/mo, 10,000 executions) or self-host for unlimited runs.</p><h3>At what point should I self-host n8n instead of using Cloud?</h3><p>Roughly when your Cloud bill passes $50–100/month — typically around 80–100k runs/month on polling-heavy or long workflows. A $10–20/month VPS gives unlimited executions, but budget 2–5 hours setup and 1–3 hours/month maintenance (~$50/month at $25/hr). If nobody on the team wants server duty, the crossover point is where n8n Cloud Pro 50K (€121/mo) becomes the honest price.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Make vs n8n at scale isn&#x27;t a plan comparison — it&#x27;s a unit conversion. Count your credits (steps × runs, plus the polling and filter leaks), count your executions (runs, whatever the length), and the cheaper platform reveals itself. Make owns the small-volume game and short workflows; n8n owns long workflows and the self-hosted endgame. The teams that overpay are the ones who picked a platform and never did the conversion.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/n8n-vs-make-small-business/">n8n vs Make: which is better for small business</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/">n8n pricing explained: self-hosted vs cloud costs</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/n8n-self-hosting-cost-breakdown-vps-2026/">n8n self-hosting cost breakdown: VPS requirements and setup</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/zapier-alternatives-cheaper-automation/">Zapier alternatives: 7 cheaper automation tools compared</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>n8n self-hosting cost breakdown: VPS requirements and setup (2026)</title>
+<meta name="description" content="What does it really cost to self-host n8n in 2026? VPS requirements (2 vCPU/4 GB baseline), promo vs renewal prices, the 3-service Docker Compose setup, the encryption key rule, SQLite vs Postgres, maintenance time cost, and a 2-year TCO vs n8n Cloud.">
+<meta name="keywords" content="n8n self-hosting cost, n8n VPS requirements, self-host n8n Docker, n8n Community Edition cost, n8n Cloud vs self-hosted price">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/n8n-self-hosting-cost-breakdown-vps-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="n8n self-hosting cost breakdown: VPS requirements and setup (2026)">
+<meta property="og:description" content="What does it really cost to self-host n8n in 2026? VPS requirements (2 vCPU/4 GB baseline), promo vs renewal prices, the 3-service Docker Compose setup, the encryption key rule, SQLite vs Postgres, maintenance time cost, and a 2-year TCO vs n8n Cloud.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/n8n-self-hosting-cost-breakdown-vps-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-self-hosting-cost-breakdown-vps-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-23">
+<meta property="article:modified_time" content="2026-10-23">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="n8n self-hosting cost breakdown: VPS requirements and setup (2026)">
+<meta name="twitter:description" content="What does it really cost to self-host n8n in 2026? VPS requirements (2 vCPU/4 GB baseline), promo vs renewal prices, the 3-service Docker Compose setup, the encryption key rule, SQLite vs Postgres, maintenance time cost, and a 2-year TCO vs n8n Cloud.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-self-hosting-cost-breakdown-vps-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/n8n-self-hosting-cost-breakdown-vps-2026/#article", "headline": "n8n self-hosting cost breakdown: VPS requirements and setup (2026)", "description": "What does it really cost to self-host n8n in 2026? VPS requirements (2 vCPU/4 GB baseline), promo vs renewal prices, the 3-service Docker Compose setup, the encryption key rule, SQLite vs Postgres, maintenance time cost, and a 2-year TCO vs n8n Cloud.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-self-hosting-cost-breakdown-vps-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://pickmyapp.github.io/blog/n8n-self-hosting-cost-breakdown-vps-2026/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does it really cost to self-host n8n?", "acceptedAnswer": {"@type": "Answer", "text": "About $6\u201315/month for a baseline VPS (2 vCPU, 4 GB RAM, 64 GB SSD) plus $10\u201315/year for a domain and ~$2/month for backups \u2014 roughly $91\u2013$108/year in hard costs after promo pricing ends. The software itself (Community Edition) is free with unlimited executions. The bigger cost is time: 2\u20135 hours to set up and 1\u20133 hours/month of maintenance, which at $25/hour is ~$50/month \u2014 about the price of n8n Cloud Pro."}}, {"@type": "Question", "name": "What VPS specs do I need for n8n?", "acceptedAnswer": {"@type": "Answer", "text": "For light use (a handful of workflows, some webhooks): 2 vCPU, 4 GB RAM, 64 GB SSD. For moderate use (dozens of workflows, AI nodes, daily batch jobs): 2\u20134 vCPU and 8 GB RAM. Heavy AI or high-volume workloads want 4+ vCPU and 8\u201316 GB. 1 vCPU / 2 GB is testing-only. Disk matters more than most guides admit \u2014 execution data fills disks silently, so buy a little extra and enable pruning."}}, {"@type": "Question", "name": "Is self-hosted n8n really free?", "acceptedAnswer": {"@type": "Answer", "text": "The Community Edition license is free with unlimited executions, but 'free' stops there: VPS (~$6\u201315/mo), domain, backups, and your maintenance time. The two-year hard-cost total is ~$200\u2013$250 vs \u20ac480 for n8n Cloud Starter (a plan most real setups outgrow). It's genuinely cheaper \u2014 just not free."}}, {"@type": "Question", "name": "What happens if I lose my n8n encryption key?", "acceptedAnswer": {"@type": "Answer", "text": "Every stored credential becomes permanently unusable. n8n encrypts all credentials with N8N_ENCRYPTION_KEY; lose the key and there's no recovery flow \u2014 you re-enter every API key, token and password by hand. Set the key before first boot and store the environment file in two places that aren't the server, the same day you set up."}}, {"@type": "Question", "name": "Should I use SQLite or Postgres with self-hosted n8n?", "acceptedAnswer": {"@type": "Answer", "text": "Postgres for anything production-shaped. SQLite is n8n's default and fine for testing, but its coarse locking gets flaky under concurrent workflow execution and it's awkward to back up live. The current three-service Docker Compose setup (postgres + n8n + n8n-runner) exists because Postgres is the real recommendation \u2014 plus enable EXECUTIONS_DATA_PRUNE so execution logs don't fill your disk."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "n8n self-hosting costs", "item": "https://pickmyapp.github.io/blog/n8n-self-hosting-cost-breakdown-vps-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">n8n self-hosting costs</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">n8n self-hosting cost breakdown: VPS requirements and setup (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-23"><strong>Oct 23, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>11 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>Self-hosting n8n on a VPS in 2026 costs roughly $6–15/month for a baseline server (2 vCPU, 4 GB RAM, 64 GB SSD) plus a domain and backups — so about $91–$108/year in hard costs after promo pricing ends, versus €480 ($525+) over two years for n8n Cloud Starter. But Starter&#x27;s 2,500 executions/month dies at a single 15-minute poller (~2,880 runs/month), which is the real reason most teams self-host: unlimited executions for a flat price. The hidden costs are time (2–5 hours setup, 1–3 hours/month maintenance — about $50/month at $25/hr) and the discipline the setup demands: set N8N_ENCRYPTION_KEY before first boot and back it up, use Postgres instead of the default SQLite, and enable execution pruning. If you have no one who enjoys server maintenance, self-hosting is not free — buy the cloud plan.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-self-hosting-cost-breakdown-vps-2026-1.jpg" width="1280" height="720" alt="Flat vector illustration of a server rack and workflow automation diagram beside coins stacked as a cost symbol" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#execution-trap">The execution trap: why this math starts with Cloud&#x27;s limits</a></li><li><a href="#true-cost">What &#x27;free&#x27; self-hosting actually costs: the full bill</a></li><li><a href="#vps-requirements">VPS requirements: the spec table</a></li><li><a href="#setup-steps">The setup, 2026 edition: three services, not two</a></li><li><a href="#encryption-key">The encryption-key rule: the one mistake you can&#x27;t undo</a></li><li><a href="#database">SQLite vs Postgres: yes, it matters</a></li><li><a href="#time-cost">The real cost: your time, and the honest crossover</a></li><li><a href="#verdict">Verdict: the two-year math</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="execution-trap">The execution trap: why this math starts with Cloud&#x27;s limits</h2>
+
+<p>Every "should I self-host n8n" conversation skips to the VPS price, but that's the wrong starting point. The right starting point is the plan you'd be escaping — because n8n Cloud's limits are tighter than the headline numbers suggest.</p>
+<p>n8n Cloud Starter is €20/month (annual billing; €24 monthly) for 2,500 executions. An <strong>execution</strong> is one complete workflow run, however many steps it has. That sounds generous until you do poller math: a workflow that checks for new rows every 5 minutes runs about <strong>8,640 times a month</strong> — more than triple the Starter limit — before it does a single useful thing. Even a gentle 15-minute poller burns ~2,880 runs a month, already past Starter's ceiling.</p>
+<p>So Starter's real capacity is about <strong>three hourly workflows and nothing else</strong>. Pro (€50/month annual, 10,000 executions) is the first plan most real setups land on, and Pro 50K (€1,450/year, 50,000 executions) is where growing teams end up. Self-hosted Community Edition gives you unlimited executions for $0 in license fees — and that's the number that makes the VPS math worth doing.</p>
+<p>If you haven't worked through the Cloud tiers, our <a href="https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/">n8n pricing guide</a> breaks down every plan — this article picks up where it leaves off, with the bill you pay instead.</p>
+<h2 id="true-cost">What &#x27;free&#x27; self-hosting actually costs: the full bill</h2>
+
+<p>n8n Community Edition costs €0: unlimited executions, unlimited workflows, no per-run fees for permitted internal use (the license is Sustainable Use — fair-code, not open-source; check the terms if you plan to offer it as a hosted service to clients). Everything else costs something. Here's the complete 2026 bill, line by line:</p>
+<div class="tablewrap"><table><caption>The real cost of self-hosting n8n (2026)</caption><thead><tr><th>Line item</th><th>What to budget</th><th>Notes</th></tr></thead><tbody>
+<tr><td><strong>VPS</strong></td><td>$6–15/mo</td><td>2 vCPU / 4 GB RAM / 64 GB SSD baseline. Renewal prices roughly double promo rates</td></tr>
+<tr><td><strong>Domain</strong></td><td>$10–15/yr</td><td>Required for HTTPS; n8n runs behind a reverse proxy</td></tr>
+<tr><td><strong>SSL</strong></td><td>$0</td><td>Let's Encrypt, free</td></tr>
+<tr><td><strong>Backups</strong></td><td>~$2/mo</td><td>Snapshots or object storage for the Postgres volume</td></tr>
+<tr><td><strong>Software license</strong></td><td>$0</td><td>Community Edition</td></tr>
+<tr><td><strong>Your time</strong></td><td>2–5h setup + 1–3h/month</td><td>The big one — read on</td></tr>
+</tbody></table></div>
+<p>Hard costs after promo pricing ends: roughly <strong>$91–$108/year</strong> (VPS at renewal + domain + backups). The two-year comparison is stark: ~$200–$250 self-hosted vs €480 ($525+) for two years of n8n Cloud Starter — a plan you'd outgrow by the second quarter anyway.</p>
+<p>But the honest version of "self-hosting saves most teams $200–700/year vs n8n Cloud" (instapods.com, July 2026) comes with a footnote: <strong>promo VPS rates roughly double at renewal</strong>. Hostinger's KVM1 is $6.49/month promo and renews at $11.99; the KVM2 (2 vCPU/8 GB) is $8.99 promo, renewing at $14.99. Always quote both periods — the provider's intro price is not your price.</p>
+<h2 id="vps-requirements">VPS requirements: the spec table</h2>
+
+<p>n8n is a Node.js app with a real database behind it. 1 vCPU / 2 GB RAM is fine for testing a couple of workflows; it will wobble the moment you run anything production-shaped. Here's what to buy:</p>
+<div class="tablewrap"><table><caption>n8n VPS specs by workload (2026)</caption><thead><tr><th>Workload</th><th>CPU</th><th>RAM</th><th>Disk</th><th>Typical cost</th></tr></thead><tbody>
+<tr><td><strong>Light:</strong> a handful of workflows, webhooks, a couple of hourly polls</td><td>2 vCPU</td><td>4 GB</td><td>64 GB SSD</td><td>$6–15/mo</td></tr>
+<tr><td><strong>Moderate:</strong> dozens of workflows, AI-agent nodes, daily batch jobs</td><td>2–4 vCPU</td><td>8 GB</td><td>80–128 GB</td><td>$14–25/mo</td></tr>
+<tr><td><strong>Heavy:</strong> AI workloads, large binary files, tens of thousands of executions/month</td><td>4+ vCPU</td><td>8–16 GB</td><td>128 GB+</td><td>$20–40/mo</td></tr>
+</tbody></table></div>
+<p>Provider shorthand (prices change; confirm at checkout): <strong>Hostinger KVM1</strong> (1 vCPU/4 GB, $6.49 promo / $11.99 renewal) covers light duty; <strong>OVHcloud VPS-1</strong> at €4.49/month is one of Europe's cheapest honest prices; <strong>Hetzner CPX31</strong> (4 GB, ~$14/month) is the practitioner favorite for price-per-reliability; managed options like Coolify or PikaPods run $4–8/month if you'd rather not touch Docker directly. Any VPS with Docker support works — n8n doesn't care whose kernel it runs on.</p>
+<p>One sizing truth from the field: <strong>disk, not CPU, is what usually bites</strong>. Execution data accumulates silently; without pruning (covered below), a 64 GB disk can fill in months on a busy instance, and a full disk doesn't degrade n8n — it crashes it. Buy a little more disk than the spec sheet says, then prune anyway.</p>
+<h2 id="setup-steps">The setup, 2026 edition: three services, not two</h2>
+
+<p>If you've self-hosted n8n before, your muscle memory may be stale. Current n8n docs expect a <strong>three-service Docker Compose</strong> stack: Postgres, n8n itself, and a separate n8n-runner service. Two-container guides from 2024 are outdated — follow the current docs, not a bookmarked tutorial.</p>
+<p>The standard shape, at a high level:</p>
+<ul>
+<li><strong>postgres</strong> — the database. Persistent volume, always. Never use an ephemeral container filesystem for the database.</li>
+<li><strong>n8n</strong> — the app, behind a reverse proxy (Nginx, Caddy or Traefik) that terminates TLS with a Let's Encrypt certificate.</li>
+<li><strong>n8n-runner</strong> — the separate task-runner service that current docs expect for code execution.</li>
+</ul>
+<p>Setup order that avoids the classic mistakes: provision the VPS and harden SSH first; install Docker; write your Compose file with Postgres + n8n + n8n-runner; <strong>set N8N_ENCRYPTION_KEY before the first boot</strong> (next section — this one is non-negotiable); put the reverse proxy in front with HTTPS; verify webhooks work over the public URL (many integrations refuse http); then connect one test workflow and one webhook before migrating anything real.</p>
+<p>Two deployment rules worth stating plainly. <strong>Skip queue mode</strong> (Redis workers plus S3 binary storage) unless you're past tens of thousands of executions a month — it's a distributed system you're volunteering to operate, and at small scale it's pure overhead. And do not expose n8n directly on port 5678 to the internet; the reverse proxy with TLS isn't optional hygiene, it's the entire authentication boundary for the editor.</p>
+<h2 id="encryption-key">The encryption-key rule: the one mistake you can&#x27;t undo</h2>
+
+<p>This deserves its own section because it's the only part of self-hosting n8n that has no recovery path. n8n encrypts every stored credential (API keys, OAuth tokens, database passwords) with <strong>N8N_ENCRYPTION_KEY</strong>. If you don't set it explicitly, n8n generates one at first boot and stores it locally. If that key is ever lost — server rebuilt without the .env file, volume deleted, config lost — <strong>every saved credential in your instance is permanently unusable</strong>. There's no "forgot key" flow. You re-enter everything by hand.</p>
+<p>The checklist: generate the key <em>before</em> first boot, put it in your environment file, and store that file in <strong>two places that aren't the server</strong> (a password manager and an encrypted backup). Back it up the same day you set up — not the day after the migration is done, because that's the day the server dies. Our <a href="https://pickmyapp.github.io/blog/n8n-vs-make-small-business/">n8n vs Make comparison</a> covers the platform choice; this rule applies whichever workflow tool you run.</p>
+<h2 id="database">SQLite vs Postgres: yes, it matters</h2>
+
+<p>n8n ships with SQLite as the default database, and the default is a trap for production use. SQLite is a single-file database with coarse locking — fine for testing, increasingly flaky under concurrent workflow execution, and a pain to back up live. <strong>Production self-hosting means Postgres.</strong></p>
+<p>The practical differences: Postgres handles concurrent executions without the locking contention SQLite exhibits under load; it backs up cleanly (pg_dump against the running container, or a volume snapshot); and it's what n8n's own docs assume for anything serious. The three-service Compose stack includes Postgres precisely because the default isn't the recommendation.</p>
+<p>Whatever database you use, turn on <strong>execution-data pruning</strong> (EXECUTIONS_DATA_PRUNE). Every run stores its data by default; on a busy instance that means gigabytes of logs you'll never open. Set a retention policy (e.g. keep 30 days, prune the rest on a schedule) and your disk stops being a countdown timer.</p>
+<h2 id="time-cost">The real cost: your time, and the honest crossover</h2>
+
+<p>Here's the part self-hosting guides bury: the VPS bill is the small money. The honest accounting is:</p>
+<ul>
+<li><strong>Initial setup:</strong> 2–5 hours for someone comfortable with Docker — longer if you're learning the reverse proxy and TLS pieces as you go.</li>
+<li><strong>Ongoing:</strong> 1–3 hours a month — n8n updates (which occasionally need attention, especially major versions), OS patches, backup verification, the odd "why is the disk full" investigation.</li>
+</ul>
+<p>At a fully-loaded cost of $25/hour, 2 hours a month of maintenance is <strong>$50/month — roughly n8n Cloud Pro</strong>. At $40/hour it's $80. That doesn't make self-hosting a bad deal — unlimited executions is worth real money once you're past Pro's 10,000 — but it means "self-hosting is free" is only true if your time is. If nobody on the team enjoys server maintenance, the VPS isn't the cost. The on-call is.</p>
+<p>The decision rule: <strong>self-host if executions are your constraint</strong> (pollers, webhooks, AI loops — the workloads Cloud plans meter hardest) <em>and</em> someone owns the server. <strong>Buy Cloud if reliability is your constraint</strong> — n8n's Frankfurt-hosted Cloud with their ops team is cheaper than your 2 a.m. debugging session. Migration between the two is straightforward, so this isn't a permanent decision; start Cloud, self-host when the execution bill hurts, and our <a href="https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/">open-source automation comparison</a> covers the free-tier alternatives if neither fits.</p>
+<h2 id="verdict">Verdict: the two-year math</h2>
+
+<p>Two years of self-hosting: ~$200–$250 in hard costs (VPS at renewal rates, domain, backups) plus roughly 30–60 hours of your time. Two years of n8n Cloud Starter: €480 — for a plan whose 2,500 executions a single 15-minute poller exceeds. Two years of Pro, the plan most real setups need: €1,200.</p>
+<p>Self-hosting wins the money math for any team whose automation actually runs. It wins on <em>freedom</em> too — unlimited executions change what you dare to automate. It loses on exactly one axis: <strong>someone has to care about the server</strong>. If that's you, a $6 VPS and an afternoon is one of the best deals in automation. If it isn't, Pro at €50/month is the honest price of never thinking about it.</p>
+
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>How much does it really cost to self-host n8n?</h3><p>About $6–15/month for a baseline VPS (2 vCPU, 4 GB RAM, 64 GB SSD) plus $10–15/year for a domain and ~$2/month for backups — roughly $91–$108/year in hard costs after promo pricing ends. The software itself (Community Edition) is free with unlimited executions. The bigger cost is time: 2–5 hours to set up and 1–3 hours/month of maintenance, which at $25/hour is ~$50/month — about the price of n8n Cloud Pro.</p><h3>What VPS specs do I need for n8n?</h3><p>For light use (a handful of workflows, some webhooks): 2 vCPU, 4 GB RAM, 64 GB SSD. For moderate use (dozens of workflows, AI nodes, daily batch jobs): 2–4 vCPU and 8 GB RAM. Heavy AI or high-volume workloads want 4+ vCPU and 8–16 GB. 1 vCPU / 2 GB is testing-only. Disk matters more than most guides admit — execution data fills disks silently, so buy a little extra and enable pruning.</p><h3>Is self-hosted n8n really free?</h3><p>The Community Edition license is free with unlimited executions, but &#x27;free&#x27; stops there: VPS (~$6–15/mo), domain, backups, and your maintenance time. The two-year hard-cost total is ~$200–$250 vs €480 for n8n Cloud Starter (a plan most real setups outgrow). It&#x27;s genuinely cheaper — just not free.</p><h3>What happens if I lose my n8n encryption key?</h3><p>Every stored credential becomes permanently unusable. n8n encrypts all credentials with N8N_ENCRYPTION_KEY; lose the key and there&#x27;s no recovery flow — you re-enter every API key, token and password by hand. Set the key before first boot and store the environment file in two places that aren&#x27;t the server, the same day you set up.</p><h3>Should I use SQLite or Postgres with self-hosted n8n?</h3><p>Postgres for anything production-shaped. SQLite is n8n&#x27;s default and fine for testing, but its coarse locking gets flaky under concurrent workflow execution and it&#x27;s awkward to back up live. The current three-service Docker Compose setup (postgres + n8n + n8n-runner) exists because Postgres is the real recommendation — plus enable EXECUTIONS_DATA_PRUNE so execution logs don&#x27;t fill your disk.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Self-hosting n8n is one of the best flat-price deals in automation — $6–15/month for unlimited executions against Cloud plans that meter every run. The price is honest if you respect it: a proper VPS (not the testing-tier), Postgres with pruning, TLS via a reverse proxy, and the encryption key backed up on day one. Do that and the only recurring bill is a couple of maintenance hours a month. Skip the discipline and the &#x27;free&#x27; server becomes the most expensive option — the one that eats a Saturday.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/n8n-pricing-self-hosted-vs-cloud/">n8n pricing explained: self-hosted vs cloud costs</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/n8n-vs-make-small-business/">n8n vs Make: which is better for small business</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/activepieces-vs-n8n-open-source-automation/">Activepieces vs n8n: open-source automation compared</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

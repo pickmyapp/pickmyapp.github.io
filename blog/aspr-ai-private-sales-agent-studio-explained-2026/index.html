@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASPR AI Private Sales Agent Studio explained: AI sales agents that run inside your own cloud, and what it means for small sales teams (2026)</title>
+<meta name="description" content="ASPR AI Private Sales Agent Studio, launched October 23, 2026, runs AI sales agents inside your own cloud on an approved language model. What it does, what it costs, and what small sales teams should take from it.">
+<meta name="keywords" content="ASPR AI Private Sales Agent Studio, ASPR AI, AI sales agents, private AI sales agents, sales agent studio, AI meeting notetaker, sales automation">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/aspr-ai-private-sales-agent-studio-explained-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="ASPR AI Private Sales Agent Studio explained: AI sales agents that run inside your own cloud, and what it means for small sales teams (2026)">
+<meta property="og:description" content="ASPR AI Private Sales Agent Studio, launched October 23, 2026, runs AI sales agents inside your own cloud on an approved language model. What it does, what it costs, and what small sales teams should take from it.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/aspr-ai-private-sales-agent-studio-explained-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aspr-ai-private-sales-agent-studio-explained-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-25">
+<meta property="article:modified_time" content="2026-10-25">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ASPR AI Private Sales Agent Studio explained: AI sales agents that run inside your own cloud, and what it means for small sales teams (2026)">
+<meta name="twitter:description" content="ASPR AI Private Sales Agent Studio, launched October 23, 2026, runs AI sales agents inside your own cloud on an approved language model. What it does, what it costs, and what small sales teams should take from it.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aspr-ai-private-sales-agent-studio-explained-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+.ad{margin:0 auto}
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/aspr-ai-private-sales-agent-studio-explained-2026/#article", "headline": "ASPR AI Private Sales Agent Studio explained: AI sales agents that run inside your own cloud, and what it means for small sales teams (2026)", "description": "ASPR AI Private Sales Agent Studio, launched October 23, 2026, runs AI sales agents inside your own cloud on an approved language model. What it does, what it costs, and what small sales teams should take from it.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aspr-ai-private-sales-agent-studio-explained-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-25", "dateModified": "2026-10-25", "mainEntityOfPage": "https://pickmyapp.github.io/blog/aspr-ai-private-sales-agent-studio-explained-2026/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is ASPR AI Private Sales Agent Studio?", "acceptedAnswer": {"@type": "Answer", "text": "Private Sales Agent Studio is a deployment option launched by ASPR AI on October 23, 2026. It runs ASPR's AI sales agents inside a customer's own cloud, on a large language model the customer's security team has already approved, instead of sending sales conversations to a vendor's cloud."}}, {"@type": "Question", "name": "How much does ASPR AI Private Sales Agent Studio cost?", "acceptedAnswer": {"@type": "Answer", "text": "ASPR AI does not publish pricing for Private Sales Agent Studio or its wider platform. Listings describe pricing as contact the vendor; request a written quote covering deployment, agents used, and engineering time before budgeting. Pricing checked October 2026; confirm on the vendor page at aspr.ai."}}, {"@type": "Question", "name": "Is ASPR AI Private Sales Agent Studio suitable for a small sales team?", "acceptedAnswer": {"@type": "Answer", "text": "It is built for enterprises with strict security review, so most small teams will find it heavier and more expensive than they need. Small teams get more value from the ideas behind it, such as meeting notes that sync to the CRM and pre-call briefs, using lighter no-code agent builders or a dedicated meeting notetaker."}}, {"@type": "Question", "name": "What do the 50+ language meeting notetakers do?", "acceptedAnswer": {"@type": "Answer", "text": "The Offline Meeting Notetaker Agent captures in-person meetings, from site visits to executive briefings, and syncs decisions, risks, and next steps to the CRM. The Online Meeting Notetaker Agent joins video calls as a visible bot and produces speaker-labeled transcripts. Both work in more than 50 languages."}}, {"@type": "Question", "name": "Does ASPR AI train its models on customer data?", "acceptedAnswer": {"@type": "Answer", "text": "According to ASPR AI, no. The company says it never trains models on customer data, that customer data stays inside the customer's own cloud with Private Sales Agent Studio, and that audit logs stream to the customer's SIEM. Confirm these points in writing in your contract."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "ASPR AI Private Sales Agent Studio explained", "item": "https://pickmyapp.github.io/blog/aspr-ai-private-sales-agent-studio-explained-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">ASPR AI Private Sales Agent Studio explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">ASPR AI Private Sales Agent Studio explained: AI sales agents that run inside your own cloud, and what it means for small sales teams (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-25"><strong>Oct 25, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>11 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>Private Sales Agent Studio, launched by ASPR AI on October 23, 2026, lets a company run ASPR's AI sales agents inside its own cloud, on an approved language model.</strong> Sales transcripts, emails, and deal notes never leave the company's walls. For most small sales teams the product is enterprise-grade overkill, but the idea matters — the same jobs (meeting notes, CRM updates, pre-call briefs) can be done with far lighter tools.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/aspr-ai-private-sales-agent-studio-explained-2026-1.jpg" width="640" height="360" alt="Illustration of AI sales agents running inside a company's own private cloud" decoding="async"></div>
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-aspr">What is ASPR AI?</a></li><li><a href="#what-is-studio">What is Private Sales Agent Studio?</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#agents">The 11 sales agents</a></li><li><a href="#notetakers">The 50+ language meeting notetakers</a></li><li><a href="#engineers">Forward-deployed engineers</a></li><li><a href="#security">Security and compliance</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#comparison">How it compares</a></li><li><a href="#small-teams">What it means for small sales teams</a></li><li><a href="#verify">What to verify before buying</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Sales AI has a trust problem. Leaders like what agents can do — summarize calls, update the CRM, draft follow-ups — but stall at one question: where does the conversation go? If transcripts and deal notes leave the company network for a vendor's cloud, security review can take months, or kill the deal. ASPR AI's answer, announced October 23, 2026, reverses the flow: Private Sales Agent Studio brings the agents to your data.</p>
+<p>This guide explains what the studio is, what ASPR's agents do, what it costs, and what a small sales team should take from an enterprise launch like this. Facts come from ASPR AI's October 23, 2026 announcement; unverified vendor claims are flagged as such.</p>
+
+<h2 id="what-is-aspr">What is ASPR AI?</h2>
+<p><strong>ASPR AI (short for Automated Sales Performance Replicator) is an Austin, Texas-based agentic sales execution platform founded in 2024.</strong> Unlike a single-purpose tool such as a call recorder or an email writer, it is a multi-agent system: a set of specialized AI agents that share one knowledge base and work inside a company's existing CRM.</p>
+<p>The company says it serves teams at more than 400 organizations — an unaudited vendor claim. Founded in 2024, ASPR AI had no public user reviews on major software directories as of early 2026, so early buyers have little independent evidence beyond demos and reference calls.</p>
+
+<h2 id="what-is-studio">What is Private Sales Agent Studio?</h2>
+<p><strong>Private Sales Agent Studio is a deployment option for ASPR's AI sales agents: instead of running on ASPR's infrastructure, the agents run inside the customer's own cloud, on the large language model that customer's security team has already approved.</strong> That sentence is the whole product idea; everything else exists to make that deployment practical.</p>
+<p>Why does location matter? A sales agent touches transcripts, deal notes, pricing discussions, emails, and forecasts — sensitive material for any regulated company, or any company whose customers ask where their data goes. A vendor-hosted agent requires trusting the vendor's cloud and retention policy; a private deployment keeps data in an environment the customer already controls.</p>
+<p class="fact"><strong>Quick fact:</strong> CEO Ganesh Iyer's framing: "Private Sales Agent Studio brings the agents to the data, not the data to the agents."</p>
+
+<h2 id="how-it-works">How does Private Sales Agent Studio work?</h2>
+<p>In plain terms, the studio works in four steps:</p>
+<ul>
+<li><strong>Deploy inside your cloud.</strong> Agents are installed in the customer's cloud account, on a language model its security team has already cleared.</li>
+<li><strong>Connect to your CRM.</strong> Agents work inside the existing CRM, so reps learn no new system of record.</li>
+<li><strong>Share one knowledge layer.</strong> All 11 agents draw on ASPR's Resident Knowledge Engine — a shared, company-specific knowledge base — plus a contextual go-to-market (GTM) layer, so the meeting-prep and coaching agents work from the same account history and playbooks.</li>
+<li><strong>Stay observable.</strong> Audit logs stream to the customer's SIEM (security information and event management system), so the security team can monitor agent activity with tools it already uses.</li>
+</ul>
+<p>The key concept is the "GTM layer." Generic AI models know nothing about your accounts, pricing, or playbook; ASPR claims its GTM layer supplies that context, achieving high accuracy at roughly one-tenth the token cost of generic AI. That figure is ASPR's own claim, not an independent benchmark — and token cost is only part of total cost, alongside deployment, engineering, and model fees.</p>
+
+<h2 id="agents">What do ASPR's 11 sales agents do?</h2>
+<p>ASPR does not publish a full agent-by-agent roster, but its platform description covers four job families the agents handle inside the CRM:</p>
+<ul>
+<li><strong>Meeting preparation.</strong> Pre-call briefs assembled from account history, past conversations, and open deals.</li>
+<li><strong>CRM updates and sales documents.</strong> Post-meeting record updates plus proposals, deal summaries, and follow-up notes.</li>
+<li><strong>Sales coaching.</strong> Conversation analysis turned into personalized coaching, so call recordings become training material.</li>
+<li><strong>Seller onboarding.</strong> Guided onboarding from agents that know the playbooks, products, and account context.</li>
+</ul>
+<p>The distinction from a general chatbot is specialization: each agent handles one sales job and shares context, so a notetaker note can feed the CRM update and coaching note without retyping. For a small team, the closest comparison is the no-code agent builders in our <a href="/blog/best-ai-agent-builders-non-developers-2026/">guide to AI agent builders for non-developers</a> — one agent for one job, no engineering project. ASPR is the enterprise version of that idea.</p>
+
+<h2 id="notetakers">The two new meeting notetakers: 50+ languages, online and offline</h2>
+<p>Alongside the studio, ASPR launched two meeting notetaker agents, both working in more than 50 languages:</p>
+<ul>
+<li><strong>Offline Meeting Notetaker Agent.</strong> The more unusual of the two: it captures in-person meetings — site visits, trade-show conversations, executive briefings — and syncs decisions, risks, and next steps to the CRM. Most CRMs only know what happened on a recorded call; this one covers deals agreed over coffee.</li>
+<li><strong>Online Meeting Notetaker Agent.</strong> Joins video calls as a visible bot and produces speaker-labeled transcripts. Visibility matters: attendees know a bot is present, which is a transparency point and, in some jurisdictions, a legal requirement.</li>
+</ul>
+<p>The 50+ language coverage matters most to small, international teams, whose English-perfect notetaker often falls apart in the customer's language. Test ASPR's claim on your own languages and accents first — "supports 50+ languages" can mean anything from fluent transcription to rough gist, and no per-language accuracy figures are published.</p>
+
+<h2 id="engineers">What are ASPR's forward-deployed engineers?</h2>
+<p><strong>Forward-deployed engineers (FDEs) are ASPR engineers who embed inside the customer's environment and work alongside RevOps, IT, and sales teams to build custom agents, workflow automations, and system integrations.</strong> The standard agents cover common sales jobs; FDEs cover the rest — workflows specific to one company's sales process that no off-the-shelf agent handles.</p>
+<p>This enterprise model cuts both ways. The buyer is not left alone with a platform and a help center — an engineer who knows the product builds the custom pieces. But it signals the product is not self-serve: cost and timeline will exceed a tool set up in an afternoon, and the buyer becomes dependent on the vendor's engineers. A product needing forward-deployed engineers is probably not priced for a five-person team.</p>
+
+<h2 id="security">Security and compliance: what ASPR promises</h2>
+<p>ASPR's security pitch rests on four claims, each worth verifying in a contract, not just a press release:</p>
+<ul>
+<li><strong>Data stays put.</strong> Customer data stays inside the customer's own cloud.</li>
+<li><strong>No training on customer data.</strong> ASPR says it never trains models on customer data.</li>
+<li><strong>Audit visibility.</strong> Audit logs stream to the customer's SIEM.</li>
+<li><strong>Certifications.</strong> ASPR AI says it is SOC 2 Type II and ISO 27001:2022 certified.</li>
+</ul>
+<p>Those are the right claims for this category. But a certification covers the vendor's controls, not necessarily every private-install configuration. A careful buyer asks for the SOC 2 report summary, confirms its coverage, and gets the no-training and data-residency promises into the data processing agreement.</p>
+
+<h2 id="pricing">How much does Private Sales Agent Studio cost?</h2>
+<p><strong>ASPR AI does not publish pricing — not for the studio, and not for its wider platform.</strong> Listings describe pricing as "contact vendor," with no public price list or per-user rate to quote. Checked October 2026: confirm on the vendor page at aspr.ai before budgeting, as the company may publish pricing after launch.</p>
+<p>In practice, expect a sales-led, quote-based purchase, not self-serve checkout. Ask for the price of four separate things, since bundling can hide the total:</p>
+<ul>
+<li>The platform license for the agents your team actually uses.</li>
+<li>The private deployment itself — installation and support for your cloud environment.</li>
+<li>The underlying model's usage costs, which may be billed by your cloud provider, not ASPR.</li>
+<li>Forward-deployed engineering time, if custom agents or integrations are needed.</li>
+</ul>
+<p>Some partner pages mention a trial gated behind a qualifying call, while directory listings say no free trial is available — the two conflict, so do not plan around a trial until a vendor representative confirms one in writing. Comparable enterprise sales AI tools typically price in the tens to low hundreds of dollars per user per month before implementation, but that is an industry observation, not an ASPR price.</p>
+<p class="fact"><strong>Bottom line on price:</strong> if a vendor will not publish a price, the price is part of the negotiation — including an exit clause covering your data, agents, and CRM integrations if you cancel.</p>
+
+<h2 id="comparison">How does it compare with other ways to run sales agents?</h2>
+<div class="tablewrap"><table>
+<caption>Based on public positioning as of October 2026. ASPR pricing is not published; confirm on the vendor page.</caption>
+<thead><tr><th scope="col">Approach</th><th scope="col">Where agents run</th><th scope="col">Setup effort</th><th scope="col">Best for</th></tr></thead>
+<tbody>
+<tr><th scope="row">ASPR Private Sales Agent Studio</th><td>Your own cloud, your approved model</td><td>High: vendor deployment, possible FDE work</td><td>Enterprises with strict security review</td></tr>
+<tr><th scope="row">Vendor-hosted sales AI</th><td>Vendor's cloud</td><td>Low to medium: connect CRM, invite team</td><td>Teams wanting fast setup</td></tr>
+<tr><th scope="row">No-code AI agent builders</th><td>Vendor's cloud, sometimes self-hosted</td><td>Low: visual builder, no code</td><td>Small teams, one agent for one job</td></tr>
+<tr><th scope="row">Self-hosted automation (e.g. n8n)</th><td>Your own server or VPS</td><td>Medium to high: you own maintenance</td><td>Technical teams wanting full control</td></tr>
+<tr><th scope="row">Dedicated meeting notetaker</th><td>Vendor's cloud</td><td>Very low: join calls, get notes</td><td>Teams whose main pain is meeting notes</td></tr>
+</tbody></table></div>
+<p>The trade-off is clear: private deployment buys control, and control costs effort. Vendor-hosted tools buy speed, and speed costs data control. The right choice depends on which constraint bites harder — your security review, or your team's time.</p>
+<p>Two rows deserve a closer look. Self-hosting n8n gives a technical team real data control at a fraction of enterprise prices, but someone must own the server; our <a href="/blog/n8n-self-hosting-cost-breakdown-vps-2026/">n8n self-hosting cost breakdown</a> works through the monthly cost. If the job is lead capture and follow-up without code, our <a href="/blog/ai-agents-for-lead-generation-no-coding/">guide to AI agents for lead generation without coding</a> covers the lighter end of the market. Always test sign-in and access before a team-wide rollout, as our <a href="/blog/1password-ai-agent-signin-tool-explained-2026/">explainer on 1Password's AI agent sign-in tool</a> shows.</p>
+
+<h2 id="small-teams">What does this launch mean for small sales teams?</h2>
+<p>Most small sales teams should not buy Private Sales Agent Studio — not as criticism, but because it is built for enterprise-scale security review, not for five reps who need better follow-up this week. The launch still matters, for four reasons:</p>
+<ul>
+<li><strong>Private deployment is becoming a standard question.</strong> Expect "where does my data go?" to become a normal line on sales AI pricing pages, not a special enterprise request.</li>
+<li><strong>Meeting capture is moving offline.</strong> If your CRM only reflects Zoom calls, your pipeline data is incomplete. Lighter notetakers already cover part of this, and more will follow.</li>
+<li><strong>Shared context beats more agents.</strong> One agent that knows your accounts is worth more than five clever agents that each start from scratch. Ask how agents share context, not just how many a tool offers.</li>
+<li><strong>Language coverage is a real differentiator.</strong> Test notetakers in every language you actually use — a tool that mangles your third language is not a 50-language tool for your team.</li>
+</ul>
+<p>The practical takeaway, in priority order: first, a meeting notetaker that syncs to your CRM; second, one lead-follow-up agent built in a no-code builder; third, pre-call briefs, which many CRMs and agent builders now generate from account history. That stack covers most of what ASPR's agents do, affordably.</p>
+
+<h2 id="verify">What to verify before buying any private sales agent product</h2>
+<p>Before signing with ASPR or any rival, check:</p>
+<ul>
+<li>Get the no-training and data-residency promises in the signed agreement, not just the marketing page.</li>
+<li>Ask which language models are supported in your cloud, and who pays the model usage bill.</li>
+<li>Test the notetaker in every language and accent your team sells in, including a noisy trade-show floor.</li>
+<li>Ask a reference customer in your industry and size what broke during deployment.</li>
+<li>Confirm exit terms: what happens to your agents, knowledge base, and CRM data if you cancel.</li>
+<li>Check whether forward-deployed engineering is included, optional, or required, and what it costs.</li>
+</ul>
+
+<div class="verdict">
+<div><h3>Consider ASPR Studio if</h3><ul>
+<li>Your security team blocks vendor-cloud AI, or customers demand data residency.</li>
+<li>You already run an approved language model in your own cloud.</li>
+<li>Your sales process justifies custom agents and embedded engineers.</li>
+<li>You sell in person and need offline meeting capture in the CRM.</li></ul></div>
+<div><h3>Skip it (for now) if</h3><ul>
+<li>You need working follow-up and notes this month, not a deployment project.</li>
+<li>You need published pricing and a self-serve trial to evaluate.</li>
+<li>Your main pain is one job — notes or lead follow-up — a lighter tool covers.</li>
+<li>You cannot staff the security and IT review a private deployment requires.</li></ul></div>
+</div>
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>What is ASPR AI Private Sales Agent Studio?</h3>
+<p>Private Sales Agent Studio is a deployment option launched by ASPR AI on October 23, 2026. It runs ASPR's AI sales agents inside a customer's own cloud, on a large language model the customer's security team has already approved, instead of sending sales conversations to a vendor's cloud.</p>
+<h3>How much does ASPR AI Private Sales Agent Studio cost?</h3>
+<p>ASPR AI does not publish pricing for Private Sales Agent Studio or its wider platform. Listings describe pricing as contact the vendor; request a written quote covering deployment, agents used, and engineering time before budgeting. Pricing checked October 2026; confirm on the vendor page at aspr.ai.</p>
+<h3>Is ASPR AI Private Sales Agent Studio suitable for a small sales team?</h3>
+<p>It is built for enterprises with strict security review, so most small teams will find it heavier and more expensive than they need. Small teams get more value from the ideas behind it, such as meeting notes that sync to the CRM and pre-call briefs, using lighter no-code agent builders or a dedicated meeting notetaker.</p>
+<h3>What do the 50+ language meeting notetakers do?</h3>
+<p>The Offline Meeting Notetaker Agent captures in-person meetings, from site visits to executive briefings, and syncs decisions, risks, and next steps to the CRM. The Online Meeting Notetaker Agent joins video calls as a visible bot and produces speaker-labeled transcripts. Both work in more than 50 languages.</p>
+<h3>Does ASPR AI train its models on customer data?</h3>
+<p>According to ASPR AI, no. The company says it never trains models on customer data, that customer data stays inside the customer's own cloud with Private Sales Agent Studio, and that audit logs stream to the customer's SIEM. Confirm these points in writing in your contract.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Private Sales Agent Studio is a significant launch, but mostly about direction — not a tool most small teams should buy today. It shows where sales AI is heading: agents living where the data already lives, on approved models, with readable audit trails. That beats shipping sensitive conversations to someone else's cloud, and it will spread.</p>
+<p>For a small sales team, the smart move is to borrow the lessons without buying the enterprise package: capture every meeting, online and off, into the CRM; give your agents shared account context; and ask every vendor where your data goes before asking what the tool costs.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published announcements, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/ai-agents-for-lead-generation-no-coding/">AI Agents for Lead Generation Without Coding</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-ai-agent-builders-non-developers-2026/">Best AI Agent Builders for Non-Developers (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/n8n-self-hosting-cost-breakdown-vps-2026/">n8n Self-Hosting Cost Breakdown (VPS, 2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/1password-ai-agent-signin-tool-explained-2026/">1Password AI Agent Sign-In Tool Explained (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

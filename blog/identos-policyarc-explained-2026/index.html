@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IDENTOS PolicyArc explained: give your AI agents task-specific, time-limited access, and what it means for small teams managing permissions (2026)</title>
+<meta name="description" content="IDENTOS PolicyArc (generally available Oct 20, 2026) lets people give AI agents scoped, time-limited access that auto-revokes when the task ends. How it works, the enterprise-first pricing reality, honest limits, and the small-team permissions playbook.">
+<meta name="keywords" content="IDENTOS PolicyArc, PolicyArc explained, AI agent access control, time-limited agent access, AI agent permissions, least privilege AI agents">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/identos-policyarc-explained-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="IDENTOS PolicyArc explained: give your AI agents task-specific, time-limited access, and what it means for small teams managing permissions (2026)">
+<meta property="og:description" content="IDENTOS PolicyArc (generally available Oct 20, 2026) lets people give AI agents scoped, time-limited access that auto-revokes when the task ends. How it works, the enterprise-first pricing reality, honest limits, and the small-team permissions playbook.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/identos-policyarc-explained-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/identos-policyarc-explained-2026-1.jpg">
+<meta property="article:published_time" content="2026-10-24">
+<meta property="article:modified_time" content="2026-10-24">
+<meta property="article:section" content="Personal Cybersecurity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IDENTOS PolicyArc explained: give your AI agents task-specific, time-limited access, and what it means for small teams managing permissions (2026)">
+<meta name="twitter:description" content="IDENTOS PolicyArc (generally available Oct 20, 2026) lets people give AI agents scoped, time-limited access that auto-revokes when the task ends. How it works, the enterprise-first pricing reality, honest limits, and the small-team permissions playbook.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/identos-policyarc-explained-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+.ad{margin:0 auto}
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/identos-policyarc-explained-2026/#article", "headline": "IDENTOS PolicyArc explained: give your AI agents task-specific, time-limited access, and what it means for small teams managing permissions (2026)", "description": "IDENTOS PolicyArc (generally available Oct 20, 2026) lets people give AI agents scoped, time-limited access that auto-revokes when the task ends. How it works, the enterprise-first pricing reality, honest limits, and the small-team permissions playbook.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/identos-policyarc-explained-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-24", "dateModified": "2026-10-24", "mainEntityOfPage": "https://pickmyapp.github.io/blog/identos-policyarc-explained-2026/", "articleSection": "Personal Cybersecurity", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is IDENTOS PolicyArc?", "acceptedAnswer": {"@type": "Answer", "text": "PolicyArc is an authorization platform from Toronto-based IDENTOS, generally available since October 20, 2026. It lets a person grant an AI agent a scoped, time-limited slice of their own access for one task, then automatically revokes it when the task or time window ends. Consent is checked against what the data owner actually agreed to on every request, and every decision is logged and reportable."}}, {"@type": "Question", "name": "How is PolicyArc different from just giving an AI agent my login?", "acceptedAnswer": {"@type": "Answer", "text": "A shared login gives the agent everything you can do, for as long as it holds the credential, with no record of what it touched. PolicyArc gives the agent only what one task needs, only for as long as the task lasts, checks consent on every request, and logs every decision. The difference is delegation with an expiry date versus standing access with no expiry date."}}, {"@type": "Question", "name": "Is PolicyArc a tool a small team can buy?", "acceptedAnswer": {"@type": "Answer", "text": "Not in the usual small-team sense. PolicyArc is an enterprise product aimed at platform, security engineering, compliance, and risk leaders, and IDENTOS has not published public pricing, so there is no self-serve plan to sign up for. Small teams should take the playbook, not the product: least-privilege delegation, time-boxed access, per-request approval, and a regular audit review. For hands-on agent sign-in today, 1Password for Agents is the consumer-priced cousin."}}, {"@type": "Question", "name": "What does PolicyArc not protect against?", "acceptedAnswer": {"@type": "Answer", "text": "It does not remove the risk of an agent session itself. Once an agent is authorized inside a task, a manipulated prompt or a compromised workflow can still steer what it does within its scope, and a policy is only as good as the rules and consent records behind it. PolicyArc narrows the blast radius and creates an audit trail, but it cannot judge whether a task itself was a good idea."}}, {"@type": "Question", "name": "How does PolicyArc compare to 1Password for Agents?", "acceptedAnswer": {"@type": "Answer", "text": "They solve adjacent problems at opposite ends of the market. 1Password for Agents, launched October 22, 2026, brokers sign-ins for consumers: the agent never sees your password, and it is included free with Individual and Family plans. PolicyArc governs what an authorized agent may do inside enterprise systems: scoped, time-limited delegation with per-request consent checks and audit logging. One protects the credential at the door; the other polices behavior after the agent is inside."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Personal Cybersecurity", "item": "https://pickmyapp.github.io/category/cybersecurity/"}, {"@type": "ListItem", "position": 3, "name": "IDENTOS PolicyArc", "item": "https://pickmyapp.github.io/blog/identos-policyarc-explained-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/cybersecurity/">Personal Cybersecurity</a></li>
+<li aria-current="page">IDENTOS PolicyArc</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">IDENTOS PolicyArc explained: give your AI agents task-specific, time-limited access, and what it means for small teams managing permissions (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Personal Cybersecurity</span></li>
+<li>Published <time datetime="2026-10-24"><strong>Oct 24, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>On October 20, 2026, Toronto-based IDENTOS made PolicyArc generally available: a policy engine that lets a person hand an AI agent a scoped, time-limited slice of their own access &#8212; just enough to finish one task &#8212; and then automatically takes it back when the task or the time window ends. Consent is re-checked against what the data owner actually agreed to on every request, not just at login, and every decision is logged. For small teams, the honest framing matters: PolicyArc is an enterprise product with no public pricing, so this is not a tool you buy on a credit card tomorrow. What you can take from it today is the playbook &#8212; least-privilege delegation, time-boxed access, per-request approval, and a regular audit review &#8212; plus the questions to ask any vendor selling you agent access. Its small-team-accessible cousin, <a href="https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/">1Password for Agents</a>, launched two days later.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/identos-policyarc-explained-2026-1.jpg" width="1280" height="720" alt="Flat vector illustration of a person handing a glowing time-limited key token to a robot assistant beside a shield and a permissions checklist" decoding="async"></div>
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-it-is">What PolicyArc is</a></li><li><a href="#standing-access">Why standing access is reckless for agents</a></li><li><a href="#how-it-works">How it works: five mechanisms</a></li><li><a href="#small-teams">What it means for small teams managing permissions</a></li><li><a href="#comparison">How it compares to the 1Password for Agents approach</a></li><li><a href="#limits">What it does not fix: honest limits</a></li><li><a href="#verdict">Verdict</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-it-is">What PolicyArc is</h2>
+<p>IDENTOS is a Toronto-based company with more than twelve years of work in identity, privacy, and authorization technology, including projects for the Canadian government and healthcare. PolicyArc is its authorization layer: the machinery that decides, request by request, whether an AI agent acting on your behalf may touch a particular piece of data or take a particular action.</p>
+<p>The product became generally available on October 20, 2026, with coverage in Business Wire and Help Net Security on October 20 and 21. Its buyers are platform and security engineering leads, compliance and risk leaders, and teams shipping AI-agent features.</p>
+<p>The core idea is delegation, not impersonation. Today, asking an agent to do something usually means handing it your credentials or a broad token, and it acts as you, with your full reach, until someone remembers to revoke it. PolicyArc flips that around: you grant the agent a narrowed version of your own access, shaped to one task, and that grant dies on its own. The agent never becomes you.</p>
+<p>IDENTOS chief technology officer Alec Laws put it bluntly at launch: &#8220;Most systems only know how to grant broad, standing access. That&#8217;s fine for a person, but reckless for an agent.&#8221; Chief executive Mike Cook framed PolicyArc as applying the company&#8217;s access and identity learning to &#8220;how to adopt AI without losing control.&#8221;</p>
+<p class="fact"><strong>The stat that anchors the launch:</strong> according to the IBM and Ponemon 2026 Cost of a Data Breach Report, as cited in the launch announcement, 92% of organizations that experienced an AI-related breach lacked proper AI access controls. The breaches were not mostly caused by exotic model attacks, but by access that was too broad, too permanent, and too poorly recorded.</p>
+<h2 id="standing-access">Why standing access is reckless for agents</h2>
+<p>Standing access means permission that sits there, always on, whether or not anyone is using it. A human employee with standing access is a known risk managed with reviews and offboarding checklists. An agent with standing access is worse, for three reasons: speed, context blindness, and forgettability.</p>
+<p>A person reads one record at a time. An agent can read ten thousand before lunch without getting bored or suspicious, so a mildly over-broad permission becomes a bulk-export channel. A human asked to pull a customer file into a chat with a stranger would pause; an agent following tampered instructions may not, and with broad standing permission there is no second checkpoint between a bad instruction and a real action. And agents are forgettable: teams spin them up for a project or demo, and the credential lingers long after the project ends. Every forgotten agent is an unmonitored door.</p>
+<h2 id="how-it-works">How it works: five mechanisms</h2>
+<p>PolicyArc is best understood as five mechanisms working together. None is exotic alone. The combination is what makes agent access governable.</p>
+<h3>1. Scoped, time-limited delegation</h3>
+<p>A person grants the agent a narrowed version of their own access for one task, covering what it may touch and how long it may touch it. When the task finishes or the window closes, access is automatically revoked. Revocation is the default outcome, not a chore, and more time requires a fresh, deliberate grant.</p>
+<h3>2. Per-request consent checks</h3>
+<p>Consent is checked against what the data owner actually agreed to on every single request, not once at login. If consent narrowed or expired since the task started, the next request reflects that immediately. This matters in regulated settings like healthcare, where consent is specific and changeable, and for ordinary privacy too.</p>
+<h3>3. Real-time context decisions</h3>
+<p>Each decision blends standing facts, such as role and identity verification, with real-time context, such as resource sensitivity and workflow stage. The system can allow, deny, or require extra verification. A routine read sails through; a bulk export or sensitive record triggers a challenge. Friction appears exactly where the risk is.</p>
+<h3>4. One policy everywhere</h3>
+<p>Teams define a resource type once, and its policy applies across every connected application. New types and policies can be added without rewriting integrations. The rule that was approved is the rule that actually runs, everywhere, instead of a dozen local interpretations.</p>
+<h3>5. An automatic audit trail</h3>
+<p>Every decision is logged and reportable: who asked, what they asked for, what was decided, and under which policy. Without it, &#8220;the agent only had limited access&#8221; is a claim. With it, it is evidence, and when something goes wrong the log shows exactly what the agent touched, in what order, under whose grant.</p>
+<h2 id="small-teams">What it means for small teams managing permissions</h2>
+<p>Here is the honest part. PolicyArc is an enterprise product aimed at platform, security, and compliance leaders, and IDENTOS has not published public pricing, so there is no starter plan to try on a Friday afternoon. A five-person team cannot buy PolicyArc the way it buys a password manager. What it can do is adopt the model, because the ideas inside it cost nothing except discipline.</p>
+<h3>Which agent tasks to allow</h3>
+<ul>
+<li><strong>Allow read-only, low-stakes work first.</strong> Summarizing docs, drafting from notes, checking order status, and triaging tickets. The damage from a mistake is small and reversible.</li>
+<li><strong>Allow narrow writes with human confirmation.</strong> Drafting an email is fine; sending it to a customer list waits for a human tap. Creating a draft order is fine; charging a card is not an agent job.</li>
+<li><strong>Never delegate the crown jewels.</strong> Banking, payroll, domain and DNS controls, cloud root accounts, and the email inbox that resets every other password stay human-only.</li>
+</ul>
+<h3>Approval habits that actually hold</h3>
+<ul>
+<li><strong>Approve per task, not per agent.</strong> A standing approval for &#8220;the support agent&#8221; is standing access with a friendlier name. Approve the job, and let the approval die with the job.</li>
+<li><strong>Put a clock on every grant.</strong> Use tokens that expire by default, and treat a non-expiring credential as a bug.</li>
+<li><strong>Keep a human in the loop for irreversible actions.</strong> If there is no undo button, there should be no agent-only path.</li>
+</ul>
+<h3>Audit review cadence you can keep</h3>
+<p>An audit log nobody reads is decoration. Take a quick weekly glance at what agents accessed, and monthly, remove every grant, agent, and integration nobody used in the last thirty days. Tie the monthly review to something you already do, like invoicing, so it survives busy weeks.</p>
+<h3>What to ask vendors</h3>
+<p>When a vendor pitches agent features, ask five questions: Is access scoped to one task, or does it inherit my full permissions? Does it expire automatically, and when? Is consent re-checked per request, or only at login? Can I require extra verification for sensitive actions? Can you show me a log of every decision? A vendor that answers all five clearly is selling governance. One that waves at &#8220;enterprise security&#8221; without answering is selling a demo. Our <a href="https://pickmyapp.github.io/blog/anthropic-cyber-mission-explained/">Anthropic cyber mission explainer</a> and <a href="https://pickmyapp.github.io/blog/osto-ai-cyber-soc2-startups-explained/">OSTO AI cyber and SOC 2 explainer</a> cover how other vendors frame the same trust problem, and our <a href="https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/">1Password for Agents explainer</a> covers a tool a small team can install today, alongside our <a href="https://pickmyapp.github.io/blog/best-password-managers-small-teams-compared/">password manager comparison for small teams</a>.</p>
+<h2 id="comparison">How it compares to the 1Password for Agents approach</h2>
+<p>PolicyArc and 1Password for Agents arrived in the same week, and they are easy to confuse, because both are about agents and access. They solve different halves of the problem, at different ends of the market.</p>
+<div class="tablewrap"><table><caption>PolicyArc vs 1Password for Agents vs standing access (2026)</caption><thead><tr><th></th><th>IDENTOS PolicyArc</th><th>1Password for Agents</th><th>Standing access (the old way)</th></tr></thead><tbody>
+<tr><td><strong>Protects</strong></td><td>What an authorized agent may do inside connected systems</td><td>The credential at sign-in: the agent never sees your password</td><td>Nothing; the agent inherits your full reach</td></tr>
+<tr><td><strong>For whom</strong></td><td>Platform, security, compliance, and risk leaders at enterprises</td><td>Consumers on Individual and Family plans</td><td>Anyone who pasted a password into a chatbot</td></tr>
+<tr><td><strong>Access shape</strong></td><td>Scoped to one task, time-limited, auto-revoked</td><td>Per-login, per-task approval; credentials filled without being seen</td><td>Broad, permanent until someone revokes it</td></tr>
+<tr><td><strong>Consent</strong></td><td>Checked against the owner&#8217;s consent on every request</td><td>Human approves each sign-in on their own device</td><td>Checked once, if at all, at setup</td></tr>
+<tr><td><strong>Audit trail</strong></td><td>Every decision logged and reportable</td><td>Sign-in approvals via the vault</td><td>None, unless the target app logs it</td></tr>
+<tr><td><strong>Pricing</strong></td><td>Not publicly listed; enterprise sales</td><td>Free with Individual ($3.99/mo) and Family ($5.99/mo) plans</td><td>Free, and expensive when it goes wrong</td></tr>
+<tr><td><strong>Small-team verdict</strong></td><td>Adopt the playbook; buy it as an enterprise</td><td>Usable today on the founder&#8217;s plan</td><td>Stop doing this</td></tr>
+</tbody></table></div>
+<p>The cleanest way to think about it: 1Password for Agents protects the door, and PolicyArc polices the rooms. A complete posture eventually needs both, but today a small team can only buy the door.</p>
+<h2 id="limits">What it does not fix: honest limits</h2>
+<p><strong>First, it is enterprise-first, and the pricing is unpublished.</strong> A small team reading launch coverage should not come away believing a signup page is waiting for them. There is not one, and the value for smaller teams is the model and the vendor questions, not a purchase.</p>
+<p><strong>Second, implementation effort is real.</strong> For a team whose permissions grew organically across a dozen apps, mapping resources, consent records, and workflows is substantial work. PolicyArc gives that work a place to live and a way to be enforced consistently, but it is not magic.</p>
+<p><strong>Third, agent session risk remains.</strong> PolicyArc governs what an agent may do within its grant and can demand verification for risky actions, but it cannot judge whether the task itself was a good idea, nor fully neutralize a manipulated prompt steering an agent inside its scope. A narrow grant limits damage; it does not eliminate it.</p>
+<p><strong>Fourth, a policy is only as good as its inputs.</strong> Consent records must be current, roles must reflect reality, and resource definitions must match the data. If the underlying records are stale, the decisions built on them will be stale too, just more efficiently enforced.</p>
+<h2 id="verdict">Verdict</h2>
+<div class="verdict"><div><h3>What works</h3><ul><li>Task-scoped, time-limited delegation with automatic revocation</li><li>Consent checked on every request, not just at login</li><li>Context-aware decisions with a verify step for risky actions</li><li>One policy across connected apps, plus a full decision audit trail</li></ul></div><div><h3>What to watch</h3><ul><li>Enterprise-first with no public pricing, so small teams cannot buy it directly</li><li>Real implementation effort to map resources and consent records</li><li>Agent session risk and prompt manipulation remain within the granted scope</li><li>Policy quality depends on the accuracy of the underlying records</li></ul></div></div>
+<p><strong>The bottom line:</strong> PolicyArc is the most clearly reasoned answer yet to how agents should be allowed near other people&#8217;s data. It replaces standing, invisible, permanent access with small, short-lived, accounted-for delegation, and treats consent as a live record rather than a historical checkbox. Small teams should steal its playbook today, ask its five vendor questions before buying any agent tool, and use 1Password for Agents for the sign-in half of the problem. The agentic era does not need agents with more access. It needs agents with less access, better justified, and fully logged.</p>
+<ul>
+<li><strong>Remember this:</strong> an agent should borrow a slice of your access for one task, then lose it automatically.</li>
+<li><strong>Ask this of every vendor:</strong> scoped to one task, expiring on its own, consent per request, verification for risky actions, and a log of every decision.</li>
+<li><strong>Do this weekly:</strong> glance at what your agents touched, and monthly, remove every grant and integration nobody used.</li>
+</ul>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>What is IDENTOS PolicyArc?</h3><p>PolicyArc is an authorization platform from Toronto-based IDENTOS, generally available since October 20, 2026. It lets a person grant an AI agent a scoped, time-limited slice of their own access for one task, then automatically revokes it when the task or time window ends. Consent is checked against what the data owner actually agreed to on every request, and every decision is logged and reportable.</p><h3>How is PolicyArc different from just giving an AI agent my login?</h3><p>A shared login gives the agent everything you can do, for as long as it holds the credential, with no record of what it touched. PolicyArc gives the agent only what one task needs, only for as long as the task lasts, checks consent on every request, and logs every decision. The difference is delegation with an expiry date versus standing access with no expiry date.</p><h3>Is PolicyArc a tool a small team can buy?</h3><p>Not in the usual small-team sense. PolicyArc is an enterprise product aimed at platform, security engineering, compliance, and risk leaders, and IDENTOS has not published public pricing, so there is no self-serve plan to sign up for. Small teams should take the playbook, not the product: least-privilege delegation, time-boxed access, per-request approval, and a regular audit review. For hands-on agent sign-in today, 1Password for Agents is the consumer-priced cousin.</p><h3>What does PolicyArc not protect against?</h3><p>It does not remove the risk of an agent session itself. Once an agent is authorized inside a task, a manipulated prompt or a compromised workflow can still steer what it does within its scope, and a policy is only as good as the rules and consent records behind it. PolicyArc narrows the blast radius and creates an audit trail, but it cannot judge whether a task itself was a good idea.</p><h3>How does PolicyArc compare to 1Password for Agents?</h3><p>They solve adjacent problems at opposite ends of the market. 1Password for Agents, launched October 22, 2026, brokers sign-ins for consumers: the agent never sees your password, and it is included free with Individual and Family plans. PolicyArc governs what an authorized agent may do inside enterprise systems: scoped, time-limited delegation with per-request consent checks and audit logging. One protects the credential at the door; the other polices behavior after the agent is inside.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>The agent era will not be secured by telling people to stop using agents. It will be secured by changing what &#8220;using an agent&#8221; means for access: a small grant, for one task, for a short time, checked against live consent, decided with live context, and written into a log. PolicyArc is the clearest enterprise expression of that idea so far. For small teams, the takeaway is not a purchase but a posture: delegate less, expire everything, approve per task, verify the risky actions, and review what your agents touched on a schedule you actually keep.</p>
+
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/">1Password for Agents explained: AI agent sign-in without sharing passwords</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-password-managers-small-teams-compared/">Best password managers for small teams compared</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/myid-authenticate-passkey-windows-logon/">MyID Authenticate explained: passkey Windows logon</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/anthropic-cyber-mission-explained/">Anthropic cyber mission explained</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

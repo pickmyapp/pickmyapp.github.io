@@ -959,6 +959,51 @@
     "best n8n alternatives for beginners 2026",
     "best n8n alternatives for beginners 2026 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:aspr-ai-private-sales-agent-studio-explained-2026",
+   "displayName": "ASPR AI Private Sales Agent Studio explained: AI sales agents that run inside your own cloud, and what it means for small sales teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/aspr-ai-private-sales-agent-studio-explained-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "ASPR AI Private Sales Agent Studio, launched October 23, 2026, runs AI sales agents inside your own cloud on an approved language model. What it does, what it costs, and what small sales teams should take from it.",
+   "representativeQueries": [
+    "aspr ai private sales agent studio",
+    "aspr ai private sales agent studio 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:pipedream-vs-n8n-for-developers-2026",
+   "displayName": "Pipedream vs n8n for developers (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/pipedream-vs-n8n-for-developers-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Pipedream vs n8n for developers: code-first workflows, GitHub sync, self-hosting, and pricing compared — with a clear verdict on which automation tool fits your workflow type in 2026.",
+   "representativeQueries": [
+    "pipedream vs n8n for developers 2026",
+    "pipedream vs n8n for developers 2026 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:getresponse-vs-mailchimp-compared-2026",
+   "displayName": "GetResponse vs Mailchimp compared (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/getresponse-vs-mailchimp-compared-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "GetResponse vs Mailchimp in 2026: pricing at 500, 2,500 and 10,000 contacts, automation limits, webinars, integrations and billing traps compared, with a clear verdict on which email tool to pick.",
+   "representativeQueries": [
+    "getresponse vs mailchimp compared 2026",
+    "getresponse vs mailchimp compared 2026 2026"
+   ]
   }
  ],
  "host": {

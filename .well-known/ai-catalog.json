@@ -914,6 +914,51 @@
     "1password's ai agent sign-in tool explained:",
     "1password's ai agent sign-in tool explained: 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:identos-policyarc-explained-2026",
+   "displayName": "IDENTOS PolicyArc explained: give your AI agents task-specific, time-limited access, and what it means for small teams managing permissions (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/identos-policyarc-explained-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "IDENTOS PolicyArc, generally available October 20, 2026, lets people hand AI agents a scoped, time-limited slice of their own access that auto-revokes when the task ends — an enterprise product with no public pricing, so small teams should steal its playbook of least-privilege delegation, time-boxed access, per-request approval, and regular audit reviews.",
+   "representativeQueries": [
+    "identos policyarc explained: give your ai",
+    "identos policyarc explained: give your ai 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:zapier-vs-make-ecommerce-stores-2026",
+   "displayName": "Zapier vs Make for ecommerce stores (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/zapier-vs-make-ecommerce-stores-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "For most ecommerce stores, Make is the cheaper automation tool in 2026 — but only if your flows are built the right way. This guide compares Zapier tasks vs Make credits, works out the real cost per order at 500, 2,000, and high-volume order counts, and flags the polling and line-item traps that can erase the savings.",
+   "representativeQueries": [
+    "zapier vs make for ecommerce stores",
+    "zapier vs make for ecommerce stores 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-n8n-alternatives-for-beginners-2026",
+   "displayName": "Best n8n alternatives for beginners (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-n8n-alternatives-for-beginners-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Make, Zapier, Activepieces, Pabbly Connect and IFTTT compared for first-time automators, with the n8n execution-limit trap explained and a decision guide that picks a tool by your first workflow.",
+   "representativeQueries": [
+    "best n8n alternatives for beginners 2026",
+    "best n8n alternatives for beginners 2026 2026"
+   ]
   }
  ],
  "host": {

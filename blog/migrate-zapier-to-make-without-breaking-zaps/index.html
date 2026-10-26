@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to migrate from Zapier to Make without breaking zaps</title>
+<meta name="description" content="Migrating from Zapier to Make without breaking zaps is a rebuild, not a transfer: no one-click importer, different billing units, and different trigger behavior. Inventory, rebuild in parallel, test a full cycle, then cut over one workflow at a time.">
+<meta name="keywords" content="migrate Zapier to Make, Zapier to Make migration, move zaps to Make, Zapier vs Make migration guide, Make scenarios from Zaps">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/migrate-zapier-to-make-without-breaking-zaps/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="How to migrate from Zapier to Make without breaking zaps">
+<meta property="og:description" content="Migrating from Zapier to Make without breaking zaps is a rebuild, not a transfer: no one-click importer, different billing units, and different trigger behavior. Inventory, rebuild in parallel, test a full cycle, then cut over one workflow at a time.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/migrate-zapier-to-make-without-breaking-zaps/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/migrate-zapier-to-make-without-breaking-zaps-1.jpg">
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to migrate from Zapier to Make without breaking zaps">
+<meta name="twitter:description" content="Migrating from Zapier to Make without breaking zaps is a rebuild, not a transfer: no one-click importer, different billing units, and different trigger behavior. Inventory, rebuild in parallel, test a full cycle, then cut over one workflow at a time.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/migrate-zapier-to-make-without-breaking-zaps-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#767676;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+.ad{margin:0 auto}
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/migrate-zapier-to-make-without-breaking-zaps/#article", "headline": "How to migrate from Zapier to Make without breaking zaps", "description": "Migrating from Zapier to Make without breaking zaps is a rebuild, not a transfer: no one-click importer, different billing units, and different trigger behavior. Inventory, rebuild in parallel, test a full cycle, then cut over one workflow at a time.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/migrate-zapier-to-make-without-breaking-zaps-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-26", "dateModified": "2026-10-26", "mainEntityOfPage": "https://pickmyapp.github.io/blog/migrate-zapier-to-make-without-breaking-zaps/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is there a one-click way to import Zaps into Make?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no official Zapier-to-Make importer. You rebuild each Zap as a Make scenario by hand, or start from one of Make's templates for common flows. Rebuilding is slower, but it is also how you find dead Zaps, redundant steps, and filters that no longer make sense."}}, {"@type": "Question", "name": "Will my Zaps stop working during migration?", "acceptedAnswer": {"@type": "Answer", "text": "Not if you run both systems in parallel. Build and test the Make scenario while the Zap keeps running, compare outputs for at least a full business cycle, then pause the Zap and let Make take over. Keep paused Zaps for 30 days as a one-click rollback before deleting them."}}, {"@type": "Question", "name": "Why does Make cost more than I expected after migrating?", "acceptedAnswer": {"@type": "Answer", "text": "Usually polling, filters, or code steps. Make charges a credit per module execution including filters, while Zapier's filters were free; a 1-minute polling trigger burns about 43,200 credits a month; and the Code app bills 2 credits per second. Switch polling triggers to webhooks, combine filters, and audit code steps first."}}, {"@type": "Question", "name": "What if Make does not support one of my apps?", "acceptedAnswer": {"@type": "Answer", "text": "Make supports around 3,000 apps against Zapier's 9,000-plus, so gaps happen. Workarounds are a webhook trigger, a generic HTTP module calling the app's API, or leaving that single Zap on Zapier while everything else moves. Check every app before you start migrating, not after."}}, {"@type": "Question", "name": "How long does a Zapier to Make migration take?", "acceptedAnswer": {"@type": "Answer", "text": "For a small team with 10\u201320 Zaps, plan one to two weeks: a day for inventory, a few days for rebuilding, at least a full business cycle of parallel testing, and a day per risk tier for cutover. Larger Zap libraries scale roughly linearly \u2014 the testing phase, not the rebuilding, is what takes the time, and it is the phase you should not skip."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "Migrate Zapier to Make", "item": "https://pickmyapp.github.io/blog/migrate-zapier-to-make-without-breaking-zaps/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">Migrate Zapier to Make</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">How to migrate from Zapier to Make without breaking zaps</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-26"><strong>Oct 26, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>11 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>There is no one-click Zapier-to-Make importer, so a safe migration is a rebuild: inventory every Zap, rebuild each one as a Make scenario, run both systems in parallel for a full business cycle, and cut over one workflow at a time, lowest risk first.</strong> The traps that break migrations are polling triggers (a 1-minute poller burns about 43,200 Make credits a month), filters that cost a credit each on Make but were free on Zapier, and code steps billed at 2 credits per second. Keep paused Zaps for 30 days after cutover as a one-click rollback.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/migrate-zapier-to-make-without-breaking-zaps-1.jpg" width="640" height="360" alt="Illustration of a bridge carrying workflow pieces from one platform to another with a safety net" decoding="async"></div>
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#before-you-start">Before you start: inventory everything</a></li><li><a href="#concept-map">The concept map: Zapier ideas in Make terms</a></li><li><a href="#trigger-trap">The trigger trap: polling vs webhooks</a></li><li><a href="#rebuild-steps">Rebuild in Make, step by step</a></li><li><a href="#parallel-testing">Test in parallel — never cut over blind</a></li><li><a href="#cutover">Cutover, one workflow at a time</a></li><li><a href="#pitfalls">Pitfalls that break migrations</a></li><li><a href="#cost-after">What you actually save</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Migrating from Zapier to Make without breaking your <a href="/blog/n8n-vs-make-small-business/">automations</a> is a rebuild, not a transfer: there is no one-click importer between the two, and the tools count usage, trigger events, and handle errors differently. Done carefully — inventory first, rebuild in parallel, test everything, then cut over one workflow at a time — you can move without losing a single order, lead, or notification. This guide gives you the full migration playbook, including the billing and trigger traps that break most migrations.</p>
+
+<h2 id="before-you-start">Before you start: inventory everything</h2>
+<p><strong>The migration starts in Zapier, not in Make.</strong> Export or list every Zap with its trigger app, trigger event, each step, any filters, paths, formatters, delays, and the accounts it uses. For each Zap, record three numbers: how often it runs, how many tasks it uses a month, and what breaks if it stops for an hour. That third number sets your cutover order — migrate the lowest-risk Zaps first and the revenue-critical ones last, when your process is proven.</p>
+<p>While you inventory, flag the Zaps that will need redesign rather than translation. Multi-step Zaps with Paths become Make scenarios with Routers. Formatter steps become Make's built-in text, date, and number functions or the Tools modules. Delays become Sleep modules. Code steps become the Make Code app — but remember it bills 2 credits per second, so a heavy code step that was free on Zapier now has a meter running. Zaps that use apps Make does not support (Make lists around 3,000 apps against Zapier's 9,000-plus) need a workaround: a webhook, a generic HTTP module, or keeping that one Zap on Zapier while everything else moves.</p>
+<p>Also note Zapier's billing unit before you compare prices: Zapier charges per successful action step, with triggers and filters free. Make charges per module execution, including filters. A Zap that costs 3 tasks on Zapier can easily cost 5–7 credits on Make once filters and routers are counted. Price the migration on Make's counting rules, not Zapier's, or the savings you projected will evaporate in the first invoice.</p>
+
+<h2 id="concept-map">The concept map: Zapier ideas in Make terms</h2>
+<table>
+<tr><th>Zapier concept</th><th>Make equivalent</th><th>Watch out for</th></tr>
+<tr><td>Zap</td><td>Scenario</td><td>Scenarios run on a schedule or webhook, not Zapier's event push model</td></tr>
+<tr><td>Trigger</td><td>Trigger module (polling or webhook)</td><td>Polling triggers burn credits on every poll; prefer webhooks</td></tr>
+<tr><td>Action step</td><td>Action module</td><td>Each module is 1 credit, including filters</td></tr>
+<tr><td>Filter</td><td>Filter between modules</td><td>Costs 1 credit on Make; free on Zapier</td></tr>
+<tr><td>Paths</td><td>Router with filtered routes</td><td>Each route's modules bill separately</td></tr>
+<tr><td>Formatter</td><td>Text / date / number functions, Tools</td><td>Some transforms need extra modules</td></tr>
+<tr><td>Delay</td><td>Sleep module</td><td>Long sleeps tie up scenario execution time</td></tr>
+<tr><td>Code by Zapier</td><td>Code app</td><td>Bills 2 credits per second</td></tr>
+<tr><td>Task</td><td>Credit</td><td>Not equivalent — recount everything</td></tr>
+</table>
+
+<h2 id="trigger-trap">The trigger trap: polling vs webhooks</h2>
+<p><strong>The single most common migration failure is rebuilding a polling trigger at the wrong interval.</strong> Zapier's polling triggers check for new data on a schedule Zapier manages, and many Zapier triggers are instant webhooks under the hood. In Make, you choose: a polling trigger that checks on an interval you set, or a webhook trigger that fires on a real event. The cost difference is enormous — a 1-minute polling trigger burns roughly 43,200 credits a month before any real work happens, while a webhook trigger costs 1 credit per real event and nothing for idle waiting.</p>
+<p>For every Zap you migrate, ask whether the trigger app offers a webhook or instant trigger in Make. If it does, use it. If it only offers polling, set the interval to the slowest your business can tolerate: a 15-minute poller burns about 2,880 checks a month, a 5-minute poller about 8,640, and a 1-minute poller the full 43,200. Never copy Zapier's default pace blindly — Zapier's polling cost was hidden inside your task count, and Make's is itemized.</p>
+<p>There is a second trigger trap: missed events during cutover. If you switch a Zap off before its Make replacement is live, events in the gap are lost unless the trigger app queues them. Plan cutover so the Make scenario is running and verified before the Zap is paused, and keep both running in parallel for the testing period described below.</p>
+
+<h2 id="rebuild-steps">Rebuild in Make, step by step</h2>
+<p><strong>Rebuild each Zap as a new scenario; do not try to automate the translation.</strong> There is no official Zapier-to-Make importer, and community converters handle only the simplest linear Zaps. Rebuilding by hand is slower, but it is also the step where you find the dead filters, the unused steps, and the Zaps nobody remembers why they exist — most teams discover 10–20% of their Zaps can simply be deleted.</p>
+<ol>
+<li><strong>Start from a template where one exists.</strong> <a href="/blog/make-vs-zapier-beginners-which-to-learn/">Make's template library</a> covers common flows (CRM to email, form to spreadsheet, order to notification). A template is a starting point, not a finished scenario — check every module's mapping before you trust it.</li>
+<li><strong>Map fields explicitly.</strong> Make shows you the actual output bundle of each module, so run the trigger module once with real data and map fields from the real output, not from memory. Most field-mapping bugs come from assuming a field name that the app does not actually return.</li>
+<li><strong>Rebuild filters as Make filters, and count them.</strong> Every filter is a credit. Where a Zap had three filters in a row, consider whether one combined condition does the same job.</li>
+<li><strong>Rebuild Paths as Routers.</strong> Test every route, including the fallback route. A route that never fires in testing will fire in production, usually at the worst moment.</li>
+<li><strong>Replace Formatter steps with native functions first.</strong> Make's built-in text, date, array, and math functions cover most Formatter uses without extra modules. Reach for the Code app only when a function genuinely cannot do the job, and watch its 2-credits-per-second meter.</li>
+<li><strong>Set error handling on every scenario.</strong> Make lets you add error-handler routes (ignore, resume, rollback, commit) to modules that can fail. Zapier's default error behavior is different, so do not assume parity — decide, per module, what a failure should do.</li>
+<li><strong>Connect accounts fresh.</strong> Re-authorize each app connection in Make rather than reusing credentials informally. Note which connections are OAuth (they expire and need re-authorization) and who on the team owns each one.</li>
+</ol>
+
+<h2 id="parallel-testing">Test in parallel — never cut over blind</h2>
+<p><strong>Run the Make scenario alongside the original Zap for at least a full business cycle before switching.</strong> For a daily workflow, that means a week; for a weekly report, a full cycle; for a monthly invoice flow, a full month if you can afford the patience. During parallel running, compare outputs, not just "did it run": the same input should produce the same record, the same email, the same spreadsheet row, in both systems.</p>
+<p>Build a simple reconciliation check for each migrated flow: a count of inputs, a count of outputs, and a spot-check of field values. Where outputs differ, the difference is almost always a mapping assumption, a timezone setting, or a filter condition — fix it in Make, not by editing data after the fact. Keep a migration log with the date each Zap was rebuilt, tested, and cut over, and who approved it. When something breaks three months later, that log is what lets you find the cause in minutes instead of hours.</p>
+<p>Watch your Make credit usage during parallel running: you are temporarily paying for both systems. Make's free tier (1,000 credits a month, 2 active scenarios) is enough for testing one or two small flows, but a real migration needs a paid tier — Core at $9 a month annual gives 10,000 credits, which covers a serious testing phase for most small teams.</p>
+
+<h2 id="cutover">Cutover, one workflow at a time</h2>
+<p><strong>Cut over in ascending order of risk, and never migrate everything on the same day.</strong> A workable order is: internal notifications first, then lead capture, then <a href="/blog/zapier-vs-make-ecommerce-stores-2026/">order processing</a>, then billing and payments last. For each cutover: pause the Zap (do not delete it), confirm the Make scenario is processing live events, watch the first few live runs end to end, then — only after a clean period — delete or archive the Zap. Keep paused Zaps for at least 30 days after cutover; restoring a paused Zap is a one-click rollback, while rebuilding a deleted one is a day's work.</p>
+<p>Time cutovers away from peaks: not on a Monday morning, not during a sale, not before a holiday. Tell the team which workflows moved and when, and who to call if something looks wrong. The most common post-cutover complaints — "I didn't get the notification" or "the spreadsheet looks different" — are usually a filter or a field mapping, and they are fixable in minutes if you know which scenario to open.</p>
+
+<h2 id="pitfalls">Pitfalls that break migrations</h2>
+<ul>
+<li><strong>Polling intervals copied blindly.</strong> A 1-minute poller that was invisible on Zapier costs 43,200 Make credits a month. Use webhooks or slow the interval.</li>
+<li><strong>Filters counted as free.</strong> On Make, every filter costs a credit. A Zap with heavy filtering gets more expensive, not cheaper, after migration.</li>
+<li><strong>Code steps metered.</strong> The Make Code app bills 2 credits per second. A slow code step can dominate a scenario's cost.</li>
+<li><strong>Apps Make does not support.</strong> Check every trigger and action app before you start. For unsupported apps, use a webhook or HTTP module, or leave that Zap on Zapier.</li>
+<li><strong>Timezone and date-format differences.</strong> Make and Zapier format dates differently in some apps. Test date fields explicitly, especially for scheduling and invoicing flows.</li>
+<li><strong>Error handling assumed, not set.</strong> Zapier and Make fail differently. Set an error route on every module that touches money, customers, or external systems.</li>
+<li><strong>Deleting Zaps too early.</strong> Keep paused Zaps for 30 days as rollback. Deletion is permanent and unrecoverable.</li>
+<li><strong>No owner for connections.</strong> OAuth connections expire. Assign every app connection to a named person, or the scenario will silently stop one day.</li>
+</ul>
+
+<h2 id="cost-after">What you actually save</h2>
+<p><strong>Most small teams save money, but the size of the saving depends on how Zapier counted their usage.</strong> <a href="/blog/zapier-alternatives-cheaper-automation/">Zapier's Professional plan</a> starts at $19.99 a month annual for 750 tasks and scales steeply — 5,000 tasks at $89, 10,000 at $129, 20,000 at $189. <a href="/blog/make-vs-n8n-pricing-at-scale-2026/">Make's Core plan</a> starts at $9 a month annual for 10,000 credits. A team using 5,000 Zapier tasks a month might pay $89 on Zapier and $9–16 on Make for the same volume, if their credit count stays honest. But a team whose Zaps rely on heavy filtering, polling, or code steps can find Make's credit count higher than expected — which is why the inventory and parallel-testing steps above are not optional. The saving is real, but only for teams that count honestly before they commit.</p>
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>Is there a one-click way to import Zaps into Make?</h3>
+<p>No. There is no official Zapier-to-Make importer. You rebuild each Zap as a Make scenario by hand, or start from one of Make's templates for common flows. Rebuilding is slower, but it is also how you find dead Zaps, redundant steps, and filters that no longer make sense.</p>
+<h3>Will my Zaps stop working during migration?</h3>
+<p>Not if you run both systems in parallel. Build and test the Make scenario while the Zap keeps running, compare outputs for at least a full business cycle, then pause the Zap and let Make take over. Keep paused Zaps for 30 days as a one-click rollback before deleting them.</p>
+<h3>Why does Make cost more than I expected after migrating?</h3>
+<p>Usually polling, filters, or code steps. Make charges a credit per module execution including filters, while Zapier's filters were free; a 1-minute polling trigger burns about 43,200 credits a month; and the Code app bills 2 credits per second. Switch polling triggers to webhooks, combine filters, and audit code steps first.</p>
+<h3>What if Make does not support one of my apps?</h3>
+<p>Make supports around 3,000 apps against Zapier's 9,000-plus, so gaps happen. Workarounds are a webhook trigger, a generic HTTP module calling the app's API, or leaving that single Zap on Zapier while everything else moves. Check every app before you start migrating, not after.</p>
+<h3>How long does a Zapier to Make migration take?</h3>
+<p>For a small team with 10–20 Zaps, plan one to two weeks: a day for inventory, a few days for rebuilding, at least a full business cycle of parallel testing, and a day per risk tier for cutover. Larger Zap libraries scale roughly linearly — the testing phase, not the rebuilding, is what takes the time, and it is the phase you should not skip.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Migrating from Zapier to Make without breaking anything comes down to discipline, not tools: inventory first, rebuild by hand, count credits honestly, test in parallel for a full cycle, and cut over one workflow at a time, lowest risk first. The savings are real — Make's pricing undercuts Zapier substantially at most small-team volumes — but only for teams that respect the counting differences, especially polling triggers and filters. Do the inventory this week, migrate the safest workflow first, and let a clean parallel run earn your confidence before you touch the workflows that move money.</p>
+
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/make-vs-zapier-beginners-which-to-learn/">Make vs Zapier for beginners: which to learn</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/zapier-alternatives-cheaper-automation/">Zapier alternatives: cheaper automation tools</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/make-vs-n8n-pricing-at-scale-2026/">Make vs n8n pricing at scale (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="/blog/n8n-vs-make-small-business/">n8n vs Make for small business</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

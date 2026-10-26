@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://pickmyapp.github.io/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
-<url><loc>https://pickmyapp.github.io/blog/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
-<url><loc>https://pickmyapp.github.io/category/ai-automation/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
+  <url><loc>https://pickmyapp.github.io/</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>https://pickmyapp.github.io/blog/</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>https://pickmyapp.github.io/category/ai-automation/</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/category/crm/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/category/email-marketing/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/category/project-management/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
@@ -14,7 +14,7 @@
 <url><loc>https://pickmyapp.github.io/privacy-policy/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/disclaimer/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/terms-of-service/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
-<url><loc>https://pickmyapp.github.io/blog/n8n-vs-make-small-business/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
+<url><loc>https://pickmyapp.github.io/blog/n8n-vs-make-small-business/</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/blog/zapier-alternatives-cheaper-automation/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/blog/mailchimp-vs-convertkit-creators/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
 <url><loc>https://pickmyapp.github.io/blog/cheapest-email-marketing-software-small-business/</loc><lastmod>2026-10-09</lastmod><changefreq>weekly</changefreq></url>
@@ -78,7 +78,7 @@
   </url>
 <url>
     <loc>https://pickmyapp.github.io/blog/make-vs-zapier-beginners-which-to-learn/</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
 <url>
     <loc>https://pickmyapp.github.io/blog/best-free-email-marketing-tools-2026/</loc>
@@ -285,7 +285,7 @@
   </url>
   <url>
     <loc>https://pickmyapp.github.io/blog/vs-code-vs-cursor-beginners-2026/</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://pickmyapp.github.io/blog/aws-vs-google-cloud-pricing-small-projects-2026/</loc>
@@ -404,7 +404,7 @@
   </url>
   <url>
     <loc>https://pickmyapp.github.io/blog/make-vs-n8n-pricing-at-scale-2026/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://pickmyapp.github.io/blog/1password-ai-agent-signin-tool-explained-2026/</loc>
@@ -433,5 +433,21 @@
   <url>
     <loc>https://pickmyapp.github.io/blog/getresponse-vs-mailchimp-compared-2026/</loc>
     <lastmod>2026-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://pickmyapp.github.io/blog/vokolla-explained-press-release-claude-cursor-gemini-2026/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://pickmyapp.github.io/blog/n8n-vs-make-pricing-100k-executions/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://pickmyapp.github.io/blog/migrate-zapier-to-make-without-breaking-zaps/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://pickmyapp.github.io/category/developer-tools/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
 </urlset>

@@ -1004,6 +1004,51 @@
     "getresponse vs mailchimp compared 2026",
     "getresponse vs mailchimp compared 2026 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:vokolla-explained-press-release-claude-cursor-gemini-2026",
+   "displayName": "Vokolla explained: write your product launch press release inside Claude, Cursor or Gemini, and what it means for small dev teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/vokolla-explained-press-release-claude-cursor-gemini-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Vokolla's press release agent now connects to Claude, Cursor and Gemini via MCP, so small dev teams can draft and check a launch announcement where they build. What it does, what it costs, and what is still unverified.",
+   "representativeQueries": [
+    "Vokolla explained: write your product launch press release i",
+    "Developer Tools"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:n8n-vs-make-pricing-100k-executions",
+   "displayName": "n8n vs Make pricing: which costs less at 100k executions — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/n8n-vs-make-pricing-100k-executions/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "At 100,000 executions a month, n8n vs Make pricing flips with workflow length: short workflows keep Make cheaper, long workflows hand the win to n8n. Converted prices, crossover points, and the self-hosting option.",
+   "representativeQueries": [
+    "n8n vs Make pricing: which costs less at 100k executions",
+    "AI Automation Tools"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:migrate-zapier-to-make-without-breaking-zaps",
+   "displayName": "How to migrate from Zapier to Make without breaking zaps — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/migrate-zapier-to-make-without-breaking-zaps/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Migrating from Zapier to Make without breaking zaps is a rebuild, not a transfer: no one-click importer, different billing units, and different trigger behavior. Inventory, rebuild in parallel, test a full cycle, then cut over one workflow at a time.",
+   "representativeQueries": [
+    "How to migrate from Zapier to Make without breaking zaps",
+    "AI Automation Tools"
+   ]
   }
  ],
  "host": {

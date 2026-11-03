@@ -1049,6 +1049,51 @@
     "How to migrate from Zapier to Make without breaking zaps",
     "AI Automation Tools"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:entire-explained-former-github-ceo-agent-first-git-forge-2026",
+   "displayName": "Entire explained: the former GitHub CEO's agent-first Git forge, and what it means for small dev teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/entire-explained-former-github-ceo-agent-first-git-forge-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Entire, led by former GitHub CEO Thomas Dohmke, replaces pull requests with AI-scored Trails. What it is, how it works, what it costs (no public pricing yet), and when a small team should switch or stay on GitHub.",
+   "representativeQueries": [
+    "entire explained: the former github ceo's",
+    "entire explained: the former github ceo's 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:n8n-templates-small-business-10-ready-made-workflows",
+   "displayName": "n8n templates for small business: 10 ready-made workflows (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/n8n-templates-small-business-10-ready-made-workflows/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "10 ready-made n8n workflow templates for small business: lead capture, invoice chasing, review requests, stock alerts and more, with trigger, steps, and real execution costs.",
+   "representativeQueries": [
+    "n8n templates for small business: 10",
+    "n8n templates for small business: 10 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-email-marketing-software-nonprofits-2026",
+   "displayName": "Best Email Marketing Software for Nonprofits (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-email-marketing-software-nonprofits-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Best email marketing software for nonprofits in 2026: Mailchimp vs GetResponse compared for donor newsletters, event invites, and volunteer emails, with free plans, send limits, automation gates, and nonprofit discounts checked.",
+   "representativeQueries": [
+    "best email marketing software for nonprofits",
+    "best email marketing software for nonprofits 2026"
+   ]
   }
  ],
  "host": {

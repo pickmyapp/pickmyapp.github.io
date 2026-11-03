@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>n8n templates for small business: 10 ready-made workflows (2026)</title>
+<meta name="description" content="10 ready-made n8n workflow templates for small business: lead capture, invoice chasing, review requests, stock alerts and more, with trigger, steps, and real execution costs.">
+<meta name="keywords" content="n8n templates, n8n templates small business, n8n workflows, n8n automation templates, small business automation, n8n execution costs">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/n8n-templates-small-business-10-ready-made-workflows/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="n8n templates for small business: 10 ready-made workflows">
+<meta property="og:description" content="10 ready-made n8n workflow templates for small business: lead capture, invoice chasing, review requests, stock alerts and more, with trigger, steps, and real execution costs.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/n8n-templates-small-business-10-ready-made-workflows/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-templates-small-business-10-ready-made-workflows-1.jpg">
+<meta property="article:published_time" content="2026-10-27">
+<meta property="article:modified_time" content="2026-10-27">
+<meta property="article:section" content="AI Automation Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="n8n templates for small business: 10 ready-made workflows">
+<meta name="twitter:description" content="10 ready-made n8n workflow templates for small business: lead capture, invoice chasing, review requests, stock alerts and more, with trigger, steps, and real execution costs.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-templates-small-business-10-ready-made-workflows-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/n8n-templates-small-business-10-ready-made-workflows/#article", "headline": "n8n templates for small business: 10 ready-made workflows", "description": "10 ready-made n8n workflow templates for small business: lead capture, invoice chasing, review requests, stock alerts and more, with trigger, steps, and real execution costs.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-templates-small-business-10-ready-made-workflows-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-10-27", "dateModified": "2026-10-27", "mainEntityOfPage": "https://pickmyapp.github.io/blog/n8n-templates-small-business-10-ready-made-workflows/", "articleSection": "AI Automation Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What counts as an n8n execution?", "acceptedAnswer": {"@type": "Answer", "text": "One execution is one complete workflow run, however many steps it contains. A ten-step workflow that runs once costs one execution, while a workflow that checks for new data every five minutes costs about 8,640 executions a month even if nothing ever changes."}}, {"@type": "Question", "name": "Can a small business run these workflows on n8n Starter?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, if you choose carefully. Individual webhook or schedule workflows in this guide cost between 4 and about 660 executions a month at the stated volumes, so three or four fit Starter's 2,500 limit. Running all ten together at those volumes needs Pro, because the combined total passes 3,000 executions."}}, {"@type": "Question", "name": "Why do polling triggers cost so much in n8n?", "acceptedAnswer": {"@type": "Answer", "text": "A polling trigger runs the workflow on a schedule and counts as an execution on every check, whether or not new data exists. A 15-minute poller costs about 2,880 executions a month and a 5-minute poller about 8,640, so always prefer a webhook trigger, which costs only one execution per real event."}}, {"@type": "Question", "name": "Is self-hosted n8n really free?", "acceptedAnswer": {"@type": "Answer", "text": "The Community Edition software is free with unlimited executions, but running it is not. A suitable VPS costs $6–15 a month, and you should budget 2–5 hours for setup and 1–3 hours a month for maintenance, plus a domain and backups. At $25 an hour, that maintenance time alone is roughly the price of n8n Cloud Pro."}}, {"@type": "Question", "name": "Should I use n8n or Make for these workflows?", "acceptedAnswer": {"@type": "Answer", "text": "Use n8n when your workflows are long or run often, because it bills per run rather than per step, and when you want the self-hosting option. Use Make when your workflows are short and simple, because its Core plan offers 10,000 credits for $9 a month billed annually, and its webhook triggers cost just 1 credit per real event."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "AI Automation Tools", "item": "https://pickmyapp.github.io/category/ai-automation/"}, {"@type": "ListItem", "position": 3, "name": "n8n templates for small business", "item": "https://pickmyapp.github.io/blog/n8n-templates-small-business-10-ready-made-workflows/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Automation Tools</a></li>
+<li aria-current="page">n8n templates for small business</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">n8n templates for small business: 10 ready-made workflows</h1>
+<ul class="metaline">
+<li><span class="tag">AI Automation Tools</span></li>
+<li>Published <time datetime="2026-10-27"><strong>Oct 27, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-10"><strong>October 2026</strong></time></li>
+<li><strong>9 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p>Yes: ten ready-made n8n workflows cover lead capture, invoice chasing, social logging, ticket triage, welcome sequences, appointment reminders, review requests, low-stock alerts, weekly reports, and cart recovery. Build them webhook-first: <strong>a 5-minute poller alone burns about 8,640 executions a month</strong>, over Starter's 2,500 limit, while webhooks cost one execution per real event.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/n8n-templates-small-business-10-ready-made-workflows-1.jpg" width="640" height="360" alt="n8n workflow templates for small business showing automation nodes for leads, invoices, and reminders" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#how-to-read">How to read the cost notes</a></li><li><a href="#workflow-1">1. Lead capture to CRM</a></li><li><a href="#workflow-2">2. Invoice and payment chasing</a></li><li><a href="#workflow-3">3. Social posts to a sheet</a></li><li><a href="#workflow-4">4. Support-ticket triage</a></li><li><a href="#workflow-5">5. New-customer welcome sequence</a></li><li><a href="#workflow-6">6. Appointment reminders</a></li><li><a href="#workflow-7">7. Review requests</a></li><li><a href="#workflow-8">8. Inventory and low-stock alerts</a></li><li><a href="#workflow-9">9. Weekly reporting digest</a></li><li><a href="#workflow-10">10. Abandoned-cart and quote follow-up</a></li><li><a href="#comparison">All 10 workflows compared</a></li><li><a href="#picking">Picking templates without blowing Starter</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Small businesses do not need more software. They need the repetitive work between their software to disappear: a lead answered, an invoice chased, a review requested, a stock alert sent before a bestseller runs out. That is exactly what n8n templates do, and this guide gives you ten ready-made workflow recipes you can build in n8n, with the trigger, the key steps, and the real execution cost of each one.</p>
+
+<p>Before you build anything, understand one definition. In n8n, <strong>an execution is one complete workflow run, however many steps it contains</strong>. A ten-step workflow that runs once costs one execution, not ten. That makes n8n good value for long workflows, but it creates a trap: workflows that check for new data every few minutes burn an execution on every check, even when nothing has changed. Every recipe below flags that trap.</p>
+
+<p>These recipes are buildable templates in the practical sense: a trigger, a set of nodes, and a predictable outcome, assembled from n8n's standard nodes, not a claim that each one sits under that exact name in an official library. If you are still deciding between tools, our <a href="/blog/n8n-vs-make-small-business/">n8n vs Make comparison for small business</a> explains how n8n's per-run billing differs from Make's per-module credits.</p>
+
+<h2 id="how-to-read">How to read the cost notes in this guide</h2>
+<p>Two numbers decide whether a workflow fits your plan: volume, meaning real events per month, and trigger type, webhook or polling. A webhook fires only when something happens, costing one execution per real event. A poller checks on a schedule, costing one execution per check, whether or not anything is new.</p>
+<p>The trap math is stark. A 5-minute poller burns about 8,640 executions a month on its own, which already exceeds n8n Cloud Starter's 2,500 executions and eats most of Pro's 10,000. A 15-minute poller burns about 2,880 a month, which also exceeds Starter. A form receiving 100 submissions a day costs about 3,000 executions a month on a webhook trigger, again over Starter. For comparison, Make renamed its billing unit from operations to credits in August 2025, and a 1-minute poller on Make burns about 43,200 credits a month before any action runs, while a Make webhook trigger costs just 1 credit per real event. The lesson is identical on both tools: <strong>prefer webhooks, and treat polling as a cost to budget, not a default</strong>.</p>
+<p class="fact"><strong>Quick fact:</strong> n8n Cloud Starter costs €20 a month billed annually (€24 monthly) for 2,500 executions, and Pro costs €50 a month billed annually (€60 monthly) for 10,000 executions. The self-hosted Community Edition is free, with unlimited executions, but you pay $6–15 a month for a suitable VPS plus 2–5 hours of setup and 1–3 hours of monthly maintenance. Prices checked Oct 2026; confirm on vendor pricing pages.</p>
+
+<h2 id="workflow-1">1. Lead capture to CRM</h2>
+<p><strong>Trigger:</strong> webhook from a website form, landing page, or ad lead form. <strong>Key nodes:</strong> Webhook, then an IF node to filter spam or test submissions, a CRM node (such as HubSpot or Pipedrive) to create or update the contact, a Slack or email node to alert the owner, and a Google Sheets node to log the lead as a backup.</p>
+<p><strong>Cost note:</strong> at 500 leads a month, this costs about 500 executions on a webhook trigger, inside Starter. At 100 leads a day, it costs about 3,000 executions, exceeding Starter, so that business needs Pro or self-hosting. Never run this on a 5-minute poller: polling alone would cost about 8,640 executions before a single lead arrived.</p>
+
+<h2 id="workflow-2">2. Invoice and payment-chasing reminders</h2>
+<p><strong>Trigger:</strong> schedule, once a day, plus a webhook when an invoice is marked paid. <strong>Key nodes:</strong> Schedule Trigger, an accounting node (such as Xero or QuickBooks) to list overdue invoices, an IF node to sort invoices into gentle reminder, firm reminder, and final notice, an email node for each tier, and a Sheets node to log what was sent.</p>
+<p><strong>Cost note:</strong> a once-daily schedule costs about 30 executions a month, plus one per reminder sent, so 200 reminders total just 230 executions. This is one of the cheapest workflows here, and a good first build, because a schedule trigger does not check every few minutes.</p>
+
+<h2 id="workflow-3">3. Social posts and mentions logged to a sheet</h2>
+<p><strong>Trigger:</strong> webhook from the social platform where one is available, otherwise a scheduled check. <strong>Key nodes:</strong> trigger node, a Filter node to keep only posts matching your brand terms, a Sheets node to append the post, author, link, and date, and an optional Slack alert for posts with high engagement.</p>
+<p><strong>Cost note:</strong> this is where the trap bites hardest. A 15-minute poller costs about 2,880 executions a month by itself, and a 5-minute poller about 8,640, so a social-logging workflow on a fast poller can consume a whole Starter plan alone. If no webhook exists, run the check hourly instead: about 720 executions a month, and accept that mentions appear up to an hour late.</p>
+
+<h2 id="workflow-4">4. Support-ticket triage</h2>
+<p><strong>Trigger:</strong> webhook when a ticket is created in your helpdesk. <strong>Key nodes:</strong> Webhook, a Switch or IF node to route by keyword (billing, delivery, technical), a node to set priority and assign the ticket, an email node sending an instant acknowledgement with a realistic reply window, and a Slack alert for urgent tickets only.</p>
+<p><strong>Cost note:</strong> at 300 tickets a month, this costs about 300 executions, plus a small number of retries. Because urgent tickets are rare, the Slack alert node fires only a handful of times, so the workflow stays cheap even though it feels always-on. The webhook is essential here: a poller checking every 5 minutes would cost about 8,640 executions for the same result.</p>
+
+<h2 id="workflow-5">5. New-customer welcome sequence</h2>
+<p><strong>Trigger:</strong> webhook when a new customer or subscriber is created. <strong>Key nodes:</strong> Webhook, a CRM or email-platform node to tag the customer, a Wait node, then a short series of emails: welcome and what to expect, a useful tip on day three, and a check-in on day seven. A final node logs completion so nobody receives the sequence twice.</p>
+<p><strong>Cost note:</strong> each customer's journey costs one execution per email step if split into separate workflows, or one per run with Wait nodes in a single workflow. At 200 new customers a month, budget 200–600 executions. This is also the pattern behind our guide to <a href="/blog/best-n8n-workflow-templates-sales-teams-2026/">n8n workflow templates for sales teams</a>.</p>
+
+<h2 id="workflow-6">6. Appointment reminders</h2>
+<p><strong>Trigger:</strong> schedule, twice a day. <strong>Key nodes:</strong> Schedule Trigger, a calendar or booking-system node to list tomorrow's appointments, an IF node to skip cancelled bookings, an SMS or WhatsApp node for the reminder, and an email fallback if no phone number is stored.</p>
+<p><strong>Cost note:</strong> two schedule runs a day cost about 60 executions a month, plus one per reminder sent, so 20 reminders a day total roughly 660 executions. That is excellent value, and it directly reduces no-shows, which is why this workflow usually pays for itself first.</p>
+
+<h2 id="workflow-7">7. Review-request automation</h2>
+<p><strong>Trigger:</strong> webhook when an order is marked fulfilled or a job is marked complete. <strong>Key nodes:</strong> Webhook, a Wait node of two to three days so the customer has used the product, an IF node to exclude refunded or complained-about orders, an email or SMS node with a review link, and a Sheets node to record who was asked.</p>
+<p><strong>Cost note:</strong> at 400 completed orders a month, this costs about 400 executions. The Wait node burns no extra executions while it waits, so the delay is free in billing terms. Never send review requests on a poller: the trigger should be the fulfilment event itself.</p>
+
+<h2 id="workflow-8">8. Inventory and low-stock alerts</h2>
+<p><strong>Trigger:</strong> webhook on stock change where your store supports it, otherwise a schedule check once or twice a day. <strong>Key nodes:</strong> trigger node, a store node (such as Shopify or WooCommerce) to read stock levels, an IF node comparing stock against a threshold per product, an email or Slack alert to the owner, and an optional draft purchase order note.</p>
+<p><strong>Cost note:</strong> a twice-daily schedule costs about 60 executions a month, regardless of how many products you check in that run, because n8n bills per run, not per item. A 5-minute poller, by contrast, would waste about 8,640 executions a month watching stock that rarely changes.</p>
+
+<h2 id="workflow-9">9. Weekly reporting digest</h2>
+<p><strong>Trigger:</strong> schedule, once a week. <strong>Key nodes:</strong> Schedule Trigger, nodes pulling sales, website leads, and ad spend, a Code or Set node to calculate totals and week-on-week change, and an email node sending one digest to the owner every Monday morning.</p>
+<p><strong>Cost note:</strong> about 4 executions a month. This is the cheapest workflow here, and the best proof that schedule triggers are not pollers: a weekly run costs almost nothing, while a 5-minute poller costs thousands.</p>
+
+<h2 id="workflow-10">10. Abandoned-cart and quote follow-up</h2>
+<p><strong>Trigger:</strong> webhook when a cart is abandoned or a quote goes unanswered for 24 hours. <strong>Key nodes:</strong> Webhook, a Wait node, an IF node to skip customers who completed checkout meanwhile, an email node with a recovery offer or a quote reminder, and a CRM node updating the deal stage so sales staff do not double-chase.</p>
+<p><strong>Cost note:</strong> at 600 abandoned carts a month, this costs about 600 executions, plus one per recovery email if you split the steps. Because recovered carts directly produce revenue, this workflow is usually the easiest to justify on Pro. For the wider pricing picture at higher volumes, see our <a href="/blog/make-vs-n8n-pricing-at-scale-2026/">Make versus n8n pricing at scale</a> analysis.</p>
+
+<h2 id="comparison">All 10 workflows compared</h2>
+<p>The table below uses the volumes stated in each recipe, so you can compare like with like. The headline lesson is simple: webhook and schedule triggers keep almost every workflow inside Starter, while a single fast poller can break it.</p>
+<div class="tablewrap"><table>
+<caption>Estimated executions assume the volumes stated in each recipe. A webhook or schedule run counts once per event or run; a poller counts once per check. Prices checked Oct 2026; confirm on vendor pricing pages.</caption>
+<thead><tr><th scope="col">Workflow</th><th scope="col">Trigger type</th><th scope="col">Est. executions/mo</th><th scope="col">Best plan</th></tr></thead>
+<tbody>
+<tr><th scope="row">1. Lead capture to CRM</th><td>Webhook</td><td>500 at 500 leads</td><td>Starter</td></tr>
+<tr><th scope="row">2. Invoice and payment chasing</th><td>Daily schedule + paid webhook</td><td>~230 at 200 reminders</td><td>Starter</td></tr>
+<tr><th scope="row">3. Social posts to sheet</th><td>Webhook, or hourly schedule</td><td>~720 hourly; ~8,640 on a 5-min poller</td><td>Starter (hourly) / Pro or self-hosted (fast poller)</td></tr>
+<tr><th scope="row">4. Support-ticket triage</th><td>Webhook</td><td>~300 at 300 tickets</td><td>Starter</td></tr>
+<tr><th scope="row">5. New-customer welcome sequence</th><td>Webhook + Wait</td><td>200–600 at 200 customers</td><td>Starter</td></tr>
+<tr><th scope="row">6. Appointment reminders</th><td>Twice-daily schedule</td><td>~660 at 20 reminders/day</td><td>Starter</td></tr>
+<tr><th scope="row">7. Review requests</th><td>Webhook + Wait</td><td>~400 at 400 orders</td><td>Starter</td></tr>
+<tr><th scope="row">8. Inventory and low-stock alerts</th><td>Webhook or twice-daily schedule</td><td>~60 scheduled</td><td>Starter</td></tr>
+<tr><th scope="row">9. Weekly reporting digest</th><td>Weekly schedule</td><td>~4</td><td>Starter</td></tr>
+<tr><th scope="row">10. Abandoned-cart and quote follow-up</th><td>Webhook + Wait</td><td>~600 at 600 carts</td><td>Starter; Pro at higher volume</td></tr>
+</tbody></table></div>
+<p>Added together at the stated volumes, the webhook and schedule workflows total roughly 3,000–3,400 executions a month, so a business running all of them needs Pro, not Starter, even though each workflow alone fits Starter. That combined total is the number that decides your plan.</p>
+
+<h2 id="picking">How to pick templates without blowing the Starter limit</h2>
+<p>Start with three workflows, not ten. Invoice chasing, appointment reminders, and review requests together cost under 1,300 executions a month at the volumes above, and each saves time or recovers money immediately. Add lead capture next, then the weekly digest.</p>
+<p>Apply three rules before activating any template. First, <strong>use a webhook wherever the app offers one</strong>. Second, <strong>never run a poller faster than hourly</strong> unless the business case genuinely needs minutes. Third, <strong>total executions across all active workflows</strong>, not per workflow, because Starter's 2,500 limit is shared.</p>
+<p>If your total passes 2,500, you have two honest options: Pro at €50 a month billed annually for 10,000 executions, or self-hosting on a $6–15 a month VPS. Self-hosting removes the execution cap, but adds 2–5 hours of setup and 1–3 hours of maintenance a month, roughly the price of Pro in time at $25 an hour. Our <a href="/blog/n8n-self-hosting-cost-breakdown-vps-2026/">n8n self-hosting cost breakdown</a> covers that trade-off, including the encryption-key backup to make before first boot.</p>
+<ul>
+<li><strong>Under 2,500 executions:</strong> Starter, webhook-first, at most three or four workflows.</li>
+<li><strong>2,500–10,000 executions:</strong> Pro, or self-hosting if someone owns the server.</li>
+<li><strong>Over 10,000 executions:</strong> self-hosting usually wins on cost, provided you have the maintenance capacity.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The best n8n template for a small business is rarely the most impressive one. It is the one that fires on a real event, costs a predictable number of executions, and removes a job somebody was doing by hand every week. Start with invoice chasing, appointment reminders, and review requests, keep every trigger on a webhook or a slow schedule, and add workflows one at a time while watching your monthly total. Do that, and ten ready-made workflows become a system you can actually afford to run, instead of a Starter plan that runs out in the second week of the month.</p>
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>What counts as an n8n execution?</h3>
+<p>One execution is one complete workflow run, however many steps it contains. A ten-step workflow that runs once costs one execution, while a workflow that checks for new data every five minutes costs about 8,640 executions a month even if nothing ever changes.</p>
+<h3>Can a small business run these workflows on n8n Starter?</h3>
+<p>Yes, if you choose carefully. Individual webhook or schedule workflows in this guide cost between 4 and about 660 executions a month at the stated volumes, so three or four fit Starter's 2,500 limit. Running all ten together at those volumes needs Pro, because the combined total passes 3,000 executions.</p>
+<h3>Why do polling triggers cost so much in n8n?</h3>
+<p>A polling trigger runs the workflow on a schedule and counts as an execution on every check, whether or not new data exists. A 15-minute poller costs about 2,880 executions a month and a 5-minute poller about 8,640, so always prefer a webhook trigger, which costs only one execution per real event.</p>
+<h3>Is self-hosted n8n really free?</h3>
+<p>The Community Edition software is free with unlimited executions, but running it is not. A suitable VPS costs $6–15 a month, and you should budget 2–5 hours for setup and 1–3 hours a month for maintenance, plus a domain and backups. At $25 an hour, that maintenance time alone is roughly the price of n8n Cloud Pro.</p>
+<h3>Should I use n8n or Make for these workflows?</h3>
+<p>Use n8n when your workflows are long or run often, because it bills per run rather than per step, and when you want the self-hosting option. Use Make when your workflows are short and simple, because its Core plan offers 10,000 credits for $9 a month billed annually, and its webhook triggers cost just 1 credit per real event.</p>
+</section>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/n8n-vs-make-small-business/">n8n vs Make: Which Is Better for Small Business in 2026?</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/n8n-self-hosting-cost-breakdown-vps-2026/">n8n self-hosting cost breakdown: VPS requirements and setup (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/make-vs-n8n-pricing-at-scale-2026/">Make scenarios vs n8n workflows: what pricing at scale really looks like (2026)</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-n8n-workflow-templates-sales-teams-2026/">best n8n workflow templates for sales teams (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

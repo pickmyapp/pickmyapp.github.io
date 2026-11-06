@@ -1184,6 +1184,51 @@
     "freshsales vs pipedrive compared 2026",
     "freshsales vs pipedrive compared 2026 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:rerun-explained-chatgpt-claude-team-ai-coworkers-2026",
+   "displayName": "Rerun explained: turn your ChatGPT or Claude subscription into a team of AI coworkers, and what it means for small teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/rerun-explained-chatgpt-claude-team-ai-coworkers-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Rerun turns the ChatGPT or Claude subscription you already pay for into a team of AI coworkers that work on their own computers, on a schedule, inside your apps. What it is, what it costs, and where it beats Claude Cowork and ChatGPT Work.",
+   "representativeQueries": [
+    "rerun explained: turn your chatgpt or",
+    "rerun explained: turn your chatgpt or 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-simple-crm-for-real-estate-agents",
+   "displayName": "Best simple CRM for real estate agents (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-simple-crm-for-real-estate-agents/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Follow Up Boss is the best simple CRM for most real estate teams, Wise Agent is the best value for solo agents at $49 a month, and BoldTrail suits brokerages. Prices, lead follow-up, IDX, and the free HubSpot fallback — compared honestly.",
+   "representativeQueries": [
+    "best simple crm for real estate",
+    "best simple crm for real estate 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:attio-vs-hubspot-for-startups",
+   "displayName": "Attio vs HubSpot for startups (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/attio-vs-hubspot-for-startups/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Attio Plus costs $35 a seat and HubSpot Starter costs $7 a seat — but the cheapest CRM and the best CRM for your startup are not the same answer. Free plans, custom objects, the 10-seat trap, and the $1,500 onboarding fee, compared with real 5-seat math.",
+   "representativeQueries": [
+    "attio vs hubspot for startups 2026",
+    "attio vs hubspot for startups 2026 2026"
+   ]
   }
  ],
  "host": {

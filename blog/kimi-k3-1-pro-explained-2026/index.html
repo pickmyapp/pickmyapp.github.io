@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kimi K3.1 Pro explained: the 2.8T open-weight AI model with 1M context, and what it means for small dev teams (2026)</title>
+<meta name="description" content="Kimi K3.1 Pro explained: Moonshot AI&#x27;s 2.8T open-weight model with 1M context, weights published Nov 4, 2026 — API pricing, benchmarks, the license catch, and whether a small dev team can run it.">
+<meta name="keywords" content="Kimi K3.1 Pro, Kimi K3.1 Pro explained, Moonshot AI Kimi, open-weight AI model, 1M context AI model, Kimi K3.1 Pro pricing, Kimi K3.1 Pro vs Claude, run Kimi K3.1 Pro">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/kimi-k3-1-pro-explained-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Kimi K3.1 Pro explained: the 2.8T open-weight AI model with 1M context, and what it means for small dev teams (2026)">
+<meta property="og:description" content="Kimi K3.1 Pro explained: Moonshot AI&#x27;s 2.8T open-weight model with 1M context, weights published Nov 4, 2026 — API pricing, benchmarks, the license catch, and whether a small dev team can run it.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/kimi-k3-1-pro-explained-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/kimi-k3-1-pro-explained-2026-1.jpg">
+<meta property="article:published_time" content="2026-11-08">
+<meta property="article:modified_time" content="2026-11-08">
+<meta property="article:section" content="Emerging Tech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kimi K3.1 Pro explained: the 2.8T open-weight AI model with 1M context, and what it means for small dev teams (2026)">
+<meta name="twitter:description" content="Kimi K3.1 Pro explained: Moonshot AI&#x27;s 2.8T open-weight model with 1M context, weights published Nov 4, 2026 — API pricing, benchmarks, the license catch, and whether a small dev team can run it.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/kimi-k3-1-pro-explained-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/kimi-k3-1-pro-explained-2026/#article", "headline": "Kimi K3.1 Pro explained: the 2.8T open-weight AI model with 1M context, and what it means for small dev teams (2026)", "description": "Kimi K3.1 Pro explained: Moonshot AI's 2.8T open-weight model with 1M context, weights published Nov 4, 2026 \u2014 API pricing, benchmarks, the license catch, and whether a small dev team can run it.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/kimi-k3-1-pro-explained-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-11-08", "dateModified": "2026-11-08", "mainEntityOfPage": "https://pickmyapp.github.io/blog/kimi-k3-1-pro-explained-2026/", "articleSection": "Emerging Tech", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Kimi K3.1 Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Kimi K3.1 Pro is Moonshot AI's flagship AI model, launched October 23, 2026: a 2.8-trillion-parameter mixture-of-experts model with a 1,048,576-token context window, built for software agents that plan multi-step work and call tools. The full weights were published on Hugging Face on November 4, 2026, in the repository moonshotai/Kimi-K3.1-Pro."}}, {"@type": "Question", "name": "Is Kimi K3.1 Pro open source?", "acceptedAnswer": {"@type": "Answer", "text": "No \u2014 it is open-weight, not open source. The model files are public and downloadable, but they ship under a custom Kimi K3.1-Pro License, not a standard open-source license. Companies with over $20 million in revenue in 12 months need a separate agreement before selling it as a service; internal use is exempt. The training data and full training recipe are not public."}}, {"@type": "Question", "name": "How much does Kimi K3.1 Pro cost?", "acceptedAnswer": {"@type": "Answer", "text": "On Moonshot's own API, kimi-k3.1-pro costs $2 per million input tokens and $10 per million output tokens, with a high-speed tier at $4 and $20. The minimum API top-up is $1. On Microsoft Foundry, added November 6, 2026, it costs $2.30 input, $0.23 cached input, and $11.50 output per million tokens. Prices checked November 8, 2026 \u2014 confirm on Moonshot's pages before budgeting."}}, {"@type": "Question", "name": "Can I run Kimi K3.1 Pro on my own computer?", "acceptedAnswer": {"@type": "Answer", "text": "No, not on a normal PC. The weights are a 1.56 TB download and need well over 1.5 TB of fast GPU memory \u2014 a multi-GPU server, not a laptop. Open weights do not mean runnable on your PC. For most small teams the realistic route is the managed API or Microsoft Foundry, paying per token with no hardware to run."}}, {"@type": "Question", "name": "How good is Kimi K3.1 Pro compared to Claude and GPT?", "acceptedAnswer": {"@type": "Answer", "text": "On Moonshot's vendor-reported numbers, it scores 65.7% on Terminal-Bench 4.0, just behind Claude Opus 5.5 at 66.4% and ahead of GPT-6 Astra at 58.2%, and 92.7 on BenchCAD with tools. Those are the vendor's own figures, not independent verification \u2014 the honest test is to run your own team's real tasks through it and compare the finished work against your current model."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Emerging Tech", "item": "https://pickmyapp.github.io/category/emerging-tech/"}, {"@type": "ListItem", "position": 3, "name": "Kimi K3.1 Pro explained", "item": "https://pickmyapp.github.io/blog/kimi-k3-1-pro-explained-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/emerging-tech/">Emerging Tech</a></li>
+<li aria-current="page">Kimi K3.1 Pro explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Kimi K3.1 Pro explained: the 2.8T open-weight AI model with 1M context, and what it means for small dev teams (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Emerging Tech</span></li>
+<li>Published <time datetime="2026-11-08"><strong>Nov 8, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-11"><strong>November 2026</strong></time></li>
+<li><strong>13 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>Kimi K3.1 Pro is Moonshot AI&#x27;s newest flagship model: a 2.8-trillion-parameter mixture-of-experts system with a 1,048,576-token context window, built for software agents that plan, call tools, and work through long tasks on their own. Moonshot launched it on October 23, 2026, then published the full weights on Hugging Face on November 4, 2026 — a 1.56 TB download anyone can inspect. The managed API starts at $2 per million input tokens and $10 per million output tokens. The catch is in the license: it is open-weight, not open source, and companies earning over $20 million a year need a separate agreement before selling it as a service. For most small dev teams, the API — not self-hosting — is the realistic way in.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/kimi-k3-1-pro-explained-2026-1.jpg" width="1280" height="720" alt="Illustration of a giant open-weight AI model with a long document feeding into it, watched by a small software team" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-kimi">What Kimi K3.1 Pro actually is</a></li><li><a href="#numbers-explained">The numbers, explained in plain English</a></li><li><a href="#open-weights-license">Open weights is not open source — read the license</a></li><li><a href="#what-it-costs">What Kimi K3.1 Pro costs</a></li><li><a href="#benchmarks">Benchmarks: what they do — and don&#x27;t — prove</a></li><li><a href="#can-small-team-run-it">Can a small dev team actually run it?</a></li><li><a href="#try-this-week">How to try Kimi K3.1 Pro this week</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-is-kimi">What Kimi K3.1 Pro actually is</h2>
+<p>Kimi K3.1 Pro comes from Moonshot AI, the Chinese AI company founded by Yang Zhilin, best known for the Kimi chatbot and its long-context models. The model launched on October 23, 2026, and the full weights followed on Hugging Face on November 4, 2026, in the repository moonshotai/Kimi-K3.1-Pro — 96 safetensors files totalling about 1.56 TB. That is the headline: a frontier-class model whose weights are public, not locked behind one company's API.</p>
+<p>It is natively multimodal, taking text and image input, and it is designed first and foremost as an agent model — software that plans multi-step work, calls tools, reads the results, and keeps going, rather than just answering a single question. That is the same shift our guide to <a href="/blog/ai-agents-explained-tools-lead-2026/">AI agents explained</a> describes: the useful unit is no longer one prompt and one answer, but a model that can run a task to completion. Kimi K3.1 Pro is Moonshot's entry in that race, aimed squarely at coding and software engineering work.</p>
+<p>You can meet it in four places: Kimi.ai (the chat product), Kimi Work and Kimi Code (its work and coding products), and the Kimi API for developers. Microsoft added it to Azure AI Foundry on November 6, 2026, which matters for teams that already run on Azure and want a second frontier model without a new vendor relationship. Prices and claims in this article were checked on November 8, 2026 — confirm them on Moonshot's own pages before budgeting, because launch-week pricing moves fast.</p><h2 id="numbers-explained">The numbers, explained in plain English</h2>
+<p>The spec sheet reads like a dare: 2.8 trillion total parameters, 104 billion activated per token, 896 experts, 16 selected per token, a 1,048,576-token context, and MXFP4 weights. Here is what each number actually means for you.</p>
+<p><strong>2.8 trillion parameters, 104 billion active.</strong> Kimi K3.1 Pro is a mixture-of-experts (MoE) model. Think of it as a company with 896 specialist teams. For any given word it generates, only 16 teams are consulted — about 104 billion parameters' worth of work — while the rest sit idle. The model is enormous in total, but the cost of each answer depends only on the slice that wakes up. That is why a 2.8T model can be priced anywhere near a much smaller one: you pay for the experts used, not the whole company.</p>
+<p><strong>1,048,576-token context.</strong> A token is roughly three-quarters of a word, so 1M tokens is around 750,000 words — roughly ten average novels, or a very large codebase. In practice, that means you can hand the model your whole repository, a stack of documentation, and a long conversation history in a single session and it can still find the relevant detail. The honest caveat: long context is only useful if the model stays accurate at the far end of it, and that is exactly what long-context benchmarks exist to test. Big context is a capability, not a guarantee.</p>
+<p><strong>MXFP4 weights.</strong> This is the compression format the weights are stored in — 4-bit floating point. It is one reason the download is 1.56 TB instead of several times that, and it is also why running the model needs specialised hardware and software that understand the format. The headline number, 1.56 TB, is the one to remember: it sets the floor for everything in the self-hosting section below.</p><h2 id="open-weights-license">Open weights is not open source — read the license</h2>
+<p>The most misunderstood word in this launch is "open". Kimi K3.1 Pro is open-weight: the trained model files are public and downloadable. It is not open source under a standard license like Apache 2.0 or MIT. It ships under a custom Kimi K3.1-Pro License, and the difference has real consequences.</p>
+<p>The headline condition: companies with over $20 million in revenue in a 12-month period need a separate agreement with Moonshot before selling the model as a service. Internal use is exempt — a big company can run it for its own engineers without that agreement — but a smaller company that wants to build a product on top of Kimi and charge customers for it can hit the threshold fast. If your plan is to wrap the model in a paid service, get the license read by someone who reads licenses for a living before you build on it.</p>
+<p>Two more facts belong here. First, open weights do not include the training data or the full training recipe, so "open" does not mean you can reproduce the model or audit exactly what it learned. Second, Moonshot says cyber-related data was removed from the model's training — a safety claim from the vendor, not an independently verified fact. None of this makes the release a bad thing: downloadable frontier weights are genuinely rare and useful for research, evaluation, and fine-tuning. It just means the word "open" is doing more work in the headlines than it does in the license.</p><h2 id="what-it-costs">What Kimi K3.1 Pro costs</h2>
+<p>There are two ways to pay: Moonshot's own API, or Microsoft Foundry. Prices below were checked on November 8, 2026, in US dollars per million tokens, and you should confirm them on the vendor pages before budgeting.</p>
+<table>
+<thead><tr><th>Service</th><th>Input / 1M tokens</th><th>Output / 1M tokens</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><strong>Kimi API — kimi-k3.1-pro</strong></td><td>$2.00</td><td>$10.00</td><td>Standard managed API; top-up minimum $1</td></tr>
+<tr><td><strong>Kimi API — kimi-k3.1-pro-highspeed</strong></td><td>$4.00</td><td>$20.00</td><td>Higher-speed tier, double the price</td></tr>
+<tr><td><strong>Microsoft Foundry</strong></td><td>$2.30</td><td>$11.50</td><td>Plus $0.23 per 1M cached input tokens; added Nov 6, 2026</td></tr>
+</tbody>
+</table>
+<p>For a sense of scale: a coding session that sends 100,000 input tokens and receives 20,000 output tokens costs about $0.40 on the standard Kimi API — cheap per session, and the bill that matters is the monthly one across a whole team. The $1 minimum top-up makes trying it nearly free, which is the right way to start: pay a dollar, run your real tasks, and measure the bill against the work it actually did.</p>
+<p>Two cost traps to watch. First, the 1M context is a meter that runs: long sessions with a huge codebase in context burn input tokens on every turn, even when the model only needs a small part of it. Second, agentic work is output-heavy — a model that plans, writes code, tests, and rewrites can generate far more output tokens than a chatbot ever would, and output tokens cost five times input tokens. If you are comparing it with another frontier model, compare the price of a finished task, not the price of a million tokens. Our <a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon explained</a> guide covers another recent model launch with the same pricing logic.</p><h2 id="benchmarks">Benchmarks: what they do — and don&#x27;t — prove</h2>
+<p>All benchmarks below are vendor-reported — Moonshot's own numbers, not independent verification. That label matters, because benchmark scores are the easiest numbers in AI to inflate by accident or design. Treat them as a signal, not a verdict.</p>
+<table>
+<thead><tr><th>Benchmark</th><th>Kimi K3.1 Pro</th><th>Claude Opus 5.5</th><th>GPT-6 Astra</th></tr></thead>
+<tbody>
+<tr><td><strong>Terminal-Bench 4.0</strong></td><td>65.7%</td><td>66.4%</td><td>58.2%</td></tr>
+<tr><td><strong>BenchCAD (with tools)</strong></td><td>92.7</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+<p>Terminal-Bench 4.0 tests what the model is built for: real software tasks in a terminal — writing code, running commands, fixing errors, and finishing multi-step jobs. Kimi's 65.7% sits a fraction behind Claude Opus 5.5 at 66.4% and well ahead of GPT-6 Astra at 58.2%, according to Moonshot. BenchCAD, a computer-aided-design benchmark run with tools, scores 92.7 — but Moonshot did not publish comparable rival numbers for it, so it tells you the model can use CAD tools, not that it beats anyone at them.</p>
+<p>What these numbers do prove: Kimi K3.1 Pro is in the frontier conversation for agentic coding, not a distant second. What they do not prove: that it will do your team's work well. Benchmarks use fixed tasks and clean environments; your work has messy repositories, private APIs, and vague requirements. The only benchmark that counts is yours: give it five real tasks from your backlog, score the results honestly, and compare against whatever model you use today. For a different angle on model evaluation, our <a href="/blog/mistral-timestral-explained-sales-forecasting-no-gpu-2026/">Mistral Timestral explained</a> guide shows how a small specialised model can beat a giant one on the right task.</p><h2 id="can-small-team-run-it">Can a small dev team actually run it?</h2>
+<p>There are two different questions hiding in that headline, and they have opposite answers. Can a small team use Kimi K3.1 Pro? Yes, easily, through the API. Can a small team run the weights themselves? Almost certainly not — and the math shows why.</p>
+<p>The weights are a 1.56 TB download. To run them, you need well over 1.5 TB of fast memory — GPU memory, not a hard drive — which means a multi-GPU server, not a laptop or a single desktop card. A single high-end consumer GPU holds 24 GB; you would need dozens of them, wired together with fast interconnects, plus the software to split a 2.8T mixture-of-experts model across them. The electricity, cooling, and engineering time alone would dwarf the API bill for any small team. Open weights do not mean runnable on your PC.</p>
+<p>That is not a flaw in the release. The downloadable weights are valuable for researchers, for companies that need to evaluate the model privately, and for teams that want to fine-tune it — all jobs for organisations with serious GPU infrastructure. For a team of five or ten developers, the sensible path is the API or Foundry: you get the same model, you pay per token, and you keep zero servers. If you do want to run models locally, start with models built for it — our guide to <a href="/blog/run-ai-models-on-pc-llama-windows-nemotron-2026/">running AI models on your own PC</a> covers Llama and Nemotron on ordinary hardware, which is the right scale for a desk, not a data centre.</p>
+<p>The middle path worth knowing about: hosted fine-tuning and private deployments through a cloud provider. You get the weights running on rented GPUs, with the provider handling the hardware. It is still a serious monthly bill, and it only makes sense once your API usage is large enough that renting beats paying per token — a calculation for a team spending thousands a month on inference, not tens.</p><h2 id="try-this-week">How to try Kimi K3.1 Pro this week</h2>
+<p>Start with the free and cheap routes, in this order, and measure before you commit.</p>
+<p><strong>1. Chat with it on Kimi.ai.</strong> The fastest test: open Kimi.ai, upload a real document or image from your work, and ask it to do a real task — summarise a long spec, or plan a small feature from your codebase description. You are testing the 1M context and the agent behaviour, not the chat polish.</p>
+<p><strong>2. Try the coding products.</strong> Kimi Code is the coding surface; give it a small, well-defined task from your backlog — a bug fix or a test-writing job — and review the diff the way you would review a junior developer's pull request. Score it on whether the code runs, not whether it looks confident.</p>
+<p><strong>3. Top up $1 on the Kimi API.</strong> The minimum top-up is $1, which buys a meaningful amount of testing at $2 per million input tokens. Point one of your existing tools or scripts at the API, run the same five tasks you would benchmark any model on, and compare the finished work — and the bill — against your current model.</p>
+<p><strong>4. Check Microsoft Foundry if you are on Azure.</strong> Added on November 6, 2026, at $2.30 input and $11.50 output per million tokens, with cached input at $0.23. For Azure teams the advantage is not price — the Kimi API is slightly cheaper — but billing, compliance, and staying inside infrastructure you already run.</p>
+<p>If the test week goes well, the next decision is not technical but commercial: confirm the license fits your use, especially the $20 million revenue condition if you plan to sell a service built on it, and set a monthly spend cap before the team starts using it in earnest. A model this capable is easy to adopt; the discipline is in measuring what it actually saves you.</p>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>What is Kimi K3.1 Pro?</h3><p>Kimi K3.1 Pro is Moonshot AI&#x27;s flagship AI model, launched October 23, 2026: a 2.8-trillion-parameter mixture-of-experts model with a 1,048,576-token context window, built for software agents that plan multi-step work and call tools. The full weights were published on Hugging Face on November 4, 2026, in the repository moonshotai/Kimi-K3.1-Pro.</p><h3>Is Kimi K3.1 Pro open source?</h3><p>No — it is open-weight, not open source. The model files are public and downloadable, but they ship under a custom Kimi K3.1-Pro License, not a standard open-source license. Companies with over $20 million in revenue in 12 months need a separate agreement before selling it as a service; internal use is exempt. The training data and full training recipe are not public.</p><h3>How much does Kimi K3.1 Pro cost?</h3><p>On Moonshot&#x27;s own API, kimi-k3.1-pro costs $2 per million input tokens and $10 per million output tokens, with a high-speed tier at $4 and $20. The minimum API top-up is $1. On Microsoft Foundry, added November 6, 2026, it costs $2.30 input, $0.23 cached input, and $11.50 output per million tokens. Prices checked November 8, 2026 — confirm on Moonshot&#x27;s pages before budgeting.</p><h3>Can I run Kimi K3.1 Pro on my own computer?</h3><p>No, not on a normal PC. The weights are a 1.56 TB download and need well over 1.5 TB of fast GPU memory — a multi-GPU server, not a laptop. Open weights do not mean runnable on your PC. For most small teams the realistic route is the managed API or Microsoft Foundry, paying per token with no hardware to run.</p><h3>How good is Kimi K3.1 Pro compared to Claude and GPT?</h3><p>On Moonshot&#x27;s vendor-reported numbers, it scores 65.7% on Terminal-Bench 4.0, just behind Claude Opus 5.5 at 66.4% and ahead of GPT-6 Astra at 58.2%, and 92.7 on BenchCAD with tools. Those are the vendor&#x27;s own figures, not independent verification — the honest test is to run your own team&#x27;s real tasks through it and compare the finished work against your current model.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Kimi K3.1 Pro is a genuinely significant release: a frontier-class agent model, with a million-token context and benchmark scores near the best in the world, whose weights anyone can download. But the two things that will decide whether it matters to your team are not on the spec sheet — the custom license, which is not open source and carries a $20 million revenue condition for selling it as a service, and the 1.56 TB of weights, which put self-hosting out of reach for small teams. Use the API, test it on real work, and let your own tasks — not the vendor&#x27;s benchmarks — make the decision.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/ai-agents-explained-tools-lead-2026/">AI agents explained: what they are and which tools lead in 2026</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/run-ai-models-on-pc-llama-windows-nemotron-2026/">Run AI models on your own PC: Llama, Windows, and Nemotron explained (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon explained: what it is and what it means for small business (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/mistral-timestral-explained-sales-forecasting-no-gpu-2026/">Mistral Timestral explained: sales forecasting with no GPU (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

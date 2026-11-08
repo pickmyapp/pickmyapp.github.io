@@ -1274,6 +1274,51 @@
     "best crm for real estate teams",
     "best crm for real estate teams 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:kimi-k3-1-pro-explained-2026",
+   "displayName": "Kimi K3.1 Pro explained: the 2.8T open-weight AI model with 1M context, and what it means for small dev teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/kimi-k3-1-pro-explained-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Kimi K3.1 Pro is Moonshot AI's 2.8-trillion-parameter open-weight model with a 1M-token context; weights published November 4, 2026. What it is, what it costs, and whether a small dev team can actually use it.",
+   "representativeQueries": [
+    "kimi k3.1 pro explained: the 2.8t",
+    "kimi k3.1 pro explained: the 2.8t 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-free-crm-with-email-integration",
+   "displayName": "Best free CRM with email integration (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-free-crm-with-email-integration/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "The free CRMs that actually sync your email — HubSpot, Zoho, Freshsales, Capsule and more — compared on real free-plan limits, so you pick the one you won't outgrow in a month.",
+   "representativeQueries": [
+    "best free crm with email integration",
+    "best free crm with email integration 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:onepagecrm-vs-capsule-solo-consultants",
+   "displayName": "OnePageCRM vs Capsule for solo consultants (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/onepagecrm-vs-capsule-solo-consultants/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "OnePageCRM starts at $9.95 a user a month, Capsule at $18 — but the cheaper tool isn't automatically the better one for a solo consultant. Action Stream vs simple pipelines, compared on price, email, and the features you'll actually use.",
+   "representativeQueries": [
+    "onepagecrm vs capsule for solo consultants",
+    "onepagecrm vs capsule for solo consultants 2026"
+   ]
   }
  ],
  "host": {

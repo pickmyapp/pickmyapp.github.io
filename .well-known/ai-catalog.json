@@ -1319,6 +1319,51 @@
     "onepagecrm vs capsule for solo consultants",
     "onepagecrm vs capsule for solo consultants 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:fleeep-explained-free-ai-notes-app-2026",
+   "displayName": "Fleeep explained: the free AI notes app that topped Product Hunt on November 7, and what it means for creators and small teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/fleeep-explained-free-ai-notes-app-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Fleeep is a free, capture-first notes app by solo maker Lydia that topped Product Hunt on November 7, 2026. What it actually does, what it costs, and where it fits next to Notion, Otter and Readwise.",
+   "representativeQueries": [
+    "fleeep explained: the free ai notes",
+    "fleeep explained: the free ai notes 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:todoist-vs-ticktick-personal-productivity",
+   "displayName": "Todoist vs TickTick for personal productivity — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/todoist-vs-ticktick-personal-productivity/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Todoist Pro costs $60 a year, TickTick Premium $49.99 — but the $10 gap is the least interesting difference. Capture speed vs built-in Pomodoro, habits and calendar, compared on real free-plan limits.",
+   "representativeQueries": [
+    "todoist vs ticktick for personal productivity",
+    "todoist vs ticktick for personal productivity 2026"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:notion-vs-clickup-startups",
+   "displayName": "Notion vs ClickUp for startups — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/notion-vs-clickup-startups/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "ClickUp Business costs $60 a month for 5 users, Notion Business $100 — until you add ClickUp Brain at $9 a seat, when the two land at $105 vs $100. Docs spine vs delivery spine, compared for a 5-person startup.",
+   "representativeQueries": [
+    "notion vs clickup for startups",
+    "notion vs clickup for startups 2026"
+   ]
   }
  ],
  "host": {

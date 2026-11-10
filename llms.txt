@@ -4,6 +4,9 @@
 
 ## Guides
 
+- [Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked](https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/): Claude Fable 5.2 explained: Anthropic's top-ranked AI model is 20% cheaper than Fable 5.1, but a cost-per-task catch means small teams should check first.
+- [ClickUp vs Asana for Marketing Teams (2026)](https://pickmyapp.github.io/blog/clickup-vs-asana-marketing-teams/): ClickUp vs Asana for marketing teams: campaign planning, content calendars, briefs and approvals compared, plus real cost at 5–10 seats in 2026.
+- [Best Project Management Software for Agencies (2026)](https://pickmyapp.github.io/blog/best-project-management-software-agencies-2026/): Asana vs ClickUp vs Monday vs Basecamp vs Notion for agencies: real cost at 5, 10 and 30 seats, client portals, time tracking and workload views.
 - [Fleeep explained: the free AI notes app that topped Product Hunt on November 7, and what it means for creators and small teams (2026)](https://pickmyapp.github.io/blog/fleeep-explained-free-ai-notes-app-2026/): Fleeep is a free, capture-first notes app by solo maker Lydia that topped Product Hunt on November 7, 2026. What it actually does, what it costs, and where it fits next to Notion, Otter and Readwise.
 - [Todoist vs TickTick for personal productivity](https://pickmyapp.github.io/blog/todoist-vs-ticktick-personal-productivity/): Todoist Pro costs $60 a year, TickTick Premium $49.99 — but the $10 gap is the least interesting difference. Capture speed vs built-in Pomodoro, habits and calendar, compared on real free-plan limits.
 - [Notion vs ClickUp for startups](https://pickmyapp.github.io/blog/notion-vs-clickup-startups/): ClickUp Business costs $60 a month for 5 users, Notion Business $100 — until you add ClickUp Brain at $9 a seat, when the two land at $105 vs $100. Docs spine vs delivery spine, compared for a 5-person startup.

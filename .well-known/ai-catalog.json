@@ -1364,6 +1364,54 @@
     "notion vs clickup for startups",
     "notion vs clickup for startups 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:claude-fable-5-2-explained-2026",
+   "displayName": "Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Claude Fable 5.2 explained: Anthropic's top-ranked AI model is 20% cheaper than Fable 5.1, but a cost-per-task catch means small teams should check first.",
+   "representativeQueries": [
+    "claude fable 5.2 explained",
+    "claude fable 5.2 price vs fable 5.1",
+    "is claude fable 5.2 cheaper per task"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:clickup-vs-asana-marketing-teams",
+   "displayName": "ClickUp vs Asana for Marketing Teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/clickup-vs-asana-marketing-teams/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "ClickUp vs Asana for marketing teams: campaign planning, content calendars, briefs and approvals compared, plus real cost at 5–10 seats in 2026.",
+   "representativeQueries": [
+    "clickup vs asana for marketing teams",
+    "clickup vs asana pricing marketing team",
+    "best project management tool for marketing team"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:best-project-management-software-agencies-2026",
+   "displayName": "Best Project Management Software for Agencies (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/best-project-management-software-agencies-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Asana vs ClickUp vs Monday vs Basecamp vs Notion for agencies: real cost at 5, 10 and 30 seats, client portals, time tracking and workload views.",
+   "representativeQueries": [
+    "best project management software for agencies",
+    "project management software for agencies pricing",
+    "asana vs clickup vs monday for agencies"
+   ]
   }
  ],
  "host": {

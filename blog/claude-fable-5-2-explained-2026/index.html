@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked</title>
+<meta name="description" content="Claude Fable 5.2 explained: Anthropic's top-ranked AI model is 20% cheaper than Fable 5.1, but a cost-per-task catch means small teams should check first.">
+<meta name="keywords" content="Claude Fable 5.2, Claude Fable 5.2 explained, Anthropic Fable 5.2 price, Fable 5.2 vs Opus 5.5, Fable 5.2 vs GPT-6 Astra, best AI model for small business 2026, Claude Fable 5.2 benchmarks">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked">
+<meta property="og:description" content="Claude Fable 5.2 explained: Anthropic's top-ranked AI model is 20% cheaper than Fable 5.1, but a cost-per-task catch means small teams should check first.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-fable-5-2-explained-2026-1.jpg">
+<meta property="article:published_time" content="2026-11-10">
+<meta property="article:modified_time" content="2026-11-10">
+<meta property="article:section" content="Emerging Tech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked">
+<meta name="twitter:description" content="Claude Fable 5.2 explained: Anthropic's top-ranked AI model is 20% cheaper than Fable 5.1, but a cost-per-task catch means small teams should check first.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-fable-5-2-explained-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/#article", "headline": "Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked", "description": "Claude Fable 5.2 explained: Anthropic's top-ranked AI model is 20% cheaper than Fable 5.1, but a cost-per-task catch means small teams should check first.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-fable-5-2-explained-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-11-10", "dateModified": "2026-11-10", "mainEntityOfPage": "https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/", "articleSection": "Emerging Tech", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Claude Fable 5.2?", "acceptedAnswer": {"@type": "Answer", "text": "Claude Fable 5.2 is Anthropic's newest flagship AI model, released on Monday, November 9, 2026. It sits at the top of the Artificial Analysis Intelligence Index with a score of 65, costs 20% less per token than Fable 5.1, and comes with a 1-million-token context window. It is available on paid Claude plans, in Claude Code, on the Claude Platform, and through AWS, Google Cloud, and Azure."}}, {"@type": "Question", "name": "How much does Claude Fable 5.2 cost?", "acceptedAnswer": {"@type": "Answer", "text": "On the Anthropic API, Fable 5.2 costs $8 per million input tokens and $40 per million output tokens, down from $10 and $50 for Fable 5.1 — a 20% cut. A fast mode costs $16/$80. But the per-token price is not the whole story: Fable 5.2 burns more tokens on hard tasks, so the cost per completed task can be higher than cheaper models. Check the per-task figures in this guide before budgeting."}}, {"@type": "Question", "name": "Is Claude Fable 5.2 better than Opus 5.5?", "acceptedAnswer": {"@type": "Answer", "text": "On raw capability, yes — Fable 5.2 tops the Artificial Analysis Intelligence Index at 65, ahead of Opus 5.5 at 59, and scores 49.1% on Anthropic's FrontierCode 2.0 coding benchmark at XHigh effort versus 32.4% for Fable 5.1. But Anthropic still recommends Opus 5.5 as the everyday model, and Opus 5.5 costs far less per completed task ($10.04 versus $26.54 for Fable 5.2 Max in Artificial Analysis' weighted measure). For routine work, Opus 5.5 is usually the better value."}}, {"@type": "Question", "name": "What is Claude Mythos 5.2?", "acceptedAnswer": {"@type": "Answer", "text": "Claude Mythos 5.2 is a restricted sibling model released alongside Fable 5.2 on November 9, 2026. It is specialized for cybersecurity and biology, and access is limited to verified organizations. It is not available on the standard Claude plans or the public API, so most small teams will never interact with it directly."}}, {"@type": "Question", "name": "Should a small business switch to Claude Fable 5.2?", "acceptedAnswer": {"@type": "Answer", "text": "Switch for your hardest work first: complex coding, long-document analysis, and multi-step agent tasks where Fable 5.2's accuracy genuinely saves rework. Keep routine drafting, summaries, and everyday chat on Opus 5.5 or a cheaper model, and use Fable 5.2 at High effort rather than Max for most jobs — it costs about $9.08 per task versus $26.54 at Max. Track your actual cost per finished task for a month before moving everything over."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Emerging Tech", "item": "https://pickmyapp.github.io/category/emerging-tech/"}, {"@type": "ListItem", "position": 3, "name": "Claude Fable 5.2 Explained", "item": "https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/emerging-tech/">Emerging Tech</a></li>
+<li aria-current="page">Claude Fable 5.2 Explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked</h1>
+<ul class="metaline">
+<li><span class="tag">Emerging Tech</span></li>
+<li>Published <time datetime="2026-11-10"><strong>Nov 10, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-11-10"><strong>November 2026</strong></time></li>
+<li><strong>10 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer">
+<span class="tag">Quick answer</span>
+<p><strong>Claude Fable 5.2 is Anthropic's newest flagship AI model, released Monday, November 9, 2026.</strong> It now sits at the top of the Artificial Analysis Intelligence Index with a score of 65, costs 20% less per token than Fable 5.1, and answers up to 30% faster. The catch small teams need to know: cheaper per token does not mean cheaper per job, because Fable 5.2 burns more tokens on hard tasks. Use it for your hardest work, keep everyday work on Opus 5.5, and check the cost-per-task numbers below before switching.</p>
+</section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/claude-fable-5-2-explained-2026-1.jpg" width="640" height="360" alt="Illustration of Anthropic's Claude Fable 5.2 AI model as a glowing neural network rising above benchmark charts, representing the new top-ranked model" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is">What is Claude Fable 5.2?</a></li><li><a href="#benchmarks">How good is it? The benchmarks</a></li><li><a href="#pricing">Pricing: 20% cheaper per token</a></li><li><a href="#cost-per-task">The cost-per-task catch</a></li><li><a href="#context-window">The 1M-token context window</a></li><li><a href="#where-to-get">Where to use it</a></li><li><a href="#pacing">“Pacing, not pausing”</a></li><li><a href="#should-you-switch">Should your small team switch?</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<p>Anthropic released Claude Fable 5.2 on Monday, November 9, 2026, and the launch headline writes itself: the new model is the top-ranked AI model in the world by one major independent index, it costs 20% less than the model it replaces, and it is noticeably faster. For a small team that leans on AI every day — drafting, coding, summarizing, answering customers — that sounds like a free upgrade. It mostly is, but only if you use it the right way. This guide explains what Fable 5.2 actually is, what the benchmarks say, what it costs in practice, and the one honest catch the launch headlines skip. All facts below were checked on November 10, 2026; confirm prices and availability on Anthropic's own pages, because launch-week details can change.</p>
+
+<h2 id="what-is">What is Claude Fable 5.2?</h2>
+<p><strong>Claude Fable 5.2 is Anthropic's newest flagship large language model, the successor to Fable 5.1.</strong> It powers the paid Claude chat plans, the Claude Code coding assistant, and the Claude Platform API, where it appears as <code>claude-fable-5-2</code>. In Anthropic's lineup, Fable is the top capability tier — the model for hard, long, or high-stakes tasks — while Opus sits one tier below as the everyday workhorse.</p>
+<p>Fable 5.2 arrived alongside a restricted sibling, Claude Mythos 5.2, specialized for cybersecurity and biology and limited to verified organizations, so it will not appear in your Claude plan or API dashboard. For almost every small business, Fable 5.2 is the only new model that matters. The naming can confuse at first — Anthropic has moved away from the familiar Sonnet/Opus/Haiku family names — but the simple version is: Fable 5.2 is the new flagship, Opus 5.5 is the strong everyday model, and both are current.</p>
+<p>Three headline claims define the release. First, Fable 5.2 is the highest-scoring model on the Artificial Analysis Intelligence Index. Second, it is 20% cheaper per token than Fable 5.1. Third, its output is up to 30% faster than 5.1, which matters more than it sounds: in a coding assistant or an agent running dozens of steps, faster output compounds into noticeably shorter waits. Each claim checks out — and each needs the context below.</p>
+
+<h2 id="benchmarks">How good is it? The benchmarks</h2>
+<p>Benchmarks are not the whole story, but two independent ones agree that Fable 5.2 is currently the strongest general model available. That rare consensus is why the launch is worth your attention even if you never read another benchmark table.</p>
+<p><strong>Artificial Analysis Intelligence Index v5.0.1 (snapshot November 10, 2026):</strong> Fable 5.2 Max scores 65, the highest score on the index. Gemini 4 Carbon trails at 60, Opus 5.5 at 59, GPT-6 Astra at 57, and the old Fable 5.1 Max at 49. The jump from 49 to 65 in a single generation is large — 16 points on an index where the gap between the top four models is only eight. Fable 5.2 at High effort scores 62, still ahead of every rival's best configuration.</p>
+<p><strong>Vals AI Vals Index v2.2 (release day):</strong> Fable 5.2 scores 71.31% and ranks 1 of 36 models tested, ahead of Claude Sonnet 5.5 at 70.85% and Gemini 4 Carbon at 70.45%. The Vals Index measures performance on realistic business and professional tasks rather than academic puzzles, so its verdict is the more relevant one for a small team buying a model to do real work.</p>
+<p><strong>FrontierCode 2.0 (Anthropic's own coding benchmark):</strong> Fable 5.2 scores 49.1% at XHigh effort, against 32.4% for Fable 5.1 — a roughly 50% improvement in coding capability in one generation. At High effort it scores 45.3%, nearly matching Opus 5.5's 45.5% at Max, for roughly half the cost per task. Coding is where most small teams will feel the difference first, because it is where accuracy saves the most rework. If you use AI to build software, read our <a href="/blog/kimi-k3-1-pro-explained-2026/">Kimi K3.1 Pro explainer</a> for how another new model compares. SemiAnalysis's GDPx benchmark, which grades models on open-ended professional work, puts Fable 5.2 at 16.4% — a modest number on a deliberately hard test, but the highest score in it.</p>
+<div class="tablewrap"><table>
+<caption>Benchmark scores checked November 10, 2026. Intelligence Index is Artificial Analysis v5.0.1; Vals Index is Vals AI v2.2.</caption>
+<thead><tr><th scope="col">Model</th><th scope="col">Intelligence Index</th><th scope="col">Vals Index</th><th scope="col">FrontierCode 2.0</th></tr></thead>
+<tbody>
+<tr><th scope="row">Claude Fable 5.2 Max</th><td>65 (rank 1)</td><td>71.31% (rank 1 of 36)</td><td>49.1% (XHigh)</td></tr>
+<tr><th scope="row">Claude Fable 5.2 High</th><td>62</td><td>—</td><td>45.3% (High)</td></tr>
+<tr><th scope="row">Gemini 4 Carbon</th><td>60</td><td>70.45%</td><td>—</td></tr>
+<tr><th scope="row">Claude Opus 5.5</th><td>59</td><td>—</td><td>45.5% (Max)</td></tr>
+<tr><th scope="row">GPT-6 Astra</th><td>57</td><td>—</td><td>—</td></tr>
+<tr><th scope="row">Claude Fable 5.1 Max</th><td>49</td><td>—</td><td>32.4%</td></tr>
+</tbody></table></div>
+<p class="fact"><strong>Quick fact:</strong> Fable 5.2's jump from 49 to 65 on the Intelligence Index is the largest single-generation gain at the top of that index in 2026 — bigger than the gap between the previous top three models combined.</p>
+<!-- AD SLOT: after-second-h2 -->
+<!-- <div class="ad" id="ad-after-h2-2" style="min-height:250px"></div> -->
+
+<h2 id="pricing">Pricing: 20% cheaper per token</h2>
+<p>On the Anthropic API, Fable 5.2 costs <strong>$8 per million input tokens and $40 per million output tokens</strong>, down from $10 and $50 for Fable 5.1. That is a clean 20% cut on both sides of the bill. A fast mode is available at $16 per million input tokens and $80 per million output tokens, for teams that will pay double for the quickest responses. For context, a token is roughly three-quarters of a word, so a million input tokens is about 750,000 words — roughly ten full-length novels of text in, for about $8.</p>
+<p>If you use Claude through a paid chat plan rather than the API, you do not see token prices at all; you pay the flat subscription and Fable 5.2 simply becomes the model your plan uses for its hardest work. The 20% cut matters most to teams that call the API directly — developers building features on top of Claude, or businesses running agents that make thousands of API calls a day. For those teams the saving is real: the same workload that cost $100 on Fable 5.1 costs $80 on Fable 5.2, assuming the same number of tokens. That last clause is where the story gets honest, and it is why the next section exists.</p>
+<div class="tablewrap"><table>
+<caption>API prices per million tokens, checked November 10, 2026. Confirm on Anthropic's pricing page before budgeting.</caption>
+<thead><tr><th scope="col">Model</th><th scope="col">Input (per 1M tokens)</th><th scope="col">Output (per 1M tokens)</th><th scope="col">Output speed</th></tr></thead>
+<tbody>
+<tr><th scope="row">Claude Fable 5.2</th><td>$8</td><td>$40</td><td>Up to 30% faster than 5.1</td></tr>
+<tr><th scope="row">Claude Fable 5.2 (fast mode)</th><td>$16</td><td>$80</td><td>Fastest tier</td></tr>
+<tr><th scope="row">Claude Fable 5.1</th><td>$10</td><td>$50</td><td>Previous generation</td></tr>
+</tbody></table></div>
+
+<h2 id="cost-per-task">The cost-per-task catch: cheaper per token, not always cheaper per job</h2>
+<p>Here is the honest angle the launch headlines skip. <strong>Fable 5.2 is cheaper per token, but it burns more tokens on hard tasks.</strong> The model thinks longer and writes more before answering, which is exactly why its scores are higher — and it is exactly why your bill is measured in tokens, not in answers. The right question is not "what does a token cost?" but "what does a finished task cost?" On that measure, Fable 5.2 is not always the cheapest option, and for routine work it is often the most expensive.</p>
+<p>Artificial Analysis publishes a weighted cost per Intelligence Index task, and the numbers are stark. Fable 5.2 Max costs <strong>$26.54 per task</strong>, against $10.04 for Opus 5.5 Max and $6.24 for GPT-6 Astra Max. The top-ranked model costs roughly two and a half times as much per completed task as the everyday model sitting just below it. The ranking and the value ranking are different lists, and a small team should buy from the value list.</p>
+<p>SemiAnalysis's GDPx benchmark tells the same story from a different angle: the average cost per professional task is <strong>$88.15 with Fable 5.2, against $67.16 with Fable 5.1</strong>. The new model is 20% cheaper per token and still about 31% more expensive per professional task, because it uses so many more tokens to get its better answer. That is not a flaw — the extra thinking is what produces the better result — but it is a fact your budget needs to know.</p>
+<p>There is a middle path, and it is the one most small teams should take. Fable 5.2 at High effort costs about <strong>$9.08 per task</strong> — less than Opus 5.5 Max, while scoring 62 on the Intelligence Index against Opus 5.5's 59. At Medium effort, Fable 5.2 matches Opus 5.5's top score for roughly 40% of the cost per task. In plain terms: run Fable 5.2 at High or Medium for most work, and reserve Max for the jobs where the extra accuracy is worth paying for. The effort setting is the single most valuable dial on this model — set it deliberately rather than leaving it at the default.</p>
+<p class="fact"><strong>The rule of thumb:</strong> if a task's answer is cheap to check and cheap to redo — a draft email, a summary, a first-pass outline — use the cheaper model. If a wrong answer is expensive — a bug shipped to production, a contract clause misread, a customer-facing reply — pay for Fable 5.2 at High. Cost per task, not cost per token, is the number that belongs in your budget.</p>
+
+<h2 id="context-window">The 1M-token context window: what it means in practice</h2>
+<p><strong>Fable 5.2 supports a context window of 1 million tokens, covering text and images.</strong> A context window is how much material the model can hold in mind at once. One million tokens is roughly 750,000 words — about fifteen average business books, or a medium-sized codebase, or several years of a small company's documents, all loaded in a single conversation.</p>
+<p>For a small team, that changes three kinds of work. First, long-document work: drop in a whole contract set, a year's worth of support tickets, or a full product manual and ask questions across all of it, instead of splitting files and losing the thread. Second, code work: an agent can read an entire repository rather than a few files, which is why the FrontierCode gains and the big context window arrive together. Third, multi-step agent work: the model can keep the plan, the intermediate results, and the original instructions in view at once, so long-running tasks drift less.</p>
+<p>Two cautions. A big window is not a substitute for good instructions: a million tokens of irrelevant material can dilute the answer, and the model still charges you for every token you send in. And a long context does not guarantee the model uses all of it equally well — the strongest results come when key facts are stated clearly rather than buried. Use the window for genuinely long inputs, and keep prompts focused. If you are building agents that do this kind of work, our <a href="/blog/ai-agents-explained-tools-lead-2026/">guide to AI agents</a> explains how to structure them so long tasks stay on track.</p>
+
+<h2 id="where-to-get">Where to use it: plans, Code, and the cloud</h2>
+<p>Fable 5.2 is available on paid Claude plans, in Claude Code, on the Claude Platform API as <code>claude-fable-5-2</code>, and through the three big clouds — Amazon Web Services, Google Cloud, and Azure. If your team already pays for Claude, the model should appear in the model picker; if you build on the API, it is a one-line change to the model name. Cloud availability matters if your company already routes AI spending through AWS or Azure, or if your data policies require a specific provider.</p>
+<p>One practical note: Anthropic still recommends <strong>Opus 5.5 as the everyday model</strong>. That is not a hedge; it is a pricing statement. Opus 5.5 is the model Anthropic thinks most daily work should run on, with Fable 5.2 reserved for the work that needs the extra capability. If your team is choosing a default model for a shared workspace or a customer-facing feature, Opus 5.5 is the sensible default, and Fable 5.2 is the upgrade you reach for deliberately. For teams comparing the newest models across vendors, our <a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon explainer</a> covers Google's rival release in the same plain-English format.</p>
+
+<h2 id="pacing">“Pacing, not pausing”: what Anthropic held back</h2>
+<p>The most unusual part of the launch is what Anthropic said about its own restraint. CEO Dario Amodei frames the release strategy as <strong>"pacing, not pausing"</strong>: some capabilities are deliberately held back — rapid self-improvement is the example Anthropic names — and the company says even more advanced models already exist internally but are not being released to the public yet.</p>
+<p>For a small business, the practical meaning is stability. A deliberately paced model is less likely to change behavior suddenly, and Fable 5.2 is not the ceiling: if you build a workflow around it today, expect a stronger model later, and keep the model choice in one place — a settings file or a single configuration — rather than hard-coding it into every prompt and script. The restricted Mythos 5.2 sibling is part of the same story: by limiting the cybersecurity and biology specialist to verified organizations, Anthropic is drawing a line between general and dual-use capability. Small teams need do nothing about this, unless they work in security or life sciences and want access, in which case verification is the route.</p>
+
+<h2 id="should-you-switch">Should your small team switch to Fable 5.2?</h2>
+<div class="verdict">
+<div><h3>Switch to Fable 5.2 for</h3><ul>
+<li>Complex coding and debugging, where the FrontierCode gains save real rework.</li>
+<li>Long-document analysis — contracts, research, support history — using the 1M-token window.</li>
+<li>Multi-step agent tasks where accuracy matters more than speed.</li>
+<li>Any job where a wrong answer costs more than the extra tokens.</li></ul></div>
+<div><h3>Stay on Opus 5.5 (or cheaper) for</h3><ul>
+<li>Everyday drafting, summaries, and first-pass outlines.</li>
+<li>High-volume, low-stakes tasks like categorizing tickets or rewriting product blurbs.</li>
+<li>Customer-facing chat where latency and cost per message matter.</li>
+<li>Any workflow where you have not yet measured cost per finished task.</li></ul></div>
+</div>
+<p>The sensible migration is a split, not a switch. Move your hardest 20% of tasks to Fable 5.2 at High effort, keep the rest where it is, and track the actual cost per finished task for a month. The benchmarks say the capability is real; the per-task numbers say the price depends entirely on how you use it. If you are setting up agents to take on that harder work, our <a href="/blog/best-no-code-ai-agent-builders-beginners-2026/">guide to no-code AI agent builders</a> covers the tools that can run them without a developer, and our <a href="/blog/tobira-site-agent-explained-website-ai-agent-2026/">Tobira Site Agent explainer</a> shows how AI agents are now showing up on the customer-facing side of small businesses too.</p>
+<!-- AD SLOT: before-faq -->
+<!-- <div class="ad" id="ad-before-faq" style="min-height:250px"></div> -->
+
+<section class="faq" aria-labelledby="faq">
+<h2 id="faq">Frequently asked questions</h2>
+<h3>What is Claude Fable 5.2?</h3>
+<p>Claude Fable 5.2 is Anthropic's newest flagship AI model, released on Monday, November 9, 2026. It sits at the top of the Artificial Analysis Intelligence Index with a score of 65, costs 20% less per token than Fable 5.1, and comes with a 1-million-token context window. It is available on paid Claude plans, in Claude Code, on the Claude Platform, and through AWS, Google Cloud, and Azure.</p>
+<h3>How much does Claude Fable 5.2 cost?</h3>
+<p>On the Anthropic API, Fable 5.2 costs $8 per million input tokens and $40 per million output tokens, down from $10 and $50 for Fable 5.1 — a 20% cut. A fast mode costs $16/$80. But the per-token price is not the whole story: Fable 5.2 burns more tokens on hard tasks, so the cost per completed task can be higher than cheaper models. Check the per-task figures in this guide before budgeting.</p>
+<h3>Is Claude Fable 5.2 better than Opus 5.5?</h3>
+<p>On raw capability, yes — Fable 5.2 tops the Artificial Analysis Intelligence Index at 65, ahead of Opus 5.5 at 59, and scores 49.1% on Anthropic's FrontierCode 2.0 coding benchmark at XHigh effort versus 32.4% for Fable 5.1. But Anthropic still recommends Opus 5.5 as the everyday model, and Opus 5.5 costs far less per completed task ($10.04 versus $26.54 for Fable 5.2 Max in Artificial Analysis' weighted measure). For routine work, Opus 5.5 is usually the better value.</p>
+<h3>What is Claude Mythos 5.2?</h3>
+<p>Claude Mythos 5.2 is a restricted sibling model released alongside Fable 5.2 on November 9, 2026. It is specialized for cybersecurity and biology, and access is limited to verified organizations. It is not available on the standard Claude plans or the public API, so most small teams will never interact with it directly.</p>
+<h3>Should a small business switch to Claude Fable 5.2?</h3>
+<p>Switch for your hardest work first: complex coding, long-document analysis, and multi-step agent tasks where Fable 5.2's accuracy genuinely saves rework. Keep routine drafting, summaries, and everyday chat on Opus 5.5 or a cheaper model, and use Fable 5.2 at High effort rather than Max for most jobs — it costs about $9.08 per task versus $26.54 at Max. Track your actual cost per finished task for a month before moving everything over.</p>
+</section>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Claude Fable 5.2 is a genuinely impressive release: the top-ranked model on the independent indexes, 20% cheaper per token, up to 30% faster, and carrying a 1-million-token context window that changes what long tasks look like. For a small team, the smart move is not to switch everything overnight but to aim the new model at the work where its accuracy pays for itself — hard coding, long documents, and multi-step agent jobs — while keeping everyday work on Opus 5.5. Measure cost per finished task, not cost per token, and set the effort level deliberately. All figures in this guide were checked on November 10, 2026; confirm prices on Anthropic's website before you commit a budget, because this is a fast-moving launch and the details can shift.</p>
+
+<aside class="author" aria-label="About the author">
+<p class="name">Written by PickMyApp Research Team</p>
+<p>We compare pricing pages, documentation, and published user reports, and we note the date every price was checked.</p>
+<p>We take no paid placements, and we update this guide when plans or features change. See <a href="/about/">how we research</a>.</p>
+</aside>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="/blog/kimi-k3-1-pro-explained-2026/">Kimi K3.1 Pro Explained: What the New Model Means for Small Teams</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/gemini-4-argon-explained-small-business/">Gemini 4 Argon Explained for Small Business</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/ai-agents-explained-tools-lead-2026/">AI Agents Explained: Tools That Work for Small Teams</a></h3><p class="meta">Read guide</p></li>
+<li class="card"><h3><a href="/blog/best-no-code-ai-agent-builders-beginners-2026/">Best No-Code AI Agent Builders for Beginners (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>© 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

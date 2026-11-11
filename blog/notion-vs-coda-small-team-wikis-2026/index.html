@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notion vs Coda for small team wikis</title>
+<meta name="description" content="Notion vs Coda for small team wikis: pricing per user vs per Doc Maker, docs vs databases, free-plan limits and which one fits a small team in 2026.">
+<meta name="keywords" content="Notion vs Coda, Coda vs Notion, Notion vs Coda small team, Notion vs Coda wiki, Superhuman Docs vs Notion, Coda pricing 2026, Notion pricing 2026, best team wiki tool">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/notion-vs-coda-small-team-wikis-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Notion vs Coda for small team wikis">
+<meta property="og:description" content="Notion vs Coda for small team wikis: pricing per user vs per Doc Maker, docs vs databases, free-plan limits and which one fits a small team in 2026.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/notion-vs-coda-small-team-wikis-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/notion-vs-coda-small-team-wikis-2026-1.jpg">
+<meta property="article:published_time" content="2026-11-11">
+<meta property="article:modified_time" content="2026-11-11">
+<meta property="article:section" content="Project Management">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notion vs Coda for small team wikis">
+<meta name="twitter:description" content="Notion vs Coda for small team wikis: pricing per user vs per Doc Maker, docs vs databases, free-plan limits and which one fits a small team in 2026.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/notion-vs-coda-small-team-wikis-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/notion-vs-coda-small-team-wikis-2026/#article", "headline": "Notion vs Coda for small team wikis", "description": "Notion vs Coda for small team wikis: pricing per user vs per Doc Maker, docs vs databases, free-plan limits and which one fits a small team in 2026.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/notion-vs-coda-small-team-wikis-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-11-11", "dateModified": "2026-11-11", "mainEntityOfPage": "https://pickmyapp.github.io/blog/notion-vs-coda-small-team-wikis-2026/", "articleSection": "Project Management", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Coda now called Superhuman Docs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Coda became Superhuman Docs on July 8, 2026, joining Grammarly, Mail and Go in the Superhuman suite. The pricing page moved to superhuman.com/plans/docs and the old coda.io/pricing address redirects there. The product is still Coda underneath - docs, tables, formulas, buttons and Packs - and this article uses the Coda name with the new brand noted."}}, {"@type": "Question", "name": "Which is cheaper for a small team, Notion or Coda?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on how many people write. Notion charges per member: Plus $10 a user a month billed annually, Business $20. Coda charges per Doc Maker only: Pro $12 a month billed annually, Business $33 - editors and viewers are free. A 20-person team with 3 writers pays $200 a month on Notion Plus but $36 a month on Coda Pro. A 5-person team where everyone writes pays $50 on Notion Plus against $60 on Coda Pro. Count your writers before you choose."}}, {"@type": "Question", "name": "Can I use Notion or Coda free as a team wiki?", "acceptedAnswer": {"@type": "Answer", "text": "Both have free plans with a catch. Notion Free caps a multi-member workspace at 1,000 blocks - a real team wiki passes that in its first month. Coda Free caps shared docs at 50 objects and 1,000 rows, with a 14-day grace period before the doc goes read-only, but personal unshared docs have no limits. Treat both free plans as trials for a team wiki, not as permanent homes."}}, {"@type": "Question", "name": "Is Notion or Coda better for a wiki?", "acceptedAnswer": {"@type": "Answer", "text": "Notion is better for a calm, readable wiki: a simple page tree anyone can navigate, strong public publishing and custom domains. Coda is better when the wiki is a working system: connected tables, formulas, buttons and automations that track work rather than just describing it. Pick Notion for reading and publishing; pick Coda for tracking and doing."}}, {"@type": "Question", "name": "Does Notion AI cost extra, and what about Coda AI?", "acceptedAnswer": {"@type": "Answer", "text": "Notion's standalone AI add-on was retired in May 2025. Full Notion AI - agent, meeting notes, enterprise search - is bundled into the $20-a-member Business plan only; Free and Plus get a limited trial. Coda's Docs AI is a beta included in Pro under fair-use limits, and Pro also includes an MCP server for AI assistants. Neither tool's AI replaces keeping the wiki itself current."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Project Management", "item": "https://pickmyapp.github.io/category/project-management/"}, {"@type": "ListItem", "position": 3, "name": "Notion vs Coda", "item": "https://pickmyapp.github.io/blog/notion-vs-coda-small-team-wikis-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/project-management/">Project Management</a></li>
+<li aria-current="page">Notion vs Coda</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Notion vs Coda for small team wikis</h1>
+<ul class="metaline">
+<li><span class="tag">Project Management</span></li>
+<li>Published <time datetime="2026-11-11"><strong>Nov 11, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-11"><strong>November 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>Notion and Coda are both all-in-one docs that small teams use as wikis, but they are built around different ideas. Notion is a workspace of pages, databases and wikis with a clean, calm interface; Coda - renamed Superhuman Docs in July 2026 - is a doc that behaves like an app, with connected tables, formulas, buttons and automations. On price, Notion charges per member (Plus $10 a user a month billed annually, Business $20) while Coda charges per Doc Maker only (Pro $12 a month billed annually, Business $33) and editors and viewers are free - so a team where few people write and many read pays far less on Coda. On free plans, Notion caps a multi-member workspace at 1,000 blocks while Coda caps shared docs at 50 objects and 1,000 rows. Pick Notion if your team wants a calm wiki and simple publishing; pick Coda if your wiki is really a working database with buttons and automations.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/notion-vs-coda-small-team-wikis-2026-1.jpg" width="1280" height="720" alt="Illustration of a small team building a shared wiki with linked docs, tables and pages on a laptop" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-each-is">What each tool actually is</a></li><li><a href="#pricing">Pricing: per member vs per Doc Maker - the math that decides it</a></li><li><a href="#free-plans">The free plans: where each one actually stops</a></li><li><a href="#wiki-features">As a wiki: structure, search, publishing and permissions</a></li><li><a href="#who-should-use">Which one for your team</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-each-is">What each tool actually is</h2>
+<p>Notion and Coda look alike on a pricing page - two all-in-one docs with pages, tables and AI - and the comparison articles that treat them as interchangeable miss the difference that decides the choice. They are built around different ideas of what a document is.</p>
+<p><strong>Notion is a workspace.</strong> Pages nest inside pages, pages hold databases, databases hold views, and the whole thing becomes the team's wiki, handbook, meeting notes and project tracker at once. The interface is calm and deliberately plain: a page is a page, and the structure is the tree. Notion's strength for a wiki is exactly that plainness - anyone can open a page, read it, and add a line without learning a system. Its publishing is simple too: a page can become a public site, and Notion Sites adds a custom domain for a reported $8 a month per domain billed annually.</p>
+<p><strong>Coda is a doc that behaves like an app.</strong> A Coda doc is a page, but the page holds connected tables, formulas, buttons that run actions, automations, and Packs - integrations that pull live data from Slack, Google Calendar and dozens of other tools. Where Notion's database is a way to organise pages, Coda's table is a way to compute: a row can trigger a Slack message, a button can change a status and notify the owner, a formula can roll up a budget. That is why teams that build trackers, approval flows and lightweight internal tools in Coda rarely go back to a plain wiki - and why teams that only want to write docs find Coda heavier than they need.</p>
+<p>One naming note before the pricing: Coda became <strong>Superhuman Docs</strong> on July 8, 2026, joining Grammarly, Mail and Go in the Superhuman suite, and the pricing page moved to superhuman.com/plans/docs. The product is still Coda underneath, and this article calls it Coda with the new name noted - but if you search for it, the current brand is Superhuman Docs, and the old coda.io/pricing address now redirects.</p><h2 id="pricing">Pricing: per member vs per Doc Maker - the math that decides it</h2>
+<p>This is the section that actually decides the choice for most small teams, because the two tools charge for different people.</p>
+<table>
+<thead><tr><th></th><th>Notion</th><th>Coda (Superhuman Docs)</th></tr></thead>
+<tbody>
+<tr><td><strong>Free</strong></td><td>$0; 1,000-block cap once a workspace has 2+ members; 10 guests; 7-day page history</td><td>$0; shared docs capped at 50 objects and 1,000 rows; 7-day version history; 1 GB attachments/doc</td></tr>
+<tr><td><strong>Mid tier</strong></td><td>Plus: $10/user/month billed annually ($12 monthly)</td><td>Pro: $12/Doc Maker/month billed annually ($15 monthly)</td></tr>
+<tr><td><strong>Team tier</strong></td><td>Business: $20/user/month billed annually ($24 monthly)</td><td>Business: $33/Doc Maker/month billed annually ($40 monthly)</td></tr>
+<tr><td><strong>Who pays</strong></td><td>Every member of the workspace</td><td>Only Doc Makers - editors and viewers are free</td></tr>
+<tr><td><strong>AI</strong></td><td>Full Notion AI bundled in Business only</td><td>Docs AI (beta) in Pro, under fair-use limits</td></tr>
+</tbody>
+</table>
+<p>Prices as published on the vendors' pages in October and November 2026 - confirm them before you budget. Two discrepancies to note: some third-party sources still list Coda's old $10 and $30 figures, or $36 for the Team tier; the official Superhuman Docs page lists $12 and $33, and that is the figure to budget from.</p>
+<p>Work the example. A 20-person team where 3 people write the wiki and 17 read it: on Notion Plus at $10 a user a month billed annually, the bill is $200 a month, $2,400 a year. On Coda Pro at $12 a Doc Maker a month billed annually, the bill is $36 a month, $432 a year - because the 17 readers cost nothing. That is the single most important pricing fact in this comparison, and it is the reason teams with a few writers and many readers keep choosing Coda. Flip the example and the answer flips: a 5-person team where everyone writes pays $50 a month on Notion Plus against $60 on Coda Pro, and Notion is cheaper - and Notion Business at $20 a member is cheaper than Coda Business at $33 a Doc Maker for the same all-writers team.</p>
+<p>Notion's AI packaging matters here too. The standalone Notion AI add-on ($10 a member a month) was retired in May 2025, and full Notion AI - Notion Agent, AI Meeting Notes, Enterprise Search - is now bundled into Business only. A Plus team that wants the full AI is buying an upgrade to $20 a member, not an add-on. Free and Plus get only a limited AI trial. Coda's Docs AI is a beta included in Pro under fair-use limits, and Pro also includes an MCP server - the Model Context Protocol connection that lets AI assistants work inside your docs.</p><div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/notion-vs-coda-small-team-wikis-2026-2.jpg" width="1280" height="720" alt="Illustration of two wiki layouts side by side: a clean page tree and a connected database table" decoding="async"></div><h2 id="free-plans">The free plans: where each one actually stops</h2>
+<p>Both tools have a free plan, and both free plans have a limit designed to push a real team to pay. The limits are different, and which one bites first tells you which tool fits your team.</p>
+<p><strong>Notion Free</strong> gives unlimited blocks for a single-member workspace - and then caps the whole workspace at 1,000 blocks the moment a second member joins. A block is a paragraph, a heading, a bullet, a table row: a real team wiki passes 1,000 blocks in its first month. That cap is the limit that forces small teams to upgrade, and it is why Notion's free plan is best read as a personal trial rather than a team plan. It also allows up to 10 guests, 5 MB file uploads and 7-day page history.</p>
+<p><strong>Coda Free</strong> caps shared docs at 50 objects - pages, tables, views, buttons, formulas - and 1,000 table rows per doc. Cross a limit and you get a 14-day grace period, after which the doc becomes read-only until you upgrade or trim it. But personal docs you have not shared with anyone have no object or row limits at all. That makes Coda's free plan genuinely usable for a solo builder or for a team that keeps its working docs personal and shares only finished pages - and a trap for a team that builds one big shared wiki doc and grows past 50 objects in a month.</p>
+<p>The honest summary: Notion's free plan breaks on team size, Coda's breaks on shared-doc size. If your wiki is many small pages written by many people, Notion's block cap bites first. If your wiki is a few big working docs with tables and buttons, Coda's object cap bites first.</p><h2 id="wiki-features">As a wiki: structure, search, publishing and permissions</h2>
+<p>A team wiki has four jobs: hold the knowledge, let people find it, let the right people edit it, and keep it from going stale. Here is how the two compare on each.</p>
+<p><strong>Structure.</strong> Notion's page tree is the simplest mental model in the category: pages inside pages, a sidebar that shows the shape of the knowledge, databases that can be viewed as a table, board, calendar, timeline or gallery. A new hire can navigate it in minutes. Coda's structure is flatter and more powerful: docs hold pages, pages hold tables, and tables can be connected across docs - a change in one table updates the view in another. That power is real for a team that wants a single source of truth, and it is also a learning curve: a Coda doc built by a power user can be hard for a newcomer to read, because the logic lives in formulas and buttons rather than in headings.</p>
+<p><strong>Search and AI.</strong> Both now pitch AI search. Notion's full AI, including Enterprise Search, sits in Business. Coda's Docs AI is in Pro and there is an MCP server, so an AI assistant can query your docs - a feature that matters more every month as teams start asking their assistants questions about their own knowledge. Neither replaces a well-organised page tree, and both are worth less than the discipline of keeping the wiki current.</p>
+<p><strong>Permissions and locking.</strong> This is where the paid tiers diverge. Notion Business adds private teamspaces, SAML SSO, granular permissions and page verification. Coda Business - formerly the Team plan - adds private team folders, doc and page locking, cross-doc sync and unlimited version history. For a wiki, page locking is the feature that matters: it stops a well-meaning colleague editing the canonical onboarding page. Notion puts its granular permissions in Business; Coda puts locking in Business too. On the mid tier, Notion Plus has no page locking and Coda Pro has hidden pages but not locking - so a team that needs locked canonical pages is buying the top tier on either tool.</p>
+<p><strong>Publishing.</strong> Notion is the stronger publisher: pages become public sites with a clean reading experience, and custom domains are available. Coda's sharing is built around collaboration inside the doc rather than public publishing. If your wiki is also your public help centre or handbook, Notion wins. If your wiki is internal and your tables do the work, Coda wins. Our <a href="/blog/notion-vs-asana-project-tracking/">Notion vs Asana for project tracking</a> guide covers Notion's project side, and our <a href="/blog/notion-vs-clickup-startups/">Notion vs ClickUp for startups</a> comparison covers the other all-in-one it is most often weighed against.</p><h2 id="who-should-use">Which one for your team</h2>
+<p><strong>Pick Notion if</strong> your team wants a calm wiki that anyone can read and edit without training; if you publish pages publicly or want a simple custom-domain site; if everyone on the team writes and the per-member price is honest for you; or if you want full AI - meeting notes, agent, enterprise search - bundled into one $20-a-member Business plan.</p>
+<p><strong>Pick Coda if</strong> your wiki is really a working system - trackers, approvals, budgets, buttons that do things - and you want tables, formulas and automations rather than just pages; if only a few people write and many read, so the per-Doc-Maker price saves you hundreds a year; if you want an MCP server so AI assistants can work inside your docs; or if your free-plan usage is personal docs, where Coda puts no size limits at all.</p>
+<p><strong>Pick neither yet if</strong> you have not written the wiki. Both tools reward teams that already know what their knowledge looks like, and both punish teams that buy the tool hoping it will organise them. Write the ten pages that matter - onboarding, how we work, who decides what, where things live - in a plain doc first. Then the choice is a pricing and structure decision, not a hope. Our <a href="/blog/best-free-project-management-tools-startups-2026/">best free project management tools for startups</a> guide covers the wider field if your wiki is really a project tracker in disguise, and our <a href="/blog/best-ai-writing-tools-small-business-2026/">best AI writing tools for small business</a> guide covers the drafting side of the stack either tool sits in.</p>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>Is Coda now called Superhuman Docs?</h3><p>Yes. Coda became Superhuman Docs on July 8, 2026, joining Grammarly, Mail and Go in the Superhuman suite. The pricing page moved to superhuman.com/plans/docs and the old coda.io/pricing address redirects there. The product is still Coda underneath - docs, tables, formulas, buttons and Packs - and this article uses the Coda name with the new brand noted.</p><h3>Which is cheaper for a small team, Notion or Coda?</h3><p>It depends on how many people write. Notion charges per member: Plus $10 a user a month billed annually, Business $20. Coda charges per Doc Maker only: Pro $12 a month billed annually, Business $33 - editors and viewers are free. A 20-person team with 3 writers pays $200 a month on Notion Plus but $36 a month on Coda Pro. A 5-person team where everyone writes pays $50 on Notion Plus against $60 on Coda Pro. Count your writers before you choose.</p><h3>Can I use Notion or Coda free as a team wiki?</h3><p>Both have free plans with a catch. Notion Free caps a multi-member workspace at 1,000 blocks - a real team wiki passes that in its first month. Coda Free caps shared docs at 50 objects and 1,000 rows, with a 14-day grace period before the doc goes read-only, but personal unshared docs have no limits. Treat both free plans as trials for a team wiki, not as permanent homes.</p><h3>Is Notion or Coda better for a wiki?</h3><p>Notion is better for a calm, readable wiki: a simple page tree anyone can navigate, strong public publishing and custom domains. Coda is better when the wiki is a working system: connected tables, formulas, buttons and automations that track work rather than just describing it. Pick Notion for reading and publishing; pick Coda for tracking and doing.</p><h3>Does Notion AI cost extra, and what about Coda AI?</h3><p>Notion&#x27;s standalone AI add-on was retired in May 2025. Full Notion AI - agent, meeting notes, enterprise search - is bundled into the $20-a-member Business plan only; Free and Plus get a limited trial. Coda&#x27;s Docs AI is a beta included in Pro under fair-use limits, and Pro also includes an MCP server for AI assistants. Neither tool&#x27;s AI replaces keeping the wiki itself current.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Notion vs Coda for a small team wiki is not a features tie to break with a checklist - it is a pricing and structure choice. Notion is the calm workspace: a page tree anyone can read, strong publishing, and a per-member price that is honest when everyone writes. Coda is the doc that works: connected tables, formulas, buttons and automations, and a per-Doc-Maker price that saves hundreds a year when few people write and many read. Count your writers, write the ten pages that matter first, and try the free plan of the one whose limit bites you last - then check the vendor pricing page on the day you pay, because both tools have changed their prices and their names in the last year.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/notion-vs-asana-project-tracking/">Notion vs Asana for project tracking</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/notion-vs-clickup-startups/">Notion vs ClickUp for startups</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-free-project-management-tools-startups-2026/">Best free project management tools for startups (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-ai-writing-tools-small-business-2026/">Best AI writing tools for small business (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

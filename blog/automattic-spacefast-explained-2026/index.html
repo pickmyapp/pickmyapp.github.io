@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month, and what it means for small teams and side projects (2026)</title>
+<meta name="description" content="Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month - what it is, what it costs, and what it means for small teams (2026).">
+<meta name="keywords" content="Automattic Spacefast, Spacefast explained, Spacefast pricing, deploy apps built with ChatGPT, Claude Cursor deploy app, Spacefast vs Vercel, AI app hosting 2026, spacefast.com">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/automattic-spacefast-explained-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month, and what it means for small teams and side projects (2026)">
+<meta property="og:description" content="Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month - what it is, what it costs, and what it means for small teams (2026).">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/automattic-spacefast-explained-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/automattic-spacefast-explained-2026-1.jpg">
+<meta property="article:published_time" content="2026-11-11">
+<meta property="article:modified_time" content="2026-11-11">
+<meta property="article:section" content="Developer Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month, and what it means for small teams and side projects (2026)">
+<meta name="twitter:description" content="Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month - what it is, what it costs, and what it means for small teams (2026).">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/automattic-spacefast-explained-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/automattic-spacefast-explained-2026/#article", "headline": "Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month, and what it means for small teams and side projects (2026)", "description": "Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month - what it is, what it costs, and what it means for small teams (2026).", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/automattic-spacefast-explained-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-11-11", "dateModified": "2026-11-11", "mainEntityOfPage": "https://pickmyapp.github.io/blog/automattic-spacefast-explained-2026/", "articleSection": "Developer Tools", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Automattic Spacefast?", "acceptedAnswer": {"@type": "Answer", "text": "Spacefast is a new Automattic company, launched November 9, 2026, that publishes websites and apps built with AI tools. It is not an AI builder: your agent - ChatGPT, Claude, Cursor, Claude Code, Codex, Grok Bot and 20-plus others - builds the app, and Spacefast gives the agent building instructions and a database, then puts the result online with a private link. Each project lives in a Space with its own sharing controls, version history and built-in database."}}, {"@type": "Question", "name": "How much does Spacefast cost?", "acceptedAnswer": {"@type": "Answer", "text": "Personal is free with $1 of usage a month, 20 Spaces and 20 custom domains, no card required. Go costs $5 a month with $5 of usage, 100 Spaces and hourly database backups. Pro costs $15 a month with $15 of usage, 500 Spaces, team roles and five members free (then $15 per extra member). Enterprise is custom priced. Overage rates beyond included usage are not published, so confirm on spacefast.com before budgeting."}}, {"@type": "Question", "name": "Is Spacefast better than Vercel or Netlify?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your workflow. Spacefast's edge is agent-native publishing: the agent deploys from inside the chat, with no Git setup, no deploy configuration and no separate database step, and one Space can hold work from Claude, ChatGPT and Cursor at once. If your team already lives in Git and has a working Vercel or Netlify pipeline, Spacefast adds a second home for projects that could live in the first - the advantage is smallest there."}}, {"@type": "Question", "name": "Can I deploy an app built in ChatGPT or Claude with Spacefast?", "acceptedAnswer": {"@type": "Answer", "text": "Yes - that is the core use case. Spacefast is an official plugin on Claude, ChatGPT and Grok Bot, and other agents connect via API, CLI or an MCP server. Connect once, ask the agent for a website, app or deck, and get a live link back; ask for changes the same way. You can also drag and drop a folder, connect a Git repository, or use the CLI."}}, {"@type": "Question", "name": "Is Spacefast free to try?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Personal plan is $0 with no card: $1 of usage included every month, 20 Spaces, 20 custom domains and commercial use allowed. The first publish needs no account. The inference bill for the AI assistant itself stays with that assistant's subscription - Spacefast only charges to publish and run what you build."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Developer Tools", "item": "https://pickmyapp.github.io/category/developer-tools/"}, {"@type": "ListItem", "position": 3, "name": "Spacefast explained", "item": "https://pickmyapp.github.io/blog/automattic-spacefast-explained-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/developer-tools/">Developer Tools</a></li>
+<li aria-current="page">Spacefast explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month, and what it means for small teams and side projects (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Developer Tools</span></li>
+<li>Published <time datetime="2026-11-11"><strong>Nov 11, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-11"><strong>November 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>Spacefast is a new Automattic company, launched November 9, 2026, that publishes websites and apps built with AI tools - it is not an AI builder itself. You keep building in ChatGPT, Claude, Cursor or 20-plus other agents; Spacefast gives that agent building instructions and a database, then puts the result online with a private link your team can comment on. The Personal plan is free with $1 of usage a month, 20 Spaces and 20 custom domains and no card required. Go costs $5 a month with $5 of usage, 100 Spaces and hourly database backups. Pro costs $15 a month with $15 of usage and team features. The honest catch: launch coverage and the pricing page disagree on a few figures, overage rates are unpublished, and early testers have flagged rough edges - so check spacefast.com before you budget around it.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/automattic-spacefast-explained-2026-1.jpg" width="1280" height="720" alt="Illustration of a small team watching an AI coding assistant publish their web app to a live link on a laptop screen" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-spacefast">What Spacefast actually is - and what it is not</a></li><li><a href="#how-publishing-works">How publishing works: four ways to get an app live</a></li><li><a href="#what-it-costs">What Spacefast costs - and where the launch numbers disagree</a></li><li><a href="#spacefast-vs-vercel">Spacefast vs Vercel, Netlify and Render - the honest comparison</a></li><li><a href="#who-should-use">Who should try it - and who should wait</a></li><li><a href="#risks">The honest risks of a two-day-old launch</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-is-spacefast">What Spacefast actually is - and what it is not</h2>
+<p>Automattic, the company behind WordPress.com, launched Spacefast on November 9, 2026 as a new company inside the group, led by Batuhan İçöz. It had soft-launched about seven weeks earlier, Mullenweg wrote on September 23. The public launch is the moment it became something a small team can plan around, and the first thing to understand is the sentence on its own site: "Spacefast is not an AI builder."</p>
+<p>That sentence is the whole product. Spacefast does not write your app. It does not generate a landing page from a prompt, and it does not compete with the tools that do. Instead it is the layer after the building: a publishing and hosting home for whatever your AI already made. You ask ChatGPT, Claude, Cursor, Claude Code, Codex, Grok Bot, OpenClaw, Hermes, Muse, or one of more than twenty supported agents to build something, and Spacefast gives that agent expert building instructions and a database before it starts, then puts the result online with a private link your team can comment on.</p>
+<p>Every project lives in a "Space" - a hosted address with its own sharing controls, version history and a built-in database. The first publish needs no account on the Personal plan and no card. That matters for the way small teams actually work: one person can prototype in Claude, another can iterate in ChatGPT, a third can fix a bug in Cursor, and all three land in the same shared space instead of three separate accounts and three separate deploy pipelines.</p>
+<p>Spacefast runs on WordPress.com infrastructure, which Automattic says handles more than 15 billion page views a month. That is the quiet reassurance in the launch: the hosting underneath is not a startup's first data center, it is the platform that already serves a large share of the web. The Enterprise tier adds SOC 2 compliance, SAML single sign-on, SCIM and audit logs for teams that need them.</p><h2 id="how-publishing-works">How publishing works: four ways to get an app live</h2>
+<p>Spacefast lists four ways to publish, and the differences between them decide who the product is actually for.</p>
+<p><strong>1. From an agent chat.</strong> This is the headline path. Spacefast is an official plugin on Claude, ChatGPT and Grok Bot, and any other agent can connect through an API, a command-line tool or an MCP server - the Model Context Protocol, the open standard that lets AI apps reach outside tools. You connect ChatGPT, Claude or Cursor once, ask for a website, an app or a slide deck, and get a live link back. Ask for changes the same way, in the same chat. The MCP server works on every plan, including the free Personal plan.</p>
+<p><strong>2. Drag and drop.</strong> Drop a folder or a zip onto the dashboard and it goes live. This is the path for the app you already built somewhere else, or the one your agent exported as files.</p>
+<p><strong>3. From Git.</strong> Connect a repository and pushes to the main branch deploy to production, while other branches get preview links. This is the path that makes Spacefast usable by a team with real review habits rather than only by a solo prototyper.</p>
+<p><strong>4. From the command line.</strong> A CLI for the developers who want deploys in a script rather than a browser tab.</p>
+<p>What you can publish is broad: websites, full apps built with Next.js, Astro, TanStack Start or PHP, and slide decks. The launch release is explicit that the agent does the building and Spacefast does the publishing, and that split has a billing consequence worth naming: the inference bill stays with whichever assistant you already pay for. You pay Spacefast only to publish and run what you build. If you are already paying $20 a month for ChatGPT Plus or Claude Pro, Spacefast does not replace that subscription - it sits on top of it.</p><div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/automattic-spacefast-explained-2026-2.jpg" width="1280" height="720" alt="Illustration comparing publishing an app from an AI chat, from a Git repository, and by dragging a folder onto a hosting dashboard" decoding="async"></div><h2 id="what-it-costs">What Spacefast costs - and where the launch numbers disagree</h2>
+<p>Spacefast's pricing page lists four tiers. Quote the pricing page, not the launch release, because the two disagree on details - and the disagreements are exactly the kind of thing that costs a small team money if it budgets from the press release.</p>
+<table>
+<thead><tr><th>Plan</th><th>Price</th><th>Included usage</th><th>Spaces / domains</th><th>Who it fits</th></tr></thead>
+<tbody>
+<tr><td><strong>Personal</strong></td><td>$0, no card</td><td>$1/month</td><td>20 Spaces, 20 custom domains</td><td>First prototype, side project, trying it out</td></tr>
+<tr><td><strong>Go</strong></td><td>$5/month</td><td>$5/month</td><td>100 Spaces, 100 custom domains</td><td>Side projects that are actually live</td></tr>
+<tr><td><strong>Pro</strong></td><td>$15/month</td><td>$15/month</td><td>500 Spaces, 500 custom domains</td><td>Small teams shipping together</td></tr>
+<tr><td><strong>Enterprise</strong></td><td>Custom</td><td>Custom</td><td>Custom</td><td>Teams needing SSO, audit logs, SLA</td></tr>
+</tbody>
+</table>
+<p>Go adds hourly database backups, datacenter selection and email support. Pro adds team roles and wildcard domains, priority email support, and up to five members free - then $15 a month for each additional member. Enterprise adds SSO, SAML and SCIM, subteams, network policies and an egress firewall, log drains and dedicated support with an SLA.</p>
+<p>Now the discrepancies. The launch release describes Go as including "unlimited spaces" and Pro as "$15 a month per member." The pricing page lists 100 Spaces for Go and charges per member only beyond five on Pro. The pricing page is the document that bills you, so budget from it - and treat the release figures as marketing copy that was written before the page was final. A second gap matters more: the page does not state overage rates once your included usage runs out. A $5 Go plan with $5 of included usage is a good deal until a side project gets traffic; without published overage pricing, the monthly bill for a popular app is genuinely unknown. Check spacefast.com before you commit, and check it again before you put a client project on it.</p>
+<p>The fair comparison for the money: the free tier is genuinely usable. Twenty Spaces, twenty custom domains and commercial use allowed, with no card, is more generous than the free tiers of most app hosts. The $5 Go plan is the interesting one for side projects - it is priced like a coffee, and for a team that already pays for an AI assistant, it is the cheapest way to turn "the agent built it" into "here is the link."</p><h2 id="spacefast-vs-vercel">Spacefast vs Vercel, Netlify and Render - the honest comparison</h2>
+<p>The question most coverage skips is the one a small team actually asks: why not just deploy to Vercel or Netlify, which already host AI-built apps perfectly well? The answer is that Spacefast is not competing on hosting power. It is competing on the step before hosting.</p>
+<p>On Vercel, Netlify, Render or Railway, the workflow is: build in your agent, export the code, push it to Git, connect the repository, configure the deployment, add the database, set the environment variables. Every one of those steps is a place a non-developer gets stuck and a place a developer loses twenty minutes. Spacefast's pitch is that the agent does all of it from inside the chat - the agent asks Spacefast for the database and the domain and the deploy target instead of asking you. The product's own framing is that it "pre-answers the setup questions an agent would normally ask."</p>
+<p>That is a real advantage for a specific team: a founder and a designer and a marketer, none of them deploying apps every day, shipping a prototype they built with Claude. It is a smaller advantage for a team that already lives in Git and already has a Vercel pipeline, because for them the deploy step is already solved and Spacefast adds a second home for projects that could live in the first. Our <a href="/blog/vs-code-vs-cursor-beginners-2026/">VS Code vs Cursor for beginners</a> guide covers the coding-agent side of that workflow, and our <a href="/blog/entire-explained-former-github-ceo-agent-first-git-forge-2026/">Entire explained</a> guide covers the agent-first Git forge for teams that want the repository to be the centre of the workflow instead.</p>
+<p>The other honest comparison is with the AI builders themselves. ChatGPT, Claude and Cursor can already show you a preview of what they built, and tools like Vercel's v0 ship a deploy button. Spacefast's difference is that it is agent-neutral: the same Space can hold work from Claude, ChatGPT and Cursor at once, and the team shares one place rather than each person publishing from their own tool's preview link. If your whole team uses one AI tool, that neutrality buys you little. If your team is split across three, it is the whole point.</p><h2 id="who-should-use">Who should try it - and who should wait</h2>
+<p><strong>Try it this week if</strong> you are a small team or solo builder who already builds with an AI assistant and wants the shortest path from "the agent built it" to a live link; if your team is split across Claude, ChatGPT and Cursor and you want one shared home for the output; if you are prototyping a side project and the free tier's 20 Spaces and $1 of usage cover it; or if you are a non-developer founder who has been stuck at the deploy step and wants the agent to handle it.</p>
+<p><strong>Wait if</strong> you need predictable hosting bills - the unpublished overage rates make a traffic spike a billing unknown; if you already have a working Vercel or Netlify pipeline and your team lives in Git; if you need scheduled jobs to run longer than a few seconds, which an early tester flagged as a current limit; or if you are putting a client-facing production app on it in week one, before the rough edges found by early testers are fixed.</p>
+<p>The middle path is the sensible one: put the prototype on the free Personal plan, ship it to a real link, and see whether the agent-publish workflow saves your team time. The cost of trying is zero and the cost of leaving is a Git repository you already own. That is a reasonable bet for a side project, and a bad bet only if you treat a two-day-old launch as a permanent home on day one.</p><h2 id="risks">The honest risks of a two-day-old launch</h2>
+<p>A launch-week article that only praises the tool is not a review, so here is the other side. Spacefast launched publicly on November 9, 2026. There are no independent reviews yet, no published uptime history, and no long-term pricing commitment. Every source for this article is Automattic's own release, the product's own pages, or launch coverage that largely repeats them.</p>
+<p>Early hands-on testing, reported by TechTimes, found three things worth knowing: a setup link behaved like an admin credential, scheduled jobs were limited to five seconds, and the documentation contradicted its own project template in places. None is fatal for a prototype, but they are the reason to keep a production app on infrastructure you already trust for now.</p>
+<p>The pricing disagreements matter too: when the press release and the pricing page disagree about Go's Spaces cap and Pro's per-member wording, the page that bills you wins. Check spacefast.com on the day you sign up, not on the day you read this.</p>
+<p>Three questions to ask before you move a real project in: what is the overage rate when a Space gets real traffic? Can you export everything, including the database, if you leave? And what does the setup link actually grant? If the answers are good, the free tier is the cheapest way to find out whether agent-native publishing fits your team. Our <a href="/blog/ai-agents-explained-tools-lead-2026/">AI agents explained</a> guide covers the wider agent landscape Spacefast sits in.</p>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>What is Automattic Spacefast?</h3><p>Spacefast is a new Automattic company, launched November 9, 2026, that publishes websites and apps built with AI tools. It is not an AI builder: your agent - ChatGPT, Claude, Cursor, Claude Code, Codex, Grok Bot and 20-plus others - builds the app, and Spacefast gives the agent building instructions and a database, then puts the result online with a private link. Each project lives in a Space with its own sharing controls, version history and built-in database.</p><h3>How much does Spacefast cost?</h3><p>Personal is free with $1 of usage a month, 20 Spaces and 20 custom domains, no card required. Go costs $5 a month with $5 of usage, 100 Spaces and hourly database backups. Pro costs $15 a month with $15 of usage, 500 Spaces, team roles and five members free (then $15 per extra member). Enterprise is custom priced. Overage rates beyond included usage are not published, so confirm on spacefast.com before budgeting.</p><h3>Is Spacefast better than Vercel or Netlify?</h3><p>It depends on your workflow. Spacefast&#x27;s edge is agent-native publishing: the agent deploys from inside the chat, with no Git setup, no deploy configuration and no separate database step, and one Space can hold work from Claude, ChatGPT and Cursor at once. If your team already lives in Git and has a working Vercel or Netlify pipeline, Spacefast adds a second home for projects that could live in the first - the advantage is smallest there.</p><h3>Can I deploy an app built in ChatGPT or Claude with Spacefast?</h3><p>Yes - that is the core use case. Spacefast is an official plugin on Claude, ChatGPT and Grok Bot, and other agents connect via API, CLI or an MCP server. Connect once, ask the agent for a website, app or deck, and get a live link back; ask for changes the same way. You can also drag and drop a folder, connect a Git repository, or use the CLI.</p><h3>Is Spacefast free to try?</h3><p>Yes. The Personal plan is $0 with no card: $1 of usage included every month, 20 Spaces, 20 custom domains and commercial use allowed. The first publish needs no account. The inference bill for the AI assistant itself stays with that assistant&#x27;s subscription - Spacefast only charges to publish and run what you build.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Spacefast is a small, well-aimed launch: not another AI builder, but the missing step after the builder - a place where apps made by ChatGPT, Claude and Cursor go live without leaving the chat. Its case is the free tier, the $5 Go plan, the agent-neutral shared Space and the WordPress.com infrastructure underneath. Its limit is its age: it launched November 9, 2026, the pricing page and press release disagree on details, overage rates are unpublished, and early testers found rough edges. Try a prototype on the free plan, check spacefast.com before you budget, and keep production on infrastructure you already trust.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/vs-code-vs-cursor-beginners-2026/">VS Code vs Cursor for beginners compared (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/entire-explained-former-github-ceo-agent-first-git-forge-2026/">Entire explained: the former GitHub CEO&#x27;s agent-first Git forge (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/ai-agents-explained-tools-lead-2026/">AI agents explained: what they are and which tools lead in 2026</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/vokolla-explained-press-release-claude-cursor-gemini-2026/">Vokolla explained: write your product launch press release inside Claude, Cursor or Gemini (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plane: the open-source Jira alternative for small teams (2026)</title>
+<meta name="description" content="Plane: the open-source Jira alternative for small teams (2026) - self-host free with unlimited users, cloud from $6/seat/month, Jira importer, and the real cost vs Jira.">
+<meta name="keywords" content="Plane open source Jira alternative, Plane vs Jira, Plane pricing, Plane project management, self-hosted Jira alternative, Plane review 2026, open source project management small teams">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/plane-open-source-jira-alternative-small-teams-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Plane: the open-source Jira alternative for small teams (2026)">
+<meta property="og:description" content="Plane: the open-source Jira alternative for small teams (2026) - self-host free with unlimited users, cloud from $6/seat/month, Jira importer, and the real cost vs Jira.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/plane-open-source-jira-alternative-small-teams-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/plane-open-source-jira-alternative-small-teams-2026-1.jpg">
+<meta property="article:published_time" content="2026-11-11">
+<meta property="article:modified_time" content="2026-11-11">
+<meta property="article:section" content="Project Management">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plane: the open-source Jira alternative for small teams (2026)">
+<meta name="twitter:description" content="Plane: the open-source Jira alternative for small teams (2026) - self-host free with unlimited users, cloud from $6/seat/month, Jira importer, and the real cost vs Jira.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/plane-open-source-jira-alternative-small-teams-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/plane-open-source-jira-alternative-small-teams-2026/#article", "headline": "Plane: the open-source Jira alternative for small teams (2026)", "description": "Plane: the open-source Jira alternative for small teams (2026) - self-host free with unlimited users, cloud from $6/seat/month, Jira importer, and the real cost vs Jira.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/plane-open-source-jira-alternative-small-teams-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-11-11", "dateModified": "2026-11-11", "mainEntityOfPage": "https://pickmyapp.github.io/blog/plane-open-source-jira-alternative-small-teams-2026/", "articleSection": "Project Management", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Plane really free?", "acceptedAnswer": {"@type": "Answer", "text": "The self-hosted Community Edition is free with no user limit - you pay only for the server it runs on, usually $5 to $20 a month on a small virtual machine. The cloud Free plan is $0 for up to 12 users. Paid cloud plans start at Pro, $6 a seat a month billed annually ($8 monthly). The wiki, time tracking and some integrations are paid features, so the free tier is the core project manager, not the whole product."}}, {"@type": "Question", "name": "Is Plane a good Jira alternative for small teams?", "acceptedAnswer": {"@type": "Answer", "text": "For most small teams, yes. Plane covers Jira's core - work items, cycles (sprints), modules (epics), roadmaps, triage - in a cleaner, Linear-style interface, with a native Jira importer that maps issues, sprints and components across. It is strongest for teams that want Jira-style planning without Jira's price or complexity. It is weakest where Jira's ecosystem matters: Marketplace apps, deep enterprise reporting and advanced roadmaps."}}, {"@type": "Question", "name": "How hard is it to migrate from Jira to Plane?", "acceptedAnswer": {"@type": "Answer", "text": "Easier than most tool switches. Plane's Jira importer maps issues to work items with descriptions, comments, attachments and history, sprints to cycles, and components to modules. Two limits to plan for: epics import as regular work item types rather than Plane epics, and Jira Cloud users need a user CSV or are skipped. The importer is available on Plane Cloud and on Commercial Edition self-hosted plans."}}, {"@type": "Question", "name": "Can I self-host Plane, and what does it take?", "acceptedAnswer": {"@type": "Answer", "text": "Yes - the Community Edition is open source under AGPL-3.0 and runs on Docker or Kubernetes with Postgres and Redis. The Docker Compose path takes about ten minutes to start, but you own the upgrades, backups and security patches afterwards. A Kubernetes deployment needs real DevOps comfort. If you want the commercial features self-hosted, the Commercial Edition is free for 12 users and paid above that."}}, {"@type": "Question", "name": "Plane vs Linear: which should a small team pick?", "acceptedAnswer": {"@type": "Answer", "text": "Pick Linear if interface polish, keyboard speed and a mature hosted product matter most and you are happy to pay for them. Pick Plane if you want to own your data, self-host for free, or keep the option of leaving without losing your tool - the open-source Community Edition is the escape hatch Linear does not offer. Both are cleaner than Jira; the choice is ownership versus polish."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Project Management", "item": "https://pickmyapp.github.io/category/project-management/"}, {"@type": "ListItem", "position": 3, "name": "Plane explained", "item": "https://pickmyapp.github.io/blog/plane-open-source-jira-alternative-small-teams-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/project-management/">Project Management</a></li>
+<li aria-current="page">Plane explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Plane: the open-source Jira alternative for small teams (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Project Management</span></li>
+<li>Published <time datetime="2026-11-11"><strong>Nov 11, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-11"><strong>November 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>Plane is an open-source project management tool, licensed under AGPL-3.0, built to do Jira&#x27;s job - work items, sprints, roadmaps and triage - in a modern interface that borrows heavily from Linear. The self-hosted Community Edition is free with no user limit; the cloud Free plan covers up to 12 users, Pro costs $6 a seat a month billed annually ($8 monthly), and Business costs $13 billed annually. It ships native importers for Jira, Linear, Asana and ClickUp, so migrating off Jira is not a manual slog. The honest catch: self-hosting means you maintain the Postgres and Redis stack yourself, the interface is a step behind Linear on polish, and the wiki and time tracking are paid features - so the free tier is generous, but not the whole product.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/plane-open-source-jira-alternative-small-teams-2026-1.jpg" width="1280" height="720" alt="Illustration of a small software team planning a sprint on a clean kanban board with work items, cycles and a roadmap" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-plane">What Plane actually is</a></li><li><a href="#what-it-costs">What Plane costs - the real math for a small team</a></li><li><a href="#plane-vs-jira">Plane vs Jira: what you gain, what you lose</a></li><li><a href="#self-hosting">Self-hosting Plane: what it actually takes</a></li><li><a href="#who-should-use">Who should pick Plane - and who should not</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-is-plane">What Plane actually is</h2>
+<p>Plane is an open-source project management platform: one place for your tasks, projects, notes and roadmaps. The repository - makeplane/plane on GitHub - holds more than 58,000 stars as checked in August 2026, making it one of the most-starred open-source project trackers in existence. It is licensed under AGPL-3.0, which means the code is genuinely open and a team can run it on its own servers without paying Plane anything.</p>
+<p>The pitch is simple and it is aimed squarely at Jira. Plane covers the core of what a software team plans with: work items instead of issues, cycles instead of sprints, modules instead of epics, plus pages for a wiki, dashboards, and an intake queue called triage. The vocabulary is deliberately Jira-like so a team migrating off Jira does not have to relearn what a sprint is - only where the buttons are. The look and feel, though, borrows from Linear: clean, fast, keyboard-friendly, and a long way from the Jira configuration screens that small teams complain about.</p>
+<p>Plane comes in two editions. The Community Edition is the open-source one: free, no user limit, run it on Docker or Kubernetes on your own infrastructure. The Commercial Edition is the one Plane recommends for teams: free for up to 12 users in the cloud, with paid plans above that, and a self-hosted commercial option that adds the paid features to your own server. The distinction matters, because the free Community Edition does not include everything - the wiki, time tracking and some integrations sit in the paid tier, and the importer for Jira is available on Plane Cloud and on Commercial Edition plans when self-hosted.</p><h2 id="what-it-costs">What Plane costs - the real math for a small team</h2>
+<p>Plane's cloud pricing is per seat with a free tier, and the self-hosted Community Edition costs nothing beyond your own infrastructure. Here is the pricing page as read in October 2026 - confirm it on plane.so/pricing before you budget, because prices change.</p>
+<table>
+<thead><tr><th>Plan</th><th>Price</th><th>Key limits</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td><strong>Self-hosted Community</strong></td><td>$0</td><td>Unlimited users; you run it</td><td>Teams who want full data ownership</td></tr>
+<tr><td><strong>Cloud Free</strong></td><td>$0</td><td>Up to 12 users, 500 AI credits/seat</td><td>Small teams trying it out</td></tr>
+<tr><td><strong>Cloud Pro</strong></td><td>$6/seat/month billed annually ($8 monthly)</td><td>1,000 AI credits/seat, custom work-item types, time tracking</td><td>Mature small teams</td></tr>
+<tr><td><strong>Cloud Business</strong></td><td>$13/seat/month billed annually ($15 monthly)</td><td>2,000 AI credits/seat, recurring work items, intake forms, dashboards</td><td>Larger teams and PMOs</td></tr>
+<tr><td><strong>Enterprise Grid</strong></td><td>Custom</td><td>Flexible AI credits, enterprise controls</td><td>Regulated or very large teams</td></tr>
+</tbody>
+</table>
+<p>Plane also sells Plane One, a one-time perpetual self-host license for growing teams that want commercial features without a subscription - an unusual offer in a market where everything is a monthly seat, and one worth asking about if your team hates recurring bills.</p>
+<p>The comparison that makes Plane's case is the Jira bill. Atlassian raised Jira Cloud prices on October 13, 2026: for 1 to 100 users, Standard went from $9.05 to $9.70 per user per month, and Premium from $18.30 to $19.60. That is the sticker price - the real Jira bill for many teams is higher, because the workflow quietly assumes Marketplace apps, Atlassian Guard and Confluence on top. Plane's own pricing-page calculator prices a 10-person Jira-plus-Confluence stack at roughly $2,084 a year against $720 a year for Plane Pro, a claimed saving of about 65%. Treat that as a vendor claim, not an independent finding - but the direction is right: for a 10-person team, Plane Pro at $6 a seat billed annually is $720 a year, against $1,164 a year for Jira Standard alone at the new $9.70 rate, before Confluence or any Marketplace app. And the self-hosted Community Edition is $0 plus a $5-to-$20-a-month virtual machine, which is why indie hackers keep pointing at it.</p>
+<p>The free tier deserves a careful read. Twelve users on the cloud free plan covers a genuine small team - a founder, two developers, a designer and a marketer, with room to spare. But the free tier is the core project manager: the wiki, time tracking and some integrations are paid. If your team lives in the wiki, the free plan is a trial, not a home. Our <a href="/blog/clickup-pricing-explained-2026/">ClickUp pricing explained</a> guide covers a competitor whose free tier is broader in some places and narrower in others.</p><div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/plane-open-source-jira-alternative-small-teams-2026-2.jpg" width="1280" height="720" alt="Illustration comparing the cost of Jira and Plane for a 10-person team over one year" decoding="async"></div><h2 id="plane-vs-jira">Plane vs Jira: what you gain, what you lose</h2>
+<p>The honest comparison starts with what Plane deliberately copies. Work items have relations, custom types and custom properties, and you can view them as a list, board, calendar, Gantt chart or spreadsheet. Cycles are time-boxed sprints with burndown charts. Modules group repeatable work streams the way epics do. Triage is the intake queue where incoming requests wait before they become work. If your team already thinks in Jira's shapes, Plane feels familiar on day one - which is the point, and which is why the migration story matters more than the feature list.</p>
+<p><strong>The importer.</strong> Plane ships a documented Jira importer, available on Plane Cloud and on Commercial Edition plans when self-hosted. Issues become work items with descriptions, comments, attachments and history; sprints become cycles and components become modules; statuses and priorities are mapped during import. Two honest limits: epics import as regular work item types, not as Plane epics, and users from Jira Cloud need a user CSV or are skipped. That is still a long way from the manual copy-paste migration that kills most tool switches, and it is the single most practical reason a small team can actually leave Jira. Plane also ships importers for Linear, Asana and ClickUp. Our <a href="/blog/jira-alternatives-small-software-teams/">Jira alternatives for small software teams</a> guide covers the wider field, and our <a href="/blog/linear-vs-jira-software-teams/">Linear vs Jira</a> comparison covers the polished paid alternative Plane is most often measured against.</p>
+<p><strong>What you gain.</strong> Data ownership, if you self-host: your work lives on your server, in your Postgres database, under your control - including air-gapped installs, which the Commercial Edition supports. Speed and simplicity: Plane's interface is cleaner than Jira's, with less configuration to fight. Cost: free to self-host, and $6 a seat in the cloud against Jira's $9.70. And the open-source escape hatch: if Plane the company ever changes direction, the Community Edition code is yours.</p>
+<p><strong>What you lose.</strong> The ecosystem. Jira's Marketplace has thousands of apps; Plane's integration library is thinner, and teams that depend on a specific Jira app may find no equivalent. Polish: reviewers consistently put Plane a step behind Linear on interface polish and keyboard speed. Depth: Jira's advanced roadmaps, automation rules and reporting are deeper than Plane's, and large enterprises will feel the gap first. And support: the free Community Edition is docs-only, so a self-hosted team is its own support desk.</p><h2 id="self-hosting">Self-hosting Plane: what it actually takes</h2>
+<p>Self-hosting is Plane's headline feature and its most misunderstood one. "Free with unlimited users" is true, and it is also a job. The Community Edition runs on Docker or Kubernetes, backed by Postgres and Redis. The Docker Compose path genuinely takes about ten minutes for a developer who has done it before, according to hands-on reports - but ten minutes to start is not ten minutes to run. You own the upgrades, the backups, the Postgres maintenance, the Redis upkeep and the security patches. A Kubernetes deployment needs real DevOps comfort.</p>
+<p>The cost math for self-hosting is small but not zero. The usual figure quoted for a small team is $5 to $20 a month on a small virtual machine - a $5 VPS runs it for a handful of users. Against that, the cloud Free plan is $0 for up to 12 users with no server to maintain, and Pro is $6 a seat. For a 10-person team, the cloud Pro bill is $60 a month; self-hosting is $5 to $20 a month plus your time. If your time is worth more than $40 a month, the cloud plan wins. If your data must stay on your own infrastructure - a client requirement, a regulation, a principle - self-hosting wins and the price is irrelevant.</p>
+<p>The other self-hosting question is which edition you get. The Community Edition is the free open-source one. The Commercial Edition - the one with the wiki, time tracking, AI credits and the Jira importer - is free for 12 users when self-hosted, and paid above that. Read the pricing page carefully before you deploy: "self-host Plane free" and "self-host Plane with the features in the review you just read" are two different sentences.</p><h2 id="who-should-use">Who should pick Plane - and who should not</h2>
+<p><strong>Pick Plane if</strong> you are a small software team that finds Jira too expensive, too slow or too complex, and you want Jira-style planning without Atlassian's bill; if you want to own your data and can self-host, or you like the idea that the tool is open source and cannot be taken away; if your team is 12 people or fewer and the free cloud tier covers you; or if you are migrating off Jira and the native importer is the difference between switching and staying.</p>
+<p><strong>Skip Plane if</strong> you need the polish and keyboard speed of Linear and are willing to pay for it; if your workflow depends on a specific Jira Marketplace app with no Plane equivalent; if you need deep enterprise reporting, advanced roadmaps or a large admin team; or if you want a tool with no server to think about and no self-hosting decision to make - in which case the cloud Free plan is still worth a week, because it costs nothing to find out.</p>
+<p>The middle path is the sensible one for most small teams: start on the cloud Free plan with your real projects, run the Jira importer on a copy of your data, and live in it for two sprints. If the team stops asking where the buttons are, upgrade to Pro at $6 a seat. If the team misses Jira's depth, you have lost two weeks, not a budget. Our <a href="/blog/best-free-project-management-tools-startups-2026/">best free project management tools for startups</a> guide covers the wider free-tier field, and our <a href="/blog/asana-vs-monday-vs-clickup-small-teams/">Asana vs Monday vs ClickUp</a> comparison covers the hosted alternatives Plane competes with on features rather than on openness.</p>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>Is Plane really free?</h3><p>The self-hosted Community Edition is free with no user limit - you pay only for the server it runs on, usually $5 to $20 a month on a small virtual machine. The cloud Free plan is $0 for up to 12 users. Paid cloud plans start at Pro, $6 a seat a month billed annually ($8 monthly). The wiki, time tracking and some integrations are paid features, so the free tier is the core project manager, not the whole product.</p><h3>Is Plane a good Jira alternative for small teams?</h3><p>For most small teams, yes. Plane covers Jira&#x27;s core - work items, cycles (sprints), modules (epics), roadmaps, triage - in a cleaner, Linear-style interface, with a native Jira importer that maps issues, sprints and components across. It is strongest for teams that want Jira-style planning without Jira&#x27;s price or complexity. It is weakest where Jira&#x27;s ecosystem matters: Marketplace apps, deep enterprise reporting and advanced roadmaps.</p><h3>How hard is it to migrate from Jira to Plane?</h3><p>Easier than most tool switches. Plane&#x27;s Jira importer maps issues to work items with descriptions, comments, attachments and history, sprints to cycles, and components to modules. Two limits to plan for: epics import as regular work item types rather than Plane epics, and Jira Cloud users need a user CSV or are skipped. The importer is available on Plane Cloud and on Commercial Edition self-hosted plans.</p><h3>Can I self-host Plane, and what does it take?</h3><p>Yes - the Community Edition is open source under AGPL-3.0 and runs on Docker or Kubernetes with Postgres and Redis. The Docker Compose path takes about ten minutes to start, but you own the upgrades, backups and security patches afterwards. A Kubernetes deployment needs real DevOps comfort. If you want the commercial features self-hosted, the Commercial Edition is free for 12 users and paid above that.</p><h3>Plane vs Linear: which should a small team pick?</h3><p>Pick Linear if interface polish, keyboard speed and a mature hosted product matter most and you are happy to pay for them. Pick Plane if you want to own your data, self-host for free, or keep the option of leaving without losing your tool - the open-source Community Edition is the escape hatch Linear does not offer. Both are cleaner than Jira; the choice is ownership versus polish.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Plane is the most honest Jira alternative for a small team in 2026: the same planning vocabulary, a cleaner interface, a native importer that makes leaving Jira practical, and a price that starts at $0 - free to self-host with unlimited users, or $6 a seat a month in the cloud against Jira&#x27;s $9.70. Its limits are real: self-hosting is a job, the integration library is thinner than Jira&#x27;s, and the wiki and time tracking sit behind the paid tier. But for a team of 12 or fewer that wants Jira-style work without Atlassian&#x27;s bill, the free tier costs nothing to try - and two sprints in it will tell you more than any comparison article can.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/jira-alternatives-small-software-teams/">Jira alternatives for small software teams</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/linear-vs-jira-software-teams/">Linear vs Jira for software teams</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/best-free-project-management-tools-startups-2026/">Best free project management tools for startups (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/clickup-pricing-explained-2026/">ClickUp pricing explained: is it worth it in 2026</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>

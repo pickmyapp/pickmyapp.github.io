@@ -1412,6 +1412,54 @@
     "project management software for agencies pricing",
     "asana vs clickup vs monday for agencies"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:automattic-spacefast-explained-2026",
+   "displayName": "Automattic Spacefast explained: deploy AI-built apps from $5 a month (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/automattic-spacefast-explained-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month - what it is, what it costs, and what it means for small teams (2026).",
+   "representativeQueries": [
+    "automattic spacefast explained",
+    "spacefast pricing $5",
+    "deploy apps built with chatgpt claude cursor"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:plane-open-source-jira-alternative-small-teams-2026",
+   "displayName": "Plane: the open-source Jira alternative for small teams (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/plane-open-source-jira-alternative-small-teams-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Plane: the open-source Jira alternative for small teams (2026) - self-host free with unlimited users, cloud from $6/seat/month, Jira importer, and the real cost vs Jira.",
+   "representativeQueries": [
+    "plane open source jira alternative",
+    "plane pricing self-hosted",
+    "plane vs jira small teams"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:notion-vs-coda-small-team-wikis-2026",
+   "displayName": "Notion vs Coda for small team wikis (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/notion-vs-coda-small-team-wikis-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Notion vs Coda for small team wikis: pricing per user vs per Doc Maker, docs vs databases, free-plan limits and which one fits a small team in 2026.",
+   "representativeQueries": [
+    "notion vs coda small team",
+    "notion vs coda wiki",
+    "coda pricing per doc maker 2026"
+   ]
   }
  ],
  "host": {

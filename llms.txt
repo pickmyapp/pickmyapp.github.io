@@ -4,6 +4,9 @@
 
 ## Guides
 
+- [Meta Muse Ember explained: the $0.10-per-million-token model for coding agents (2026)](https://pickmyapp.github.io/blog/meta-muse-ember-explained-2026/): Meta Muse Ember explained: $0.10 per million input tokens for requests under 200K — the price step-up, benchmarks, and what it means for small dev teams.
+- [Insightly vs Zoho CRM compared (2026)](https://pickmyapp.github.io/blog/insightly-vs-zoho-crm-compared-2026/): Insightly vs Zoho CRM compared: Insightly starts at $29 a user a month, Zoho at $14 — project management vs price, with real 5-user costs (2026).
+- [Wrike vs Monday compared for agencies (2026)](https://pickmyapp.github.io/blog/wrike-vs-monday-compared-for-agencies-2026/): Wrike vs Monday compared for agencies: Wrike Business $25 a seat, Monday Pro $19 — proofing, guests and seat blocks change the real bill (2026).
 - [Automattic Spacefast explained: deploy AI-built apps from $5 a month (2026)](https://pickmyapp.github.io/blog/automattic-spacefast-explained-2026/): Automattic Spacefast explained: deploy apps built with ChatGPT, Claude and Cursor from $5 a month - what it is, what it costs, and what it means for small teams (2026).
 - [Plane: the open-source Jira alternative for small teams (2026)](https://pickmyapp.github.io/blog/plane-open-source-jira-alternative-small-teams-2026/): Plane: the open-source Jira alternative for small teams (2026) - self-host free with unlimited users, cloud from $6/seat/month, Jira importer, and the real cost vs Jira.
 - [Notion vs Coda for small team wikis (2026)](https://pickmyapp.github.io/blog/notion-vs-coda-small-team-wikis-2026/): Notion vs Coda for small team wikis: pricing per user vs per Doc Maker, docs vs databases, free-plan limits and which one fits a small team in 2026.

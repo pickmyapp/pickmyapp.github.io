@@ -1460,6 +1460,54 @@
     "notion vs coda wiki",
     "coda pricing per doc maker 2026"
    ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:meta-muse-ember-explained-2026",
+   "displayName": "Meta Muse Ember explained: the $0.10-per-million-token model for coding agents (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/meta-muse-ember-explained-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Meta Muse Ember explained: $0.10 per million input tokens for requests under 200K — the price step-up, benchmarks, and what it means for small dev teams.",
+   "representativeQueries": [
+    "meta muse ember explained",
+    "muse ember pricing $0.10",
+    "muse ember vs claude haiku coding agents"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:insightly-vs-zoho-crm-compared-2026",
+   "displayName": "Insightly vs Zoho CRM compared (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/insightly-vs-zoho-crm-compared-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Insightly vs Zoho CRM compared: Insightly starts at $29 a user a month, Zoho at $14 — project management vs price, with real 5-user costs (2026).",
+   "representativeQueries": [
+    "insightly vs zoho crm",
+    "insightly pricing $29",
+    "zoho crm vs insightly small business"
+   ]
+  },
+  {
+   "identifier": "urn:air:pickmyapp.github.io:article:wrike-vs-monday-compared-for-agencies-2026",
+   "displayName": "Wrike vs Monday compared for agencies (2026) — PickMyApp",
+   "url": "https://pickmyapp.github.io/blog/wrike-vs-monday-compared-for-agencies-2026/",
+   "type": "text/html",
+   "capabilities": [
+    "content-discovery",
+    "reading"
+   ],
+   "description": "Wrike vs Monday compared for agencies: Wrike Business $25 a seat, Monday Pro $19 — proofing, guests and seat blocks change the real bill (2026).",
+   "representativeQueries": [
+    "wrike vs monday agencies",
+    "wrike pricing business $25",
+    "monday pro vs wrike business"
+   ]
   }
  ],
  "host": {

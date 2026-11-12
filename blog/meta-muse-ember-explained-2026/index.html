@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Muse Ember explained: the $0.10-per-million-token AI model for coding agents, and what it means for small dev teams (2026)</title>
+<meta name="description" content="Meta Muse Ember explained: $0.10 per million input tokens for requests under 200K — the price step-up, benchmarks, and what it means for small dev teams.">
+<meta name="keywords" content="Meta Muse Ember, Muse Ember explained, Muse Ember pricing, $0.10 per million tokens, coding agents, Muse Wonder, Muse Spark, AI coding model 2026">
+<meta name="author" content="PickMyApp Research Team">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://pickmyapp.github.io/blog/meta-muse-ember-explained-2026/">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PickMyApp">
+<meta property="og:title" content="Meta Muse Ember explained: the $0.10-per-million-token AI model for coding agents, and what it means for small dev teams (2026)">
+<meta property="og:description" content="Meta Muse Ember explained: $0.10 per million input tokens for requests under 200K — the price step-up, benchmarks, and what it means for small dev teams.">
+<meta property="og:url" content="https://pickmyapp.github.io/blog/meta-muse-ember-explained-2026/">
+<meta property="og:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/meta-muse-ember-explained-2026-1.jpg">
+<meta property="article:published_time" content="2026-11-12">
+<meta property="article:modified_time" content="2026-11-12">
+<meta property="article:section" content="Emerging Tech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Meta Muse Ember explained: the $0.10-per-million-token AI model for coding agents, and what it means for small dev teams (2026)">
+<meta name="twitter:description" content="Meta Muse Ember explained: $0.10 per million input tokens for requests under 200K — the price step-up, benchmarks, and what it means for small dev teams.">
+<meta name="twitter:image" content="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/meta-muse-ember-explained-2026-1.jpg">
+<style>
+:root{--bg:#fff;--fg:#222;--mute:#8a8a8a;--line:#d4d4d4;--hl:#d9dad4;--sans:"Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;--pad:clamp(16px,4vw,48px)}
+@media(prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mute:#8d8d8d;--line:#3a3a3a;--hl:#2e2f2b}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+a:hover{background:var(--hl)}
+:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}
+.mono,.tag,time,.idx,.btn,.nav a,.ticker,.meta{font-family:var(--mono)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--fg);color:var(--bg);padding:8px;z-index:99}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px dashed var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:12px;font:700 20px var(--mono);letter-spacing:-.02em}
+.logo:hover{background:none}
+.logo img{width:32px;height:32px}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px dashed var(--line);padding:8px var(--pad) 20px}
+.nav.open{display:block}
+.nav ul{display:flex;flex-direction:column}
+.nav li a{display:block;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;text-transform:uppercase}
+.nav .btn{margin-top:16px}
+.burger{width:40px;height:40px;border:1px solid var(--fg);background:none;color:var(--fg);cursor:pointer;display:grid;place-content:center;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:currentColor}
+
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--fg);font-size:14px;text-transform:uppercase;background:none;color:var(--fg)}
+.btn:hover{background:var(--hl)}
+.btn-dark{background:var(--fg);color:var(--bg)}
+.btn-dark:hover{background:var(--fg);color:var(--bg);opacity:.85}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;font-size:13px;color:var(--mute);padding:14px 0;border-bottom:1px dashed var(--line)}
+.ticker div{display:inline-block;padding-left:100%;animation:tick 40s linear infinite}
+.ticker b{font-weight:400;color:var(--fg)}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none;padding-left:0}html{scroll-behavior:auto}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,7vw,88px)}
+.hero h1{font-size:clamp(34px,7vw,84px);line-height:1.02;letter-spacing:-.035em;font-weight:700;max-width:16ch}
+.hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,22px);line-height:1.35;color:var(--mute)}
+.hero .sub strong{color:var(--fg);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{margin-top:24px;font:13px var(--mono);color:var(--mute)}
+
+/* sections: index left, content right */
+.sec{display:grid;gap:24px;padding:clamp(40px,6vw,80px) 0;border-top:1px dashed var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:6px}
+.idx{font-size:14px}
+.sec-head .mute{font:13px var(--mono);color:var(--mute)}
+.sec h2{font-size:clamp(26px,4.4vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-bottom:8px}
+.lede{color:var(--mute);max-width:60ch;margin-bottom:8px}
+
+/* cards */
+.grid{display:grid;gap:0;border-top:1px dashed var(--line)}
+.card{display:flex;flex-direction:column;gap:12px;padding:20px 0;border-bottom:1px dashed var(--line)}
+.card:hover{background:var(--hl)}
+.card .thumb{border:1px solid var(--line);overflow:hidden;aspect-ratio:16/9;background:var(--hl)}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.tag{align-self:flex-start;font-size:12px;border:1px solid var(--fg);padding:2px 8px;text-transform:uppercase}
+.card h3{font-size:clamp(20px,2.4vw,26px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+.card h3 a:hover{background:none}
+.card h3 a::after{content:"";position:absolute;inset:0}
+.card{position:relative}
+.card p{color:var(--mute);font-size:15px}
+.meta{font-size:12px;color:var(--mute);margin-top:auto}
+
+.cat{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:8px;position:relative}
+.cat:hover{background:var(--hl)}
+.ico{width:44px;height:44px;border:1px solid var(--fg);display:grid;place-content:center;font:700 13px var(--mono)}
+.cat h3{font-size:22px;letter-spacing:-.02em;font-weight:700}
+.cat h3 a:hover{background:none}
+.cat h3 a::after{content:"";position:absolute;inset:0}
+.cat p{color:var(--mute);font-size:15px}
+.count{font:12px var(--mono);color:var(--mute)}
+
+.points{display:grid;border-top:1px dashed var(--line)}
+.point{padding:20px 0;border-bottom:1px dashed var(--line);display:grid;gap:6px}
+.point h3{font-size:22px;letter-spacing:-.02em}
+.point p{color:var(--mute);max-width:60ch}
+.point .idx{color:var(--mute)}
+
+.vs{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;border-bottom:1px dashed var(--line);position:relative}
+.vs:hover{background:var(--hl)}
+.vs h3{font-size:clamp(22px,3.4vw,38px);letter-spacing:-.03em;line-height:1.1}
+.vs h3 a:hover{background:none}
+.vs h3 a::after{content:"";position:absolute;inset:0}
+.vs p{font:13px var(--mono);color:var(--mute);margin-top:6px}
+.arrow{flex:none;width:32px;height:32px;border:1px solid var(--fg);display:grid;place-content:center;font:16px var(--mono)}
+
+.ad{margin:0 auto}
+
+/* footer */
+.site-footer{border-top:1px dashed var(--line);padding:48px 0 32px;font-size:14px}
+.fgrid{display:grid;gap:32px}
+.site-footer h2{font:13px var(--mono);color:var(--mute);margin-bottom:12px;text-transform:uppercase;font-weight:400}
+.site-footer li{padding:3px 0}
+.site-footer li a{font:13px var(--mono);text-transform:uppercase}
+.site-footer .blurb{max-width:42ch;color:var(--mute)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px dashed var(--line);font:12px var(--mono);color:var(--mute);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media(min-width:720px){
+ .grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr);column-gap:32px}
+ .fgrid{grid-template-columns:2fr 1fr 1fr 1fr}
+ .points{grid-template-columns:repeat(2,1fr);column-gap:32px}
+}
+@media(min-width:960px){
+ .burger{display:none}
+ .nav{display:block;position:static;border:0;padding:0;background:none}
+ .nav ul{flex-direction:row;align-items:center;gap:22px}
+ .nav li a{border:0;padding:4px 0;font-size:13px}
+ .nav .btn{margin:0 0 0 8px;padding:9px 14px}
+ .nav .btn:hover{background:var(--fg);opacity:.85}
+ .sec{grid-template-columns:minmax(120px,22%) 1fr;gap:32px}
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1180px){
+ .grid.g3{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- article ---------- */
+.crumbs{padding:20px 0 8px;font:13px var(--mono);color:var(--mute)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0;padding:0}
+.crumbs li+li::before{content:"/";margin-right:8px}
+.crumbs a{color:var(--fg)}
+.art-h1{font-size:clamp(32px,6.2vw,80px);line-height:1.03;letter-spacing:-.035em;font-weight:700;padding:clamp(16px,3vw,40px) 0 clamp(20px,3vw,32px);max-width:20ch}
+.metaline{display:flex;flex-wrap:wrap;gap:6px 24px;padding:14px 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--mute);margin:0;list-style:none}
+.metaline strong{color:var(--fg);font-weight:400}
+.art-top{max-width:880px;margin:32px 0 0}
+.quick{border:1px solid var(--fg);padding:20px;background:var(--hl)}
+.quick .tag{background:var(--fg);color:var(--bg);margin-bottom:12px;display:inline-block}
+.quick p{font:15px/1.65 var(--mono)}
+.art-img{margin:32px 0 0;max-width:880px;border:1px solid var(--line);aspect-ratio:16/9;overflow:hidden}
+.art-img img{width:100%;height:100%;object-fit:cover}
+.art{display:grid;gap:32px;padding:40px 0 64px}
+.toc{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:14px 0;font:13px/1.5 var(--mono)}
+.toc h2{font:13px var(--mono);color:var(--mute);margin:0 0 8px;letter-spacing:0;font-weight:400}
+.toc ol{margin:0;padding-left:22px}
+.toc li{padding:3px 0}
+.prose{font:15px/1.8 var(--mono);max-width:72ch}
+.prose p{margin:0 0 18px}
+.prose h2{font:700 clamp(24px,3.4vw,36px)/1.1 var(--sans);letter-spacing:-.03em;margin:56px 0 18px}
+.prose h3{font:700 18px/1.3 var(--mono);margin:30px 0 10px}
+.prose ul,.prose ol.list{margin:0 0 18px;padding-left:22px}
+.prose ul{list-style:square}
+.prose li{padding:2px 0}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--mute)}
+.prose strong{font-weight:700}
+.fact{border-left:2px solid var(--fg);padding:4px 0 4px 16px;margin:0 0 18px}
+.tablewrap{overflow-x:auto;margin:0 0 8px;border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:640px;font:13px/1.5 var(--mono)}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px dashed var(--line)}
+th{font-weight:700;background:var(--hl)}
+caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--mute)}
+.verdict{display:grid;gap:16px;margin:0 0 18px}
+.verdict>div{border:1px solid var(--fg);padding:18px}
+.verdict h3{margin-top:0}
+.verdict ul{margin:0}
+.faq h3{border-top:1px dashed var(--line);padding-top:18px;margin-top:22px}
+.author{border:1px solid var(--line);padding:20px;margin-top:48px;font:14px/1.7 var(--mono)}
+.author p{margin:0 0 8px}
+.author .name{font:700 18px var(--sans);letter-spacing:-.02em}
+.related-wrap{border-top:1px dashed var(--line);padding:clamp(40px,6vw,72px) 0}
+.related-wrap h2{font-size:clamp(26px,4vw,44px);letter-spacing:-.03em;margin:0 0 20px}
+@media(min-width:960px){
+ .art{grid-template-columns:240px minmax(0,1fr);gap:48px}
+ .toc{position:sticky;top:90px;align-self:start}
+ .verdict{grid-template-columns:1fr 1fr}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://pickmyapp.github.io/blog/meta-muse-ember-explained-2026/#article", "headline": "Meta Muse Ember explained: the $0.10-per-million-token AI model for coding agents, and what it means for small dev teams (2026)", "description": "Meta Muse Ember explained: $0.10 per million input tokens for requests under 200K \u2014 the price step-up, benchmarks, and what it means for small dev teams.", "image": "https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/meta-muse-ember-explained-2026-1.jpg", "author": {"@type": "Organization", "name": "PickMyApp Research Team", "url": "https://pickmyapp.github.io/about/"}, "publisher": {"@type": "Organization", "name": "PickMyApp", "logo": {"@type": "ImageObject", "url": "https://pickmyapp.github.io/images/logo.svg"}}, "datePublished": "2026-11-12", "dateModified": "2026-11-12", "mainEntityOfPage": "https://pickmyapp.github.io/blog/meta-muse-ember-explained-2026/", "articleSection": "Emerging Tech", "inLanguage": "en-US"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Meta Muse Ember?", "acceptedAnswer": {"@type": "Answer", "text": "Muse Ember is Meta's smallest and most efficient AI model, launched November 9, 2026 (model ID muse-ember-1.0). It is built for the repetitive execution work inside coding agents \u2014 tool calls, coding subtasks, routing, extraction and long document parsing. Meta's framing is that Muse Wonder plans and Muse Ember handles the volume. It takes text, images, audio and video as input and outputs text only, with a 1-million-token context window."}}, {"@type": "Question", "name": "Is Muse Ember really $0.10 per million tokens?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 but only for input tokens, and only on requests of up to 200,000 input tokens. Output costs $0.50 per million tokens, cached input $0.004 per million. Above 200,000 input tokens in a request, every rate triples: $0.30 input, $0.012 cached, $1.50 output \u2014 applied to the whole request, not just the tokens past 200,000."}}, {"@type": "Question", "name": "How does Muse Ember compare to Claude Haiku 5.5?", "acceptedAnswer": {"@type": "Answer", "text": "On Meta-reported benchmarks, Ember ties Haiku at 36 on the Artificial Analysis Intelligence Index and beats it on coding-agent tasks (Coding Agent Index 46 vs 37) and automation (AutomationBench 37.8 vs 13.9). But Haiku wins on the hardest real engineering tasks: FrontierCode 2.0 scores Haiku 34.9% against Ember's 27.2%. Per-token list prices are identical ($0.10 input, $0.50 output); Ember is cheaper per task \u2014 about $0.14 vs $0.41 on Artificial Analysis's estimate."}}, {"@type": "Question", "name": "Can I run Muse Ember locally or self-host it?", "acceptedAnswer": {"@type": "Answer", "text": "No. Ember is hosted-only \u2014 available through Meta's Model API (api.meta.ai), Muse Code, Google Cloud, Oracle Cloud and Vercel's AI Gateway. Meta has published no parameter count and no open weights. If you need a model you can run yourself, the open-weight options in the same family are Meta's Glimmer or Moonshot's Kimi K3.1 Pro."}}, {"@type": "Question", "name": "How much will Muse Ember cost my team in practice?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on request size, not just token volume. Small requests under 200,000 input tokens cost $0.10 per million in and $0.50 out, with cached input at $0.004 \u2014 an Artificial Analysis estimate puts one benchmark task at about $0.14. Requests over 200,000 input tokens triple every rate. The flat-rate alternative is Muse Code: Everyday $5, High $15, Power $50, Maximum $200 a month, with Ember included on every plan."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pickmyapp.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Emerging Tech", "item": "https://pickmyapp.github.io/category/emerging-tech/"}, {"@type": "ListItem", "position": 3, "name": "Muse Ember explained", "item": "https://pickmyapp.github.io/blog/meta-muse-ember-explained-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="logo" href="/"><img src="/images/logo.svg" width="32" height="32" alt="">PickMyApp</a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+<nav class="nav" id="nav" aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/category/ai-automation/">AI Tools</a></li>
+<li><a href="/category/crm/">CRM</a></li>
+<li><a href="/category/email-marketing/">Email Marketing</a></li>
+<li><a href="/category/web-hosting/">Web Hosting</a></li>
+<li><a href="/blog/">Blog</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+<a class="btn btn-dark" href="/#latest">Latest Guides</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><ol>
+<li><a href="/">Home</a></li>
+<li><a href="/category/emerging-tech/">Emerging Tech</a></li>
+<li aria-current="page">Muse Ember explained</li>
+</ol></nav>
+
+<article>
+<header>
+<h1 class="art-h1">Meta Muse Ember explained: the $0.10-per-million-token AI model for coding agents, and what it means for small dev teams (2026)</h1>
+<ul class="metaline">
+<li><span class="tag">Emerging Tech</span></li>
+<li>Published <time datetime="2026-11-12"><strong>Nov 12, 2026</strong></time></li>
+<li>Updated: <time datetime="2026-11"><strong>November 2026</strong></time></li>
+<li><strong>12 min</strong> read</li>
+<li>By <strong>PickMyApp Research Team</strong></li>
+</ul>
+</header>
+
+<div class="art-top">
+<section class="quick" aria-label="Quick answer"><span class="tag">Quick answer</span><p>Meta launched Muse Ember on November 9, 2026 — model ID muse-ember-1.0 — as the smallest and most efficient model in its Muse family, built for the repetitive execution work inside coding agents: tool calls, coding subtasks, routing, extraction and long document parsing. Meta&#x27;s own framing is that Muse Wonder plans and Muse Ember handles the volume. The headline price is real but narrow: $0.10 per million input tokens applies only to requests of up to 200,000 input tokens; output costs $0.50 per million, and every rate triples once a request passes 200,000 input tokens. Ember takes in up to 1 million tokens of context and is available hosted-only through Meta&#x27;s Model API, Muse Code and cloud partners — there are no open weights and no self-hosted option. On Meta-reported benchmarks it matches Claude Haiku 5.5 on overall intelligence and beats it on coding-agent tasks, but loses on the hardest real engineering tasks. For a small dev team, the pitch is a two-model setup: a bigger model plans, Ember executes the small steps — provided each request stays under the 200,000-token line.</p></section>
+</div>
+
+<div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/meta-muse-ember-explained-2026-1.jpg" width="1280" height="720" alt="Illustration of a small development team watching an AI coding agent break one large task into many small subtasks on a laptop screen" decoding="async"></div>
+
+<!-- AD SLOT: optional-top (not used) -->
+
+<div class="art">
+<nav class="toc" aria-label="Table of contents"><h2>Contents</h2><ol><li><a href="#what-is-ember">What Muse Ember actually is — and what it is not</a></li><li><a href="#pricing-explained">The $0.10 price — and the 200,000-token catch</a></li><li><a href="#benchmarks">What the benchmarks say — and what they don&#x27;t</a></li><li><a href="#how-teams-use-it">How a small team would actually use Ember</a></li><li><a href="#ember-vs-haiku-luna">Ember vs Claude Haiku 5.5 and GPT-6 Luna — the honest comparison</a></li><li><a href="#who-should-try">Who should try it — and who should wait</a></li><li><a href="#faq">Frequently asked questions</a></li><li><a href="#conclusion">Conclusion</a></li></ol></nav>
+<div class="prose">
+<h2 id="what-is-ember">What Muse Ember actually is — and what it is not</h2>
+<p>Meta's Muse family now has four models, and Ember is the smallest of them. Spark arrived in April 2026 as the coding and agentic workhorse, Glimmer followed in August as its open-weight twin, Wonder launched in October as the flagship for the hardest problems, and Ember — announced Monday, November 9, 2026 — completes the set as the execution layer. It comes from Meta Superintelligence Labs, and it is the first model Meta says was trained using Muse Wonder Full, its largest model.</p>
+<p>The job description is specific, and that specificity is the whole point. Ember is built for "complex reasoning execution and the work agents repeat all day": tool calls, coding subtasks, routing, extraction and long document parsing. It is not the model that decides what to build. It is the model that does the hundreds of small things after the decision is made — reading a file, running a test, applying a targeted fix, pulling a value out of a long document. Meta's positioning line is blunt: "Muse Wonder plans, Muse Ember handles the volume."</p>
+<p>On inputs and outputs, Ember is multimodal on the way in and text-only on the way out. It natively understands text, images, audio and video, plus PDFs through the API, and it supports the Responses API, which is the interface agent frameworks use to keep a conversation and its tool calls in one session. The context window is 1 million tokens (1,048,576), with a maximum output of 512,000 tokens — large enough to take in a full codebase in one call, which is exactly the use case where the pricing catch in the next section bites. Our <a href="/blog/ai-agents-explained-tools-lead-2026/">AI agents explained</a> guide covers the wider agent landscape Ember sits in.</p>
+<h2 id="pricing-explained">The $0.10 price — and the 200,000-token catch</h2>
+<p>The queue title for this article says "$0.10-per-million-token", and that figure is real. It is also only one cell of the pricing table, and the rest of the table changes what a small team will actually pay. Here is Meta's published pricing, per million tokens:</p>
+<table>
+<thead><tr><th>Rate</th><th>Up to 200,000 input tokens per request</th><th>Over 200,000 input tokens per request</th></tr></thead>
+<tbody>
+<tr><td><strong>Input</strong></td><td>$0.10</td><td>$0.30</td></tr>
+<tr><td><strong>Cached input</strong></td><td>$0.004</td><td>$0.012</td></tr>
+<tr><td><strong>Output (including reasoning)</strong></td><td>$0.50</td><td>$1.50</td></tr>
+</tbody>
+</table>
+<p>Two details decide the real bill. First, the higher tier applies to the whole request, not just the tokens past 200,000 — and the tier is set by total input tokens in the request, cached tokens included. A full-codebase call that fills the 1-million-token window does not cost $0.10 per million; it costs three times that, on every token. Second, output is five times the input price at the low tier, and reasoning tokens count as output, so an agent that thinks out loud before it acts pays the higher rate on its thinking.</p>
+<p>There is also a flat-rate route. Muse Code subscriptions charge monthly instead of per token — Everyday $5, High $15, Power $50, Maximum $200 a month — and Ember is included on every plan. For a team that wants predictable billing, the $5 Everyday plan is the cheapest way to try Ember without watching a token meter. Web-search grounding is priced separately at $2.50 per 1,000 search queries, which matters for agents that check documentation as they work.</p>
+<p>The comparison that actually matters is cost per task, not cost per token. On Artificial Analysis's measure, one benchmark task costs about $0.14 on Ember, $0.41 on Claude Haiku 5.5 and $2.39 on Muse Spark 1.3 — which is why Meta can honestly say Ember "matches Haiku's best score at about a third of the cost" while listing the identical $0.10 input and $0.50 output per-token rates as Haiku and GPT-6 Luna. The per-token price is not the saving; the saving is that Ember needs fewer, cheaper steps to finish the same job.</p><div class="art-img"><img src="https://res.cloudinary.com/oznphemt/image/upload/f_auto,q_auto/pickmyapp/meta-muse-ember-explained-2026-2.jpg" width="1280" height="720" alt="Illustration comparing the cost of one AI coding task across Muse Ember, Claude Haiku 5.5 and GPT-6 Luna" decoding="async"></div><h2 id="benchmarks">What the benchmarks say — and what they don&#x27;t</h2>
+<p>Every benchmark number in this section is vendor-reported: Meta published them on November 9, 2026, citing Artificial Analysis, and no independent replication existed as of November 12.</p>
+<table>
+<thead><tr><th>Benchmark</th><th>Muse Ember</th><th>Claude Haiku 5.5</th><th>GPT-6 Luna</th></tr></thead>
+<tbody>
+<tr><td><strong>Artificial Analysis Intelligence Index</strong></td><td>36</td><td>36</td><td>28</td></tr>
+<tr><td><strong>Coding Agent Index-AA</strong></td><td>46</td><td>37</td><td>31</td></tr>
+<tr><td><strong>Terminal-Bench 4.0</strong></td><td>40.9</td><td>39.2</td><td>16.4</td></tr>
+<tr><td><strong>FrontierCode 2.0-AA</strong></td><td>27.2%</td><td>34.9%</td><td>25.2%</td></tr>
+<tr><td><strong>AutomationBench</strong></td><td>37.8</td><td>13.9</td><td>20.2</td></tr>
+<tr><td><strong>Cost per task (AA estimate)</strong></td><td>~$0.14</td><td>~$0.41</td><td>—</td></tr>
+</tbody>
+</table>
+<p>The pattern is consistent: Ember wins the volume work and loses the hardest work. On the overall Intelligence Index it ties Haiku at 36 (unrounded: Ember 35.8, Haiku 36.2) — the same rounded score at about a third of the cost per task. On the Coding Agent Index it leads clearly, 46 against Haiku's 37 and Luna's 31, and on Terminal-Bench it edges Haiku 40.9 to 39.2. On AutomationBench the gap is dramatic, 37.8 against 13.9 — Ember is built for repetitive automated work and it shows.</p>
+<p>Then FrontierCode 2.0, which tests real engineering tasks judged on whether the result is actually mergeable, flips the story: Haiku scores 34.9%, Ember 27.2%, Luna 25.2%. That is the benchmark that most resembles what a small team asks an agent to do on a real codebase — a multi-file change that has to pass review — and it is the one Ember loses. Ember also leads on OSWorld 2.1 computer use, which fits the same pattern: it is strong at executing defined steps and weaker at the open-ended engineering judgement that makes a change mergeable.</p>
+<p>The honest reading for a small team: use Ember where the task is well-defined and repeated — running the test suite, applying the same fix pattern across files, extracting structured data from long documents — and keep a stronger model on the planning step and on any change that has to survive code review.</p><h2 id="how-teams-use-it">How a small team would actually use Ember</h2>
+<p>Ember is hosted-only, so the first decision is where you reach it. The primary route is Meta's Model API at api.meta.ai, model ID muse-ember-1.0. It is also listed on Google Cloud and Oracle Cloud, and Vercel made it available on its AI Gateway the same day it launched, with partner quotes from Box, Cline, Oracle, Cloudflare and You.com. Our <a href="/blog/vs-code-vs-cursor-beginners-2026/">VS Code vs Cursor for beginners</a> guide covers the coding-agent side of the workflow Ember plugs into. The other route is Muse Code, the flat monthly subscription, which bundles Ember into the same coding assistant a team already uses.</p>
+<p>The intended pattern is two-tier, and it maps neatly onto how small teams already split agent work. A bigger model — Muse Wonder, Muse Spark 1.3, or Claude — plans the change: it reads the ticket, decides the approach, breaks the work into steps. Then Ember executes the steps, dozens or hundreds of them, each as a small request: read this file, run that test, patch this function, extract that value.</p>
+<p>That discipline is also where the cost story either works or falls apart. An agent that fans out into twenty subagents, each reading the same large files, is paying the input price twenty times — cheap per token, but not free. Cached input at $0.004 per million tokens helps here: repeated reads of the same files cost almost nothing, which is exactly the pattern a coding agent follows when it re-reads a file it already saw.</p>
+<h2 id="ember-vs-haiku-luna">Ember vs Claude Haiku 5.5 and GPT-6 Luna — the honest comparison</h2>
+<p>TechCrunch's launch coverage called Ember "significantly cheaper than frontier competitors like Haiku and Luna" at 10 cents per million input tokens. That line needs a correction, because multiple secondary sources report that Haiku 5.5 and GPT-6 Luna list the identical $0.10 input and $0.50 output per-token rates. On list price per token, the three are the same. The real difference is cost per task: Ember finishes the Artificial Analysis benchmark task for about $0.14 against Haiku's $0.41, because it does the job in fewer, cheaper steps — not because its sticker price is lower.</p>
+<p>On capability, the three split along the same line the benchmarks draw. Ember is the strongest of the three on coding-agent volume — Coding Agent Index 46, AutomationBench 37.8 — and the weakest of the three on the hardest engineering work, where Haiku's FrontierCode score of 34.9% beats Ember's 27.2%.</p>
+<p>Availability is where the three genuinely differ. Ember is hosted-only with no open weights. Haiku 5.5 is also hosted-only, reached through Anthropic's API and Claude Code. Luna is OpenAI's hosted model. None of the three can be self-hosted, which is the gap an open-weight model fills — Kimi K3.1 Pro and Meta's own Glimmer are the options for a team that wants weights it can run itself. For a small dev team choosing between the three hosted models, the deciding question is not the per-token price, which is the same, but the shape of the work: high-volume repetitive execution favours Ember, hard engineering judgement favours Haiku, and Luna's case rests on the OpenAI ecosystem rather than on these numbers. Our <a href="/blog/kimi-k3-1-pro-explained-2026/">Kimi K3.1 Pro explained</a> guide covers the open-weight alternative for teams that want to run a model on their own hardware.</p><h2 id="who-should-try">Who should try it — and who should wait</h2>
+<p><strong>Try it this week if</strong> your team already runs a coding agent and pays per token for every step it takes; if your agents do the same repetitive work all day — test runs, routine fixes, extraction from long documents — and you can keep each request under 200,000 input tokens; if you want the cheapest model that scores 36 on the Artificial Analysis index for high-volume subagent fan-out; or if you already pay for Muse Code, where Ember is included on every plan from the $5 Everyday tier.</p>
+<p><strong>Wait if</strong> you need the model to make engineering judgement on multi-file changes that must pass code review — FrontierCode says Haiku is stronger there; if your workflow hands the agent the whole codebase at once, because that crosses the 200,000-token line and triples the price; if you need to self-host or run a model locally, which Ember cannot do at all; or if you want independent benchmarks before trusting a launch-week claim — none existed as of November 12, 2026.</p>
+<p>The middle path is the sensible one: put Ember on the execution half of a two-model setup for a week, keep the planning model you already trust, and measure the actual bill against the $0.14-per-task estimate.</p>
+<section class="faq" aria-labelledby="faq"><h2 id="faq">Frequently asked questions</h2><h3>What is Meta Muse Ember?</h3><p>Muse Ember is Meta&#x27;s smallest and most efficient AI model, launched November 9, 2026 (model ID muse-ember-1.0). It is built for the repetitive execution work inside coding agents — tool calls, coding subtasks, routing, extraction and long document parsing. Meta&#x27;s framing is that Muse Wonder plans and Muse Ember handles the volume. It takes text, images, audio and video as input and outputs text only, with a 1-million-token context window.</p><h3>Is Muse Ember really $0.10 per million tokens?</h3><p>Yes — but only for input tokens, and only on requests of up to 200,000 input tokens. Output costs $0.50 per million tokens, cached input $0.004 per million. Above 200,000 input tokens in a request, every rate triples: $0.30 input, $0.012 cached, $1.50 output — applied to the whole request, not just the tokens past 200,000.</p><h3>How does Muse Ember compare to Claude Haiku 5.5?</h3><p>On Meta-reported benchmarks, Ember ties Haiku at 36 on the Artificial Analysis Intelligence Index and beats it on coding-agent tasks (Coding Agent Index 46 vs 37) and automation (AutomationBench 37.8 vs 13.9). But Haiku wins on the hardest real engineering tasks: FrontierCode 2.0 scores Haiku 34.9% against Ember&#x27;s 27.2%. Per-token list prices are identical ($0.10 input, $0.50 output); Ember is cheaper per task — about $0.14 vs $0.41 on Artificial Analysis&#x27;s estimate.</p><h3>Can I run Muse Ember locally or self-host it?</h3><p>No. Ember is hosted-only — available through Meta&#x27;s Model API (api.meta.ai), Muse Code, Google Cloud, Oracle Cloud and Vercel&#x27;s AI Gateway. Meta has published no parameter count and no open weights. If you need a model you can run yourself, the open-weight options in the same family are Meta&#x27;s Glimmer or Moonshot&#x27;s Kimi K3.1 Pro.</p><h3>How much will Muse Ember cost my team in practice?</h3><p>It depends on request size, not just token volume. Small requests under 200,000 input tokens cost $0.10 per million in and $0.50 out, with cached input at $0.004 — an Artificial Analysis estimate puts one benchmark task at about $0.14. Requests over 200,000 input tokens triple every rate. The flat-rate alternative is Muse Code: Everyday $5, High $15, Power $50, Maximum $200 a month, with Ember included on every plan.</p></section>
+<h2 id="conclusion">Conclusion</h2>
+<p>Muse Ember is a narrow, well-aimed launch: not a cheaper flagship, but a cheap worker for the repetitive half of agent coding. Its case is the $0.10 input price on small requests, the 1-million-token context, the coding-agent benchmark leads and the $0.14-per-task cost. Its limits are the 200,000-token step-up that triples the price, the FrontierCode gap on hard engineering work, the hosted-only availability and the fact that every benchmark is Meta-reported with no independent check yet. Try it as the execution half of a two-model setup, keep requests small, and measure your own bill before you move a real workload onto it.</p>
+</div>
+
+</div>
+</div>
+</article>
+</div>
+
+<section class="related-wrap" aria-labelledby="related">
+<div class="wrap">
+<h2 id="related">Related Guides</h2>
+<ul class="grid g2">
+<li class="card"><h3><a href="https://pickmyapp.github.io/blog/claude-fable-5-2-explained-2026/">Claude Fable 5.2 Explained (2026): Cheaper, Top-Ranked</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/kimi-k3-1-pro-explained-2026/">Kimi K3.1 Pro explained: the 2.8T open-weight AI model with 1M context, and what it means for small dev teams (2026)</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/ai-agents-explained-tools-lead-2026/">AI agents explained: what they are and which tools lead in 2026</a></h3><p class="meta">Read guide</p></li><li class="card"><h3><a href="https://pickmyapp.github.io/blog/vs-code-vs-cursor-beginners-2026/">VS Code vs Cursor for beginners compared (2026)</a></h3><p class="meta">Read guide</p></li>
+</ul>
+</div>
+</section>
+
+<!-- AD SLOT: above-footer -->
+<!-- <div class="ad" id="ad-above-footer" style="min-height:90px"></div> -->
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="fgrid">
+<div><h2>About</h2><p class="blurb">PickMyApp publishes honest guides, comparisons and reviews of business software. We check pricing, test free plans and take no paid placements.</p></div>
+<nav aria-label="Quick links"><h2>Quick links</h2><ul><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></nav>
+<nav aria-label="Categories"><h2>Categories</h2><ul><li><a href="/category/ai-automation/">AI Automation Tools</a></li><li><a href="/category/crm/">CRM Software</a></li><li><a href="/category/email-marketing/">Email Marketing</a></li><li><a href="/category/project-management/">Project Management</a></li><li><a href="/category/web-hosting/">Web Hosting</a></li></ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/disclaimer/">Disclaimer</a></li><li><a href="/terms-of-service/">Terms of Service</a></li></ul></nav>
+</div>
+<div class="copy"><span>&copy; 2026 PickMyApp</span><a href="/sitemap.xml">sitemap.xml</a></div>
+</div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById("burger"),n=document.getElementById("nav");
+b.addEventListener("click",function(){var o=n.classList.toggle("open");b.setAttribute("aria-expanded",o);b.setAttribute("aria-label",o?"Close menu":"Open menu")});
+n.addEventListener("click",function(e){if(e.target.tagName==="A"){n.classList.remove("open");b.setAttribute("aria-expanded","false")}});})();
+</script>
+</body>
+</html>
